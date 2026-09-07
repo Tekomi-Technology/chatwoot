@@ -356,7 +356,7 @@ const newReportRoutes = () => [
 const reportRoutes = computed(() => newReportRoutes());
 
 const menuItems = computed(() => {
-  return [
+  const items = [
     {
       name: 'Home',
       label: t('SIDEBAR.HOME'),
@@ -958,6 +958,50 @@ const menuItems = computed(() => {
       ],
     },
   ];
+
+  // ============================================================
+  // TEMP DEMO FILTER — added 2026-09-07, hides features not covered
+  // in the Tekomi_Connect.docx client demo doc. See
+  // DEMO_HIDDEN_FEATURES.md at repo root for full context.
+  // TO RESTORE: set DEMO_MODE to false (or delete this block).
+  // ============================================================
+  const DEMO_MODE = true;
+  if (!DEMO_MODE) return items;
+
+  const DEMO_HIDDEN_TOP_LEVEL = [
+    'Captain',
+    'Calls',
+    'Companies',
+    'Reports',
+    'Portals',
+  ];
+  const DEMO_HIDDEN_SETTINGS_CHILDREN = [
+    'Settings Account Settings',
+    'Settings Agents',
+    'Settings Teams',
+    'Settings Templates',
+    'Settings Custom Attributes',
+    'Settings Data',
+    'Settings Audit Logs',
+    'Settings Custom Roles',
+    'Conversation Workflow',
+    'Settings Security',
+    'Settings Billing',
+  ];
+
+  return items
+    .filter(item => !DEMO_HIDDEN_TOP_LEVEL.includes(item.name))
+    .map(item => {
+      if (item.name === 'Settings' && item.children) {
+        return {
+          ...item,
+          children: item.children.filter(
+            child => !DEMO_HIDDEN_SETTINGS_CHILDREN.includes(child.name)
+          ),
+        };
+      }
+      return item;
+    });
 });
 </script>
 
