@@ -1046,7 +1046,9 @@ const menuItems = computed(() => {
           >
             {{ t('SIDEBAR_ITEMS.BRAND_NAME') }}
           </span>
-          <span class="text-xs text-n-slate-11 truncate">
+          <span
+            class="text-[11px] font-medium italic tracking-wide text-n-brand truncate"
+          >
             {{ t('SIDEBAR_ITEMS.BRAND_TAGLINE') }}
           </span>
         </span>
