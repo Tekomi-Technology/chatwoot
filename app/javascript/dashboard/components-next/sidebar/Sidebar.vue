@@ -50,8 +50,7 @@ const isCallsAvailable = computed(
   () => isOnChatwootCloud.value || isEnterprise
 );
 
-// Tekomi: menu Captain (AI) được ẩn khỏi sidebar. Đổi thành true để hiện lại.
-const SHOW_CAPTAIN_MENU = false;
+const SHOW_CAPTAIN_MENU = true;
 const searchShortcut = useKbd([`$mod`, 'k']);
 const { t } = useI18n();
 

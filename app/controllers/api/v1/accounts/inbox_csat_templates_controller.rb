@@ -67,7 +67,7 @@ class Api::V1::Accounts::InboxCsatTemplatesController < Api::V1::Accounts::BaseC
   def validate_captain_enabled
     return if Current.account.feature_enabled?('captain_integration')
 
-    render json: { error: 'Captain is required for template analysis' }, status: :forbidden
+    render json: { error: 'Tekomi AI is required for template analysis' }, status: :forbidden
   end
 
   def render_template_creation_result(result)
