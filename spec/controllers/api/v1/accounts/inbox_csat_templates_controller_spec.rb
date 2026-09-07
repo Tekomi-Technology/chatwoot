@@ -406,7 +406,7 @@ RSpec.describe Api::V1::Accounts::InboxCsatTemplatesController, type: :request d
              as: :json
 
         expect(response).to have_http_status(:forbidden)
-        expect(response.parsed_body['error']).to eq('Captain is required for template analysis')
+        expect(response.parsed_body['error']).to eq('Tekomi AI is required for template analysis')
       end
     end
 

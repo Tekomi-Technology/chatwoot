@@ -49,6 +49,8 @@ const store = useStore();
 const isCallsAvailable = computed(
   () => isOnChatwootCloud.value || isEnterprise
 );
+
+const SHOW_CAPTAIN_MENU = true;
 const searchShortcut = useKbd([`$mod`, 'k']);
 const { t } = useI18n();
 
@@ -354,7 +356,7 @@ const newReportRoutes = () => [
 const reportRoutes = computed(() => newReportRoutes());
 
 const menuItems = computed(() => {
-  return [
+  const items = [
     {
       name: 'Home',
       label: t('SIDEBAR.HOME'),
@@ -493,88 +495,92 @@ const menuItems = computed(() => {
         },
       ],
     },
-    {
-      name: 'Captain',
-      icon: 'i-woot-captain',
-      label: t('SIDEBAR.CAPTAIN'),
-      activeOn: ['captain_assistants_create_index'],
-      children: [
-        {
-          name: 'Overview',
-          label: t('SIDEBAR.CAPTAIN_OVERVIEW'),
-          activeOn: ['captain_assistants_overview_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_overview_index',
-          }),
-        },
-        {
-          name: 'FAQs',
-          label: t('SIDEBAR.CAPTAIN_RESPONSES'),
-          activeOn: [
-            'captain_assistants_responses_index',
-            'captain_assistants_faq_suggestions',
-          ],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_responses_index',
-          }),
-        },
-        {
-          name: 'Documents',
-          label: t('SIDEBAR.CAPTAIN_DOCUMENTS'),
-          activeOn: ['captain_assistants_documents_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_documents_index',
-          }),
-        },
-        {
-          name: 'Scenarios',
-          label: t('SIDEBAR.CAPTAIN_SCENARIOS'),
-          activeOn: ['captain_assistants_scenarios_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_scenarios_index',
-          }),
-        },
-        {
-          name: 'Playground',
-          label: t('SIDEBAR.CAPTAIN_PLAYGROUND'),
-          activeOn: ['captain_assistants_playground_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_playground_index',
-          }),
-        },
-        {
-          name: 'Inboxes',
-          label: t('SIDEBAR.CAPTAIN_INBOXES'),
-          activeOn: ['captain_assistants_inboxes_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_inboxes_index',
-          }),
-        },
-        {
-          name: 'Tools',
-          label: t('SIDEBAR.CAPTAIN_TOOLS'),
-          activeOn: ['captain_tools_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_tools_index',
-          }),
-        },
-        {
-          name: 'Settings',
-          label: t('SIDEBAR.CAPTAIN_SETTINGS'),
-          activeOn: [
-            'captain_assistants_settings_index',
-            'captain_assistants_settings_system_index',
-            'captain_assistants_settings_audience_index',
-            'captain_assistants_settings_schedule_index',
-            'captain_assistants_guidelines_index',
-            'captain_assistants_guardrails_index',
-          ],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_assistants_settings_index',
-          }),
-        },
-      ],
-    },
+    ...(SHOW_CAPTAIN_MENU
+      ? [
+          {
+            name: 'Captain',
+            icon: 'i-woot-captain',
+            label: t('SIDEBAR.CAPTAIN'),
+            activeOn: ['captain_assistants_create_index'],
+            children: [
+              {
+                name: 'Overview',
+                label: t('SIDEBAR.CAPTAIN_OVERVIEW'),
+                activeOn: ['captain_assistants_overview_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_overview_index',
+                }),
+              },
+              {
+                name: 'FAQs',
+                label: t('SIDEBAR.CAPTAIN_RESPONSES'),
+                activeOn: [
+                  'captain_assistants_responses_index',
+                  'captain_assistants_faq_suggestions',
+                ],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_responses_index',
+                }),
+              },
+              {
+                name: 'Documents',
+                label: t('SIDEBAR.CAPTAIN_DOCUMENTS'),
+                activeOn: ['captain_assistants_documents_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_documents_index',
+                }),
+              },
+              {
+                name: 'Scenarios',
+                label: t('SIDEBAR.CAPTAIN_SCENARIOS'),
+                activeOn: ['captain_assistants_scenarios_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_scenarios_index',
+                }),
+              },
+              {
+                name: 'Playground',
+                label: t('SIDEBAR.CAPTAIN_PLAYGROUND'),
+                activeOn: ['captain_assistants_playground_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_playground_index',
+                }),
+              },
+              {
+                name: 'Inboxes',
+                label: t('SIDEBAR.CAPTAIN_INBOXES'),
+                activeOn: ['captain_assistants_inboxes_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_inboxes_index',
+                }),
+              },
+              {
+                name: 'Tools',
+                label: t('SIDEBAR.CAPTAIN_TOOLS'),
+                activeOn: ['captain_tools_index'],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_tools_index',
+                }),
+              },
+              {
+                name: 'Settings',
+                label: t('SIDEBAR.CAPTAIN_SETTINGS'),
+                activeOn: [
+                  'captain_assistants_settings_index',
+                  'captain_assistants_settings_system_index',
+                  'captain_assistants_settings_audience_index',
+                  'captain_assistants_settings_schedule_index',
+                  'captain_assistants_guidelines_index',
+                  'captain_assistants_guardrails_index',
+                ],
+                to: accountScopedRoute('captain_assistants_index', {
+                  navigationPath: 'captain_assistants_settings_index',
+                }),
+              },
+            ],
+          },
+        ]
+      : []),
     ...(isCallsAvailable.value
       ? [
           {
@@ -952,6 +958,50 @@ const menuItems = computed(() => {
       ],
     },
   ];
+
+  // ============================================================
+  // TEMP DEMO FILTER — added 2026-09-07, hides features not covered
+  // in the Tekomi_Connect.docx client demo doc. See
+  // DEMO_HIDDEN_FEATURES.md at repo root for full context.
+  // TO RESTORE: set DEMO_MODE to false (or delete this block).
+  // ============================================================
+  const DEMO_MODE = true;
+  if (!DEMO_MODE) return items;
+
+  const DEMO_HIDDEN_TOP_LEVEL = [
+    'Captain',
+    'Calls',
+    'Companies',
+    'Reports',
+    'Portals',
+  ];
+  const DEMO_HIDDEN_SETTINGS_CHILDREN = [
+    'Settings Account Settings',
+    'Settings Agents',
+    'Settings Teams',
+    'Settings Templates',
+    'Settings Custom Attributes',
+    'Settings Data',
+    'Settings Audit Logs',
+    'Settings Custom Roles',
+    'Conversation Workflow',
+    'Settings Security',
+    'Settings Billing',
+  ];
+
+  return items
+    .filter(item => !DEMO_HIDDEN_TOP_LEVEL.includes(item.name))
+    .map(item => {
+      if (item.name === 'Settings' && item.children) {
+        return {
+          ...item,
+          children: item.children.filter(
+            child => !DEMO_HIDDEN_SETTINGS_CHILDREN.includes(child.name)
+          ),
+        };
+      }
+      return item;
+    });
 });
 </script>
 
@@ -996,7 +1046,9 @@ const menuItems = computed(() => {
           >
             {{ t('SIDEBAR_ITEMS.BRAND_NAME') }}
           </span>
-          <span class="text-xs text-n-slate-11 truncate">
+          <span
+            class="text-[11px] font-medium italic tracking-wide text-n-brand truncate"
+          >
             {{ t('SIDEBAR_ITEMS.BRAND_TAGLINE') }}
           </span>
         </span>
