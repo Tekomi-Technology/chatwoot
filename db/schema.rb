@@ -1,4 +1,4 @@
-ActiveRecord::Schema[7.2].define(version: 2026_08_27_000001) do
+ActiveRecord::Schema[7.2].define(version: 2026_09_04_000001) do
   # These extensions should be enabled to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -763,6 +763,19 @@ ActiveRecord::Schema[7.2].define(version: 2026_08_27_000001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["oa_id"], name: "index_channel_zalo_oa_on_oa_id", unique: true
+  end
+
+  create_table "channel_zalo_personal", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.string "zalo_uid", null: false
+    t.string "display_name"
+    t.text "credentials", null: false
+    t.string "status", default: "reconnecting", null: false
+    t.datetime "status_updated_at"
+    t.datetime "last_connected_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["zalo_uid"], name: "index_channel_zalo_personal_on_zalo_uid", unique: true
   end
 
   create_table "companies", force: :cascade do |t|

@@ -49,7 +49,8 @@ class Zalo::WorkerClient
     private
 
     def post(path, body = nil)
-      request(:post, path, body: body&.to_json, headers: { 'Content-Type' => 'application/json' })
+      headers = body ? { 'Content-Type' => 'application/json' } : {}
+      request(:post, path, body: body&.to_json, headers: headers)
     end
 
     def request(method, path, body: nil, headers: {}, query: nil)
