@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    env_file: .env ## Change this file for customized env variables
+    env_file: .env 
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
@@ -38,6 +38,18 @@ services:
       - RAILS_ENV=production
       - INSTALLATION_ENV=docker
     command: ['bundle', 'exec', 'sidekiq', '-C', 'config/sidekiq.yml']
+    restart: always
+
+  zalo:
+    <<: *base
+    image: chatwoot-custom-rails:1.0
+    depends_on:
+      - rails
+    environment:
+      - NODE_ENV=production
+      - RAILS_ENV=production
+      - ZALO_WORKER_HOST=0.0.0.0
+    command: ['node', 'zalo_worker/dist/main.js']
     restart: always
 
   redis:
