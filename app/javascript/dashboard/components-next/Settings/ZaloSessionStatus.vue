@@ -6,7 +6,10 @@ import { dynamicTime } from 'shared/helpers/timeHelper';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 
 // A personal Zalo session expires on Zalo's terms, not on a schedule, so the inbox shows its
-// live state: an expired session silently stops both directions until someone rescans.
+// live state: an expired session silently stops both directions until someone rescans. The most
+// common cause is the account being signed in to Zalo Web elsewhere — Zalo keeps one web session
+// per account and drops this one — so the expired state says that rather than leaving the
+// operator to guess the inbox is broken.
 const props = defineProps({
   inbox: {
     type: Object,
@@ -57,19 +60,26 @@ const rescan = () => {
 </script>
 
 <template>
-  <div class="flex items-center justify-between gap-3 flex-wrap">
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full" :class="dotColor" />
-      <span class="text-sm font-medium text-n-slate-12">{{ statusLabel }}</span>
-      <span v-if="detail" class="text-sm text-n-slate-11">{{ detail }}</span>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center justify-between gap-3 flex-wrap">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full" :class="dotColor" />
+        <span class="text-sm font-medium text-n-slate-12">
+          {{ statusLabel }}
+        </span>
+        <span v-if="detail" class="text-sm text-n-slate-11">{{ detail }}</span>
+      </div>
+      <NextButton
+        v-if="needsRescan"
+        sm
+        solid
+        blue
+        :label="$t('INBOX_MGMT.ZALO_PERSONAL_SESSION.RESCAN')"
+        @click="rescan"
+      />
     </div>
-    <NextButton
-      v-if="needsRescan"
-      sm
-      solid
-      blue
-      :label="$t('INBOX_MGMT.ZALO_PERSONAL_SESSION.RESCAN')"
-      @click="rescan"
-    />
+    <p v-if="needsRescan" class="text-sm text-n-slate-11 max-w-lg">
+      {{ $t('INBOX_MGMT.ZALO_PERSONAL_SESSION.EXPIRED_HINT') }}
+    </p>
   </div>
 </template>

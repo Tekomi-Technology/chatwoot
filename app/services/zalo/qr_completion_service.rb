@@ -31,7 +31,15 @@ class Zalo::QrCompletionService
     channel = ::Channel::ZaloPersonal.find(pending[:channel_id])
     raise Mismatch if channel.zalo_uid != zalo_uid
 
-    channel.update!(credentials: credentials_json, display_name: display_name.presence || channel.display_name)
+    # Back to `reconnecting`, the same state a freshly created channel starts in: the credentials
+    # are good and the worker is about to open the session. Leaving it `expired` would keep the
+    # inbox reporting a dead session — and asking for another QR scan — while one is being opened.
+    channel.update!(
+      credentials: credentials_json,
+      display_name: display_name.presence || channel.display_name,
+      status: 'reconnecting',
+      status_updated_at: Time.current
+    )
     channel
   end
 

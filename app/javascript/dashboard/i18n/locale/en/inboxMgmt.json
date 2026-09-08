@@ -779,8 +779,9 @@
       "STATUS": {
         "CONNECTED": "Connected",
         "RECONNECTING": "Reconnecting…",
-        "EXPIRED": "Session expired — scan the QR code again"
-      }
+        "EXPIRED": "Session ended"
+      },
+      "EXPIRED_HINT": "Zalo allows one web session per account, so signing the same account in to Zalo Web somewhere else ends this one."
     },
     "TABS": {
       "SETTINGS": "Settings",

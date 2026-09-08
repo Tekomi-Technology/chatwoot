@@ -3,6 +3,7 @@ import {
   isZaloAuthError,
   ReconnectSupervisor,
   BACKOFF_MS,
+  MAX_AUTH_FAILURES,
   type ReconnectDeps,
   type SupervisedAdapter,
 } from '../src/supervisor.js';
@@ -109,7 +110,7 @@ describe('ReconnectSupervisor.connect (success)', () => {
 });
 
 describe('ReconnectSupervisor auth failure', () => {
-  it('marks the channel expired and does not schedule a retry', async () => {
+  it('retries a rejected re-login instead of expiring on the first refusal', async () => {
     vi.useFakeTimers();
     try {
       const { deps } = makeDeps({
@@ -121,10 +122,78 @@ describe('ReconnectSupervisor auth failure', () => {
 
       await sup.connect(7);
 
-      expect(deps.setStatus).toHaveBeenCalledWith(7, 'expired');
+      expect(deps.setStatus).toHaveBeenCalledWith(7, 'reconnecting');
+      expect(deps.setStatus).not.toHaveBeenCalledWith(7, 'expired');
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it(`marks the channel expired once the refusals reach ${MAX_AUTH_FAILURES}`, async () => {
+    vi.useFakeTimers();
+    try {
+      const { deps } = makeDeps({
+        createAdapter: vi.fn(async () => {
+          throw new Error('cookie invalid, please re-login');
+        }),
+      });
+      const sup = new ReconnectSupervisor(deps);
+
+      await sup.connect(7); // refusal 1 -> reconnecting
+      for (let i = 0; i < MAX_AUTH_FAILURES; i++) {
+        await vi.advanceTimersByTimeAsync(BACKOFF_MS[Math.min(i, BACKOFF_MS.length - 1)]);
+      }
+
+      expect(deps.createAdapter).toHaveBeenCalledTimes(MAX_AUTH_FAILURES);
+      expect(deps.setStatus).toHaveBeenLastCalledWith(7, 'expired');
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('stops retrying once the channel is expired', async () => {
+    vi.useFakeTimers();
+    try {
+      const { deps } = makeDeps({
+        createAdapter: vi.fn(async () => {
+          throw new Error('cookie invalid, please re-login');
+        }),
+      });
+      const sup = new ReconnectSupervisor(deps);
+
+      await sup.connect(7);
+      for (let i = 0; i < MAX_AUTH_FAILURES; i++) {
+        await vi.advanceTimersByTimeAsync(BACKOFF_MS[Math.min(i, BACKOFF_MS.length - 1)]);
+      }
+      expect(deps.setStatus).toHaveBeenLastCalledWith(7, 'expired');
+
       (deps.createAdapter as ReturnType<typeof vi.fn>).mockClear();
-      await vi.advanceTimersByTimeAsync(BACKOFF_MS[BACKOFF_MS.length - 1] + 1000);
+      await vi.advanceTimersByTimeAsync(BACKOFF_MS[BACKOFF_MS.length - 1] * 2);
       expect(deps.createAdapter).not.toHaveBeenCalled();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('clears the refusal count after a successful connect', async () => {
+    vi.useFakeTimers();
+    try {
+      const adapter = fakeAdapter();
+      const createAdapter = vi
+        .fn()
+        .mockRejectedValueOnce(new Error('cookie invalid, please re-login'))
+        .mockResolvedValue(adapter);
+      const { deps } = makeDeps({ createAdapter });
+      const sup = new ReconnectSupervisor(deps);
+
+      await sup.connect(7); // refusal 1
+      await vi.advanceTimersByTimeAsync(BACKOFF_MS[0]); 
+      expect(deps.setStatus).toHaveBeenLastCalledWith(7, 'connected');
+
+      createAdapter.mockRejectedValue(new Error('cookie invalid, please re-login'));
+      adapter.fireClose(1006, 'abnormal');
+      await vi.advanceTimersByTimeAsync(BACKOFF_MS[0]);
+      expect(deps.setStatus).toHaveBeenLastCalledWith(7, 'reconnecting');
     } finally {
       vi.useRealTimers();
     }
@@ -175,14 +244,12 @@ describe('ReconnectSupervisor.onClosed', () => {
       });
       const sup = new ReconnectSupervisor(deps);
 
-      await sup.connect(7); // fails -> schedules BACKOFF_MS[0]
-      await vi.advanceTimersByTimeAsync(BACKOFF_MS[0]); // retry fails -> schedules BACKOFF_MS[1]
-      await vi.advanceTimersByTimeAsync(BACKOFF_MS[1]); // retry fails -> schedules BACKOFF_MS[2]
+      await sup.connect(7); 
+      await vi.advanceTimersByTimeAsync(BACKOFF_MS[0]);  
+      await vi.advanceTimersByTimeAsync(BACKOFF_MS[1]);
 
       expect(deps.createAdapter).toHaveBeenCalledTimes(3);
 
-      // Run far past every remaining backoff step; the delay never exceeds the cap, so this
-      // still lands on a bounded, predictable number of additional attempts.
       const remaining = BACKOFF_MS.length - 2;
       let totalRemainingDelay = 0;
       for (let i = 2; i < BACKOFF_MS.length + 3; i++) {

@@ -2,12 +2,6 @@ import type { ZaloCredentials } from './types.js';
 
 export type SessionStatus = 'connected' | 'reconnecting' | 'expired';
 
-/**
- * Conservative auth-error classifier for a zca-js login rejection.
- * Returns true ONLY when the message clearly indicates a credential/session problem.
- * Everything else (network, unknown) is treated as retryable — a wrong `expired`
- * forces a manual QR re-scan, while a wrong retry only costs a backoff delay.
- */
 export function isZaloAuthError(err: unknown): boolean {
   const msg = String((err as { message?: unknown })?.message ?? '').toLowerCase();
   if (!msg) return false;
@@ -16,14 +10,12 @@ export function isZaloAuthError(err: unknown): boolean {
   );
 }
 
-/** The slice of an adapter the supervisor drives. ZcaAdapter satisfies it structurally. */
 export interface SupervisedAdapter {
   onClosed(cb: (code: number, reason: string) => void): void;
   getSerializedCookie(): unknown;
   stop(): Promise<void>;
 }
 
-/** All I/O the supervisor needs, injected so it stays testable. */
 export interface ReconnectDeps {
   loadCredentials(channelId: number): Promise<ZaloCredentials | null>;
   saveCredentials(channelId: number, creds: ZaloCredentials): Promise<void>;
@@ -35,12 +27,14 @@ export interface ReconnectDeps {
   log(obj: Record<string, unknown>, msg: string): void;
 }
 
-// Exponential backoff (ms); the last value is the cap.
 export const BACKOFF_MS = [5_000, 15_000, 45_000, 120_000, 300_000];
 const MANUAL_CLOSE = 1000;
 
+export const MAX_AUTH_FAILURES = 3;
+
 interface ChannelState {
   attempt: number;
+  authFailures: number;
   connecting: boolean;
   stopped: boolean;
   epoch: number;
@@ -53,7 +47,6 @@ export class ReconnectSupervisor {
 
   constructor(private deps: ReconnectDeps) {}
 
-  /** Re-persist the live cookie for every currently-connected channel. Never throws. */
   async persistAllCookies(): Promise<void> {
     for (const [channelId, st] of this.state) {
       if (!st.adapter) continue;
@@ -66,24 +59,22 @@ export class ReconnectSupervisor {
     }
   }
 
-  /** Stop supervising a channel (inbox deleted). Cancels any pending reconnect. */
   async remove(channelId: number): Promise<void> {
     const st = this.ensure(channelId);
     st.stopped = true;
-    st.epoch++; // supersede any in-flight connect() for this removed channel
+    st.epoch++; 
     if (st.timer) clearTimeout(st.timer);
     st.timer = undefined;
     st.adapter = undefined;
     await this.deps.unregister(channelId).catch(() => {});
   }
 
-  /** Connect (or reconnect) one channel. Never throws. */
   async connect(channelId: number): Promise<void> {
     const st = this.ensure(channelId);
-    if (st.connecting) return; // guard against overlapping attempts
+    if (st.connecting) return; 
     st.connecting = true;
     st.stopped = false;
-    const epoch = ++st.epoch; // this attempt's generation; onClosed/remove bump st.epoch to supersede it
+    const epoch = ++st.epoch; 
     const isCurrent = () => st.epoch === epoch && !st.stopped;
     try {
       const creds = await this.deps.loadCredentials(channelId);
@@ -98,14 +89,28 @@ export class ReconnectSupervisor {
       adapter.onClosed((code, reason) => this.onClosed(channelId, code, reason));
       st.adapter = adapter;
       st.attempt = 0;
+      st.authFailures = 0;
       await this.transition(channelId, 'connected');
-      if (!isCurrent()) return; // a close interleaved during setStatus; onClosed already handled it
+      if (!isCurrent()) return; 
       await this.persistCookie(channelId, adapter, creds);
     } catch (err) {
       st.adapter = undefined;
       if (isZaloAuthError(err)) {
-        this.deps.log({ channelId, err: String(err) }, 'zalo re-login auth failure; marking expired');
-        await this.transition(channelId, 'expired');
+        st.authFailures++;
+        if (st.authFailures >= MAX_AUTH_FAILURES) {
+          this.deps.log(
+            { channelId, err: String(err), attempts: st.authFailures },
+            'zalo re-login rejected repeatedly; marking expired'
+          );
+          await this.transition(channelId, 'expired');
+          return;
+        }
+        this.deps.log(
+          { channelId, err: String(err), attempt: st.authFailures },
+          'zalo re-login rejected; retrying before giving up'
+        );
+        await this.transition(channelId, 'reconnecting');
+        this.scheduleReconnect(channelId);
         return;
       }
       this.deps.log({ channelId, err: String(err) }, 'zalo connect failed; will retry');
@@ -116,7 +121,6 @@ export class ReconnectSupervisor {
     }
   }
 
-  /** Single choke point for status changes. */
   private async transition(channelId: number, status: SessionStatus): Promise<void> {
     this.deps.log({ channelId, status }, 'channel status changed');
     await this.deps.setStatus(channelId, status).catch(() => {});
@@ -135,7 +139,7 @@ export class ReconnectSupervisor {
   private ensure(channelId: number): ChannelState {
     let s = this.state.get(channelId);
     if (!s) {
-      s = { attempt: 0, connecting: false, stopped: false, epoch: 0 };
+      s = { attempt: 0, authFailures: 0, connecting: false, stopped: false, epoch: 0 };
       this.state.set(channelId, s);
     }
     return s;
@@ -144,7 +148,7 @@ export class ReconnectSupervisor {
   private onClosed(channelId: number, code: number, reason: string): void {
     const st = this.ensure(channelId);
     st.adapter = undefined;
-    st.epoch++; // supersede any in-flight connect() so it won't overwrite status back to connected
+    st.epoch++; 
     if (st.stopped) return;
     if (code === MANUAL_CLOSE) return; // we closed it on purpose
     this.deps.log({ channelId, code, reason }, 'zalo session closed; scheduling reconnect');

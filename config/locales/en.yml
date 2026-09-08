@@ -170,6 +170,9 @@ en:
         sdp_offer_required: 'sdp_offer is required'
         contact_phone_required: 'Contact phone number is required'
         permission_request_failed: 'Failed to send call permission request'
+    zalo_personal:
+      no_session: 'Message not sent because the Zalo session has ended. Zalo keeps one web session per account, so signing that account in to Zalo Web elsewhere ends this one. Scan the QR code again in the inbox settings to reconnect.'
+      file_rejected: 'Zalo refused this file. Try sending it in a different format, or as a smaller file.'
     openai:
       invalid_api_key: 'OpenAI API key is invalid or revoked. Please check your key in your OpenAI dashboard.'
     inboxes:

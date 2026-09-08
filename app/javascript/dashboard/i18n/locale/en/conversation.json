@@ -412,6 +412,15 @@
       "UNMUTE": "Unmute mic",
       "VIEW_CHAT_HISTORY": "View chat history",
       "GO_TO_CONVERSATION": "Go to conversation thread"
+    },
+    "ZALO_SESSION_EXPIRED": {
+      "MESSAGE": "The Zalo session for this inbox has ended, so messages cannot be sent or received. Scan the QR code again to reconnect.",
+      "MESSAGE_AGENT": "The Zalo session for this inbox has ended, so messages cannot be sent or received. Ask an administrator to scan the QR code again.",
+      "SCAN": "Scan QR",
+      "DIALOG_TITLE": "Reconnect Zalo",
+      "DIALOG_DESCRIPTION": "Zalo keeps one web session per account, so signing that account in to Zalo Web elsewhere ends this one.",
+      "CLOSE": "Close",
+      "RECONNECTED": "Zalo session reconnected"
     }
   },
   "EMAIL_TRANSCRIPT": {

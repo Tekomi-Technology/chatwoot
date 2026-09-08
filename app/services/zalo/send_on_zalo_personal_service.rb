@@ -5,10 +5,15 @@ class Zalo::SendOnZaloPersonalService < Base::SendOnChannelService
     Channel::ZaloPersonal
   end
 
+  # The worker's own wording ("no_session No active Zalo session for channel 1") is meant for
+  # logs, not for the agent reading the failed bubble, so each permanent failure gets a message
+  # that says what happened and what to do about it.
   def perform_reply
     message.attachments.present? ? send_attachments : send_text
-  rescue ::Zalo::WorkerClient::NoSessionError, ::Zalo::WorkerClient::FileRejectedError => e
-    message.update!(status: :failed, external_error: e.message)
+  rescue ::Zalo::WorkerClient::NoSessionError
+    message.update!(status: :failed, external_error: I18n.t('errors.zalo_personal.no_session'))
+  rescue ::Zalo::WorkerClient::FileRejectedError
+    message.update!(status: :failed, external_error: I18n.t('errors.zalo_personal.file_rejected'))
   end
 
   def send_text
