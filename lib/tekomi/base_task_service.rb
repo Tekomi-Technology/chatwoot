@@ -34,7 +34,7 @@ class Tekomi::BaseTaskService
   def api_base
     endpoint = InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_ENDPOINT')&.value.presence || 'https://api.openai.com/'
     endpoint = endpoint.chomp('/')
-    "#{endpoint}/v1"
+    "#{endpoint}/v1/"
   end
 
   def make_api_call(messages:, model: nil, feature: nil, schema: nil, tools: [])
