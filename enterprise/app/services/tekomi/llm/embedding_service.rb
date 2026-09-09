@@ -17,7 +17,7 @@ class Tekomi::Llm::EmbeddingService
     return [] if content.blank?
 
     instrument_embedding_call(instrumentation_params(content, model)) do
-      RubyLLM.embed(content, model: model).vectors
+      RubyLLM.embed(content, model: model, provider: :openai, assume_model_exists: true).vectors
     end
   rescue RubyLLM::Error => e
     Rails.logger.error "Embedding API Error: #{e.message}"
