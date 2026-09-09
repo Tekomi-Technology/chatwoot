@@ -965,7 +965,7 @@ const menuItems = computed(() => {
   // DEMO_HIDDEN_FEATURES.md at repo root for full context.
   // TO RESTORE: set DEMO_MODE to false (or delete this block).
   // ============================================================
-  const DEMO_MODE = false;
+  const DEMO_MODE = true;
   if (!DEMO_MODE) return items;
 
   const DEMO_HIDDEN_TOP_LEVEL = [
