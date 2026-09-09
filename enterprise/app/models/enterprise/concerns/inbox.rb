@@ -2,10 +2,10 @@ module Enterprise::Concerns::Inbox
   extend ActiveSupport::Concern
 
   included do
-    has_one :captain_inbox, dependent: :destroy, class_name: 'CaptainInbox'
-    has_one :captain_assistant,
-            through: :captain_inbox,
-            class_name: 'Captain::Assistant'
+    has_one :tekomi_inbox, dependent: :destroy, class_name: 'TekomiInbox'
+    has_one :tekomi_assistant,
+            through: :tekomi_inbox,
+            class_name: 'Tekomi::Assistant'
     has_many :inbox_capacity_limits, dependent: :destroy
     has_many :calls, dependent: :destroy_async
     has_many :conversation_outcomes, dependent: :destroy_async

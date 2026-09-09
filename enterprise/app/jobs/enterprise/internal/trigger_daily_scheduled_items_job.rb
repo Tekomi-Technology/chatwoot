@@ -2,9 +2,9 @@ module Enterprise::Internal::TriggerDailyScheduledItemsJob
   def perform
     super
 
-    Captain::Documents::ScheduleSyncsJob.perform_later('enterprise')
-    Captain::Documents::ScheduleSyncsJob.perform_later('business') if business_auto_sync_due?
-    Captain::Documents::ScheduleSyncsJob.perform_later('startups') if startup_auto_sync_due?
+    Tekomi::Documents::ScheduleSyncsJob.perform_later('enterprise')
+    Tekomi::Documents::ScheduleSyncsJob.perform_later('business') if business_auto_sync_due?
+    Tekomi::Documents::ScheduleSyncsJob.perform_later('startups') if startup_auto_sync_due?
   end
 
   private

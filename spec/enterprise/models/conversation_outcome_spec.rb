@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ConversationOutcome, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:account) }
-    it { is_expected.to belong_to(:assistant).class_name('Captain::Assistant') }
+    it { is_expected.to belong_to(:assistant).class_name('Tekomi::Assistant') }
     it { is_expected.to belong_to(:conversation).class_name('::Conversation') }
     it { is_expected.to belong_to(:inbox) }
   end
@@ -33,7 +33,7 @@ RSpec.describe ConversationOutcome, type: :model do
 
     it 'rejects an assistant from another account' do
       outcome = build(:conversation_outcome)
-      outcome.assistant = create(:captain_assistant, account: create(:account))
+      outcome.assistant = create(:tekomi_assistant, account: create(:account))
 
       expect(outcome).not_to be_valid
       expect(outcome.errors[:assistant]).to be_present

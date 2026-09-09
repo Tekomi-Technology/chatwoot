@@ -4,14 +4,14 @@ import GroupedStackedChangelogCard from './GroupedStackedChangelogCard.vue';
 
 const sampleCards = [
   {
-    id: 'chatwoot-captain',
-    title: 'Chatwoot Captain',
-    meta_title: 'Chatwoot Captain',
+    id: 'chatwoot-tekomi',
+    title: 'Chatwoot Tekomi',
+    meta_title: 'Chatwoot Tekomi',
     meta_description:
       'Watch how our latest feature can transform your workflow with powerful automation tools.',
-    slug: 'chatwoot-captain',
+    slug: 'chatwoot-tekomi',
     feature_image:
-      'https://www.chatwoot.com/images/captain/captain_thumbnail.jpg',
+      'https://www.chatwoot.com/images/tekomi/tekomi_thumbnail.jpg',
   },
   {
     id: 'smart-routing',

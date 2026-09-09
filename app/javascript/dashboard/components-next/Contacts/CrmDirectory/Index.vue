@@ -22,9 +22,12 @@ const isSyncing = ref(false);
 
 const ungroupedExpanded = ref(false);
 
-const totalContacts = computed(() =>
-  companies.value.reduce((sum, company) => sum + (company.contacts_count || 0), 0) +
-  ungroupedContacts.value.length
+const totalContacts = computed(
+  () =>
+    companies.value.reduce(
+      (sum, company) => sum + (company.contacts_count || 0),
+      0
+    ) + ungroupedContacts.value.length
 );
 
 const crmBadge = contact => {
@@ -50,7 +53,10 @@ const fetchUngrouped = async () => {
   let page = 1;
   const all = [];
   for (;;) {
-    const { data } = await ContactAPI.getWithParams({ page, company_id: 'none' });
+    const { data } = await ContactAPI.getWithParams({
+      page,
+      company_id: 'none',
+    });
     const rows = data.payload || data || [];
     all.push(...rows);
     if (rows.length < 15 || page > 50) break;
@@ -120,7 +126,9 @@ onMounted(loadAll);
 </script>
 
 <template>
-  <div class="flex flex-col flex-1 overflow-y-auto px-6 py-6 w-full mx-auto max-w-5xl">
+  <div
+    class="flex flex-col flex-1 overflow-y-auto px-6 py-6 w-full mx-auto max-w-5xl"
+  >
     <header class="flex items-center justify-between mb-4">
       <h1 class="text-xl font-medium text-n-slate-12">
         {{ $t('CRM_DIRECTORY.TITLE') }}
@@ -198,13 +206,19 @@ onMounted(loadAll);
         </div>
       </div>
 
-      <div class="border border-n-weak rounded-lg mb-2 overflow-hidden bg-n-solid-1">
+      <div
+        class="border border-n-weak rounded-lg mb-2 overflow-hidden bg-n-solid-1"
+      >
         <button
           class="flex w-full items-center gap-2 px-4 py-3 text-left hover:bg-n-alpha-1"
           @click="ungroupedExpanded = !ungroupedExpanded"
         >
           <Icon
-            :icon="ungroupedExpanded ? 'i-lucide-chevron-down' : 'i-lucide-chevron-right'"
+            :icon="
+              ungroupedExpanded
+                ? 'i-lucide-chevron-down'
+                : 'i-lucide-chevron-right'
+            "
             class="size-4 text-n-slate-11"
           />
           <span class="text-sm font-medium text-n-slate-12">
@@ -214,7 +228,10 @@ onMounted(loadAll);
             {{ ungroupedContacts.length }}
           </span>
         </button>
-        <div v-if="ungroupedExpanded" class="border-t border-n-weak bg-n-background">
+        <div
+          v-if="ungroupedExpanded"
+          class="border-t border-n-weak bg-n-background"
+        >
           <div
             v-for="contact in ungroupedContacts"
             :key="contact.id"

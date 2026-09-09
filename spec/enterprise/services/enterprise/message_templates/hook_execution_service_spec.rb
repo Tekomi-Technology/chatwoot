@@ -5,13 +5,13 @@ RSpec.describe MessageTemplates::HookExecutionService do
   let(:inbox) { create(:inbox, account: account) }
   let(:contact) { create(:contact, account: account) }
   let(:conversation) { create(:conversation, inbox: inbox, account: account, contact: contact, status: :pending) }
-  let(:assistant) { create(:captain_assistant, account: account) }
+  let(:assistant) { create(:tekomi_assistant, account: account) }
 
   before do
-    create(:captain_inbox, captain_assistant: assistant, inbox: inbox)
+    create(:tekomi_inbox, tekomi_assistant: assistant, inbox: inbox)
   end
 
-  context 'when captain assistant is configured' do
+  context 'when tekomi assistant is configured' do
     context 'when within business hours' do
       before do
         inbox.update!(working_hours_enabled: true)
@@ -21,26 +21,26 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'keeps the legacy job arguments for Captain V1' do
-        allow(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later)
+      it 'keeps the legacy job arguments for Tekomi V1' do
+        allow(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later)
 
         create(:message, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant)
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant)
       end
 
-      it 'passes the responding message id for Captain V2' do
-        account.enable_features!(:captain_integration_v2)
-        allow(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later)
+      it 'passes the responding message id for Tekomi V2' do
+        account.enable_features!(:tekomi_integration_v2)
+        allow(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later)
 
         message = create(:message, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant, message.id)
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant, message.id)
       end
 
       it 'does not lock or schedule a job for an email auto reply' do
-        account.enable_features!(:captain_integration_v2)
-        allow(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later)
+        account.enable_features!(:tekomi_integration_v2)
+        allow(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later)
 
         customer_message = create(:message, conversation: conversation, message_type: :incoming, account: account)
         auto_reply = build(
@@ -53,10 +53,10 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
         auto_reply.save!
 
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:perform_later).once
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant, customer_message.id)
-        expect(conversation.messages.captain_response_triggering).to contain_exactly(customer_message)
-        expect(conversation.messages.captain_response_triggering).not_to include(auto_reply)
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:perform_later).once
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:perform_later).with(conversation, assistant, customer_message.id)
+        expect(conversation.messages.tekomi_response_triggering).to contain_exactly(customer_message)
+        expect(conversation.messages.tekomi_response_triggering).not_to include(auto_reply)
       end
     end
 
@@ -64,25 +64,25 @@ RSpec.describe MessageTemplates::HookExecutionService do
       let(:configured_job) { instance_double(ActiveJob::ConfiguredJob, perform_later: true) }
 
       before do
-        allow(Captain::Conversation::ResponseBuilderJob).to receive(:set).and_return(configured_job)
+        allow(Tekomi::Conversation::ResponseBuilderJob).to receive(:set).and_return(configured_job)
       end
 
-      it 'uses only the current message attachments for Captain V1' do
+      it 'uses only the current message attachments for Tekomi V1' do
         create(:message, :with_attachment, conversation: conversation, message_type: :incoming, account: account)
         create(:message, :with_attachment, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 2.seconds).twice
-        expect(Captain::Conversation::ResponseBuilderJob).not_to have_received(:set).with(wait: 3.seconds)
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 2.seconds).twice
+        expect(Tekomi::Conversation::ResponseBuilderJob).not_to have_received(:set).with(wait: 3.seconds)
       end
 
-      it 'recalculates the wait from recent burst attachments for Captain V2' do
-        account.enable_features!(:captain_integration_v2)
+      it 'recalculates the wait from recent burst attachments for Tekomi V2' do
+        account.enable_features!(:tekomi_integration_v2)
 
         create(:message, :with_attachment, conversation: conversation, message_type: :incoming, account: account)
         create(:message, :with_attachment, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 2.seconds).once
-        expect(Captain::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 3.seconds).once
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 2.seconds).once
+        expect(Tekomi::Conversation::ResponseBuilderJob).to have_received(:set).with(wait: 3.seconds).once
       end
     end
 
@@ -98,16 +98,16 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'schedules captain response job outside business hours (Captain always responds when configured)' do
-        expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      it 'schedules tekomi response job outside business hours (Tekomi always responds when configured)' do
+        expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
         create(:message, conversation: conversation, message_type: :incoming, account: account)
       end
 
-      it 'performs captain handoff when quota is exceeded (OOO template will kick in after handoff)' do
+      it 'performs tekomi handoff when quota is exceeded (OOO template will kick in after handoff)' do
         account.update!(
-          limits: { 'captain_responses' => 100 },
-          custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
+          limits: { 'tekomi_responses' => 100 },
+          custom_attributes: account.custom_attributes.merge('tekomi_responses_usage' => 100)
         )
 
         create(:message, conversation: conversation, message_type: :incoming, account: account)
@@ -115,7 +115,7 @@ RSpec.describe MessageTemplates::HookExecutionService do
         expect(conversation.reload.status).to eq('open')
       end
 
-      it 'does not send out of office message when Captain is handling' do
+      it 'does not send out of office message when Tekomi is handling' do
         out_of_office_service = instance_double(MessageTemplates::Template::OutOfOffice)
         allow(MessageTemplates::Template::OutOfOffice).to receive(:new).and_return(out_of_office_service)
         allow(out_of_office_service).to receive(:perform).and_return(true)
@@ -131,14 +131,14 @@ RSpec.describe MessageTemplates::HookExecutionService do
         inbox.update!(working_hours_enabled: false)
       end
 
-      it 'schedules captain response job regardless of time' do
-        expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      it 'schedules tekomi response job regardless of time' do
+        expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
         create(:message, conversation: conversation, message_type: :incoming, account: account)
       end
 
-      it 'records a conversation outcome when captain V2 is enabled' do
-        account.enable_features!('captain_integration_v2')
+      it 'records a conversation outcome when tekomi V2 is enabled' do
+        account.enable_features!('tekomi_integration_v2')
 
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
@@ -150,14 +150,14 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'does not record a conversation outcome when captain V2 is disabled' do
+      it 'does not record a conversation outcome when tekomi V2 is disabled' do
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
         end.not_to change(ConversationOutcome, :count)
       end
     end
 
-    context 'when captain quota is exceeded within business hours' do
+    context 'when tekomi quota is exceeded within business hours' do
       before do
         inbox.update!(working_hours_enabled: true)
         inbox.working_hours.find_by(day_of_week: Time.current.in_time_zone(inbox.timezone).wday).update!(
@@ -166,8 +166,8 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
 
         account.update!(
-          limits: { 'captain_responses' => 100 },
-          custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
+          limits: { 'tekomi_responses' => 100 },
+          custom_attributes: account.custom_attributes.merge('tekomi_responses_usage' => 100)
         )
       end
 
@@ -178,14 +178,14 @@ RSpec.describe MessageTemplates::HookExecutionService do
       end
 
       it 'emits a usage limit handoff event' do
-        expect(Captain::ConversationEvents).to receive(:handed_off)
+        expect(Tekomi::ConversationEvents).to receive(:handed_off)
           .with(conversation: conversation, assistant: assistant, source: 'usage_limit', reason_category: :usage_limit, at: kind_of(Time))
 
         create(:message, conversation: conversation, message_type: :incoming, account: account)
       end
 
-      it 'records the handoff on the outcome when captain V2 is enabled' do
-        account.enable_features!('captain_integration_v2')
+      it 'records the handoff on the outcome when tekomi V2 is enabled' do
+        account.enable_features!('tekomi_integration_v2')
 
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
@@ -197,7 +197,7 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'does not record an outcome when captain V2 is disabled' do
+      it 'does not record an outcome when tekomi V2 is disabled' do
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
         end.not_to change(ConversationOutcome, :count)
@@ -205,20 +205,20 @@ RSpec.describe MessageTemplates::HookExecutionService do
     end
   end
 
-  context 'when no captain assistant is configured' do
+  context 'when no tekomi assistant is configured' do
     before do
-      CaptainInbox.where(inbox: inbox).destroy_all
+      TekomiInbox.where(inbox: inbox).destroy_all
     end
 
-    it 'does not schedule captain response job' do
-      expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+    it 'does not schedule tekomi response job' do
+      expect(Tekomi::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
   end
 
-  it 'does not schedule Captain for inbox bot integrations' do
-    expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+  it 'does not schedule Tekomi for inbox bot integrations' do
+    expect(Tekomi::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
     agent_bot_inbox = create(:agent_bot_inbox, inbox: inbox, agent_bot: create(:agent_bot, account: account))
     create(:message, conversation: conversation, message_type: :incoming, account: account)
 
@@ -232,14 +232,14 @@ RSpec.describe MessageTemplates::HookExecutionService do
       conversation.update!(status: :open)
     end
 
-    it 'does not schedule captain response job' do
-      expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+    it 'does not schedule tekomi response job' do
+      expect(Tekomi::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
 
-    it 'still records the conversation as eligible demand when captain V2 is enabled' do
-      account.enable_features!('captain_integration_v2')
+    it 'still records the conversation as eligible demand when tekomi V2 is enabled' do
+      account.enable_features!('tekomi_integration_v2')
 
       expect do
         create(:message, conversation: conversation, message_type: :incoming, account: account)
@@ -255,22 +255,22 @@ RSpec.describe MessageTemplates::HookExecutionService do
       contact.update!(additional_attributes: { 'country_code' => 'US' })
     end
 
-    it 'schedules captain response job' do
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+    it 'schedules tekomi response job' do
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
   end
 
   context 'when the conversation stops matching the audience mid-conversation' do
-    it 'still schedules captain response job for the pending conversation' do
+    it 'still schedules tekomi response job for the pending conversation' do
       conversation
       assistant.update!(config: assistant.config.merge('audience' => {
                                                          'attribute_key' => 'country_code', 'filter_operator' => 'equal_to', 'values' => ['US']
                                                        }))
       contact.update!(additional_attributes: { 'country_code' => 'CA' })
 
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
@@ -285,7 +285,7 @@ RSpec.describe MessageTemplates::HookExecutionService do
       )
     end
 
-    it 'still schedules captain response job when business hours end after captain took the conversation' do
+    it 'still schedules tekomi response job when business hours end after tekomi took the conversation' do
       assistant.update!(config: assistant.config.merge('response_window' => 'business_hours'))
       conversation
       inbox.working_hours.find_by(day_of_week: Time.current.in_time_zone(inbox.timezone).wday).update!(
@@ -293,12 +293,12 @@ RSpec.describe MessageTemplates::HookExecutionService do
         closed_all_day: true
       )
 
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
 
-    it 'still schedules captain response job when business hours begin after captain took the conversation' do
+    it 'still schedules tekomi response job when business hours begin after tekomi took the conversation' do
       assistant.update!(config: assistant.config.merge('response_window' => 'outside_business_hours'))
       inbox.working_hours.find_by(day_of_week: Time.current.in_time_zone(inbox.timezone).wday).update!(
         open_all_day: false,
@@ -310,12 +310,12 @@ RSpec.describe MessageTemplates::HookExecutionService do
         closed_all_day: false
       )
 
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
 
-    it 'still schedules captain response job when both audience and schedule stop matching' do
+    it 'still schedules tekomi response job when both audience and schedule stop matching' do
       assistant.update!(config: assistant.config.merge('response_window' => 'business_hours'))
       conversation
       assistant.update!(config: assistant.config.merge('audience' => {
@@ -327,22 +327,22 @@ RSpec.describe MessageTemplates::HookExecutionService do
         closed_all_day: true
       )
 
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
 
       create(:message, conversation: conversation, message_type: :incoming, account: account)
     end
   end
 
   context 'when message is outgoing' do
-    it 'does not schedule captain response job' do
-      expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+    it 'does not schedule tekomi response job' do
+      expect(Tekomi::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
 
       create(:message, conversation: conversation, message_type: :outgoing, account: account)
     end
   end
 
-  context 'when greeting and out of office messages with Captain enabled' do
-    context 'when conversation is pending (Captain is handling)' do
+  context 'when greeting and out of office messages with Tekomi enabled' do
+    context 'when conversation is pending (Tekomi is handling)' do
       before do
         conversation.update!(status: :pending)
       end
@@ -409,9 +409,9 @@ RSpec.describe MessageTemplates::HookExecutionService do
     end
   end
 
-  context 'when Captain is not configured' do
+  context 'when Tekomi is not configured' do
     before do
-      CaptainInbox.where(inbox: inbox).destroy_all
+      TekomiInbox.where(inbox: inbox).destroy_all
     end
 
     it 'creates greeting message in conversation' do
@@ -449,8 +449,8 @@ RSpec.describe MessageTemplates::HookExecutionService do
     let(:campaign) { create(:campaign, account: account) }
     let(:campaign_conversation) { create(:conversation, inbox: inbox, account: account, contact: contact, status: :pending, campaign: campaign) }
 
-    it 'schedules captain response job for incoming messages on pending campaign conversations' do
-      expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(campaign_conversation, assistant)
+    it 'schedules tekomi response job for incoming messages on pending campaign conversations' do
+      expect(Tekomi::Conversation::ResponseBuilderJob).to receive(:perform_later).with(campaign_conversation, assistant)
 
       create(:message, conversation: campaign_conversation, message_type: :incoming, account: account)
     end
@@ -498,8 +498,8 @@ RSpec.describe MessageTemplates::HookExecutionService do
 
     it 'does not send out of office template after handoff on campaign conversations when quota is exceeded' do
       account.update!(
-        limits: { 'captain_responses' => 100 },
-        custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
+        limits: { 'tekomi_responses' => 100 },
+        custom_attributes: account.custom_attributes.merge('tekomi_responses_usage' => 100)
       )
       inbox.update!(
         working_hours_enabled: true,
@@ -516,11 +516,11 @@ RSpec.describe MessageTemplates::HookExecutionService do
     end
   end
 
-  context 'when Captain quota is exceeded and handoff happens' do
+  context 'when Tekomi quota is exceeded and handoff happens' do
     before do
       account.update!(
-        limits: { 'captain_responses' => 100 },
-        custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
+        limits: { 'tekomi_responses' => 100 },
+        custom_attributes: account.custom_attributes.merge('tekomi_responses_usage' => 100)
       )
     end
 

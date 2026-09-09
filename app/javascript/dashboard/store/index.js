@@ -50,18 +50,18 @@ import teamMembers from './modules/teamMembers';
 import teams from './modules/teams';
 import userNotificationSettings from './modules/userNotificationSettings';
 import webhooks from './modules/webhooks';
-import captainAgentSessions from './captain/agentSessions';
-import captainAssistants from './captain/assistant';
-import captainDocuments from './captain/document';
-import captainResponses from './captain/response';
-import captainFaqSuggestions from './captain/faqSuggestions';
-import captainInboxes from './captain/inboxes';
-import captainBulkActions from './captain/bulkActions';
-import copilotThreads from './captain/copilotThreads';
-import copilotMessages from './captain/copilotMessages';
-import captainScenarios from './captain/scenarios';
-import captainTools from './captain/tools';
-import captainCustomTools from './captain/customTools';
+import tekomiAgentSessions from './tekomi/agentSessions';
+import tekomiAssistants from './tekomi/assistant';
+import tekomiDocuments from './tekomi/document';
+import tekomiResponses from './tekomi/response';
+import tekomiFaqSuggestions from './tekomi/faqSuggestions';
+import tekomiInboxes from './tekomi/inboxes';
+import tekomiBulkActions from './tekomi/bulkActions';
+import copilotThreads from './tekomi/copilotThreads';
+import copilotMessages from './tekomi/copilotMessages';
+import tekomiScenarios from './tekomi/scenarios';
+import tekomiTools from './tekomi/tools';
+import tekomiCustomTools from './tekomi/customTools';
 
 const plugins = [];
 
@@ -117,18 +117,18 @@ export default createStore({
     teams,
     userNotificationSettings,
     webhooks,
-    captainAgentSessions,
-    captainAssistants,
-    captainDocuments,
-    captainResponses,
-    captainFaqSuggestions,
-    captainInboxes,
-    captainBulkActions,
+    tekomiAgentSessions,
+    tekomiAssistants,
+    tekomiDocuments,
+    tekomiResponses,
+    tekomiFaqSuggestions,
+    tekomiInboxes,
+    tekomiBulkActions,
     copilotThreads,
     copilotMessages,
-    captainScenarios,
-    captainTools,
-    captainCustomTools,
+    tekomiScenarios,
+    tekomiTools,
+    tekomiCustomTools,
   },
   plugins,
 });

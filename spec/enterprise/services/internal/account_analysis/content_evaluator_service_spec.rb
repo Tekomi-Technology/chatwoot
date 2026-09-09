@@ -13,7 +13,7 @@ RSpec.describe Internal::AccountAnalysis::ContentEvaluatorService do
   end
 
   before do
-    create(:installation_config, name: 'CAPTAIN_OPEN_AI_API_KEY', value: 'test-key')
+    create(:installation_config, name: 'TEKOMI_OPEN_AI_API_KEY', value: 'test-key')
     allow(RubyLLM).to receive(:moderate).and_return(mock_moderation_result)
   end
 

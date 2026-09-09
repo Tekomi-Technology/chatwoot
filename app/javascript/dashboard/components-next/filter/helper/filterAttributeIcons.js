@@ -1,6 +1,6 @@
 /**
  * Leading icons and grouped section headers for the attribute picker rendered by FilterSelect,
- * so the conversation and contact filters read like the Captain audience picker. The icon table is
+ * so the conversation and contact filters read like the Tekomi audience picker. The icon table is
  * shared with the automation condition picker, which draws from the same attribute keys.
  */
 

@@ -27,7 +27,7 @@ describe('CopilotEmptyState', () => {
     await prompts[1].trigger('click');
 
     expect(wrapper.emitted('useSuggestion')[0][0]).toEqual({
-      message: 'CAPTAIN.COPILOT.PROMPTS.SUGGEST.CONTENT',
+      message: 'TEKOMI.COPILOT.PROMPTS.SUGGEST.CONTENT',
       requestType: 'reply_suggestion',
     });
   });
@@ -39,7 +39,7 @@ describe('CopilotEmptyState', () => {
     await prompts[0].trigger('click');
 
     expect(wrapper.emitted('useSuggestion')[0][0]).toBe(
-      'CAPTAIN.COPILOT.PROMPTS.SUMMARIZE.CONTENT'
+      'TEKOMI.COPILOT.PROMPTS.SUMMARIZE.CONTENT'
     );
   });
 
@@ -48,7 +48,7 @@ describe('CopilotEmptyState', () => {
 
     expect(wrapper.findAll('button')).toHaveLength(2);
     expect(wrapper.text()).not.toContain(
-      'CAPTAIN.COPILOT.PROMPTS.SUGGEST.LABEL'
+      'TEKOMI.COPILOT.PROMPTS.SUGGEST.LABEL'
     );
   });
 });

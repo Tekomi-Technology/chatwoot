@@ -15,7 +15,7 @@ describe Enterprise::Billing::TopupCheckoutService do
              { 'name' => 'Business', 'product_id' => ['prod_business'], 'price_ids' => ['price_business'] }
            ])
 
-    create(:installation_config, name: 'CAPTAIN_TOPUP_OPTIONS', value: {
+    create(:installation_config, name: 'TEKOMI_TOPUP_OPTIONS', value: {
              'usd' => [
                { 'credits' => 1000, 'amount' => 20.0 },
                { 'credits' => 2500, 'amount' => 50.0 },
@@ -26,7 +26,7 @@ describe Enterprise::Billing::TopupCheckoutService do
 
     account.update!(
       custom_attributes: { plan_name: 'Business', stripe_customer_id: stripe_customer_id },
-      limits: { 'captain_responses' => 500 }
+      limits: { 'tekomi_responses' => 500 }
     )
 
     allow(Stripe::Customer).to receive(:retrieve).and_return(stripe_customer)
@@ -50,7 +50,7 @@ describe Enterprise::Billing::TopupCheckoutService do
     it 'updates account limits after successful topup' do
       service.create_checkout_session(credits: 1000)
 
-      expect(account.reload.limits['captain_responses']).to eq(1500)
+      expect(account.reload.limits['tekomi_responses']).to eq(1500)
     end
 
     it 'raises error for invalid credits' do

@@ -1,7 +1,7 @@
 module Llm::FeatureRouter
   class UnknownFeatureError < StandardError; end
 
-  CAPTAIN_V2_ASSISTANT_MODEL = 'gpt-5.2'.freeze
+  TEKOMI_V2_ASSISTANT_MODEL = 'gpt-5.2'.freeze
 
   class << self
     def resolve(feature:, account: nil)
@@ -27,11 +27,11 @@ module Llm::FeatureRouter
       installation_model = installation_model_override(feature_key)
       return [installation_model, :installation_override] if installation_model.present?
 
-      [captain_v2_assistant_model(account, feature_key) || Llm::Models.default_model_for(feature_key), :default]
+      [tekomi_v2_assistant_model(account, feature_key) || Llm::Models.default_model_for(feature_key), :default]
     end
 
     def account_model_override(account, feature_key)
-      model = account&.captain_models&.[](feature_key).presence
+      model = account&.tekomi_models&.[](feature_key).presence
       return unless model
       return model if Llm::Models.valid_model_for?(feature_key, model)
     end
@@ -40,18 +40,18 @@ module Llm::FeatureRouter
       return unless feature_key == 'conversation_completion'
       return unless ChatwootApp.self_hosted_enterprise?
 
-      InstallationConfig.find_by(name: 'CAPTAIN_OPEN_AI_MODEL')&.value.presence
+      InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_MODEL')&.value.presence
     end
 
     def provider_for(model, source)
       Llm::Models.provider_for(model) || ('openai' if source == :installation_override)
     end
 
-    def captain_v2_assistant_model(account, feature_key)
+    def tekomi_v2_assistant_model(account, feature_key)
       return unless feature_key == 'assistant'
-      return unless account&.feature_enabled?('captain_integration_v2')
+      return unless account&.feature_enabled?('tekomi_integration_v2')
 
-      CAPTAIN_V2_ASSISTANT_MODEL
+      TEKOMI_V2_ASSISTANT_MODEL
     end
   end
 end

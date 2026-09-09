@@ -22,7 +22,7 @@ import ArticleHeaderControls from 'dashboard/components-next/HelpCenter/Pages/Ar
 import CategoryHeaderControls from 'dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryHeaderControls.vue';
 import Spinner from 'dashboard/components-next/spinner/Spinner.vue';
 import ArticleEmptyState from 'dashboard/components-next/HelpCenter/EmptyState/Article/ArticleEmptyState.vue';
-import BulkSelectBar from 'dashboard/components-next/captain/assistant/BulkSelectBar.vue';
+import BulkSelectBar from 'dashboard/components-next/tekomi/assistant/BulkSelectBar.vue';
 import Button from 'dashboard/components-next/button/Button.vue';
 import Input from 'dashboard/components-next/input/Input.vue';
 import Dialog from 'dashboard/components-next/dialog/Dialog.vue';
@@ -90,7 +90,7 @@ const isTranslationAvailable = computed(
     isEnterprise &&
     isFeatureEnabledonAccount.value(
       currentAccountId.value,
-      FEATURE_FLAGS.CAPTAIN_TASKS
+      FEATURE_FLAGS.TEKOMI_TASKS
     )
 );
 

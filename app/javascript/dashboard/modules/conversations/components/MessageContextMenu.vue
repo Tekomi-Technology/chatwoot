@@ -15,7 +15,7 @@ import {
 import MenuItem from '../../../components/widgets/conversation/contextMenu/menuItem.vue';
 import { useTrack } from 'dashboard/composables';
 import NextButton from 'dashboard/components-next/button/Button.vue';
-import ReportCaptainMessageDialog from './ReportCaptainMessageDialog.vue';
+import ReportTekomiMessageDialog from './ReportTekomiMessageDialog.vue';
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
     MenuItem,
     ContextMenu,
     NextButton,
-    ReportCaptainMessageDialog,
+    ReportTekomiMessageDialog,
   },
   props: {
     message: {
@@ -276,7 +276,7 @@ export default {
         />
       </div>
     </ContextMenu>
-    <ReportCaptainMessageDialog
+    <ReportTekomiMessageDialog
       v-if="enabledOptions['report']"
       ref="reportDialog"
       :message-id="messageId"

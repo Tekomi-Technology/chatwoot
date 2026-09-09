@@ -5,7 +5,7 @@ import Avatar from 'dashboard/components-next/avatar/Avatar.vue';
 import { useBranding } from 'shared/composables/useBranding';
 
 // composables
-import { useCaptain } from 'dashboard/composables/useCaptain';
+import { useTekomi } from 'dashboard/composables/useTekomi';
 import { useTrack } from 'dashboard/composables';
 
 // store & api
@@ -14,7 +14,7 @@ import { mapGetters } from 'vuex';
 // utils & constants
 import { LocalStorage } from 'shared/helpers/localStorage';
 import { LOCAL_STORAGE_KEYS } from 'dashboard/constants/localStorage';
-import { CAPTAIN_EVENTS } from '../../../../helper/AnalyticsHelper/events';
+import { TEKOMI_EVENTS } from '../../../../helper/AnalyticsHelper/events';
 
 export default {
   name: 'LabelSuggestion',
@@ -34,10 +34,10 @@ export default {
     },
   },
   setup() {
-    const { captainTasksEnabled } = useCaptain();
+    const { tekomiTasksEnabled } = useTekomi();
     const { replaceInstallationName } = useBranding();
 
-    return { captainTasksEnabled, replaceInstallationName };
+    return { tekomiTasksEnabled, replaceInstallationName };
   },
   data() {
     return {
@@ -80,7 +80,7 @@ export default {
     },
     shouldShowSuggestions() {
       if (this.isDismissed) return false;
-      if (!this.captainTasksEnabled) return false;
+      if (!this.tekomiTasksEnabled) return false;
 
       return this.preparedLabels.length && this.chatLabels.length === 0;
     },
@@ -116,7 +116,7 @@ export default {
 
       // dismiss this once the values are set
       this.isDismissed = true;
-      this.trackLabelEvent(CAPTAIN_EVENTS.LABEL_SUGGESTION_DISMISSED);
+      this.trackLabelEvent(TEKOMI_EVENTS.LABEL_SUGGESTION_DISMISSED);
     },
     isConversationDismissed() {
       return LocalStorage.getFlag(
@@ -134,7 +134,7 @@ export default {
         conversationId: this.conversationId,
         labels: labelsToAdd,
       });
-      this.trackLabelEvent(CAPTAIN_EVENTS.LABEL_SUGGESTION_APPLIED);
+      this.trackLabelEvent(TEKOMI_EVENTS.LABEL_SUGGESTION_APPLIED);
     },
     trackLabelEvent(event) {
       const payload = {

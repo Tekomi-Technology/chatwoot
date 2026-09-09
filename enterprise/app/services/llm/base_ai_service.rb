@@ -34,7 +34,7 @@ class Llm::BaseAiService
 
   def setup_model
     route = feature_route
-    return @model = route[:model] if account_override_route?(route) || captain_v2_assistant?
+    return @model = route[:model] if account_override_route?(route) || tekomi_v2_assistant?
 
     @model = @fallback_model.presence || installation_model.presence || route&.dig(:model) || DEFAULT_MODEL
   end
@@ -49,12 +49,12 @@ class Llm::BaseAiService
     route&.dig(:source) == :account_override
   end
 
-  def captain_v2_assistant?
-    @llm_feature.to_s == 'assistant' && @llm_account&.feature_enabled?('captain_integration_v2')
+  def tekomi_v2_assistant?
+    @llm_feature.to_s == 'assistant' && @llm_account&.feature_enabled?('tekomi_integration_v2')
   end
 
   def installation_model
-    InstallationConfig.find_by(name: 'CAPTAIN_OPEN_AI_MODEL')&.value
+    InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_MODEL')&.value
   end
 
   def setup_temperature

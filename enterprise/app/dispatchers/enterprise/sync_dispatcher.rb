@@ -1,7 +1,7 @@
 module Enterprise::SyncDispatcher
   def listeners
     super + [
-      Captain::ConversationOutcomeEventListener.instance
+      Tekomi::ConversationOutcomeEventListener.instance
     ]
   end
 end

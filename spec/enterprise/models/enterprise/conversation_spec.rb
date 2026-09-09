@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Conversation, type: :model do
-  describe 'captain audience routing on create' do
+  describe 'tekomi audience routing on create' do
     let(:account) { create(:account) }
     let(:inbox) { create(:inbox, account: account) }
-    let(:assistant) { create(:captain_assistant, account: account) }
+    let(:assistant) { create(:tekomi_assistant, account: account) }
     let(:us_contact) { create(:contact, account: account, additional_attributes: { 'country_code' => 'US' }) }
     let(:ca_contact) { create(:contact, account: account, additional_attributes: { 'country_code' => 'CA' }) }
 
     before do
-      create(:captain_inbox, captain_assistant: assistant, inbox: inbox)
+      create(:tekomi_inbox, tekomi_assistant: assistant, inbox: inbox)
       assistant.update!(config: assistant.config.merge('audience' => {
                                                          'attribute_key' => 'country_code', 'filter_operator' => 'equal_to', 'values' => ['US']
                                                        }))

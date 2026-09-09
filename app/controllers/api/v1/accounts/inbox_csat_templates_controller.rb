@@ -1,7 +1,7 @@
 class Api::V1::Accounts::InboxCsatTemplatesController < Api::V1::Accounts::BaseController
   before_action :fetch_inbox
   before_action :validate_whatsapp_channel
-  before_action :validate_captain_enabled, only: [:analyze]
+  before_action :validate_tekomi_enabled, only: [:analyze]
 
   def show
     service = CsatTemplateManagementService.new(@inbox)
@@ -64,8 +64,8 @@ class Api::V1::Accounts::InboxCsatTemplatesController < Api::V1::Accounts::BaseC
     render json: { error: 'Message is required' }, status: :unprocessable_entity
   end
 
-  def validate_captain_enabled
-    return if Current.account.feature_enabled?('captain_integration')
+  def validate_tekomi_enabled
+    return if Current.account.feature_enabled?('tekomi_integration')
 
     render json: { error: 'Tekomi AI is required for template analysis' }, status: :forbidden
   end

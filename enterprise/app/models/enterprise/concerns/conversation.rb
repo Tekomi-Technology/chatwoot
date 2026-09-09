@@ -6,8 +6,8 @@ module Enterprise::Concerns::Conversation
     has_one :applied_sla, dependent: :destroy_async
     has_many :sla_events, dependent: :destroy_async
     has_many :calls, dependent: :destroy_async
-    has_many :captain_responses, class_name: 'Captain::AssistantResponse', dependent: :nullify, as: :documentable
-    has_many :captain_faq_observations, class_name: 'Captain::FaqObservation', dependent: :delete_all
+    has_many :tekomi_responses, class_name: 'Tekomi::AssistantResponse', dependent: :nullify, as: :documentable
+    has_many :tekomi_faq_observations, class_name: 'Tekomi::FaqObservation', dependent: :delete_all
     has_many :conversation_outcomes, dependent: :destroy_async
     scope :with_sla_applicable_contact, -> { left_joins(:contact).where(contacts: { blocked: [false, nil] }) }
 

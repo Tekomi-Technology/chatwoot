@@ -3,18 +3,18 @@
 # Table name: conversation_outcomes
 #
 #  id                      :bigint           not null, primary key
-#  captain_reply_count     :integer          default(0), not null
 #  csat_rating             :integer
 #  csat_received_at        :datetime
 #  ended_at                :datetime
 #  episode_trigger         :string           default("initial"), not null
-#  first_captain_reply_at  :datetime
 #  first_human_reply_at    :datetime
+#  first_tekomi_reply_at   :datetime
 #  handoff_at              :datetime
 #  handoff_reason_category :string
-#  last_captain_reply_at   :datetime
+#  last_tekomi_reply_at    :datetime
 #  resolved_at             :datetime
 #  started_at              :datetime         not null
+#  tekomi_reply_count      :integer          default(0), not null
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #  account_id              :bigint           not null
@@ -53,7 +53,7 @@ class ConversationOutcome < ApplicationRecord
   ].freeze
 
   belongs_to :account
-  belongs_to :assistant, class_name: 'Captain::Assistant'
+  belongs_to :assistant, class_name: 'Tekomi::Assistant'
   belongs_to :conversation, class_name: '::Conversation'
   belongs_to :inbox
 

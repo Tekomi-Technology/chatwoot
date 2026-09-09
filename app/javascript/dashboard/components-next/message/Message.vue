@@ -153,9 +153,9 @@ const inbox = computed(() => inboxGetter.value(props.inboxId) || {});
 const isOnChatwootCloud = useMapGetter('globalConfig/isOnChatwootCloud');
 const { replaceInstallationName } = useBranding();
 
-const isCaptainMessage = computed(() => {
+const isTekomiMessage = computed(() => {
   const senderType = props.sender?.type ?? props.senderType;
-  return senderType === SENDER_TYPES.CAPTAIN_ASSISTANT;
+  return senderType === SENDER_TYPES.TEKOMI_ASSISTANT;
 });
 
 /**
@@ -222,9 +222,7 @@ const isBotOrAgentMessage = computed(() => {
   }
 
   if (
-    [SENDER_TYPES.AGENT_BOT, SENDER_TYPES.CAPTAIN_ASSISTANT].includes(
-      senderType
-    )
+    [SENDER_TYPES.AGENT_BOT, SENDER_TYPES.TEKOMI_ASSISTANT].includes(senderType)
   ) {
     return true;
   }
@@ -415,7 +413,7 @@ const contextMenuEnabledOptions = computed(() => {
       !isFailedOrProcessing,
     report:
       isOnChatwootCloud.value &&
-      isCaptainMessage.value &&
+      isTekomiMessage.value &&
       !isMessageDeleted.value,
   };
 });
@@ -503,7 +501,7 @@ const avatarInfo = computed(() => {
   const { name, type, avatarUrl, thumbnail } = sender || {};
 
   // If sender type is agent bot, use avatarUrl
-  if ([SENDER_TYPES.AGENT_BOT, SENDER_TYPES.CAPTAIN_ASSISTANT].includes(type)) {
+  if ([SENDER_TYPES.AGENT_BOT, SENDER_TYPES.TEKOMI_ASSISTANT].includes(type)) {
     return {
       name: name ?? '',
       src: avatarUrl ?? '',

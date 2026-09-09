@@ -71,7 +71,7 @@ RSpec.describe Account, type: :model do
   end
 
   context 'with usage_limits' do
-    let(:captain_limits) do
+    let(:tekomi_limits) do
       {
         :startups => { :documents => 100, :responses => 100 },
         :business => { :documents => 200, :responses => 300 },
@@ -79,95 +79,95 @@ RSpec.describe Account, type: :model do
       }.with_indifferent_access
     end
     let(:account) { create(:account, { custom_attributes: { plan_name: 'startups' } }) }
-    let(:assistant) { create(:captain_assistant, account: account) }
+    let(:assistant) { create(:tekomi_assistant, account: account) }
 
     before do
       allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(true)
       create(:installation_config, name: 'ACCOUNT_AGENTS_LIMIT', value: 20)
     end
 
-    describe 'when captain limits are configured' do
+    describe 'when tekomi limits are configured' do
       before do
-        create_list(:captain_document, 3, account: account, assistant: assistant, status: :available)
-        create(:installation_config, name: 'CAPTAIN_CLOUD_PLAN_LIMITS', value: captain_limits.to_json)
+        create_list(:tekomi_document, 3, account: account, assistant: assistant, status: :available)
+        create(:installation_config, name: 'TEKOMI_CLOUD_PLAN_LIMITS', value: tekomi_limits.to_json)
       end
 
       ## Document
       it 'updates document count accurately' do
         account.update_document_usage
-        expect(account.custom_attributes['captain_documents_usage']).to eq(3)
+        expect(account.custom_attributes['tekomi_documents_usage']).to eq(3)
       end
 
       it 'handles zero documents' do
-        account.captain_documents.destroy_all
+        account.tekomi_documents.destroy_all
         account.update_document_usage
-        expect(account.custom_attributes['captain_documents_usage']).to eq(0)
+        expect(account.custom_attributes['tekomi_documents_usage']).to eq(0)
       end
 
       it 'reflects document limits' do
-        document_limits = account.usage_limits[:captain][:documents]
+        document_limits = account.usage_limits[:tekomi][:documents]
 
         expect(document_limits[:consumed]).to eq 3
-        expect(document_limits[:current_available]).to eq captain_limits[:startups][:documents] - 3
+        expect(document_limits[:current_available]).to eq tekomi_limits[:startups][:documents] - 3
       end
 
       ## Responses
       it 'incrementing responses updates usage_limits' do
         account.increment_response_usage
 
-        responses_limits = account.usage_limits[:captain][:responses]
+        responses_limits = account.usage_limits[:tekomi][:responses]
 
-        expect(account.custom_attributes['captain_responses_usage']).to eq 1
+        expect(account.custom_attributes['tekomi_responses_usage']).to eq 1
         expect(responses_limits[:consumed]).to eq 1
-        expect(responses_limits[:current_available]).to eq captain_limits[:startups][:responses] - 1
+        expect(responses_limits[:current_available]).to eq tekomi_limits[:startups][:responses] - 1
       end
 
       it 'reseting responses limits updates usage_limits' do
-        account.custom_attributes['captain_responses_usage'] = 30
+        account.custom_attributes['tekomi_responses_usage'] = 30
         account.save!
 
-        responses_limits = account.usage_limits[:captain][:responses]
+        responses_limits = account.usage_limits[:tekomi][:responses]
 
         expect(responses_limits[:consumed]).to eq 30
-        expect(responses_limits[:current_available]).to eq captain_limits[:startups][:responses] - 30
+        expect(responses_limits[:current_available]).to eq tekomi_limits[:startups][:responses] - 30
 
         account.reset_response_usage
-        responses_limits = account.usage_limits[:captain][:responses]
+        responses_limits = account.usage_limits[:tekomi][:responses]
 
-        expect(account.custom_attributes['captain_responses_usage']).to eq 0
+        expect(account.custom_attributes['tekomi_responses_usage']).to eq 0
         expect(responses_limits[:consumed]).to eq 0
-        expect(responses_limits[:current_available]).to eq captain_limits[:startups][:responses]
+        expect(responses_limits[:current_available]).to eq tekomi_limits[:startups][:responses]
       end
 
       it 'returns monthly limit accurately' do
         %w[startups business enterprise].each do |plan|
           account.custom_attributes = { 'plan_name': plan }
           account.save!
-          expect(account.captain_monthly_limit).to eq captain_limits[plan]
+          expect(account.tekomi_monthly_limit).to eq tekomi_limits[plan]
         end
       end
 
       it 'current_available is never out of bounds' do
-        account.custom_attributes['captain_responses_usage'] = 3000
+        account.custom_attributes['tekomi_responses_usage'] = 3000
         account.save!
 
-        responses_limits = account.usage_limits[:captain][:responses]
+        responses_limits = account.usage_limits[:tekomi][:responses]
         expect(responses_limits[:consumed]).to eq 3000
         expect(responses_limits[:current_available]).to eq 0
 
-        account.custom_attributes['captain_responses_usage'] = -100
+        account.custom_attributes['tekomi_responses_usage'] = -100
         account.save!
 
-        responses_limits = account.usage_limits[:captain][:responses]
+        responses_limits = account.usage_limits[:tekomi][:responses]
         expect(responses_limits[:consumed]).to eq 0
-        expect(responses_limits[:current_available]).to eq captain_limits[:startups][:responses]
+        expect(responses_limits[:current_available]).to eq tekomi_limits[:startups][:responses]
       end
     end
 
-    describe 'when captain limits are not configured' do
+    describe 'when tekomi limits are not configured' do
       it 'returns default values' do
         account.custom_attributes = { 'plan_name': 'unknown' }
-        expect(account.captain_monthly_limit).to eq(
+        expect(account.tekomi_monthly_limit).to eq(
           { documents: ChatwootApp.max_limit, responses: ChatwootApp.max_limit }.with_indifferent_access
         )
       end
@@ -175,14 +175,14 @@ RSpec.describe Account, type: :model do
 
     describe 'when limits are configured for an account' do
       before do
-        create(:installation_config, name: 'CAPTAIN_CLOUD_PLAN_LIMITS', value: captain_limits.to_json)
-        account.update(limits: { captain_documents: 5555, captain_responses: 9999 })
+        create(:installation_config, name: 'TEKOMI_CLOUD_PLAN_LIMITS', value: tekomi_limits.to_json)
+        account.update(limits: { tekomi_documents: 5555, tekomi_responses: 9999 })
       end
 
       it 'returns limits based on custom attributes' do
         usage_limits = account.usage_limits
-        expect(usage_limits[:captain][:documents][:total_count]).to eq(5555)
-        expect(usage_limits[:captain][:responses][:total_count]).to eq(9999)
+        expect(usage_limits[:tekomi][:documents][:total_count]).to eq(5555)
+        expect(usage_limits[:tekomi][:responses][:total_count]).to eq(9999)
       end
     end
 
@@ -274,35 +274,35 @@ RSpec.describe Account, type: :model do
       )
     end
 
-    it 'enables Captain V2 for new self-hosted enterprise accounts' do
+    it 'enables Tekomi V2 for new self-hosted enterprise accounts' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
 
       account = create(:account)
 
-      expect(account).to be_feature_enabled('captain_integration')
-      expect(account).to be_feature_enabled('captain_integration_v2')
-      expect(account.captain_preferences[:models]['assistant']).to eq('gpt-5.2')
-      expect(account.captain_models).to be_nil
+      expect(account).to be_feature_enabled('tekomi_integration')
+      expect(account).to be_feature_enabled('tekomi_integration_v2')
+      expect(account.tekomi_preferences[:models]['assistant']).to eq('gpt-5.2')
+      expect(account.tekomi_models).to be_nil
     end
 
-    it 'marks new cloud accounts as eligible for the Captain V2 paid-plan default' do
+    it 'marks new cloud accounts as eligible for the Tekomi V2 paid-plan default' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(false)
       allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(true)
 
       account = create(:account)
 
-      expect(account.internal_attributes[Enterprise::Account::CAPTAIN_V2_DEFAULT_ELIGIBLE]).to be true
-      expect(account).not_to be_feature_enabled('captain_integration')
-      expect(account).not_to be_feature_enabled('captain_integration_v2')
+      expect(account.internal_attributes[Enterprise::Account::TEKOMI_V2_DEFAULT_ELIGIBLE]).to be true
+      expect(account).not_to be_feature_enabled('tekomi_integration')
+      expect(account).not_to be_feature_enabled('tekomi_integration_v2')
     end
   end
 
-  describe 'captain document sync cadence' do
+  describe 'tekomi document sync cadence' do
     let(:account) { create(:account) }
 
     it 'has no cadence when installation config is missing' do
       account.update!(custom_attributes: { plan_name: 'business' })
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
     end
 
     it 'uses configured plan intervals from installation config' do
@@ -310,39 +310,39 @@ RSpec.describe Account, type: :model do
         business: 48,
         enterprise: 24
       }
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: intervals.to_json)
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: intervals.to_json)
       account.update!(custom_attributes: { plan_name: 'business' })
 
-      expect(account.captain_document_sync_interval).to eq(2.days)
+      expect(account.tekomi_document_sync_interval).to eq(2.days)
     end
 
     it 'normalizes configured plan name casing' do
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: { business: 24 }.to_json)
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: { business: 24 }.to_json)
       account.update!(custom_attributes: { plan_name: 'Business' })
 
-      expect(account.captain_document_sync_interval).to eq(1.day)
+      expect(account.tekomi_document_sync_interval).to eq(1.day)
     end
 
     it 'uses the enterprise cadence for self-hosted enterprise installs without a plan_name' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: { enterprise: 6 }.to_json)
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: { enterprise: 6 }.to_json)
       account.update!(custom_attributes: {})
 
-      expect(account.captain_document_sync_interval).to eq(6.hours)
+      expect(account.tekomi_document_sync_interval).to eq(6.hours)
     end
 
     it 'allows installation config to disable a plan cadence' do
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: { business: nil }.to_json)
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: { business: nil }.to_json)
       account.update!(custom_attributes: { plan_name: 'business' })
 
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
     end
 
     it 'has no cadence when installation config is invalid' do
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: 'invalid-json')
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: 'invalid-json')
       account.update!(custom_attributes: { plan_name: 'business' })
 
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
     end
 
     it 'treats invalid plan interval values as disabled' do
@@ -351,16 +351,16 @@ RSpec.describe Account, type: :model do
         enterprise: { hours: 6 },
         startups: '168'
       }
-      create(:installation_config, name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS', value: intervals.to_json)
+      create(:installation_config, name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS', value: intervals.to_json)
 
       account.update!(custom_attributes: { plan_name: 'business' })
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
 
       account.update!(custom_attributes: { plan_name: 'enterprise' })
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
 
       account.update!(custom_attributes: { plan_name: 'startups' })
-      expect(account.captain_document_sync_interval).to be_nil
+      expect(account.tekomi_document_sync_interval).to be_nil
     end
   end
 

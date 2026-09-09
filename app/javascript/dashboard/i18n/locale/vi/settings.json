@@ -324,17 +324,17 @@
     "ACTIVE": "Có hiệu lực",
     "COMPANIES": "Công ty",
     "ALL_COMPANIES": "Tất cả công ty",
-    "CAPTAIN": "Tekomi AI",
+    "TEKOMI": "Tekomi AI",
     "CALLS": "Cuộc gọi",
-    "CAPTAIN_ASSISTANTS": "Trợ lý",
-    "CAPTAIN_OVERVIEW": "Tổng quan",
-    "CAPTAIN_DOCUMENTS": "Tài liệu",
-    "CAPTAIN_RESPONSES": "Câu hỏi thường gặp",
-    "CAPTAIN_TOOLS": "Công cụ",
-    "CAPTAIN_SCENARIOS": "Kịch bản",
-    "CAPTAIN_PLAYGROUND": "Khu thử nghiệm",
-    "CAPTAIN_INBOXES": "Hộp thư",
-    "CAPTAIN_SETTINGS": "Cài đặt",
+    "TEKOMI_ASSISTANTS": "Trợ lý",
+    "TEKOMI_OVERVIEW": "Tổng quan",
+    "TEKOMI_DOCUMENTS": "Tài liệu",
+    "TEKOMI_RESPONSES": "Câu hỏi thường gặp",
+    "TEKOMI_TOOLS": "Công cụ",
+    "TEKOMI_SCENARIOS": "Kịch bản",
+    "TEKOMI_PLAYGROUND": "Khu thử nghiệm",
+    "TEKOMI_INBOXES": "Hộp thư",
+    "TEKOMI_SETTINGS": "Cài đặt",
     "HOME": "Trang Chủ",
     "AGENTS": "Nhân viên",
     "AGENT_BOTS": "Bot",
@@ -413,7 +413,7 @@
     },
     "DOCS": "Đọc tài liệu",
     "SECURITY": "Bảo mật",
-    "CAPTAIN_AI": "Tekomi AI",
+    "TEKOMI_AI": "Tekomi AI",
     "CONVERSATION_WORKFLOW": "Quy trình hội thoại",
     "CRM_DIRECTORY": "Danh bạ CRM"
   },
@@ -528,7 +528,7 @@
       "IMPORT_FAILED": "Không bắt đầu được lần nhập."
     }
   },
-  "CAPTAIN_SETTINGS": {
+  "TEKOMI_SETTINGS": {
     "TITLE": "Cài đặt Tekomi AI",
     "DESCRIPTION": "Cấu hình các mô hình AI và tính năng cho Tekomi AI. Tekomi AI tính phí theo tín dụng, mỗi thao tác của Tekomi AI sẽ trừ tín dụng tuỳ theo mô hình bạn chọn.",
     "LOADING": "Đang tải cấu hình Tekomi AI...",
@@ -604,7 +604,7 @@
       "DESCRIPTION": "Xem các hóa đơn trước đây của bạn, chỉnh sửa chi tiết thanh toán hoặc hủy thuê bao của bạn.",
       "BUTTON_TXT": "Đi tới cổng thanh toán"
     },
-    "CAPTAIN": {
+    "TEKOMI": {
       "TITLE": "Tekomi AI",
       "DESCRIPTION": "Quản lý mức sử dụng và tín dụng cho Tekomi AI.",
       "BUTTON_TXT": "Mua thêm tín dụng",

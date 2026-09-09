@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import BulkSelectBar from 'dashboard/components-next/captain/assistant/BulkSelectBar.vue';
+import BulkSelectBar from 'dashboard/components-next/tekomi/assistant/BulkSelectBar.vue';
 import Button from 'dashboard/components-next/button/Button.vue';
 import BulkLabelActions from 'dashboard/components/widgets/conversation/conversationBulkActions/BulkLabelActions.vue';
 import Policy from 'dashboard/components/policy.vue';

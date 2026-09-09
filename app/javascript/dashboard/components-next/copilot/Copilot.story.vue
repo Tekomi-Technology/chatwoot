@@ -22,7 +22,7 @@ const messages = ref([
   },
 ]);
 
-const isCaptainTyping = ref(false);
+const isTekomiTyping = ref(false);
 
 const sendMessage = message => {
   // Add user message
@@ -33,9 +33,9 @@ const sendMessage = message => {
   });
 
   // Simulate AI response
-  isCaptainTyping.value = true;
+  isTekomiTyping.value = true;
   setTimeout(() => {
-    isCaptainTyping.value = false;
+    isTekomiTyping.value = false;
     messages.value.push({
       id: messages.value.length + 1,
       role: 'assistant',
@@ -47,13 +47,13 @@ const sendMessage = message => {
 
 <template>
   <Story
-    title="Captain/Copilot"
+    title="Tekomi/Copilot"
     :layout="{ type: 'grid', width: '400px', height: '800px' }"
   >
     <Copilot
       :support-agent="supportAgent"
       :messages="messages"
-      :is-captain-typing="isCaptainTyping"
+      :is-tekomi-typing="isTekomiTyping"
       @send-message="sendMessage"
     />
   </Story>

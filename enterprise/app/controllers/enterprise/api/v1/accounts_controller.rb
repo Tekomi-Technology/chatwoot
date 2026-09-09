@@ -124,7 +124,7 @@ class Enterprise::Api::V1::AccountsController < Api::BaseController
         'allowed' => @account.usage_limits[:agents],
         'consumed' => agents(@account)
       },
-      'captain' => @account.usage_limits[:captain]
+      'tekomi' => @account.usage_limits[:tekomi]
     }
   end
 

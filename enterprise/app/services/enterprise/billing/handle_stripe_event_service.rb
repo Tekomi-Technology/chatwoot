@@ -2,7 +2,7 @@ class Enterprise::Billing::HandleStripeEventService
   include BillingHelper
 
   CLOUD_PLANS_CONFIG = 'CHATWOOT_CLOUD_PLANS'.freeze
-  CAPTAIN_CLOUD_PLAN_LIMITS = 'CAPTAIN_CLOUD_PLAN_LIMITS'.freeze
+  TEKOMI_CLOUD_PLAN_LIMITS = 'TEKOMI_CLOUD_PLAN_LIMITS'.freeze
 
   STARTUP_PLAN_FEATURES = Enterprise::Billing::ReconcilePlanFeaturesService::STARTUP_PLAN_FEATURES
   BUSINESS_PLAN_FEATURES = Enterprise::Billing::ReconcilePlanFeaturesService::BUSINESS_PLAN_FEATURES
@@ -47,7 +47,7 @@ class Enterprise::Billing::HandleStripeEventService
   end
 
   def capture_previous_usage
-    { responses: account.custom_attributes['captain_responses_usage'].to_i, monthly: current_plan_credits[:responses] }
+    { responses: account.custom_attributes['tekomi_responses_usage'].to_i, monthly: current_plan_credits[:responses] }
   end
 
   def current_plan_credits
@@ -87,41 +87,41 @@ class Enterprise::Billing::HandleStripeEventService
     return unless Enterprise::Billing::CreateStripeCustomerService.new(account: account).perform
 
     account.with_lock do
-      previous_usage = { responses: account.custom_attributes['captain_responses_usage'].to_i, monthly: previous_monthly_credits }
-      adjust_captain_credits(previous_usage, new_plan_credits: 0)
+      previous_usage = { responses: account.custom_attributes['tekomi_responses_usage'].to_i, monthly: previous_monthly_credits }
+      adjust_tekomi_credits(previous_usage, new_plan_credits: 0)
       account.reset_response_usage
     end
   end
 
   def handle_subscription_credits(plan, previous_usage)
-    adjust_captain_credits(previous_usage, new_plan_credits: get_plan_credits(plan['name'])[:responses])
+    adjust_tekomi_credits(previous_usage, new_plan_credits: get_plan_credits(plan['name'])[:responses])
   end
 
-  def adjust_captain_credits(previous_usage, new_plan_credits:)
+  def adjust_tekomi_credits(previous_usage, new_plan_credits:)
     current_limits = account.limits || {}
-    current_credits = current_limits['captain_responses'].to_i
+    current_credits = current_limits['tekomi_responses'].to_i
 
     consumed_topup_credits = [previous_usage[:responses] - previous_usage[:monthly], 0].max
     updated_credits = [current_credits - consumed_topup_credits - previous_usage[:monthly] + new_plan_credits, 0].max
 
-    Rails.logger.info("Updating captain credits for account #{account.id}: #{current_credits} -> #{updated_credits}")
-    account.update!(limits: current_limits.merge('captain_responses' => updated_credits))
+    Rails.logger.info("Updating tekomi credits for account #{account.id}: #{current_credits} -> #{updated_credits}")
+    account.update!(limits: current_limits.merge('tekomi_responses' => updated_credits))
   end
 
   def handle_plan_change_credits(new_plan, previous_usage)
     current_limits = account.limits || {}
-    current_credits = current_limits['captain_responses'].to_i
+    current_credits = current_limits['tekomi_responses'].to_i
 
     previous_plan_credits = previous_usage[:monthly]
     new_plan_credits = get_plan_credits(new_plan['name'])[:responses]
 
     updated_credits = current_credits - previous_plan_credits + new_plan_credits
 
-    account.update!(limits: current_limits.merge('captain_responses' => updated_credits))
+    account.update!(limits: current_limits.merge('tekomi_responses' => updated_credits))
   end
 
   def get_plan_credits(plan_name)
-    config = InstallationConfig.find_by(name: CAPTAIN_CLOUD_PLAN_LIMITS).value
+    config = InstallationConfig.find_by(name: TEKOMI_CLOUD_PLAN_LIMITS).value
     config = JSON.parse(config) if config.is_a?(String)
     config[plan_name.downcase]&.symbolize_keys
   end

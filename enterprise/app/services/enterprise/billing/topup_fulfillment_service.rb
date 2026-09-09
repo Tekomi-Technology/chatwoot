@@ -35,12 +35,12 @@ class Enterprise::Billing::TopupFulfillmentService
 
   def update_account_credits(credits)
     current_limits = account.limits || {}
-    current_total = current_limits['captain_responses'].to_i
+    current_total = current_limits['tekomi_responses'].to_i
     new_total = current_total + credits
 
     account.update!(
       limits: current_limits.merge(
-        'captain_responses' => new_total
+        'tekomi_responses' => new_total
       )
     )
   end

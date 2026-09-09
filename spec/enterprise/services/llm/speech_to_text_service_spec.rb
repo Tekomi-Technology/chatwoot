@@ -8,8 +8,8 @@ RSpec.describe Llm::SpeechToTextService, type: :service do
   let(:service) { described_class.new(blob: attachment.file.blob, account: account) }
 
   before do
-    InstallationConfig.find_or_create_by!(name: 'CAPTAIN_OPEN_AI_API_KEY') { |config| config.value = 'test-api-key' }
-    InstallationConfig.find_or_create_by!(name: 'CAPTAIN_OPEN_AI_MODEL') { |config| config.value = 'gpt-4o-mini' }
+    InstallationConfig.find_or_create_by!(name: 'TEKOMI_OPEN_AI_API_KEY') { |config| config.value = 'test-api-key' }
+    InstallationConfig.find_or_create_by!(name: 'TEKOMI_OPEN_AI_MODEL') { |config| config.value = 'gpt-4o-mini' }
 
     attachment.file.attach(
       io: File.open(Rails.public_path.join('audio/widget/ding.mp3')),
@@ -24,33 +24,33 @@ RSpec.describe Llm::SpeechToTextService, type: :service do
         {
           agents: ChatwootApp.max_limit,
           inboxes: ChatwootApp.max_limit,
-          captain: { responses: { current_available: 100 } }
+          tekomi: { responses: { current_available: 100 } }
         }
       )
     end
 
-    it 'is false when the captain_integration feature is disabled' do
-      account.disable_features!('captain_integration')
+    it 'is false when the tekomi_integration feature is disabled' do
+      account.disable_features!('tekomi_integration')
 
       expect(described_class.available_for?(account)).to be(false)
     end
 
     it 'is false when audio transcriptions are disabled on the account' do
-      account.enable_features!('captain_integration')
+      account.enable_features!('tekomi_integration')
       account.update!(audio_transcriptions: false)
 
       expect(described_class.available_for?(account)).to be(false)
     end
 
-    it 'is false when no captain responses are available' do
-      account.enable_features!('captain_integration')
-      allow(account).to receive(:usage_limits).and_return(captain: { responses: { current_available: 0 } })
+    it 'is false when no tekomi responses are available' do
+      account.enable_features!('tekomi_integration')
+      allow(account).to receive(:usage_limits).and_return(tekomi: { responses: { current_available: 0 } })
 
       expect(described_class.available_for?(account)).to be(false)
     end
 
     it 'is true when the feature, setting and credits are all present' do
-      account.enable_features!('captain_integration')
+      account.enable_features!('tekomi_integration')
 
       expect(described_class.available_for?(account)).to be(true)
     end
@@ -101,7 +101,7 @@ RSpec.describe Llm::SpeechToTextService, type: :service do
       expect(service.perform).to eq('Audio transcript')
     end
 
-    it 'consumes a captain response credit when text comes back' do
+    it 'consumes a tekomi response credit when text comes back' do
       allow(audio_api).to receive(:transcribe).and_return({ 'text' => 'Audio transcript' })
 
       service.perform

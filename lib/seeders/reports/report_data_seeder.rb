@@ -17,7 +17,7 @@
 #   - 5 teams with realistic distribution
 #   - 30 labels with random assignments
 #   - 3 inboxes with agent assignments
-#   - 1 Captain assistant bound to a single web inbox, with knowledge (FAQs + documents)
+#   - 1 Tekomi assistant bound to a single web inbox, with knowledge (FAQs + documents)
 #     and a variety of assistant-handled conversations (auto-resolved, handed off,
 #     handled with a human, resolved-then-reopened) for the assistant overview page
 #   - Realistic reporting events with historical timestamps
@@ -40,7 +40,7 @@ class Seeders::Reports::ReportDataSeeder
   TOTAL_LABELS = 30
   TOTAL_INBOXES = 3
   MESSAGES_PER_CONVERSATION = 5
-  # Captain assistant conversations, split across the outcomes the overview page reports on.
+  # Tekomi assistant conversations, split across the outcomes the overview page reports on.
   TOTAL_ASSISTANT_CONVERSATIONS = 120
   ASSISTANT_KNOWLEDGE_APPROVED = 14
   ASSISTANT_KNOWLEDGE_PENDING = 6
@@ -94,14 +94,14 @@ class Seeders::Reports::ReportDataSeeder
     @account.reporting_events.destroy_all
   end
 
-  # Delete Captain records directly (assistant associations are destroy_async, which
+  # Delete Tekomi records directly (assistant associations are destroy_async, which
   # would leave rows around mid-reseed); order respects foreign keys.
   def clear_assistant_data
-    assistant_ids = Captain::Assistant.for_account(@account.id).select(:id)
-    Captain::AssistantResponse.by_account(@account.id).delete_all
-    Captain::Document.for_account(@account.id).delete_all
-    CaptainInbox.where(captain_assistant_id: assistant_ids).delete_all
-    Captain::Assistant.for_account(@account.id).delete_all
+    assistant_ids = Tekomi::Assistant.for_account(@account.id).select(:id)
+    Tekomi::AssistantResponse.by_account(@account.id).delete_all
+    Tekomi::Document.for_account(@account.id).delete_all
+    TekomiInbox.where(tekomi_assistant_id: assistant_ids).delete_all
+    Tekomi::Assistant.for_account(@account.id).delete_all
   end
 
   def create_teams
@@ -234,15 +234,15 @@ class Seeders::Reports::ReportDataSeeder
 
   # One assistant, bound to a single web inbox (the first one), as the overview page expects.
   def create_assistant
-    @account.enable_features!('captain_integration', 'captain_integration_v2')
+    @account.enable_features!('tekomi_integration', 'tekomi_integration_v2')
     @assistant_inbox = @inboxes.first
-    @assistant = Captain::Assistant.create!(
+    @assistant = Tekomi::Assistant.create!(
       account: @account,
       name: "#{Faker::Company.name} Copilot",
-      description: 'Captain assistant handling website support conversations.',
+      description: 'Tekomi assistant handling website support conversations.',
       config: { feature_faq: true, feature_memory: true, product_name: @account.name }
     )
-    CaptainInbox.create!(captain_assistant: @assistant, inbox: @assistant_inbox)
+    TekomiInbox.create!(tekomi_assistant: @assistant, inbox: @assistant_inbox)
     create_assistant_knowledge
 
     puts "Created assistant '#{@assistant.name}' for inbox '#{@assistant_inbox.name}'"
@@ -253,7 +253,7 @@ class Seeders::Reports::ReportDataSeeder
     ASSISTANT_KNOWLEDGE_PENDING.times { create_assistant_response(:pending) }
 
     ASSISTANT_DOCUMENTS.times do
-      Captain::Document.create!(
+      Tekomi::Document.create!(
         account: @account,
         assistant: @assistant,
         name: Faker::Company.catch_phrase,
@@ -266,7 +266,7 @@ class Seeders::Reports::ReportDataSeeder
   end
 
   def create_assistant_response(status)
-    Captain::AssistantResponse.create!(
+    Tekomi::AssistantResponse.create!(
       account: @account,
       assistant: @assistant,
       question: "#{Faker::Lorem.sentence(word_count: rand(4..8)).chomp('.')}?",

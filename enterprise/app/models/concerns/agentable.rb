@@ -3,6 +3,8 @@ module Concerns::Agentable
 
   DEFAULT_TEMPERATURE = 0.5
 
+  DEFAULT_MAX_TOKENS = 4000
+
   def agent
     Agents::Agent.new(
       name: agent_name,
@@ -10,7 +12,8 @@ module Concerns::Agentable
       tools: agent_tools,
       model: agent_model,
       temperature: temperature.presence&.to_f || DEFAULT_TEMPERATURE,
-      response_schema: agent_response_schema
+      response_schema: agent_response_schema,
+      params: { max_tokens: DEFAULT_MAX_TOKENS }
     )
   end
 
@@ -29,12 +32,12 @@ module Concerns::Agentable
       )
     end
 
-    Captain::PromptRenderer.render(prompt_template, enhanced_context.with_indifferent_access)
+    Tekomi::PromptRenderer.render(prompt_template, enhanced_context.with_indifferent_access)
   end
 
   def agent_model
     route = Llm::FeatureRouter.resolve(feature: 'assistant', account: account)
-    return route[:model] if route[:source] == :account_override || account&.feature_enabled?('captain_integration_v2')
+    return route[:model] if route[:source] == :account_override || account&.feature_enabled?('tekomi_integration_v2')
 
     installation_model.presence || route[:model]
   end
@@ -54,11 +57,11 @@ module Concerns::Agentable
   end
 
   def installation_model
-    InstallationConfig.find_by(name: 'CAPTAIN_OPEN_AI_MODEL')&.value
+    InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_MODEL')&.value
   end
 
   def agent_response_schema
-    Captain::ResponseSchema
+    Tekomi::ResponseSchema
   end
 
   def format_current_time(timezone)

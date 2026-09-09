@@ -22,10 +22,10 @@ module Events::Types
   # FIXME: deprecate the opened and resolved events in future in favor of status changed event.
   CONVERSATION_OPENED = 'conversation.opened'
   CONVERSATION_RESOLVED = 'conversation.resolved'
-  CAPTAIN_CONVERSATION_HANDED_OFF = 'captain.conversation.handed_off'
-  CAPTAIN_CONVERSATION_RESOLVED = 'captain.conversation.resolved'
-  CAPTAIN_RESPONSE_COMPLETED = 'captain.response.completed'
-  CAPTAIN_RESPONSE_FAILED = 'captain.response.failed'
+  TEKOMI_CONVERSATION_HANDED_OFF = 'tekomi.conversation.handed_off'
+  TEKOMI_CONVERSATION_RESOLVED = 'tekomi.conversation.resolved'
+  TEKOMI_RESPONSE_COMPLETED = 'tekomi.response.completed'
+  TEKOMI_RESPONSE_FAILED = 'tekomi.response.failed'
 
   CONVERSATION_STATUS_CHANGED = 'conversation.status_changed'
   CONVERSATION_CONTACT_CHANGED = 'conversation.contact_changed'

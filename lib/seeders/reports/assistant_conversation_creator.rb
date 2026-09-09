@@ -3,15 +3,15 @@
 require 'faker'
 require 'active_support/testing/time_helpers'
 
-# Seeds Captain assistant activity for the reports/overview test data.
+# Seeds Tekomi assistant activity for the reports/overview test data.
 #
 # Produces a variety of assistant-handled conversations in a single web inbox so
-# every Captain assistant overview metric (handled, auto-resolution, handoff,
+# every Tekomi assistant overview metric (handled, auto-resolution, handoff,
 # hours saved, reopen rate, conversation depth) has realistic data:
-#   - :resolved_by_assistant  assistant answers and Captain auto-resolves
+#   - :resolved_by_assistant  assistant answers and Tekomi auto-resolves
 #   - :handled_by_both        assistant answers, a human also replies and resolves
 #   - :handed_off             assistant answers, then hands off to a human
-#   - :resolved_and_reopened  Captain resolves, then the conversation reopens
+#   - :resolved_and_reopened  Tekomi resolves, then the conversation reopens
 #
 # Reporting events are fired through ReportingEventListener directly (mirroring
 # ConversationCreator) so the same rows the builder reads from get populated.
@@ -100,13 +100,13 @@ class Seeders::Reports::AssistantConversationCreator
 
     case outcome
     when :resolved_by_assistant
-      resolve_by_captain(conversation, resolved_at)
+      resolve_by_tekomi(conversation, resolved_at)
     when :handled_by_both
       resolve_by_human(conversation, resolved_at)
     when :handed_off
       resolve_by_human(conversation, resolved_at) if rand < 0.6
     when :resolved_and_reopened
-      resolve_by_captain(conversation, resolved_at)
+      resolve_by_tekomi(conversation, resolved_at)
       reopen(conversation, resolved_at + rand((1.hour)..(24.hours)))
     end
   end
@@ -148,11 +148,11 @@ class Seeders::Reports::AssistantConversationCreator
     )
   end
 
-  def resolve_by_captain(conversation, resolved_at)
+  def resolve_by_tekomi(conversation, resolved_at)
     mark_resolved(conversation, resolved_at)
     travel_to(resolved_at) do
       trigger_event('conversation_resolved', conversation)
-      trigger_captain_event(Events::Types::CAPTAIN_CONVERSATION_RESOLVED, conversation)
+      trigger_tekomi_event(Events::Types::TEKOMI_CONVERSATION_RESOLVED, conversation)
     end
     travel_back
   end
@@ -178,7 +178,7 @@ class Seeders::Reports::AssistantConversationCreator
   end
 
   def handoff_to_human(conversation)
-    trigger_captain_event(Events::Types::CAPTAIN_CONVERSATION_HANDED_OFF, conversation)
+    trigger_tekomi_event(Events::Types::TEKOMI_CONVERSATION_HANDED_OFF, conversation)
   end
 
   def mark_resolved(conversation, resolved_at)
@@ -194,9 +194,9 @@ class Seeders::Reports::AssistantConversationCreator
     )
   end
 
-  def trigger_captain_event(name, conversation)
+  def trigger_tekomi_event(name, conversation)
     event = Events::Base.new(name, Time.current, { conversation: conversation, source: 'inference' })
-    Captain::ReportingEventListener.instance.public_send(event.method_name, event)
+    Tekomi::ReportingEventListener.instance.public_send(event.method_name, event)
   end
 
   def trigger_reply_time(message, waiting_since)

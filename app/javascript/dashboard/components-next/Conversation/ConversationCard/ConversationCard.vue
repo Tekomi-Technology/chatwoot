@@ -38,7 +38,9 @@ const cardMessagePreviewWithMetaRef = ref(null);
 
 const currentContact = computed(() => props.contact);
 
-const currentContactName = computed(() => getSenderDisplayName(currentContact.value));
+const currentContactName = computed(() =>
+  getSenderDisplayName(currentContact.value)
+);
 const currentContactThumbnail = computed(() => currentContact.value?.thumbnail);
 const currentContactStatus = computed(
   () => currentContact.value?.availabilityStatus

@@ -10,7 +10,7 @@ module Enterprise::Api::V1::Accounts::Articles::BulkActionsController
     end
 
     @articles.find_each do |article|
-      Captain::Articles::TranslateJob.perform_later(
+      Tekomi::Articles::TranslateJob.perform_later(
         Current.account, article.id, @locale, @category&.id, Current.user
       )
     end
@@ -29,7 +29,7 @@ module Enterprise::Api::V1::Accounts::Articles::BulkActionsController
     @category = @portal.categories.find_by(id: permitted_params[:category_id], locale: @locale)
     @articles = @portal.articles.where(id: permitted_params[:ids])
 
-    captain_available? && valid_locale? && valid_category? && valid_articles?
+    tekomi_available? && valid_locale? && valid_category? && valid_articles?
   end
 
   def find_existing_translations
@@ -37,10 +37,10 @@ module Enterprise::Api::V1::Accounts::Articles::BulkActionsController
     @portal.articles.where(associated_article_id: root_ids, locale: @locale)
   end
 
-  def captain_available?
-    return true if Current.account.feature_enabled?('captain_tasks')
+  def tekomi_available?
+    return true if Current.account.feature_enabled?('tekomi_tasks')
 
-    render_could_not_create_error(I18n.t('portals.articles.captain_not_available'))
+    render_could_not_create_error(I18n.t('portals.articles.tekomi_not_available'))
     false
   end
 

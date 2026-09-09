@@ -22,7 +22,7 @@ RSpec.describe Llm::FeatureRouter do
     end
 
     it 'uses a valid account model override' do
-      account.update!(captain_models: { 'editor' => 'gpt-4.1' })
+      account.update!(tekomi_models: { 'editor' => 'gpt-4.1' })
 
       resolved = described_class.resolve(feature: 'editor', account: account)
 
@@ -35,7 +35,7 @@ RSpec.describe Llm::FeatureRouter do
     end
 
     it 'uses a valid account model override for an internal feature' do
-      account.update!(captain_models: { 'conversation_completion' => 'gpt-5.2' })
+      account.update!(tekomi_models: { 'conversation_completion' => 'gpt-5.2' })
 
       resolved = described_class.resolve(feature: 'conversation_completion', account: account)
 
@@ -49,7 +49,7 @@ RSpec.describe Llm::FeatureRouter do
 
     it 'uses the installation model for conversation completion on self-hosted Enterprise' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-      InstallationConfig.find_or_initialize_by(name: 'CAPTAIN_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
+      InstallationConfig.find_or_initialize_by(name: 'TEKOMI_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
 
       resolved = described_class.resolve(feature: 'conversation_completion', account: account)
 
@@ -63,7 +63,7 @@ RSpec.describe Llm::FeatureRouter do
 
     it 'keeps the OpenAI provider for a custom installation model' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-      InstallationConfig.find_or_initialize_by(name: 'CAPTAIN_OPEN_AI_MODEL').update!(value: 'custom-openai-model')
+      InstallationConfig.find_or_initialize_by(name: 'TEKOMI_OPEN_AI_MODEL').update!(value: 'custom-openai-model')
 
       resolved = described_class.resolve(feature: 'conversation_completion', account: account)
 
@@ -76,8 +76,8 @@ RSpec.describe Llm::FeatureRouter do
 
     it 'keeps account overrides ahead of the installation model' do
       allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-      InstallationConfig.find_or_initialize_by(name: 'CAPTAIN_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
-      account.update!(captain_models: { 'conversation_completion' => 'gpt-5.2' })
+      InstallationConfig.find_or_initialize_by(name: 'TEKOMI_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
+      account.update!(tekomi_models: { 'conversation_completion' => 'gpt-5.2' })
 
       resolved = described_class.resolve(feature: 'conversation_completion', account: account)
 
@@ -87,8 +87,8 @@ RSpec.describe Llm::FeatureRouter do
       )
     end
 
-    it 'resolves GPT-5.2 as the assistant default when Captain V2 is enabled without storing an account override' do
-      account.enable_features!('captain_integration_v2')
+    it 'resolves GPT-5.2 as the assistant default when Tekomi V2 is enabled without storing an account override' do
+      account.enable_features!('tekomi_integration_v2')
 
       resolved = described_class.resolve(feature: 'assistant', account: account)
 
@@ -98,12 +98,12 @@ RSpec.describe Llm::FeatureRouter do
         model: 'gpt-5.2',
         source: :default
       )
-      expect(account.reload.captain_models).to be_nil
+      expect(account.reload.tekomi_models).to be_nil
     end
 
-    it 'keeps account model overrides ahead of the Captain V2 default' do
-      account.enable_features!('captain_integration_v2')
-      account.update!(captain_models: { 'assistant' => 'gpt-5.1' })
+    it 'keeps account model overrides ahead of the Tekomi V2 default' do
+      account.enable_features!('tekomi_integration_v2')
+      account.update!(tekomi_models: { 'assistant' => 'gpt-5.1' })
 
       resolved = described_class.resolve(feature: 'assistant', account: account)
 
@@ -114,7 +114,7 @@ RSpec.describe Llm::FeatureRouter do
     end
 
     it 'falls back to the feature default when the account override is invalid' do
-      account.captain_models = { 'editor' => 'invalid-model' }
+      account.tekomi_models = { 'editor' => 'invalid-model' }
 
       resolved = described_class.resolve(feature: 'editor', account: account)
 
@@ -125,7 +125,7 @@ RSpec.describe Llm::FeatureRouter do
     end
 
     it 'falls back to the feature default when the account override is blank' do
-      account.update!(captain_models: { 'editor' => '' })
+      account.update!(tekomi_models: { 'editor' => '' })
 
       resolved = described_class.resolve(feature: 'editor', account: account)
 

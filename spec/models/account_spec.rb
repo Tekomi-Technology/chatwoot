@@ -59,8 +59,8 @@ RSpec.describe Account do
     end
   end
 
-  describe 'captain defaults for new accounts' do
-    it 'exposes Captain features without storing account-level model overrides' do
+  describe 'tekomi defaults for new accounts' do
+    it 'exposes Tekomi features without storing account-level model overrides' do
       InstallationConfig.find_or_initialize_by(name: 'ACCOUNT_LEVEL_FEATURE_DEFAULTS').update!(
         value: Featurable::FEATURE_LIST,
         locked: true
@@ -68,9 +68,9 @@ RSpec.describe Account do
 
       account = create(:account)
 
-      expect(account).to be_feature_enabled('captain_integration')
-      expect(account).to be_feature_enabled('captain_integration_v2')
-      expect(account.captain_models).to be_nil
+      expect(account).to be_feature_enabled('tekomi_integration')
+      expect(account).to be_feature_enabled('tekomi_integration_v2')
+      expect(account.tekomi_models).to be_nil
     end
   end
 
@@ -327,42 +327,42 @@ RSpec.describe Account do
         expect(account.settings['auto_resolve_message']).to eq(message)
       end
 
-      it 'defaults captain_auto_resolve_mode to legacy when captain_tasks is disabled' do
-        allow(account).to receive(:feature_enabled?).with('captain_tasks').and_return(false)
+      it 'defaults tekomi_auto_resolve_mode to legacy when tekomi_tasks is disabled' do
+        allow(account).to receive(:feature_enabled?).with('tekomi_tasks').and_return(false)
 
-        expect(account.captain_auto_resolve_mode).to eq('legacy')
-        expect(account).to be_captain_auto_resolve_legacy
+        expect(account.tekomi_auto_resolve_mode).to eq('legacy')
+        expect(account).to be_tekomi_auto_resolve_legacy
       end
 
-      it 'defaults captain_auto_resolve_mode to evaluated when captain_tasks is enabled' do
-        allow(account).to receive(:feature_enabled?).with('captain_tasks').and_return(true)
+      it 'defaults tekomi_auto_resolve_mode to evaluated when tekomi_tasks is enabled' do
+        allow(account).to receive(:feature_enabled?).with('tekomi_tasks').and_return(true)
 
-        expect(account.captain_auto_resolve_mode).to eq('evaluated')
-        expect(account).to be_captain_auto_resolve_evaluated
+        expect(account.tekomi_auto_resolve_mode).to eq('evaluated')
+        expect(account).to be_tekomi_auto_resolve_evaluated
       end
 
-      it 'correctly gets and sets captain_auto_resolve_mode' do
-        account.captain_auto_resolve_mode = 'legacy'
+      it 'correctly gets and sets tekomi_auto_resolve_mode' do
+        account.tekomi_auto_resolve_mode = 'legacy'
 
-        expect(account.captain_auto_resolve_mode).to eq('legacy')
-        expect(account.settings['captain_auto_resolve_mode']).to eq('legacy')
-        expect(account).to be_captain_auto_resolve_legacy
+        expect(account.tekomi_auto_resolve_mode).to eq('legacy')
+        expect(account.settings['tekomi_auto_resolve_mode']).to eq('legacy')
+        expect(account).to be_tekomi_auto_resolve_legacy
       end
 
-      it 'allows clearing captain_auto_resolve_mode to fall back to feature defaults' do
-        allow(account).to receive(:feature_enabled?).with('captain_tasks').and_return(false)
-        account.captain_auto_resolve_mode = nil
+      it 'allows clearing tekomi_auto_resolve_mode to fall back to feature defaults' do
+        allow(account).to receive(:feature_enabled?).with('tekomi_tasks').and_return(false)
+        account.tekomi_auto_resolve_mode = nil
 
         expect(account).to be_valid
-        expect(account.captain_auto_resolve_mode).to eq('legacy')
-        expect(account.settings['captain_auto_resolve_mode']).to be_nil
+        expect(account.tekomi_auto_resolve_mode).to eq('legacy')
+        expect(account.settings['tekomi_auto_resolve_mode']).to be_nil
       end
 
       it 'falls back to disabled mode from legacy settings key' do
-        account.settings = { 'captain_disable_auto_resolve' => true }
+        account.settings = { 'tekomi_disable_auto_resolve' => true }
 
-        expect(account.captain_auto_resolve_mode).to eq('disabled')
-        expect(account).to be_captain_auto_resolve_disabled
+        expect(account.tekomi_auto_resolve_mode).to eq('disabled')
+        expect(account).to be_tekomi_auto_resolve_disabled
       end
 
       it 'handles nil values correctly' do
@@ -424,16 +424,16 @@ RSpec.describe Account do
     end
   end
 
-  describe 'captain_preferences' do
+  describe 'tekomi_preferences' do
     let(:account) { create(:account) }
 
     describe 'with no saved preferences' do
       before do
-        account.update!(captain_models: nil)
+        account.update!(tekomi_models: nil)
       end
 
       it 'returns defaults from llm.yml' do
-        prefs = account.captain_preferences
+        prefs = account.tekomi_preferences
 
         expect(prefs[:features].values).to all(be false)
 
@@ -442,19 +442,19 @@ RSpec.describe Account do
         end
       end
 
-      it 'returns GPT-5.2 for assistant when Captain V2 is enabled' do
-        account.enable_features!('captain_integration_v2')
+      it 'returns GPT-5.2 for assistant when Tekomi V2 is enabled' do
+        account.enable_features!('tekomi_integration_v2')
 
-        expect(account.captain_preferences[:models]['assistant']).to eq('gpt-5.2')
-        expect(account.reload.captain_models).to be_nil
+        expect(account.tekomi_preferences[:models]['assistant']).to eq('gpt-5.2')
+        expect(account.reload.tekomi_models).to be_nil
       end
     end
 
     describe 'with saved model preferences' do
       it 'returns saved preferences merged with defaults' do
-        account.update!(captain_models: { 'editor' => 'gpt-4.1-mini', 'assistant' => 'gpt-5.2' })
+        account.update!(tekomi_models: { 'editor' => 'gpt-4.1-mini', 'assistant' => 'gpt-5.2' })
 
-        prefs = account.captain_preferences
+        prefs = account.tekomi_preferences
 
         expect(prefs[:models]['editor']).to eq('gpt-4.1-mini')
         expect(prefs[:models]['assistant']).to eq('gpt-5.2')
@@ -464,9 +464,9 @@ RSpec.describe Account do
 
     describe 'with saved feature preferences' do
       it 'returns saved feature states' do
-        account.update!(captain_features: { 'editor' => true, 'assistant' => true })
+        account.update!(tekomi_features: { 'editor' => true, 'assistant' => true })
 
-        prefs = account.captain_preferences
+        prefs = account.tekomi_preferences
 
         expect(prefs[:features]['editor']).to be true
         expect(prefs[:features]['assistant']).to be true
@@ -476,29 +476,29 @@ RSpec.describe Account do
 
     describe 'validation' do
       it 'rejects invalid model for a feature' do
-        account.captain_models = { 'label_suggestion' => 'gpt-5.1' }
+        account.tekomi_models = { 'label_suggestion' => 'gpt-5.1' }
 
         expect(account).not_to be_valid
-        expect(account.errors[:captain_models].first).to include('not a valid model for label_suggestion')
+        expect(account.errors[:tekomi_models].first).to include('not a valid model for label_suggestion')
       end
 
       it 'accepts valid model for a feature' do
-        account.captain_models = { 'editor' => 'gpt-4.1-mini', 'label_suggestion' => 'gpt-4.1-nano' }
+        account.tekomi_models = { 'editor' => 'gpt-4.1-mini', 'label_suggestion' => 'gpt-4.1-nano' }
 
         expect(account).to be_valid
       end
 
       it 'rejects unknown feature keys' do
-        account.captain_models = { 'unknown_feature' => 'gpt-4.1' }
+        account.tekomi_models = { 'unknown_feature' => 'gpt-4.1' }
 
         expect(account).not_to be_valid
-        expect(account.errors[:captain_models]).to include("'unknown_feature' is not a known feature")
+        expect(account.errors[:tekomi_models]).to include("'unknown_feature' is not a known feature")
       end
 
       it 'removes blank model overrides before saving' do
-        account.update!(captain_models: { 'editor' => '', 'assistant' => 'gpt-5.2' })
+        account.update!(tekomi_models: { 'editor' => '', 'assistant' => 'gpt-5.2' })
 
-        expect(account.captain_models).to eq('assistant' => 'gpt-5.2')
+        expect(account.tekomi_models).to eq('assistant' => 'gpt-5.2')
       end
     end
   end

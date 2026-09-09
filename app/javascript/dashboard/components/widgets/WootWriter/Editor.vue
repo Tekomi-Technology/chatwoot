@@ -21,7 +21,7 @@ import CopilotMenuBar from './CopilotMenuBar.vue';
 
 import { useEmitter } from 'dashboard/composables/emitter';
 import { useI18n } from 'vue-i18n';
-import { useCaptain } from 'dashboard/composables/useCaptain';
+import { useTekomi } from 'dashboard/composables/useTekomi';
 import { useKeyboardEvents } from 'dashboard/composables/useKeyboardEvents';
 import { useTrack } from 'dashboard/composables';
 import { useUISettings } from 'dashboard/composables/useUISettings';
@@ -31,7 +31,7 @@ import { vOnClickOutside } from '@vueuse/components';
 import { BUS_EVENTS } from 'shared/constants/busEvents';
 import {
   CONVERSATION_EVENTS,
-  CAPTAIN_EVENTS,
+  TEKOMI_EVENTS,
 } from 'dashboard/helper/AnalyticsHelper/events';
 
 import {
@@ -86,7 +86,7 @@ const props = defineProps({
   updateSelectionWith: { type: String, default: '' },
   enableVariables: { type: Boolean, default: false },
   enableCannedResponses: { type: Boolean, default: true },
-  enableCaptainTools: { type: Boolean, default: false },
+  enableTekomiTools: { type: Boolean, default: false },
   enableMacros: { type: Boolean, default: false },
   variables: { type: Object, default: () => ({}) },
   signature: { type: String, default: '' },
@@ -117,7 +117,7 @@ const emit = defineEmits([
 ]);
 
 const { t } = useI18n();
-const { captainTasksEnabled } = useCaptain();
+const { tekomiTasksEnabled } = useTekomi();
 
 const TYPING_INDICATOR_IDLE_TIME = 4000;
 const MAXIMUM_FILE_UPLOAD_SIZE = 4; // in MB
@@ -144,7 +144,7 @@ const editorSchema = computed(() => {
     : effectiveChannelType.value;
   const formatting = getFormattingForEditor(
     formatType,
-    captainTasksEnabled.value
+    tekomiTasksEnabled.value
   );
   return buildMessageSchema(formatting.marks, formatting.nodes);
 });
@@ -155,7 +155,7 @@ const editorMenuOptions = computed(() => {
     : effectiveChannelType.value || DEFAULT_FORMATTING;
   const formatting = getFormattingForEditor(
     formatType,
-    captainTasksEnabled.value
+    tekomiTasksEnabled.value
   );
 
   return formatting.menu;
@@ -342,14 +342,14 @@ const plugins = computed(() => {
       trigger: '@',
       showMenu: showToolsMenu,
       searchTerm: toolSearchKey,
-      isAllowed: () => props.enableCaptainTools,
+      isAllowed: () => props.enableTekomiTools,
       interceptEnter: true,
     }),
     createSuggestionPlugin({
       trigger: '@',
       showMenu: showUserMentions,
       searchTerm: mentionSearchKey,
-      isAllowed: () => props.isPrivate || !props.enableCaptainTools,
+      isAllowed: () => props.isPrivate || !props.enableTekomiTools,
     }),
     createSuggestionPlugin({
       trigger: '/',
@@ -410,7 +410,7 @@ watch(shouldShowMacros, updatedValue => {
   emit('toggleMacrosMenu', updatedValue);
 });
 watch(showToolsMenu, updatedValue => {
-  emit('toggleToolsMenu', props.enableCaptainTools && updatedValue);
+  emit('toggleToolsMenu', props.enableTekomiTools && updatedValue);
 });
 
 function focusEditorInputField(pos = 'end') {
@@ -488,7 +488,7 @@ function openFileBrowser() {
 function handleCopilotClick() {
   const isOpening = !showSelectionMenu.value;
   if (isOpening) {
-    useTrack(CAPTAIN_EVENTS.EDITOR_AI_MENU_OPENED, {
+    useTrack(TEKOMI_EVENTS.EDITOR_AI_MENU_OPENED, {
       conversationId: props.conversationId,
       entryPoint: 'inline',
     });

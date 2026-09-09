@@ -228,7 +228,7 @@ RSpec.describe 'Enterprise Billing APIs', type: :request do
                 'consumed' => account.users.count
               },
               'conversation' => {},
-              'captain' => {
+              'tekomi' => {
                 'documents' => { 'consumed' => 0, 'current_available' => ChatwootApp.max_limit, 'total_count' => ChatwootApp.max_limit },
                 'responses' => { 'consumed' => 0, 'current_available' => ChatwootApp.max_limit, 'total_count' => ChatwootApp.max_limit }
               },
@@ -280,7 +280,7 @@ RSpec.describe 'Enterprise Billing APIs', type: :request do
                { 'name' => 'Hacker', 'product_id' => ['prod_hacker'], 'price_ids' => ['price_hacker'] },
                { 'name' => 'Business', 'product_id' => ['prod_business'], 'price_ids' => ['price_business'] }
              ])
-      create(:installation_config, name: 'CAPTAIN_TOPUP_OPTIONS', value: {
+      create(:installation_config, name: 'TEKOMI_TOPUP_OPTIONS', value: {
                'usd' => [
                  { 'credits' => 1000, 'amount' => 20.0 },
                  { 'credits' => 2500, 'amount' => 50.0 },
@@ -307,7 +307,7 @@ RSpec.describe 'Enterprise Billing APIs', type: :request do
       before do
         account.update!(
           custom_attributes: { plan_name: 'Business', stripe_customer_id: stripe_customer_id },
-          limits: { 'captain_responses' => 1000 }
+          limits: { 'tekomi_responses' => 1000 }
         )
         allow(Stripe::Customer).to receive(:retrieve).with(stripe_customer_id).and_return(stripe_customer)
         allow(Stripe::Invoice).to receive(:create).and_return(stripe_invoice)
@@ -328,7 +328,7 @@ RSpec.describe 'Enterprise Billing APIs', type: :request do
         json_response = JSON.parse(response.body)
         expect(json_response['credits']).to eq(1000)
         expect(json_response['amount']).to eq(20.0)
-        expect(json_response['limits']['captain_responses']).to eq(2000)
+        expect(json_response['limits']['tekomi_responses']).to eq(2000)
       end
 
       it 'returns error when credits parameter is missing' do

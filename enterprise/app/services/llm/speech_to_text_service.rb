@@ -12,12 +12,12 @@ class Llm::SpeechToTextService < Llm::LegacyBaseOpenAiService
 
   attr_reader :blob, :account, :transcription_model
 
-  # Transcription runs on Captain's OpenAI credentials and consumes its response credits.
+  # Transcription runs on Tekomi's OpenAI credentials and consumes its response credits.
   def self.available_for?(account)
-    return false unless account.feature_enabled?('captain_integration')
+    return false unless account.feature_enabled?('tekomi_integration')
     return false if account.audio_transcriptions.blank?
 
-    account.usage_limits[:captain][:responses][:current_available].positive?
+    account.usage_limits[:tekomi][:responses][:current_available].positive?
   end
 
   def self.too_large?(blob)

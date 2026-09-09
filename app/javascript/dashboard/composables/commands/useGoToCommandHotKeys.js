@@ -57,12 +57,12 @@ const GO_TO_COMMANDS = [
     routeName: 'contacts_dashboard_index',
   },
   {
-    id: 'goto_captain',
-    title: 'COMMAND_BAR.COMMANDS.GO_TO_CAPTAIN',
+    id: 'goto_tekomi',
+    title: 'COMMAND_BAR.COMMANDS.GO_TO_TEKOMI',
     section: SECTION_GENERAL,
     icon: ICON_BOT,
-    routeName: 'captain_assistants_index',
-    params: { navigationPath: 'captain_assistants_overview_index' },
+    routeName: 'tekomi_assistants_index',
+    params: { navigationPath: 'tekomi_assistants_overview_index' },
   },
   {
     id: 'goto_calls_dashboard',

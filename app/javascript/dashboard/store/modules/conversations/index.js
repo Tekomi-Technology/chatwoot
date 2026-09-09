@@ -370,7 +370,7 @@ export const mutations = {
   [types.UPDATE_CHAT_LIST_FILTERS](_state, data) {
     _state.conversationFilters = { ..._state.conversationFilters, ...data };
   },
-  [types.SET_INBOX_CAPTAIN_ASSISTANT](_state, data) {
+  [types.SET_INBOX_TEKOMI_ASSISTANT](_state, data) {
     _state.copilotAssistant = data.assistant;
   },
 };

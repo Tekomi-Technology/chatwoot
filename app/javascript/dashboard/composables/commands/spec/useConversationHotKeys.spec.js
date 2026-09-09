@@ -3,7 +3,7 @@ import { useStore, useMapGetter } from 'dashboard/composables/store';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { useConversationLabels } from 'dashboard/composables/useConversationLabels';
-import { useCaptain } from 'dashboard/composables/useCaptain';
+import { useTekomi } from 'dashboard/composables/useTekomi';
 import { useAgentsList } from 'dashboard/composables/useAgentsList';
 import { REPLY_EDITOR_MODES } from 'dashboard/components/widgets/WootWriter/constants';
 import {
@@ -18,7 +18,7 @@ vi.mock('dashboard/composables/store');
 vi.mock('vue-i18n');
 vi.mock('vue-router');
 vi.mock('dashboard/composables/useConversationLabels');
-vi.mock('dashboard/composables/useCaptain');
+vi.mock('dashboard/composables/useTekomi');
 vi.mock('dashboard/composables/useAgentsList');
 
 describe('useConversationHotKeys', () => {
@@ -49,7 +49,7 @@ describe('useConversationHotKeys', () => {
       addLabelToConversation: vi.fn(),
       removeLabelFromConversation: vi.fn(),
     });
-    useCaptain.mockReturnValue({ captainTasksEnabled: { value: true } });
+    useTekomi.mockReturnValue({ tekomiTasksEnabled: { value: true } });
     useAgentsList.mockReturnValue({
       agentsList: { value: [] },
       assignableAgents: { value: mockAssignableAgents },
@@ -67,7 +67,7 @@ describe('useConversationHotKeys', () => {
     expect(conversationHotKeys.value.length).toBeGreaterThan(0);
   });
 
-  it('should include AI assist actions when captain tasks is enabled', () => {
+  it('should include AI assist actions when tekomi tasks is enabled', () => {
     const { conversationHotKeys } = useConversationHotKeys();
     const aiAssistAction = conversationHotKeys.value.find(
       action => action.id === 'ai_assist'
@@ -75,8 +75,8 @@ describe('useConversationHotKeys', () => {
     expect(aiAssistAction).toBeDefined();
   });
 
-  it('should not include AI assist actions when captain tasks is disabled', () => {
-    useCaptain.mockReturnValue({ captainTasksEnabled: { value: false } });
+  it('should not include AI assist actions when tekomi tasks is disabled', () => {
+    useTekomi.mockReturnValue({ tekomiTasksEnabled: { value: false } });
     const { conversationHotKeys } = useConversationHotKeys();
     const aiAssistAction = conversationHotKeys.value.find(
       action => action.id === 'ai_assist'

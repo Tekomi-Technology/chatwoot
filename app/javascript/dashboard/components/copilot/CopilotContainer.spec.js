@@ -27,8 +27,8 @@ vi.mock('dashboard/composables/store', async () => {
   const { ref: createRef } = await import('vue');
   const refs = {
     getCurrentUser: createRef({ id: 1 }),
-    'captainAssistants/getRecords': createRef([{ id: 7 }]),
-    'captainAssistants/getUIFlags': createRef({ fetchingList: false }),
+    'tekomiAssistants/getRecords': createRef([{ id: 7 }]),
+    'tekomiAssistants/getUIFlags': createRef({ fetchingList: false }),
     getCopilotAssistant: createRef(null),
     getSelectedChat: createRef({ id: 1 }),
     getLastEmailInSelectedChat: createRef({ message_type: 0 }),

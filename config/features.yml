@@ -135,7 +135,7 @@
 - name: linear_integration
   display_name: Linear Integration
   enabled: false
-- name: captain_integration
+- name: tekomi_integration
   display_name: Tekomi AI
   enabled: false
 - name: custom_roles
@@ -144,7 +144,7 @@
 - name: chatwoot_v4
   display_name: Chatwoot V4
   enabled: true
-- name: captain_v1_action_classifier
+- name: tekomi_v1_action_classifier
   display_name: Tekomi AI V1 Action Classifier
   enabled: false
   chatwoot_internal: true
@@ -168,7 +168,7 @@
 - name: notion_integration
   display_name: Notion Integration
   enabled: false
-- name: captain_integration_v2
+- name: tekomi_integration_v2
   display_name: Tekomi AI V2
   enabled: false
 - name: whatsapp_embedded_signup
@@ -185,7 +185,7 @@
 - name: assignment_v2
   display_name: Assignment V2
   enabled: true
-- name: captain_document_auto_sync
+- name: tekomi_document_auto_sync
   display_name: Tekomi AI Document Auto Sync
   enabled: false
 - name: advanced_search
@@ -217,7 +217,7 @@
 - name: csat_review_notes
   display_name: CSAT Review Notes
   enabled: false
-- name: captain_tasks
+- name: tekomi_tasks
   display_name: Tekomi AI Tasks
   enabled: true
 - name: conversation_required_attributes

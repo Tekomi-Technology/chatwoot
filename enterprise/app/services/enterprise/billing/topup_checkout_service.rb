@@ -3,7 +3,7 @@ class Enterprise::Billing::TopupCheckoutService
 
   class Error < StandardError; end
 
-  TOPUP_OPTIONS_CONFIG = 'CAPTAIN_TOPUP_OPTIONS'.freeze
+  TOPUP_OPTIONS_CONFIG = 'TEKOMI_TOPUP_OPTIONS'.freeze
 
   pattr_initialize [:account!]
 

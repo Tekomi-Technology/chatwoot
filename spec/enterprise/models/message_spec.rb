@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Message do
   let!(:conversation) { create(:conversation) }
 
-  it 'updates first reply if the message is human and even if there are messages from captain' do
-    captain_assistant = create(:captain_assistant, account: conversation.account)
+  it 'updates first reply if the message is human and even if there are messages from tekomi' do
+    tekomi_assistant = create(:tekomi_assistant, account: conversation.account)
     expect(conversation.first_reply_created_at).to be_nil
 
     ## There is a difference on how the time is stored in the database and how it is retrieved
@@ -12,9 +12,9 @@ RSpec.describe Message do
     # In the test, we will check whether the time is within the range
     expect(conversation.waiting_since).to be_within(0.000001.seconds).of(conversation.created_at)
 
-    create(:message, message_type: :outgoing, conversation: conversation, sender: captain_assistant)
+    create(:message, message_type: :outgoing, conversation: conversation, sender: tekomi_assistant)
 
-    # Captain::Assistant responses clear waiting_since (like AgentBot)
+    # Tekomi::Assistant responses clear waiting_since (like AgentBot)
     expect(conversation.first_reply_created_at).to be_nil
     expect(conversation.waiting_since).to be_nil
 
@@ -26,11 +26,11 @@ RSpec.describe Message do
 
   describe '#mark_pending_conversation_as_open_for_human_response' do
     let(:conversation) { create(:conversation, status: :pending) }
-    let(:captain_assistant) { create(:captain_assistant, account: conversation.account) }
-    let(:auto_open_activity_content) { I18n.t('conversations.activity.captain.auto_opened_after_agent_reply', locale: conversation.account.locale) }
+    let(:tekomi_assistant) { create(:tekomi_assistant, account: conversation.account) }
+    let(:auto_open_activity_content) { I18n.t('conversations.activity.tekomi.auto_opened_after_agent_reply', locale: conversation.account.locale) }
 
     before do
-      create(:captain_inbox, inbox: conversation.inbox, captain_assistant: captain_assistant)
+      create(:tekomi_inbox, inbox: conversation.inbox, tekomi_assistant: tekomi_assistant)
     end
 
     it 'marks the conversation open when a human sends a public outgoing message' do

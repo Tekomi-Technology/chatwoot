@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useMapGetter, useStore } from 'dashboard/composables/store.js';
 import { useAccount } from 'dashboard/composables/useAccount';
-import { useCaptain } from 'dashboard/composables/useCaptain';
+import { useTekomi } from 'dashboard/composables/useTekomi';
 import { format } from 'date-fns';
 import sessionStorage from 'shared/helpers/sessionStorage';
 
@@ -21,13 +21,13 @@ import { useI18n } from 'vue-i18n';
 const router = useRouter();
 const { currentAccount, isOnChatwootCloud } = useAccount();
 const {
-  captainEnabled,
-  captainLimits,
+  tekomiEnabled,
+  tekomiLimits,
   documentLimits,
   responseLimits,
   fetchLimits,
   isFetchingLimits,
-} = useCaptain();
+} = useTekomi();
 
 const uiFlags = useMapGetter('accounts/getUIFlags');
 const store = useStore();
@@ -247,9 +247,9 @@ onMounted(handleBillingPageLogic);
           </div>
         </BillingCard>
         <BillingCard
-          v-if="captainEnabled"
-          :title="$t('BILLING_SETTINGS.CAPTAIN.TITLE')"
-          :description="$t('BILLING_SETTINGS.CAPTAIN.DESCRIPTION')"
+          v-if="tekomiEnabled"
+          :title="$t('BILLING_SETTINGS.TEKOMI.TITLE')"
+          :description="$t('BILLING_SETTINGS.TEKOMI.DESCRIPTION')"
         >
           <template #action>
             <div class="flex gap-2">
@@ -261,7 +261,7 @@ onMounted(handleBillingPageLogic);
                 :is-loading="isFetchingLimits"
                 @click="fetchLimits"
               >
-                {{ $t('BILLING_SETTINGS.CAPTAIN.REFRESH_CREDITS') }}
+                {{ $t('BILLING_SETTINGS.TEKOMI.REFRESH_CREDITS') }}
               </ButtonV4>
               <ButtonV4
                 v-if="canPurchaseCredits"
@@ -274,27 +274,27 @@ onMounted(handleBillingPageLogic);
               </ButtonV4>
             </div>
           </template>
-          <div v-if="captainLimits && responseLimits" class="px-5">
+          <div v-if="tekomiLimits && responseLimits" class="px-5">
             <BillingMeter
-              :title="$t('BILLING_SETTINGS.CAPTAIN.RESPONSES')"
+              :title="$t('BILLING_SETTINGS.TEKOMI.RESPONSES')"
               v-bind="responseLimits"
             />
           </div>
-          <div v-if="captainLimits && documentLimits" class="px-5">
+          <div v-if="tekomiLimits && documentLimits" class="px-5">
             <BillingMeter
-              :title="$t('BILLING_SETTINGS.CAPTAIN.DOCUMENTS')"
+              :title="$t('BILLING_SETTINGS.TEKOMI.DOCUMENTS')"
               v-bind="documentLimits"
             />
           </div>
         </BillingCard>
         <BillingCard
           v-else
-          :title="$t('BILLING_SETTINGS.CAPTAIN.TITLE')"
-          :description="$t('BILLING_SETTINGS.CAPTAIN.UPGRADE')"
+          :title="$t('BILLING_SETTINGS.TEKOMI.TITLE')"
+          :description="$t('BILLING_SETTINGS.TEKOMI.UPGRADE')"
         >
           <template #action>
             <ButtonV4 sm solid slate @click="onClickBillingPortal">
-              {{ $t('CAPTAIN.PAYWALL.UPGRADE_NOW') }}
+              {{ $t('TEKOMI.PAYWALL.UPGRADE_NOW') }}
             </ButtonV4>
           </template>
         </BillingCard>

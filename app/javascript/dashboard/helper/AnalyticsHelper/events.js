@@ -81,39 +81,39 @@ export const PORTALS_EVENTS = Object.freeze({
   PREVIEW_ARTICLE: 'Previewed article',
 });
 
-export const CAPTAIN_EVENTS = Object.freeze({
+export const TEKOMI_EVENTS = Object.freeze({
   // Editor funnel events
-  EDITOR_AI_MENU_OPENED: 'Captain: Editor AI menu opened',
-  GENERATION_FAILED: 'Captain: Generation failed',
-  AI_ASSISTED_MESSAGE_SENT: 'Captain: AI-assisted message sent',
+  EDITOR_AI_MENU_OPENED: 'Tekomi: Editor AI menu opened',
+  GENERATION_FAILED: 'Tekomi: Generation failed',
+  AI_ASSISTED_MESSAGE_SENT: 'Tekomi: AI-assisted message sent',
 
   // Rewrite events (with operation attribute in payload)
-  REWRITE_USED: 'Captain: Rewrite used',
-  REWRITE_APPLIED: 'Captain: Rewrite applied',
-  REWRITE_DISMISSED: 'Captain: Rewrite dismissed',
+  REWRITE_USED: 'Tekomi: Rewrite used',
+  REWRITE_APPLIED: 'Tekomi: Rewrite applied',
+  REWRITE_DISMISSED: 'Tekomi: Rewrite dismissed',
 
   // Summarize events
-  SUMMARIZE_USED: 'Captain: Summarize used',
-  SUMMARIZE_APPLIED: 'Captain: Summarize applied',
-  SUMMARIZE_DISMISSED: 'Captain: Summarize dismissed',
+  SUMMARIZE_USED: 'Tekomi: Summarize used',
+  SUMMARIZE_APPLIED: 'Tekomi: Summarize applied',
+  SUMMARIZE_DISMISSED: 'Tekomi: Summarize dismissed',
 
   // Reply suggestion events
-  REPLY_SUGGESTION_USED: 'Captain: Reply suggestion used',
-  REPLY_SUGGESTION_APPLIED: 'Captain: Reply suggestion applied',
-  REPLY_SUGGESTION_DISMISSED: 'Captain: Reply suggestion dismissed',
+  REPLY_SUGGESTION_USED: 'Tekomi: Reply suggestion used',
+  REPLY_SUGGESTION_APPLIED: 'Tekomi: Reply suggestion applied',
+  REPLY_SUGGESTION_DISMISSED: 'Tekomi: Reply suggestion dismissed',
 
   // Follow-up events
-  FOLLOW_UP_SENT: 'Captain: Follow-up sent',
+  FOLLOW_UP_SENT: 'Tekomi: Follow-up sent',
 
   // Label suggestions
-  LABEL_SUGGESTION_APPLIED: 'Captain: Label suggestion applied',
-  LABEL_SUGGESTION_DISMISSED: 'Captain: Label suggestion dismissed',
+  LABEL_SUGGESTION_APPLIED: 'Tekomi: Label suggestion applied',
+  LABEL_SUGGESTION_DISMISSED: 'Tekomi: Label suggestion dismissed',
 });
 
 export const COPILOT_EVENTS = Object.freeze({
   SEND_SUGGESTED: 'Copilot: Send suggested message',
   SEND_MESSAGE: 'Copilot: Sent a message',
-  USE_CAPTAIN_RESPONSE: 'Copilot: Used captain response',
+  USE_TEKOMI_RESPONSE: 'Copilot: Used tekomi response',
 });
 
 export const SNOOZE_EVENTS = Object.freeze({

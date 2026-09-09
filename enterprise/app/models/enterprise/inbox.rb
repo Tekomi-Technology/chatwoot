@@ -9,17 +9,17 @@ module Enterprise::Inbox
   end
 
   def active_bot?
-    super || captain_active?
+    super || tekomi_active?
   end
 
-  def captain_active?
-    captain_assistant.present? && more_responses?
+  def tekomi_active?
+    tekomi_assistant.present? && more_responses?
   end
 
   private
 
   def more_responses?
-    account.usage_limits[:captain][:responses][:current_available].positive?
+    account.usage_limits[:tekomi][:responses][:current_available].positive?
   end
 
   def get_agent_ids_over_assignment_limit(limit)

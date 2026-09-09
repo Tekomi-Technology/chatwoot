@@ -75,7 +75,7 @@ class Integrations::Hook < ApplicationRecord
   end
 
   def process_event(_event)
-    # OpenAI integration migrated to Captain::EditorService
+    # OpenAI integration migrated to Tekomi::EditorService
     # Other integrations (slack, dialogflow, etc.) handled via HookJob
     { error: 'No processor found' }
   end

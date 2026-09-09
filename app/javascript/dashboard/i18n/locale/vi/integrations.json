@@ -22,7 +22,7 @@
     "LOADING": "Đang tải danh sách tích hợp",
     "SEARCH_PLACEHOLDER": "Tìm tích hợp...",
     "NO_RESULTS": "Không tìm thấy tích hợp nào phù hợp",
-    "CAPTAIN": {
+    "TEKOMI": {
       "DISABLED": "Tekomi AI chưa được bật cho tài khoản của bạn.",
       "CLICK_HERE_TO_CONFIGURE": "Bấm vào đây để cấu hình",
       "LOADING_CONSOLE": "Đang tải Bảng điều khiển Tekomi AI...",
@@ -396,7 +396,7 @@
       }
     }
   },
-  "CAPTAIN": {
+  "TEKOMI": {
     "NAME": "Tekomi AI",
     "HEADER_KNOW_MORE": "Tìm hiểu thêm",
     "OVERVIEW": {

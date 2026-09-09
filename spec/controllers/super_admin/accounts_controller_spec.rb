@@ -27,20 +27,20 @@ RSpec.describe 'Super Admin accounts API', type: :request do
 
   describe 'GET /super_admin/accounts/{account_id}' do
     context 'when it is an authenticated user' do
-      it 'shows effective Captain model routing', if: ChatwootApp.enterprise? do
-        account.update!(captain_models: { 'editor' => 'gpt-4.1', 'conversation_completion' => 'gpt-5.2' })
+      it 'shows effective Tekomi model routing', if: ChatwootApp.enterprise? do
+        account.update!(tekomi_models: { 'editor' => 'gpt-4.1', 'conversation_completion' => 'gpt-5.2' })
         sign_in(super_admin, scope: :super_admin)
 
         get "/super_admin/accounts/#{account.id}"
         document = Nokogiri::HTML(response.body)
         summaries = document.css('details summary').map { |summary| summary.text.squish }
-        routing_panel = document.at_css('#captain_models').parent.at_css('details')
+        routing_panel = document.at_css('#tekomi_models').parent.at_css('details')
         completion_card = routing_panel.css('.rounded-md').find { |card| card.text.include?('conversation_completion') }
 
         expect(response).to have_http_status(:success)
-        expect(document.at_css('#captain_models').text.squish).to eq('Captain models')
+        expect(document.at_css('#tekomi_models').text.squish).to eq('Tekomi models')
         expect(summaries).to include('View model routing')
-        expect(summaries).not_to include('All features', 'Captain models')
+        expect(summaries).not_to include('All features', 'Tekomi models')
         expect(routing_panel.text.squish).to include('Customer features', 'Internal features')
         expect(completion_card.text.squish).to include('Inactive conversation completion evaluator', 'GPT-5.2', 'Account override')
         expect(response.body).to include('Editor', 'OpenAI', 'openai', 'gpt-4.1', 'Label suggestion', 'Default')
@@ -48,12 +48,12 @@ RSpec.describe 'Super Admin accounts API', type: :request do
 
       it 'shows the installation model for internal routing on self-hosted Enterprise', if: ChatwootApp.enterprise? do
         allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-        InstallationConfig.find_or_initialize_by(name: 'CAPTAIN_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
+        InstallationConfig.find_or_initialize_by(name: 'TEKOMI_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
         sign_in(super_admin, scope: :super_admin)
 
         get "/super_admin/accounts/#{account.id}"
         document = Nokogiri::HTML(response.body)
-        routing_panel = document.at_css('#captain_models').parent.at_css('details')
+        routing_panel = document.at_css('#tekomi_models').parent.at_css('details')
         completion_card = routing_panel.css('.rounded-md').find { |card| card.text.include?('conversation_completion') }
 
         expect(response).to have_http_status(:success)
@@ -68,25 +68,25 @@ RSpec.describe 'Super Admin accounts API', type: :request do
 
   describe 'GET /super_admin/accounts/{account_id}/edit' do
     context 'when it is an authenticated user' do
-      it 'renders separate Captain model selectors for customer and internal AI features', if: ChatwootApp.enterprise? do
+      it 'renders separate Tekomi model selectors for customer and internal AI features', if: ChatwootApp.enterprise? do
         allow(ChatwootApp).to receive(:self_hosted_enterprise?).and_return(true)
-        InstallationConfig.find_or_initialize_by(name: 'CAPTAIN_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
-        account.update!(captain_models: { 'editor' => 'gpt-4.1' })
+        InstallationConfig.find_or_initialize_by(name: 'TEKOMI_OPEN_AI_MODEL').update!(value: 'gpt-5.1')
+        account.update!(tekomi_models: { 'editor' => 'gpt-4.1' })
         sign_in(super_admin, scope: :super_admin)
 
         get "/super_admin/accounts/#{account.id}/edit"
 
         expect(response).to have_http_status(:success)
         Llm::Models.feature_keys.each do |feature_key|
-          expect(response.body).to include("account[captain_models][#{feature_key}]")
+          expect(response.body).to include("account[tekomi_models][#{feature_key}]")
         end
         Llm::Models.internal_feature_keys.each do |feature_key|
-          expect(response.body).to include("account[captain_models][#{feature_key}]")
+          expect(response.body).to include("account[tekomi_models][#{feature_key}]")
         end
 
         document = Nokogiri::HTML(response.body)
-        editor_select = document.at_css('select[name="account[captain_models][editor]"]')
-        completion_select = document.at_css('select[name="account[captain_models][conversation_completion]"]')
+        editor_select = document.at_css('select[name="account[tekomi_models][editor]"]')
+        completion_select = document.at_css('select[name="account[tekomi_models][conversation_completion]"]')
         default_model_id = Llm::Models.default_model_for('editor')
         default_model = Llm::Models.model_config(default_model_id)['display_name']
 
@@ -96,15 +96,15 @@ RSpec.describe 'Super Admin accounts API', type: :request do
         expect(completion_select.css('option').pluck('value')).to eq([''] + Llm::Models.models_for('conversation_completion'))
       end
 
-      it 'shows the Captain V2 assistant default in the model selector', if: ChatwootApp.enterprise? do
-        account.enable_features!('captain_integration_v2')
+      it 'shows the Tekomi V2 assistant default in the model selector', if: ChatwootApp.enterprise? do
+        account.enable_features!('tekomi_integration_v2')
         sign_in(super_admin, scope: :super_admin)
 
         get "/super_admin/accounts/#{account.id}/edit"
 
         document = Nokogiri::HTML(response.body)
-        assistant_select = document.at_css('select[name="account[captain_models][assistant]"]')
-        default_model_id = Llm::FeatureRouter::CAPTAIN_V2_ASSISTANT_MODEL
+        assistant_select = document.at_css('select[name="account[tekomi_models][assistant]"]')
+        default_model_id = Llm::FeatureRouter::TEKOMI_V2_ASSISTANT_MODEL
         default_model = Llm::Models.model_config(default_model_id)['display_name']
 
         expect(response).to have_http_status(:success)
@@ -115,9 +115,9 @@ RSpec.describe 'Super Admin accounts API', type: :request do
 
   describe 'PATCH /super_admin/accounts/{account_id}' do
     context 'when it is an authenticated user' do
-      it 'updates Captain model overrides without changing unrelated settings' do
+      it 'updates Tekomi model overrides without changing unrelated settings' do
         account.update!(
-          captain_models: { 'editor' => 'gpt-4.1' },
+          tekomi_models: { 'editor' => 'gpt-4.1' },
           keep_pending_on_bot_failure: true
         )
         sign_in(super_admin, scope: :super_admin)
@@ -128,7 +128,7 @@ RSpec.describe 'Super Admin accounts API', type: :request do
                   name: account.name,
                   locale: account.locale,
                   status: account.status,
-                  captain_models: {
+                  tekomi_models: {
                     editor: '',
                     assistant: 'gpt-5.2',
                     conversation_completion: 'gpt-5.2'
@@ -137,16 +137,16 @@ RSpec.describe 'Super Admin accounts API', type: :request do
               }
 
         expect(response).to have_http_status(:redirect)
-        expect(account.reload.captain_models).to eq(
+        expect(account.reload.tekomi_models).to eq(
           'assistant' => 'gpt-5.2',
           'conversation_completion' => 'gpt-5.2'
         )
         expect(account.keep_pending_on_bot_failure).to be true
       end
 
-      it 'rejects invalid Captain model overrides' do
+      it 'rejects invalid Tekomi model overrides' do
         sign_in(super_admin, scope: :super_admin)
-        existing_captain_models = account.captain_models
+        existing_tekomi_models = account.tekomi_models
 
         patch "/super_admin/accounts/#{account.id}",
               params: {
@@ -154,7 +154,7 @@ RSpec.describe 'Super Admin accounts API', type: :request do
                   name: account.name,
                   locale: account.locale,
                   status: account.status,
-                  captain_models: {
+                  tekomi_models: {
                     label_suggestion: 'gpt-5.1'
                   }
                 }
@@ -162,7 +162,7 @@ RSpec.describe 'Super Admin accounts API', type: :request do
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.body).to include('not a valid model for label_suggestion')
-        expect(account.reload.captain_models).to eq(existing_captain_models)
+        expect(account.reload.tekomi_models).to eq(existing_tekomi_models)
       end
     end
   end

@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n';
 import { useAlert } from 'dashboard/composables';
 import { useStore, useMapGetter } from 'dashboard/composables/store';
 import { useInbox } from 'dashboard/composables/useInbox';
-import { useCaptain } from 'dashboard/composables/useCaptain';
+import { useTekomi } from 'dashboard/composables/useTekomi';
 import { CSAT_DISPLAY_TYPES } from 'shared/constants/messages';
 
 import Icon from 'dashboard/components-next/icon/Icon.vue';
@@ -27,7 +27,7 @@ const props = defineProps({
 const { t } = useI18n();
 const store = useStore();
 const labels = useMapGetter('labels/getLabels');
-const { captainEnabled } = useCaptain();
+const { tekomiEnabled } = useTekomi();
 
 const { isAWhatsAppChannel, isATwilioWhatsAppChannel } = useInbox(
   props.inbox?.id
@@ -94,7 +94,7 @@ const shouldShowTemplateStatus = computed(
   () => templateStatus.value && !templateLoading.value
 );
 const showUtilityAnalyzer = computed(
-  () => isAnyWhatsAppChannel.value && captainEnabled.value
+  () => isAnyWhatsAppChannel.value && tekomiEnabled.value
 );
 
 const templateApprovalStatus = computed(() => {

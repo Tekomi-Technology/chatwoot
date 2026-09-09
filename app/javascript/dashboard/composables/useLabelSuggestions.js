@@ -2,7 +2,7 @@ import { computed, onMounted } from 'vue';
 import { useMapGetter, useStore } from 'dashboard/composables/store';
 import { useAccount } from 'dashboard/composables/useAccount';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
-import TasksAPI from 'dashboard/api/captain/tasks';
+import TasksAPI from 'dashboard/api/tekomi/tasks';
 
 /**
  * Cleans and normalizes a list of labels.
@@ -25,8 +25,8 @@ export function useLabelSuggestions() {
   const currentChat = useMapGetter('getSelectedChat');
   const conversationId = computed(() => currentChat.value?.id);
 
-  const captainTasksEnabled = computed(() => {
-    return isCloudFeatureEnabled(FEATURE_FLAGS.CAPTAIN_TASKS);
+  const tekomiTasksEnabled = computed(() => {
+    return isCloudFeatureEnabled(FEATURE_FLAGS.TEKOMI_TASKS);
   });
 
   const aiIntegration = computed(
@@ -73,7 +73,7 @@ export function useLabelSuggestions() {
   });
 
   return {
-    captainTasksEnabled,
+    tekomiTasksEnabled,
     isLabelSuggestionFeatureEnabled,
     getLabelSuggestions,
   };

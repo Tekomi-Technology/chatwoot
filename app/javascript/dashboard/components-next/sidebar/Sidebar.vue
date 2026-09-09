@@ -50,7 +50,7 @@ const isCallsAvailable = computed(
   () => isOnChatwootCloud.value || isEnterprise
 );
 
-const SHOW_CAPTAIN_MENU = true;
+const SHOW_TEKOMI_MENU = true;
 const searchShortcut = useKbd([`$mod`, 'k']);
 const { t } = useI18n();
 
@@ -495,86 +495,86 @@ const menuItems = computed(() => {
         },
       ],
     },
-    ...(SHOW_CAPTAIN_MENU
+    ...(SHOW_TEKOMI_MENU
       ? [
           {
-            name: 'Captain',
-            icon: 'i-woot-captain',
-            label: t('SIDEBAR.CAPTAIN'),
-            activeOn: ['captain_assistants_create_index'],
+            name: 'Tekomi',
+            icon: 'i-woot-tekomi',
+            label: t('SIDEBAR.TEKOMI'),
+            activeOn: ['tekomi_assistants_create_index'],
             children: [
               {
                 name: 'Overview',
-                label: t('SIDEBAR.CAPTAIN_OVERVIEW'),
-                activeOn: ['captain_assistants_overview_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_overview_index',
+                label: t('SIDEBAR.TEKOMI_OVERVIEW'),
+                activeOn: ['tekomi_assistants_overview_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_overview_index',
                 }),
               },
               {
                 name: 'FAQs',
-                label: t('SIDEBAR.CAPTAIN_RESPONSES'),
+                label: t('SIDEBAR.TEKOMI_RESPONSES'),
                 activeOn: [
-                  'captain_assistants_responses_index',
-                  'captain_assistants_faq_suggestions',
+                  'tekomi_assistants_responses_index',
+                  'tekomi_assistants_faq_suggestions',
                 ],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_responses_index',
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_responses_index',
                 }),
               },
               {
                 name: 'Documents',
-                label: t('SIDEBAR.CAPTAIN_DOCUMENTS'),
-                activeOn: ['captain_assistants_documents_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_documents_index',
+                label: t('SIDEBAR.TEKOMI_DOCUMENTS'),
+                activeOn: ['tekomi_assistants_documents_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_documents_index',
                 }),
               },
               {
                 name: 'Scenarios',
-                label: t('SIDEBAR.CAPTAIN_SCENARIOS'),
-                activeOn: ['captain_assistants_scenarios_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_scenarios_index',
+                label: t('SIDEBAR.TEKOMI_SCENARIOS'),
+                activeOn: ['tekomi_assistants_scenarios_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_scenarios_index',
                 }),
               },
               {
                 name: 'Playground',
-                label: t('SIDEBAR.CAPTAIN_PLAYGROUND'),
-                activeOn: ['captain_assistants_playground_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_playground_index',
+                label: t('SIDEBAR.TEKOMI_PLAYGROUND'),
+                activeOn: ['tekomi_assistants_playground_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_playground_index',
                 }),
               },
               {
                 name: 'Inboxes',
-                label: t('SIDEBAR.CAPTAIN_INBOXES'),
-                activeOn: ['captain_assistants_inboxes_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_inboxes_index',
+                label: t('SIDEBAR.TEKOMI_INBOXES'),
+                activeOn: ['tekomi_assistants_inboxes_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_inboxes_index',
                 }),
               },
               {
                 name: 'Tools',
-                label: t('SIDEBAR.CAPTAIN_TOOLS'),
-                activeOn: ['captain_tools_index'],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_tools_index',
+                label: t('SIDEBAR.TEKOMI_TOOLS'),
+                activeOn: ['tekomi_tools_index'],
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_tools_index',
                 }),
               },
               {
                 name: 'Settings',
-                label: t('SIDEBAR.CAPTAIN_SETTINGS'),
+                label: t('SIDEBAR.TEKOMI_SETTINGS'),
                 activeOn: [
-                  'captain_assistants_settings_index',
-                  'captain_assistants_settings_system_index',
-                  'captain_assistants_settings_audience_index',
-                  'captain_assistants_settings_schedule_index',
-                  'captain_assistants_guidelines_index',
-                  'captain_assistants_guardrails_index',
+                  'tekomi_assistants_settings_index',
+                  'tekomi_assistants_settings_system_index',
+                  'tekomi_assistants_settings_audience_index',
+                  'tekomi_assistants_settings_schedule_index',
+                  'tekomi_assistants_guidelines_index',
+                  'tekomi_assistants_guardrails_index',
                 ],
-                to: accountScopedRoute('captain_assistants_index', {
-                  navigationPath: 'captain_assistants_settings_index',
+                to: accountScopedRoute('tekomi_assistants_index', {
+                  navigationPath: 'tekomi_assistants_settings_index',
                 }),
               },
             ],
@@ -797,10 +797,10 @@ const menuItems = computed(() => {
           to: accountScopedRoute('general_settings_index'),
         },
         // {
-        //   name: 'Settings Captain',
-        //   label: t('SIDEBAR.CAPTAIN_AI'),
-        //   icon: 'i-woot-captain',
-        //   to: accountScopedRoute('captain_settings_index'),
+        //   name: 'Settings Tekomi',
+        //   label: t('SIDEBAR.TEKOMI_AI'),
+        //   icon: 'i-woot-tekomi',
+        //   to: accountScopedRoute('tekomi_settings_index'),
         // },
         {
           name: 'Settings Agents',
@@ -965,11 +965,11 @@ const menuItems = computed(() => {
   // DEMO_HIDDEN_FEATURES.md at repo root for full context.
   // TO RESTORE: set DEMO_MODE to false (or delete this block).
   // ============================================================
-  const DEMO_MODE = true;
+  const DEMO_MODE = false;
   if (!DEMO_MODE) return items;
 
   const DEMO_HIDDEN_TOP_LEVEL = [
-    'Captain',
+    'Tekomi',
     'Calls',
     'Companies',
     'Reports',

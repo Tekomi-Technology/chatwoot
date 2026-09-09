@@ -1,8 +1,8 @@
 module Enterprise::AsyncDispatcher
   def listeners
     super + [
-      CaptainListener.instance,
-      Captain::ReportingEventListener.instance
+      TekomiListener.instance,
+      Tekomi::ReportingEventListener.instance
     ]
   end
 end

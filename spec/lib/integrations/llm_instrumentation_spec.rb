@@ -303,7 +303,7 @@ RSpec.describe Integrations::LlmInstrumentation do
           embedding_span = instance_double(OpenTelemetry::Trace::Span)
           embedding_instance = test_class.new
           embedding_params = {
-            span_name: 'llm.captain.embedding',
+            span_name: 'llm.tekomi.embedding',
             account_id: 123,
             feature_name: 'embedding',
             model: 'text-embedding-3-small',
@@ -314,7 +314,7 @@ RSpec.describe Integrations::LlmInstrumentation do
           allow(instance).to receive(:tracer).and_return(mock_tracer)
           allow(embedding_instance).to receive(:tracer).and_return(mock_tracer)
           allow(mock_tracer).to receive(:in_span).with('llm.test').and_yield(root_span)
-          allow(mock_tracer).to receive(:in_span).with('llm.captain.embedding').and_yield(embedding_span)
+          allow(mock_tracer).to receive(:in_span).with('llm.tekomi.embedding').and_yield(embedding_span)
 
           instance.instrument_agent_session(params) do
             embedding_instance.instrument_embedding_call(embedding_params) { [0.1, 0.2, 0.3] }

@@ -3,7 +3,7 @@ import ReportsAPI from 'dashboard/api/reports';
 
 // `fetcher` is any `({ ...request, page, signal }) => Promise` returning the
 // shared drilldown envelope (`{ data: { meta, payload } }`), so the same paging
-// and abort machinery backs both the reports and Captain assistant drilldowns.
+// and abort machinery backs both the reports and Tekomi assistant drilldowns.
 // The default is wrapped so `ReportsAPI` stays the receiver when invoked.
 export function useReportDrilldown(
   fetcher = params => ReportsAPI.getDrilldown(params)

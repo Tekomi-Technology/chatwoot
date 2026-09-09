@@ -7,8 +7,8 @@ module Enterprise::SuperAdmin::AppConfigsController
       @allowed_configs = custom_branding_options
     when 'internal'
       @allowed_configs = internal_config_options
-    when 'captain'
-      @allowed_configs = captain_config_options
+    when 'tekomi'
+      @allowed_configs = tekomi_config_options
     when 'saml'
       @allowed_configs = saml_config_options
     else
@@ -33,18 +33,18 @@ module Enterprise::SuperAdmin::AppConfigsController
 
   def internal_config_options
     %w[CLEARBIT_API_KEY CONTEXT_DEV_API_KEY DASHBOARD_SCRIPTS
-       INACTIVE_WHATSAPP_NUMBERS SKIP_INCOMING_BCC_PROCESSING CAPTAIN_CLOUD_PLAN_LIMITS
+       INACTIVE_WHATSAPP_NUMBERS SKIP_INCOMING_BCC_PROCESSING TEKOMI_CLOUD_PLAN_LIMITS
        CHATWOOT_INSTANCE_ADMIN_EMAIL OG_IMAGE_CDN_URL OG_IMAGE_CLIENT_REF CLOUDFLARE_API_KEY
        CLOUDFLARE_ZONE_ID BLOCKED_EMAIL_DOMAINS OTEL_PROVIDER LANGFUSE_PUBLIC_KEY LANGFUSE_SECRET_KEY LANGFUSE_BASE_URL]
   end
 
-  def captain_config_options
+  def tekomi_config_options
     %w[
-      CAPTAIN_OPEN_AI_API_KEY
-      CAPTAIN_OPEN_AI_MODEL
-      CAPTAIN_OPEN_AI_ENDPOINT
-      CAPTAIN_EMBEDDING_MODEL
-      CAPTAIN_FIRECRAWL_API_KEY
+      TEKOMI_OPEN_AI_API_KEY
+      TEKOMI_OPEN_AI_MODEL
+      TEKOMI_OPEN_AI_ENDPOINT
+      TEKOMI_EMBEDDING_MODEL
+      TEKOMI_FIRECRAWL_API_KEY
     ]
   end
 

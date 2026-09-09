@@ -154,46 +154,46 @@
   locked: false
   type: secret
 
-- name: CAPTAIN_OPEN_AI_API_KEY
+- name: TEKOMI_OPEN_AI_API_KEY
   display_title: 'OpenAI API Key'
   description: 'The API key used to authenticate requests to OpenAI services for Tekomi AI.'
   locked: false
   type: secret
-- name: CAPTAIN_OPEN_AI_MODEL
+- name: TEKOMI_OPEN_AI_MODEL
   display_title: 'OpenAI Model'
   description: 'The OpenAI model configured for use in Tekomi AI. Default: gpt-4.1-mini'
   locked: false
-- name: CAPTAIN_OPEN_AI_ENDPOINT
+- name: TEKOMI_OPEN_AI_ENDPOINT
   display_title: 'OpenAI API Endpoint (optional)'
   description: 'The OpenAI endpoint configured for use in Tekomi AI. Default: https://api.openai.com/'
   locked: false
-- name: CAPTAIN_EMBEDDING_MODEL
+- name: TEKOMI_EMBEDDING_MODEL
   display_title: 'Embedding Model (optional)'
   description: 'The embedding model configured for use in Tekomi AI. Default: text-embedding-3-small'
   locked: false
-- name: CAPTAIN_FIRECRAWL_API_KEY
+- name: TEKOMI_FIRECRAWL_API_KEY
   display_title: 'FireCrawl API Key (optional)'
   description: 'The FireCrawl API key for the Tekomi AI service'
   locked: false
   type: secret
-- name: CAPTAIN_CLOUD_PLAN_LIMITS
+- name: TEKOMI_CLOUD_PLAN_LIMITS
   display_title: 'Tekomi AI Cloud Plan Limits'
   description: 'The limits for the Tekomi AI service for different plans'
   value:
   type: code
-- name: CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS
+- name: TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS
   display_title: 'Tekomi AI Document Auto Sync Intervals'
   description: 'JSON map of plan-wise Tekomi AI document auto-sync intervals in hours. Use null to disable auto-sync for a plan.'
   value:
   locked: false
   type: code
-- name: CAPTAIN_DOCUMENT_AUTO_SYNC_PER_ACCOUNT_BATCH_LIMIT
+- name: TEKOMI_DOCUMENT_AUTO_SYNC_PER_ACCOUNT_BATCH_LIMIT
   display_title: 'Tekomi AI Document Auto Sync Per Account Batch Limit'
   description: 'Maximum syncable Tekomi AI documents to enqueue per account in one scheduler run. Defaults to 50.'
   value: 50
   locked: false
   type: number
-- name: CAPTAIN_DOCUMENT_AUTO_SYNC_GLOBAL_BATCH_LIMIT
+- name: TEKOMI_DOCUMENT_AUTO_SYNC_GLOBAL_BATCH_LIMIT
   display_title: 'Tekomi AI Document Auto Sync Global Batch Limit'
   description: 'Maximum syncable Tekomi AI documents to enqueue globally in one scheduler run. Defaults to 1000.'
   value: 1000
@@ -221,7 +221,7 @@
   display_title: 'Cloud Plans'
   value:
   description: 'Config to store stripe plans for cloud'
-- name: CAPTAIN_TOPUP_OPTIONS
+- name: TEKOMI_TOPUP_OPTIONS
   display_title: 'Tekomi AI Topup Options'
   value: {}
   description: 'Currency-keyed AI credit top-up packages, e.g. {"usd":[{"credits":1000,"amount":20.0}],"brl":[{"credits":1000,"amount":100.0}]}'

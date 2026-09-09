@@ -9,7 +9,7 @@ describe Enterprise::Billing::TopupFulfillmentService do
   before do
     account.update!(
       custom_attributes: { stripe_customer_id: stripe_customer_id },
-      limits: { 'captain_responses' => 1000 }
+      limits: { 'tekomi_responses' => 1000 }
     )
     allow(Stripe::Billing::CreditGrant).to receive(:create)
   end
@@ -18,7 +18,7 @@ describe Enterprise::Billing::TopupFulfillmentService do
     it 'adds credits to account limits' do
       service.fulfill(credits: 1000, amount_cents: 2000, currency: 'usd')
 
-      expect(account.reload.limits['captain_responses']).to eq(2000)
+      expect(account.reload.limits['tekomi_responses']).to eq(2000)
     end
 
     it 'creates a Stripe credit grant' do

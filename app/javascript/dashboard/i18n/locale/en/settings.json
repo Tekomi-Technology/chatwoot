@@ -326,17 +326,17 @@
     "ACTIVE": "Active",
     "COMPANIES": "Companies",
     "ALL_COMPANIES": "All Companies",
-    "CAPTAIN": "Tekomi AI",
+    "TEKOMI": "Tekomi AI",
     "CALLS": "Calls",
-    "CAPTAIN_ASSISTANTS": "Assistants",
-    "CAPTAIN_OVERVIEW": "Overview",
-    "CAPTAIN_DOCUMENTS": "Documents",
-    "CAPTAIN_RESPONSES": "FAQs",
-    "CAPTAIN_TOOLS": "Tools",
-    "CAPTAIN_SCENARIOS": "Scenarios",
-    "CAPTAIN_PLAYGROUND": "Playground",
-    "CAPTAIN_INBOXES": "Inboxes",
-    "CAPTAIN_SETTINGS": "Settings",
+    "TEKOMI_ASSISTANTS": "Assistants",
+    "TEKOMI_OVERVIEW": "Overview",
+    "TEKOMI_DOCUMENTS": "Documents",
+    "TEKOMI_RESPONSES": "FAQs",
+    "TEKOMI_TOOLS": "Tools",
+    "TEKOMI_SCENARIOS": "Scenarios",
+    "TEKOMI_PLAYGROUND": "Playground",
+    "TEKOMI_INBOXES": "Inboxes",
+    "TEKOMI_SETTINGS": "Settings",
     "HOME": "Home",
     "AGENTS": "Agents",
     "AGENT_BOTS": "Bots",
@@ -416,7 +416,7 @@
     },
     "DOCS": "Read docs",
     "SECURITY": "Security",
-    "CAPTAIN_AI": "Tekomi AI",
+    "TEKOMI_AI": "Tekomi AI",
     "CONVERSATION_WORKFLOW": "Conversation Workflow"
   },
   "DATA_IMPORTS": {
@@ -530,7 +530,7 @@
       "IMPORT_FAILED": "Could not start the import."
     }
   },
-  "CAPTAIN_SETTINGS": {
+  "TEKOMI_SETTINGS": {
     "TITLE": "Tekomi AI Settings",
     "DESCRIPTION": "Configure your AI models and features for Tekomi AI. Tekomi AI follows a credit based billing, you will be charged credits for every action Tekomi AI takes based on the model selected.",
     "LOADING": "Loading Tekomi AI configuration...",
@@ -606,7 +606,7 @@
       "DESCRIPTION": "View your previous invoices, edit your billing details, or cancel your subscription.",
       "BUTTON_TXT": "Go to the billing portal"
     },
-    "CAPTAIN": {
+    "TEKOMI": {
       "TITLE": "Tekomi AI",
       "DESCRIPTION": "Manage usage and credits for Tekomi AI.",
       "BUTTON_TXT": "Buy more credits",

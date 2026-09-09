@@ -1,5 +1,5 @@
 module Enterprise::Conversation
-  attr_accessor :captain_activity_reason, :captain_activity_reason_type
+  attr_accessor :tekomi_activity_reason, :tekomi_activity_reason_type
 
   def list_of_keys
     super + %w[sla_policy_id]
@@ -11,16 +11,16 @@ module Enterprise::Conversation
     super || call_attributes_changed?
   end
 
-  def with_captain_activity_context(reason:, reason_type:)
-    previous_reason = captain_activity_reason
-    previous_reason_type = captain_activity_reason_type
+  def with_tekomi_activity_context(reason:, reason_type:)
+    previous_reason = tekomi_activity_reason
+    previous_reason_type = tekomi_activity_reason_type
 
-    self.captain_activity_reason = reason
-    self.captain_activity_reason_type = reason_type
+    self.tekomi_activity_reason = reason
+    self.tekomi_activity_reason_type = reason_type
     yield
   ensure
-    self.captain_activity_reason = previous_reason
-    self.captain_activity_reason_type = previous_reason_type
+    self.tekomi_activity_reason = previous_reason
+    self.tekomi_activity_reason_type = previous_reason_type
   end
 
   private
@@ -30,7 +30,7 @@ module Enterprise::Conversation
     return unless pending?
     return if inbox.external_bot_active?
 
-    assistant = inbox.captain_assistant
+    assistant = inbox.tekomi_assistant
     self.status = :open if assistant.present? && !assistant.engages?(contact, self)
   end
 

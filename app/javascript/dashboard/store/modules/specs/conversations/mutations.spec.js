@@ -555,8 +555,8 @@ describe('#mutations', () => {
     });
   });
 
-  describe('#SET_INBOX_CAPTAIN_ASSISTANT', () => {
-    it('set inbox captain assistant', () => {
+  describe('#SET_INBOX_TEKOMI_ASSISTANT', () => {
+    it('set inbox tekomi assistant', () => {
       const state = { copilotAssistant: {} };
       const data = {
         assistant: {
@@ -565,7 +565,7 @@ describe('#mutations', () => {
           description: 'Assistant description',
         },
       };
-      mutations[types.SET_INBOX_CAPTAIN_ASSISTANT](state, data);
+      mutations[types.SET_INBOX_TEKOMI_ASSISTANT](state, data);
       expect(state.copilotAssistant).toEqual(data.assistant);
     });
   });

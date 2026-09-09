@@ -1,17 +1,17 @@
 module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleLength
-  CAPTAIN_RESPONSES = 'captain_responses'.freeze
-  CAPTAIN_DOCUMENTS = 'captain_documents'.freeze
-  CAPTAIN_RESPONSES_USAGE = 'captain_responses_usage'.freeze
-  CAPTAIN_DOCUMENTS_USAGE = 'captain_documents_usage'.freeze
+  TEKOMI_RESPONSES = 'tekomi_responses'.freeze
+  TEKOMI_DOCUMENTS = 'tekomi_documents'.freeze
+  TEKOMI_RESPONSES_USAGE = 'tekomi_responses_usage'.freeze
+  TEKOMI_DOCUMENTS_USAGE = 'tekomi_documents_usage'.freeze
 
   def usage_limits
     unless ChatwootApp.chatwoot_cloud?
       return {
         agents: ChatwootApp.max_limit,
         inboxes: ChatwootApp.max_limit,
-        captain: {
-          documents: unrestricted_captain_limit,
-          responses: unrestricted_captain_limit
+        tekomi: {
+          documents: unrestricted_tekomi_limit,
+          responses: unrestricted_tekomi_limit
         }
       }
     end
@@ -19,9 +19,9 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
     {
       agents: agent_limits.to_i,
       inboxes: get_limits(:inboxes).to_i,
-      captain: {
-        documents: get_captain_limits(:documents),
-        responses: get_captain_limits(:responses)
+      tekomi: {
+        documents: get_tekomi_limits(:documents),
+        responses: get_tekomi_limits(:responses)
       }
     }
   end
@@ -29,15 +29,15 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
   def increment_response_usage
     return unless ChatwootApp.chatwoot_cloud?
 
-    increment_custom_attribute(CAPTAIN_RESPONSES_USAGE)
+    increment_custom_attribute(TEKOMI_RESPONSES_USAGE)
   end
 
   def reset_response_usage
-    update_custom_attribute(CAPTAIN_RESPONSES_USAGE, 0)
+    update_custom_attribute(TEKOMI_RESPONSES_USAGE, 0)
   end
 
   def update_document_usage
-    update_custom_attribute(CAPTAIN_DOCUMENTS_USAGE, captain_documents.count)
+    update_custom_attribute(TEKOMI_DOCUMENTS_USAGE, tekomi_documents.count)
   end
 
   def email_transcript_enabled?
@@ -60,18 +60,18 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
     plan_features[plan_name]
   end
 
-  def captain_monthly_limit
-    default_limits = default_captain_limits
+  def tekomi_monthly_limit
+    default_limits = default_tekomi_limits
 
     {
-      documents: self[:limits][CAPTAIN_DOCUMENTS] || default_limits['documents'],
-      responses: self[:limits][CAPTAIN_RESPONSES] || default_limits['responses']
+      documents: self[:limits][TEKOMI_DOCUMENTS] || default_limits['documents'],
+      responses: self[:limits][TEKOMI_RESPONSES] || default_limits['responses']
     }.with_indifferent_access
   end
 
   private
 
-  def unrestricted_captain_limit
+  def unrestricted_tekomi_limit
     {
       total_count: ChatwootApp.max_limit,
       current_available: ChatwootApp.max_limit,
@@ -79,13 +79,13 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
     }
   end
 
-  def get_captain_limits(type)
-    total_count = captain_monthly_limit[type.to_s].to_i
+  def get_tekomi_limits(type)
+    total_count = tekomi_monthly_limit[type.to_s].to_i
 
     consumed = if type == :documents
-                 custom_attributes[CAPTAIN_DOCUMENTS_USAGE].to_i || 0
+                 custom_attributes[TEKOMI_DOCUMENTS_USAGE].to_i || 0
                else
-                 custom_attributes[CAPTAIN_RESPONSES_USAGE].to_i || 0
+                 custom_attributes[TEKOMI_RESPONSES_USAGE].to_i || 0
                end
 
     consumed = 0 if consumed.negative?
@@ -120,10 +120,10 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
     default_plan.present? && plan_name&.downcase == default_plan['name']&.downcase
   end
 
-  def default_captain_limits
+  def default_tekomi_limits
     max_limits = { documents: ChatwootApp.max_limit, responses: ChatwootApp.max_limit }.with_indifferent_access
     zero_limits = { documents: 0, responses: 0 }.with_indifferent_access
-    plan_quota = InstallationConfig.find_by(name: 'CAPTAIN_CLOUD_PLAN_LIMITS')&.value
+    plan_quota = InstallationConfig.find_by(name: 'TEKOMI_CLOUD_PLAN_LIMITS')&.value
 
     # If there are no limits configured, we allow max usage
     return max_limits if plan_quota.blank?
@@ -191,8 +191,8 @@ module Enterprise::Account::PlanUsageAndLimits # rubocop:disable Metrics/ModuleL
       'properties' => {
         'inboxes' => { 'type': 'number' },
         'agents' => { 'type': 'number' },
-        'captain_responses' => { 'type': 'number' },
-        'captain_documents' => { 'type': 'number' },
+        'tekomi_responses' => { 'type': 'number' },
+        'tekomi_documents' => { 'type': 'number' },
         'emails' => { 'type': 'number' }
       },
       'required' => [],

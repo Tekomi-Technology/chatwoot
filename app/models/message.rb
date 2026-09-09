@@ -229,7 +229,7 @@ class Message < ApplicationRecord
     return false unless human_response? && !private?
     return false if conversation.first_reply_created_at.present?
     return false if conversation.messages.outgoing
-                                .where.not(sender_type: ['AgentBot', 'Captain::Assistant'])
+                                .where.not(sender_type: ['AgentBot', 'Tekomi::Assistant'])
                                 .where.not(private: true)
                                 .where("(additional_attributes->'campaign_id') is null").count > 1
 
@@ -375,8 +375,8 @@ class Message < ApplicationRecord
   end
 
   def bot_response?
-    # Check if this is a response from AgentBot or Captain::Assistant
-    outgoing? && sender_type.in?(['AgentBot', 'Captain::Assistant'])
+    # Check if this is a response from AgentBot or Tekomi::Assistant
+    outgoing? && sender_type.in?(['AgentBot', 'Tekomi::Assistant'])
   end
 
   def dispatch_create_events
@@ -414,14 +414,14 @@ class Message < ApplicationRecord
   end
 
   def mark_pending_conversation_as_open_for_human_response
-    return unless captain_pending_conversation?
+    return unless tekomi_pending_conversation?
     return unless human_response?
     return if private?
 
     conversation.open!
   end
 
-  def captain_pending_conversation?
+  def tekomi_pending_conversation?
     false
   end
 

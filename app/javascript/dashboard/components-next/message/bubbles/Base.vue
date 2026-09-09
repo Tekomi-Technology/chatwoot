@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 
 import MessageMeta from '../MessageMeta.vue';
-import CaptainGenerationDetails from '../CaptainGenerationDetails.vue';
+import TekomiGenerationDetails from '../TekomiGenerationDetails.vue';
 
 import { emitter } from 'shared/helpers/mitt';
 import { useMessageContext } from '../provider.js';
@@ -27,9 +27,9 @@ const {
 } = useMessageContext();
 const { t } = useI18n();
 
-const isCaptainMessage = computed(
+const isTekomiMessage = computed(
   () =>
-    (sender.value?.type ?? senderType.value) === SENDER_TYPES.CAPTAIN_ASSISTANT
+    (sender.value?.type ?? senderType.value) === SENDER_TYPES.TEKOMI_ASSISTANT
 );
 
 const metaColorClass = computed(() => {
@@ -142,15 +142,15 @@ const replyToPreview = computed(() => {
     </div>
     <slot />
     <template v-if="shouldShowMeta">
-      <CaptainGenerationDetails
-        v-if="isCaptainMessage"
+      <TekomiGenerationDetails
+        v-if="isTekomiMessage"
         :message-id="id"
         class="mt-2"
       >
         <template #meta>
           <MessageMeta :class="[emailMetaClass, metaColorClass]" />
         </template>
-      </CaptainGenerationDetails>
+      </TekomiGenerationDetails>
       <MessageMeta
         v-else
         :class="[flexOrientationClass, emailMetaClass, metaColorClass]"

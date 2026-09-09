@@ -394,9 +394,9 @@ RSpec.describe Api::V1::Accounts::InboxCsatTemplatesController, type: :request d
       }
     end
 
-    context 'when captain_integration feature is disabled' do
+    context 'when tekomi_integration feature is disabled' do
       before do
-        account.disable_features!('captain_integration')
+        account.disable_features!('tekomi_integration')
       end
 
       it 'returns forbidden' do
@@ -410,9 +410,9 @@ RSpec.describe Api::V1::Accounts::InboxCsatTemplatesController, type: :request d
       end
     end
 
-    context 'when captain_integration feature is enabled' do
+    context 'when tekomi_integration feature is enabled' do
       before do
-        account.enable_features!('captain_integration')
+        account.enable_features!('tekomi_integration')
         account.reload
       end
 

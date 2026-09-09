@@ -1,17 +1,17 @@
 module Enterprise::Account
-  # Transitional marker for the Captain V1 to V2 rollout. Set this to false only
+  # Transitional marker for the Tekomi V1 to V2 rollout. Set this to false only
   # for accounts that must remain on V1 during paid plan reconciliation.
   # Remove once every account is migrated to V2.
-  CAPTAIN_V2_DEFAULT_ELIGIBLE = 'captain_v2_default_eligible'.freeze
+  TEKOMI_V2_DEFAULT_ELIGIBLE = 'tekomi_v2_default_eligible'.freeze
 
   class << self
-    def captain_document_sync_intervals
-      parse_captain_document_sync_intervals(InstallationConfig.find_by(name: 'CAPTAIN_DOCUMENT_AUTO_SYNC_INTERVALS')&.value)
+    def tekomi_document_sync_intervals
+      parse_tekomi_document_sync_intervals(InstallationConfig.find_by(name: 'TEKOMI_DOCUMENT_AUTO_SYNC_INTERVALS')&.value)
     end
 
     private
 
-    def parse_captain_document_sync_intervals(configured_intervals)
+    def parse_tekomi_document_sync_intervals(configured_intervals)
       return {} if configured_intervals.blank?
 
       parsed_intervals = configured_intervals.is_a?(String) ? JSON.parse(configured_intervals) : configured_intervals
@@ -58,7 +58,7 @@ module Enterprise::Account
     custom_attributes.delete('marked_for_deletion_at') && custom_attributes.delete('marked_for_deletion_reason') && save
   end
 
-  def captain_document_sync_interval(sync_intervals = Enterprise::Account.captain_document_sync_intervals)
+  def tekomi_document_sync_interval(sync_intervals = Enterprise::Account.tekomi_document_sync_intervals)
     plan = custom_attributes['plan_name']
     plan = 'enterprise' if plan.blank? && ChatwootApp.self_hosted_enterprise?
     return nil if plan.blank?
@@ -108,9 +108,9 @@ module Enterprise::Account
   def enable_default_features
     super
     if ChatwootApp.self_hosted_enterprise?
-      enable_features('captain_integration', 'captain_integration_v2')
+      enable_features('tekomi_integration', 'tekomi_integration_v2')
     elsif ChatwootApp.chatwoot_cloud?
-      internal_attributes[CAPTAIN_V2_DEFAULT_ELIGIBLE] = true
+      internal_attributes[TEKOMI_V2_DEFAULT_ELIGIBLE] = true
     end
   end
 

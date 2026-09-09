@@ -14,7 +14,7 @@ describe('#getters', () => {
   it('keeps agent bots scoped to bot-inclusive lists', () => {
     const agentBot = {
       id: 1,
-      name: 'Captain',
+      name: 'Tekomi',
       assignee_type: 'AgentBot',
     };
     const state = {
