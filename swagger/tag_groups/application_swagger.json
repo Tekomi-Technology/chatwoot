@@ -8026,7 +8026,7 @@
             "userApiKey": []
           }
         ],
-        "description": "Get the count of outgoing messages grouped by a specified entity (agent, team, inbox, or label).\nWhen grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are excluded.\n\n**Note:** This API endpoint is available only in Chatwoot version 4.11.0 and above.\n",
+        "description": "Get the count of outgoing messages grouped by a specified entity (agent, team, inbox, or label).\nWhen grouped by agent, messages sent by bots (AgentBot, Tekomi::Assistant) are excluded.\n\n**Note:** This API endpoint is available only in Chatwoot version 4.11.0 and above.\n",
         "parameters": [
           {
             "in": "query",
@@ -8904,7 +8904,7 @@
               "Contact",
               "User",
               "AgentBot",
-              "Captain::Assistant",
+              "Tekomi::Assistant",
               null
             ],
             "description": "The type of the sender"
@@ -10348,7 +10348,7 @@
           },
           "avatar_url": {
             "type": "string",
-            "description": "Avatar URL of the sender. Present for senders of type user, agent_bot, and captain_assistant. Not present for contact senders (use thumbnail instead)."
+            "description": "Avatar URL of the sender. Present for senders of type user, agent_bot, and tekomi_assistant. Not present for contact senders (use thumbnail instead)."
           },
           "thumbnail": {
             "type": "string",
@@ -10360,7 +10360,7 @@
               "contact",
               "user",
               "agent_bot",
-              "captain_assistant"
+              "tekomi_assistant"
             ],
             "description": "Type of the sender"
           },
@@ -10422,14 +10422,14 @@
               "string",
               "null"
             ],
-            "description": "Description when the sender is a captain assistant"
+            "description": "Description when the sender is a Tekomi AI assistant"
           },
           "created_at": {
             "type": [
               "string",
               "null"
             ],
-            "description": "Created timestamp in ISO 8601 format when the sender is a captain assistant"
+            "description": "Created timestamp in ISO 8601 format when the sender is a Tekomi AI assistant"
           }
         }
       },
