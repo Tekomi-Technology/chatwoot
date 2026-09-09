@@ -3,52 +3,52 @@
     "SHOPIFY": {
       "HEADER": "Shopify",
       "DELETE": {
-        "TITLE": "Delete Shopify Integration",
-        "MESSAGE": "Are you sure you want to delete the Shopify integration?"
+        "TITLE": "Xoá tích hợp Shopify",
+        "MESSAGE": "Bạn có chắc muốn xoá tích hợp Shopify?"
       },
       "STORE_URL": {
-        "TITLE": "Connect Shopify Store",
-        "LABEL": "Store URL",
+        "TITLE": "Kết nối cửa hàng Shopify",
+        "LABEL": "URL cửa hàng",
         "PLACEHOLDER": "your-store.myshopify.com",
-        "HELP": "Enter your Shopify store's myshopify.com URL",
+        "HELP": "Nhập URL myshopify.com của cửa hàng Shopify của bạn",
         "CANCEL": "Huỷ",
-        "SUBMIT": "Connect Store"
+        "SUBMIT": "Kết nối cửa hàng"
       },
-      "ERROR": "There was an error connecting to Shopify. Please try again or contact support if the issue persists."
+      "ERROR": "Có lỗi khi kết nối với Shopify. Vui lòng thử lại hoặc liên hệ hỗ trợ nếu vẫn còn lỗi."
     },
     "HEADER": "Tích hợp",
     "DESCRIPTION": "Chatwoot integrates with multiple tools and services to improve your team's efficiency. Explore the list below to configure your favorite apps.",
-    "LEARN_MORE": "Learn more about integrations",
-    "LOADING": "Fetching integrations",
-    "SEARCH_PLACEHOLDER": "Search integrations...",
-    "NO_RESULTS": "No integrations found matching your search",
+    "LEARN_MORE": "Tìm hiểu thêm về tích hợp",
+    "LOADING": "Đang tải danh sách tích hợp",
+    "SEARCH_PLACEHOLDER": "Tìm tích hợp...",
+    "NO_RESULTS": "Không tìm thấy tích hợp nào phù hợp",
     "CAPTAIN": {
-      "DISABLED": "Tekomi AI is not enabled on your account.",
-      "CLICK_HERE_TO_CONFIGURE": "Click here to configure",
-      "LOADING_CONSOLE": "Loading Tekomi AI Console...",
-      "FAILED_TO_LOAD_CONSOLE": "Failed to load Tekomi AI Console. Please refresh and try again."
+      "DISABLED": "Tekomi AI chưa được bật cho tài khoản của bạn.",
+      "CLICK_HERE_TO_CONFIGURE": "Bấm vào đây để cấu hình",
+      "LOADING_CONSOLE": "Đang tải Bảng điều khiển Tekomi AI...",
+      "FAILED_TO_LOAD_CONSOLE": "Không tải được Bảng điều khiển Tekomi AI. Vui lòng tải lại trang và thử lại."
     },
     "WEBHOOK": {
       "SUBSCRIBED_EVENTS": "Những sự kiện được theo dõi",
-      "LEARN_MORE": "Learn more about webhooks",
+      "LEARN_MORE": "Tìm hiểu thêm về webhook",
       "PAYWALL": {
-        "TITLE": "Webhooks are available on paid plans",
+        "TITLE": "Webhook chỉ có ở gói trả phí",
         "AVAILABLE_ON": "Use webhooks to receive real-time events from your Chatwoot account.",
-        "UPGRADE_PROMPT": "Upgrade to the Startups, Business, or Enterprise plan to use webhooks.",
-        "UPGRADE_NOW": "Upgrade now",
-        "CANCEL_ANYTIME": "Change or cancel your plan anytime."
+        "UPGRADE_PROMPT": "Nâng cấp lên gói Startups, Business hoặc Enterprise để dùng webhook.",
+        "UPGRADE_NOW": "Nâng cấp ngay",
+        "CANCEL_ANYTIME": "Đổi hoặc huỷ gói bất cứ lúc nào."
       },
       "SECRET": {
-        "LABEL": "Secret",
-        "COPY": "Copy secret to clipboard",
-        "COPY_SUCCESS": "Secret copied to clipboard",
-        "TOGGLE": "Toggle secret visibility",
-        "CREATED_DESC": "Your webhook has been created. Use the secret below to verify webhook signatures. Please copy it now — you can also find it later in the webhook edit form.",
-        "DONE": "Done"
+        "LABEL": "Khoá bí mật",
+        "COPY": "Sao chép khoá bí mật",
+        "COPY_SUCCESS": "Đã sao chép khoá bí mật",
+        "TOGGLE": "Ẩn/hiện khoá bí mật",
+        "CREATED_DESC": "Webhook của bạn đã được tạo. Dùng khoá bí mật bên dưới để xác minh chữ ký webhook. Hãy sao chép ngay — bạn cũng có thể tìm lại sau trong biểu mẫu sửa webhook.",
+        "DONE": "Xong"
       },
-      "COUNT": "{n} webhook | {n} webhooks",
-      "SEARCH_PLACEHOLDER": "Search webhooks...",
-      "NO_RESULTS": "No webhooks found matching your search",
+      "COUNT": "{n} webhook | {n} webhook",
+      "SEARCH_PLACEHOLDER": "Tìm webhook...",
+      "NO_RESULTS": "Không tìm thấy webhook nào phù hợp",
       "FORM": {
         "CANCEL": "Huỷ",
         "DESC": "Webhook events cung cấp cho bạn thông tin thời gian thực về những gì đang xảy ra trong tài khoản Chatwoot của bạn. Vui lòng nhập một URL hợp lệ để định cấu hình một cuộc gọi lại.",
@@ -61,20 +61,20 @@
             "MESSAGE_CREATED": "Tin nhắn đã được tạo",
             "MESSAGE_UPDATED": "Tin nhắn đã được cập nhật",
             "WEBWIDGET_TRIGGERED": "Tiện ích trò chuyện trực tuyến do người dùng mở",
-            "CONTACT_CREATED": "Contact created",
-            "CONTACT_UPDATED": "Contact updated",
-            "CONVERSATION_TYPING_ON": "Conversation Typing On",
-            "CONVERSATION_TYPING_OFF": "Conversation Typing Off",
-            "INBOX_UPDATED": "Inbox updated"
+            "CONTACT_CREATED": "Liên hệ được tạo",
+            "CONTACT_UPDATED": "Liên hệ được cập nhật",
+            "CONVERSATION_TYPING_ON": "Bắt đầu gõ trong hội thoại",
+            "CONVERSATION_TYPING_OFF": "Ngừng gõ trong hội thoại",
+            "INBOX_UPDATED": "Hộp thư được cập nhật"
           }
         },
         "NAME": {
-          "LABEL": "Webhook Name",
-          "PLACEHOLDER": "Enter the name of the webhook"
+          "LABEL": "Tên webhook",
+          "PLACEHOLDER": "Nhập tên webhook"
         },
         "END_POINT": {
-          "LABEL": "Webhook URL",
-          "PLACEHOLDER": "Example: {webhookExampleURL}",
+          "LABEL": "URL webhook",
+          "PLACEHOLDER": "Ví dụ: {webhookExampleURL}",
           "ERROR": "Vui lòng nhập một URL hợp lệ"
         },
         "EDIT_SUBMIT": "Cập nhật webhook",
@@ -91,7 +91,7 @@
         "404": "Không có webhook nào được định cấu hình cho tài khoản này.",
         "TITLE": "Quản lý webhooks",
         "TABLE_HEADER": {
-          "WEBHOOK_ENDPOINT": "Webhook endpoint",
+          "WEBHOOK_ENDPOINT": "Endpoint webhook",
           "ACTIONS": "Hành động"
         }
       },
@@ -129,104 +129,104 @@
       "HEADER": "Slack",
       "DELETE": "Xoá",
       "DELETE_CONFIRMATION": {
-        "TITLE": "Delete the integration",
-        "MESSAGE": "Are you sure you want to delete the integration? Doing so will result in the loss of access to conversations on your Slack workspace."
+        "TITLE": "Xoá tích hợp",
+        "MESSAGE": "Bạn có chắc muốn xoá tích hợp này? Việc này sẽ mất quyền truy cập hội thoại trên workspace Slack của bạn."
       },
       "HELP_TEXT": {
         "TITLE": "Dùng tích hợp Slack",
         "BODY": "With this integration, all of your incoming conversations will be synced to the ***{selectedChannelName}*** channel in your Slack workspace. You can manage all your customer conversations right within the channel and never miss a message.\n\nHere are the main features of the integration:\n\n**Respond to conversations from within Slack:** To respond to a conversation in the ***{selectedChannelName}*** Slack channel, simply type out your message and send it as a thread. This will create a response back to the customer through Chatwoot. It's that simple!\n\n **Create private notes:** If you want to create private notes instead of replies, start your message with ***`note:`***. This ensures that your message is kept private and won't be visible to the customer.\n\n**Associate an agent profile:** If the person who replied on Slack has an agent profile in Chatwoot under the same email, the replies will be associated with that agent profile automatically. This means you can easily track who said what and when. On the other hand, when the replier doesn't have an associated agent profile, the replies will appear from the bot profile to the customer.",
-        "SELECTED": "selected"
+        "SELECTED": "đã chọn"
       },
       "SELECT_CHANNEL": {
-        "OPTION_LABEL": "Select a channel",
+        "OPTION_LABEL": "Chọn một kênh",
         "UPDATE": "Cập nhật",
-        "BUTTON_TEXT": "Connect channel",
-        "DESCRIPTION": "Your Slack workspace is now linked with Chatwoot. However, the integration is currently inactive. To activate the integration and connect a channel to Chatwoot, please click the button below.\n\n**Note:** If you are attempting to connect a private channel, add the Chatwoot app to the Slack channel before proceeding with this step.",
-        "ATTENTION_REQUIRED": "Attention required",
-        "EXPIRED": "Your Slack integration has expired. To continue receiving messages on Slack, please delete the integration and connect your workspace again."
+        "BUTTON_TEXT": "Kết nối kênh",
+        "DESCRIPTION": "Workspace Slack của bạn đã được liên kết với Tekomi. Tuy nhiên, tích hợp hiện đang không hoạt động. Để kích hoạt và kết nối một kênh với Tekomi, hãy bấm nút bên dưới.\n\n**Lưu ý:** Nếu bạn muốn kết nối kênh riêng tư, hãy thêm ứng dụng Tekomi vào kênh Slack đó trước khi tiếp tục bước này.",
+        "ATTENTION_REQUIRED": "Cần chú ý",
+        "EXPIRED": "Tích hợp Slack của bạn đã hết hạn. Để tiếp tục nhận tin nhắn trên Slack, vui lòng xoá tích hợp rồi kết nối lại workspace."
       },
-      "UPDATE_ERROR": "There was an error updating the integration, please try again",
-      "UPDATE_SUCCESS": "The channel is connected successfully",
-      "FAILED_TO_FETCH_CHANNELS": "There was an error fetching the channels from Slack, please try again"
+      "UPDATE_ERROR": "Có lỗi khi cập nhật tích hợp, vui lòng thử lại",
+      "UPDATE_SUCCESS": "Đã kết nối kênh thành công",
+      "FAILED_TO_FETCH_CHANNELS": "Có lỗi khi tải danh sách kênh từ Slack, vui lòng thử lại"
     },
     "DYTE": {
-      "CLICK_HERE_TO_JOIN": "Click here to join",
-      "LEAVE_THE_ROOM": "Leave the room",
-      "START_VIDEO_CALL_HELP_TEXT": "Start a new video call with the customer",
-      "JOIN_ERROR": "There was an error joining the call, please try again",
-      "CREATE_ERROR": "There was an error creating a meeting link, please try again"
+      "CLICK_HERE_TO_JOIN": "Bấm vào đây để tham gia",
+      "LEAVE_THE_ROOM": "Rời phòng",
+      "START_VIDEO_CALL_HELP_TEXT": "Bắt đầu cuộc gọi video mới với khách hàng",
+      "JOIN_ERROR": "Có lỗi khi tham gia cuộc gọi, vui lòng thử lại",
+      "CREATE_ERROR": "Có lỗi khi tạo liên kết cuộc họp, vui lòng thử lại"
     },
     "OPEN_AI": {
-      "AI_ASSIST": "AI Assist",
-      "WITH_AI": " {option} with AI ",
+      "AI_ASSIST": "Trợ lý AI",
+      "WITH_AI": " {option} bằng AI ",
       "OPTIONS": {
-        "REPLY_SUGGESTION": "Reply Suggestion",
-        "SUMMARIZE": "Summarize",
-        "REPHRASE": "Improve Writing",
-        "FIX_SPELLING_GRAMMAR": "Fix Spelling and Grammar",
-        "SHORTEN": "Shorten",
-        "EXPAND": "Expand",
-        "MAKE_FRIENDLY": "Change message tone to friendly",
-        "MAKE_FORMAL": "Use formal tone",
-        "SIMPLIFY": "Simplify",
-        "CONFIDENT": "Use confident tone",
-        "PROFESSIONAL": "Use professional tone",
-        "CASUAL": "Use casual tone",
-        "STRAIGHTFORWARD": "Use straightforward tone"
+        "REPLY_SUGGESTION": "Gợi ý trả lời",
+        "SUMMARIZE": "Tóm tắt",
+        "REPHRASE": "Cải thiện văn phong",
+        "FIX_SPELLING_GRAMMAR": "Sửa chính tả và ngữ pháp",
+        "SHORTEN": "Rút gọn",
+        "EXPAND": "Mở rộng",
+        "MAKE_FRIENDLY": "Đổi giọng văn sang thân thiện",
+        "MAKE_FORMAL": "Dùng giọng văn trang trọng",
+        "SIMPLIFY": "Đơn giản hoá",
+        "CONFIDENT": "Dùng giọng văn tự tin",
+        "PROFESSIONAL": "Dùng giọng văn chuyên nghiệp",
+        "CASUAL": "Dùng giọng văn thoải mái",
+        "STRAIGHTFORWARD": "Dùng giọng văn thẳng thắn"
       },
       "REPLY_OPTIONS": {
-        "IMPROVE_REPLY": "Improve reply",
-        "IMPROVE_REPLY_SELECTION": "Improve the selection",
+        "IMPROVE_REPLY": "Cải thiện câu trả lời",
+        "IMPROVE_REPLY_SELECTION": "Cải thiện phần đã chọn",
         "CHANGE_TONE": {
-          "TITLE": "Change tone",
+          "TITLE": "Đổi giọng văn",
           "OPTIONS": {
-            "PROFESSIONAL": "Professional",
-            "CASUAL": "Casual",
-            "STRAIGHTFORWARD": "Straightforward",
-            "CONFIDENT": "Confident",
-            "FRIENDLY": "Friendly"
+            "PROFESSIONAL": "Chuyên nghiệp",
+            "CASUAL": "Thoải mái",
+            "STRAIGHTFORWARD": "Thẳng thắn",
+            "CONFIDENT": "Tự tin",
+            "FRIENDLY": "Thân thiện"
           }
         },
-        "GRAMMAR": "Fix grammar & spelling",
-        "SUGGESTION": "Suggest a reply",
-        "SUMMARIZE": "Summarize the conversation",
-        "ASK_COPILOT": "Ask Copilot"
+        "GRAMMAR": "Sửa ngữ pháp & chính tả",
+        "SUGGESTION": "Gợi ý câu trả lời",
+        "SUMMARIZE": "Tóm tắt hội thoại",
+        "ASK_COPILOT": "Hỏi Trợ thủ"
       },
       "ASSISTANCE_MODAL": {
-        "DRAFT_TITLE": "Draft content",
-        "GENERATED_TITLE": "Generated content",
-        "AI_WRITING": "AI is writing",
+        "DRAFT_TITLE": "Nội dung nháp",
+        "GENERATED_TITLE": "Nội dung đã tạo",
+        "AI_WRITING": "AI đang viết",
         "BUTTONS": {
-          "APPLY": "Use this suggestion",
+          "APPLY": "Dùng gợi ý này",
           "CANCEL": "Huỷ"
         }
       },
       "CTA_MODAL": {
-        "TITLE": "Integrate with OpenAI",
-        "DESC": "Bring advanced AI features to your dashboard with OpenAI's GPT models. To begin, enter the API key from your OpenAI account.",
-        "KEY_PLACEHOLDER": "Enter your OpenAI API key",
+        "TITLE": "Tích hợp với OpenAI",
+        "DESC": "Mang các tính năng AI nâng cao vào bảng điều khiển của bạn với mô hình GPT của OpenAI. Để bắt đầu, nhập API key từ tài khoản OpenAI của bạn.",
+        "KEY_PLACEHOLDER": "Nhập API key OpenAI của bạn",
         "BUTTONS": {
           "NEED_HELP": "Cần hỗ trợ?",
-          "DISMISS": "Dismiss",
-          "FINISH": "Finish Setup"
+          "DISMISS": "Bỏ qua",
+          "FINISH": "Hoàn tất thiết lập"
         },
-        "DISMISS_MESSAGE": "You can setup OpenAI integration later Whenever you want.",
-        "SUCCESS_MESSAGE": "OpenAI integration setup successfully"
+        "DISMISS_MESSAGE": "Bạn có thể thiết lập tích hợp OpenAI sau, bất cứ khi nào muốn.",
+        "SUCCESS_MESSAGE": "Đã thiết lập tích hợp OpenAI thành công"
       },
-      "TITLE": "Improve With AI",
-      "SUMMARY_TITLE": "Summary with AI",
-      "REPLY_TITLE": "Reply suggestion with AI",
-      "SUBTITLE": "An improved reply will be generated using AI, based on your current draft.",
+      "TITLE": "Cải thiện bằng AI",
+      "SUMMARY_TITLE": "Tóm tắt bằng AI",
+      "REPLY_TITLE": "Gợi ý trả lời bằng AI",
+      "SUBTITLE": "Một câu trả lời được cải thiện sẽ được AI tạo ra, dựa trên bản nháp hiện tại của bạn.",
       "TONE": {
-        "TITLE": "Tone",
+        "TITLE": "Giọng văn",
         "OPTIONS": {
-          "PROFESSIONAL": "Professional",
-          "FRIENDLY": "Friendly"
+          "PROFESSIONAL": "Chuyên nghiệp",
+          "FRIENDLY": "Thân thiện"
         }
       },
       "BUTTONS": {
-        "GENERATE": "Generate",
-        "GENERATING": "Generating...",
+        "GENERATE": "Tạo",
+        "GENERATING": "Đang tạo...",
         "CANCEL": "Huỷ"
       },
       "GENERATE_ERROR": "There was an error processing the content, please try again"
@@ -245,10 +245,10 @@
       "HEADER_BTN_TXT": "Thêm mới một Ứng dụng bảng điều khiển",
       "SIDEBAR_TXT": "<p> <b> Ứng dụng trên bảng điều khiển</b> </p> <p>Ứng dụng bảng điều khiển cho phép nhúng ứng dụng vào trang bảng điều khiển để cung cấp ngữ cảnh cho các nhân viên hỗ trợ khách hàng. Tính năng này cho phép bạn tạo ứng dụng một cách độc lập và nhúng ứng dụng đó vào bên trong trang điều khiển để cung cấp thông tin người dùng, đơn đặt hàng hoặc lịch sử thanh toán trước đó của họ. </p> <p> Khi bạn nhúng ứng dụng của mình bằng điều khiển, ứng dụng của bạn sẽ lấy bối cảnh của hội thoại và liên hệ dưới dạng sự kiện cửa sổ. Triển khai trình nghe cho sự kiện thông báo trên trang của bạn để nhận ngữ cảnh. </p> <p> Để thêm ứng dụng trang điều khiển mới, hãy nhấp vào nút 'Thêm ứng dụng bảng điều khiển mới'. </p>",
       "DESCRIPTION": "Ứng dụng bảng điều khiển cho phép các tổ chức nhúng một ứng dụng bên trong trang điều khiển để cung cấp ngữ cảnh cho các nhân viên hỗ trợ khách hàng. Tính năng này cho phép bạn tạo ứng dụng một cách độc lập và nhúng ứng dụng đó để cung cấp thông tin người dùng, đơn đặt hàng hoặc lịch sử thanh toán trước đó của họ.",
-      "LEARN_MORE": "Learn more about Dashboard Apps",
-      "COUNT": "{n} dashboard app | {n} dashboard apps",
-      "SEARCH_PLACEHOLDER": "Search dashboard apps...",
-      "NO_RESULTS": "No dashboard apps found matching your search",
+      "LEARN_MORE": "Tìm hiểu thêm về Ứng dụng bảng điều khiển",
+      "COUNT": "{n} ứng dụng | {n} ứng dụng",
+      "SEARCH_PLACEHOLDER": "Tìm ứng dụng bảng điều khiển...",
+      "NO_RESULTS": "Không tìm thấy ứng dụng nào phù hợp",
       "LIST": {
         "404": "Chưa có ứng dụng trang \u001dđiều khiển nào được định cấu hình trên tài khoản này",
         "LOADING": "Đang tìm nạp ứng dụng bảng điều khiển...",
@@ -293,104 +293,104 @@
     },
     "LINEAR": {
       "HEADER": "Linear",
-      "ADD_OR_LINK_BUTTON": "Create/Link Linear Issue",
-      "LOADING": "Fetching linear issues...",
-      "LOADING_ERROR": "There was an error fetching the linear issues, please try again",
+      "ADD_OR_LINK_BUTTON": "Tạo/Liên kết Linear Issue",
+      "LOADING": "Đang tải Linear issue...",
+      "LOADING_ERROR": "Có lỗi khi tải Linear issue, vui lòng thử lại",
       "CREATE": "Tạo",
       "LINK": {
-        "SEARCH": "Search issues",
-        "SELECT": "Select issue",
+        "SEARCH": "Tìm issue",
+        "SELECT": "Chọn issue",
         "TITLE": "Liên kết",
-        "EMPTY_LIST": "No linear issues found",
-        "LOADING": "Loading",
-        "ERROR": "There was an error fetching the linear issues, please try again",
-        "LINK_SUCCESS": "Issue linked successfully",
-        "LINK_ERROR": "There was an error linking the issue, please try again",
-        "LINK_TITLE": "Conversation (#{conversationId}) with {name}"
+        "EMPTY_LIST": "Không tìm thấy Linear issue nào",
+        "LOADING": "Đang tải",
+        "ERROR": "Có lỗi khi tải Linear issue, vui lòng thử lại",
+        "LINK_SUCCESS": "Đã liên kết issue thành công",
+        "LINK_ERROR": "Có lỗi khi liên kết issue, vui lòng thử lại",
+        "LINK_TITLE": "Hội thoại (#{conversationId}) với {name}"
       },
       "ADD_OR_LINK": {
-        "TITLE": "Create/link linear issue",
-        "DESCRIPTION": "Create Linear issues from conversations, or link existing ones for seamless tracking.",
+        "TITLE": "Tạo/liên kết Linear issue",
+        "DESCRIPTION": "Tạo Linear issue từ hội thoại, hoặc liên kết issue có sẵn để theo dõi liền mạch.",
         "FORM": {
           "TITLE": {
             "LABEL": "Tiêu đề",
-            "PLACEHOLDER": "Enter title",
+            "PLACEHOLDER": "Nhập tiêu đề",
             "REQUIRED_ERROR": "Tiêu đề bắt buộc có"
           },
           "DESCRIPTION": {
             "LABEL": "Mô tả",
-            "PLACEHOLDER": "Enter description"
+            "PLACEHOLDER": "Nhập mô tả"
           },
           "TEAM": {
             "LABEL": "Nhóm",
             "PLACEHOLDER": "Chọn nhóm",
-            "SEARCH": "Search team",
-            "REQUIRED_ERROR": "Team is required"
+            "SEARCH": "Tìm nhóm",
+            "REQUIRED_ERROR": "Vui lòng chọn nhóm"
           },
           "ASSIGNEE": {
-            "LABEL": "Assignee",
-            "PLACEHOLDER": "Select assignee",
-            "SEARCH": "Search assignee"
+            "LABEL": "Người phụ trách",
+            "PLACEHOLDER": "Chọn người phụ trách",
+            "SEARCH": "Tìm người phụ trách"
           },
           "PRIORITY": {
             "LABEL": "Mức độ ưu tiên",
             "PLACEHOLDER": "Chọc mức ưu tiên",
-            "SEARCH": "Search priority"
+            "SEARCH": "Tìm mức ưu tiên"
           },
           "LABEL": {
             "LABEL": "Nhãn",
-            "PLACEHOLDER": "Select label",
-            "SEARCH": "Search label"
+            "PLACEHOLDER": "Chọn nhãn",
+            "SEARCH": "Tìm nhãn"
           },
           "STATUS": {
             "LABEL": "Trạng thái",
-            "PLACEHOLDER": "Select status",
-            "SEARCH": "Search status"
+            "PLACEHOLDER": "Chọn trạng thái",
+            "SEARCH": "Tìm trạng thái"
           },
           "PROJECT": {
-            "LABEL": "Project",
-            "PLACEHOLDER": "Select project",
-            "SEARCH": "Search project"
+            "LABEL": "Dự án",
+            "PLACEHOLDER": "Chọn dự án",
+            "SEARCH": "Tìm dự án"
           }
         },
         "CREATE": "Tạo",
         "CANCEL": "Huỷ",
-        "CREATE_SUCCESS": "Issue created successfully",
-        "CREATE_ERROR": "There was an error creating the issue, please try again",
-        "LOADING_TEAM_ERROR": "There was an error fetching the teams, please try again",
-        "LOADING_TEAM_ENTITIES_ERROR": "There was an error fetching the team entities, please try again"
+        "CREATE_SUCCESS": "Đã tạo issue thành công",
+        "CREATE_ERROR": "Có lỗi khi tạo issue, vui lòng thử lại",
+        "LOADING_TEAM_ERROR": "Có lỗi khi tải danh sách nhóm, vui lòng thử lại",
+        "LOADING_TEAM_ENTITIES_ERROR": "Có lỗi khi tải dữ liệu của nhóm, vui lòng thử lại"
       },
       "ISSUE": {
         "STATUS": "Trạng thái",
         "PRIORITY": "Mức độ ưu tiên",
-        "ASSIGNEE": "Assignee",
+        "ASSIGNEE": "Người phụ trách",
         "LABELS": "Nhãn",
-        "CREATED_AT": "Created at {createdAt}"
+        "CREATED_AT": "Tạo lúc {createdAt}"
       },
       "UNLINK": {
-        "TITLE": "Unlink",
-        "SUCCESS": "Issue unlinked successfully",
-        "ERROR": "There was an error unlinking the issue, please try again"
+        "TITLE": "Bỏ liên kết",
+        "SUCCESS": "Đã bỏ liên kết issue thành công",
+        "ERROR": "Có lỗi khi bỏ liên kết issue, vui lòng thử lại"
       },
-      "NO_LINKED_ISSUES": "No linked issues found",
+      "NO_LINKED_ISSUES": "Không có issue nào được liên kết",
       "DELETE": {
-        "TITLE": "Are you sure you want to delete the integration?",
-        "MESSAGE": "Are you sure you want to delete the integration?",
+        "TITLE": "Bạn có chắc muốn xoá tích hợp?",
+        "MESSAGE": "Bạn có chắc muốn xoá tích hợp?",
         "CONFIRM": "Có, xoá",
         "CANCEL": "Huỷ"
       },
       "CTA": {
-        "TITLE": "Connect to Linear",
-        "AGENT_DESCRIPTION": "Linear workspace is not connected. Request your administrator to connect a workspace to use this integration.",
-        "DESCRIPTION": "Linear workspace is not connected. Click the button below to connect your workspace to use this integration.",
-        "BUTTON_TEXT": "Connect Linear workspace"
+        "TITLE": "Kết nối với Linear",
+        "AGENT_DESCRIPTION": "Chưa kết nối workspace Linear. Hãy nhờ quản trị viên kết nối workspace để dùng tích hợp này.",
+        "DESCRIPTION": "Chưa kết nối workspace Linear. Bấm nút bên dưới để kết nối workspace và dùng tích hợp này.",
+        "BUTTON_TEXT": "Kết nối workspace Linear"
       }
     },
     "NOTION": {
       "HEADER": "Notion",
       "DELETE": {
-        "TITLE": "Are you sure you want to delete the Notion integration?",
-        "MESSAGE": "Deleting this integration will remove access to your Notion workspace and stop all related functionality.",
+        "TITLE": "Bạn có chắc muốn xoá tích hợp Notion?",
+        "MESSAGE": "Xoá tích hợp này sẽ mất quyền truy cập workspace Notion của bạn và ngừng mọi chức năng liên quan.",
         "CONFIRM": "Có, xoá",
         "CANCEL": "Huỷ"
       }
@@ -402,75 +402,75 @@
     "OVERVIEW": {
       "HEADER": "Tổng quan",
       "WELCOME": {
-        "LABEL": "Tekomi AI summary",
-        "LOADING": "Generating summary…"
+        "LABEL": "Tóm tắt Tekomi AI",
+        "LOADING": "Đang tạo tóm tắt…"
       },
       "INBOX_BANNER": {
-        "TEXT": "This assistant isn't connected to any inbox yet, so it won't respond to conversations.",
-        "ACTION": "Connect inbox",
-        "DISMISS": "Dismiss"
+        "TEXT": "Trợ lý này chưa được gắn với hộp thư nào nên sẽ không trả lời hội thoại.",
+        "ACTION": "Gắn hộp thư",
+        "DISMISS": "Bỏ qua"
       },
       "COVERAGE_BANNER": {
-        "TEXT": "{count} FAQ suggestions are ready for review, keeping coverage at {coverage}%. Approve them so your assistant can resolve more on its own.",
-        "ACTION": "Review suggestions",
-        "DISMISS": "Dismiss"
+        "TEXT": "{count} gợi ý câu hỏi thường gặp đang chờ xét duyệt, giữ độ phủ ở {coverage}%. Duyệt chúng để trợ lý tự xử lý được nhiều hơn.",
+        "ACTION": "Xem gợi ý",
+        "DISMISS": "Bỏ qua"
       },
       "RANGES": {
-        "LAST_DAYS": "Last {count} days",
-        "THIS_MONTH": "This month",
-        "LAST_MONTH": "Last month"
+        "LAST_DAYS": "{count} ngày qua",
+        "THIS_MONTH": "Tháng này",
+        "LAST_MONTH": "Tháng trước"
       },
       "METRICS": {
         "HANDLED": {
-          "LABEL": "Conversations handled",
-          "HINT": "Distinct conversations this assistant replied in."
+          "LABEL": "Hội thoại đã xử lý",
+          "HINT": "Số hội thoại riêng biệt mà trợ lý này đã trả lời."
         },
         "AUTO_RESOLUTION": {
-          "LABEL": "Auto-resolution rate",
-          "HINT": "Share of handled conversations closed without a human reply."
+          "LABEL": "Tỷ lệ tự xử lý xong",
+          "HINT": "Tỷ lệ hội thoại được xử lý xong mà không cần nhân viên trả lời."
         },
         "HANDOFF": {
-          "LABEL": "Handoff rate",
-          "HINT": "Share of handled conversations escalated to a human agent."
+          "LABEL": "Tỷ lệ chuyển tiếp",
+          "HINT": "Tỷ lệ hội thoại được chuyển lên nhân viên."
         },
         "HOURS_SAVED": {
-          "LABEL": "Time saved",
-          "HINT": "Estimate: Tekomi AI replies times ~2 minutes of assumed agent effort per reply. Directional, not measured labor."
+          "LABEL": "Thời gian tiết kiệm",
+          "HINT": "Ước tính: số câu trả lời của Tekomi AI nhân với ~2 phút công sức giả định của nhân viên mỗi câu. Chỉ mang tính tham khảo, không phải số đo thực tế."
         },
         "REOPEN": {
-          "LABEL": "Reopen rate",
-          "HINT": "Auto-resolved conversations that were reopened afterwards."
+          "LABEL": "Tỷ lệ mở lại",
+          "HINT": "Hội thoại tự xử lý xong nhưng sau đó bị mở lại."
         },
         "DEPTH": {
-          "LABEL": "Messages / conversation",
-          "HINT": "Average replies the assistant sends per conversation."
+          "LABEL": "Tin nhắn / hội thoại",
+          "HINT": "Số câu trả lời trung bình trợ lý gửi mỗi hội thoại."
         }
       },
       "DRILLDOWN": {
-        "EMPTY": "No records found for this metric.",
-        "ERROR": "Could not load records. Please try again.",
-        "LOAD_MORE": "Load more",
-        "RESULT_COUNT_CONVERSATION": "{count} conversation | {count} conversations"
+        "EMPTY": "Không có bản ghi nào cho chỉ số này.",
+        "ERROR": "Không tải được bản ghi. Vui lòng thử lại.",
+        "LOAD_MORE": "Tải thêm",
+        "RESULT_COUNT_CONVERSATION": "{count} hội thoại | {count} hội thoại"
       },
       "KNOWLEDGE": {
-        "TITLE": "Knowledge coverage",
-        "COVERAGE": "{pct}% approved",
-        "APPROVED": "Approved FAQs",
-        "SUGGESTIONS": "FAQ suggestions",
-        "DOCUMENTS": "Documents"
+        "TITLE": "Độ phủ kiến thức",
+        "COVERAGE": "{pct}% đã duyệt",
+        "APPROVED": "Câu hỏi thường gặp đã duyệt",
+        "SUGGESTIONS": "Gợi ý câu hỏi thường gặp",
+        "DOCUMENTS": "Tài liệu"
       },
       "LINKS": {
         "DOCS": {
-          "TITLE": "Tekomi AI docs",
-          "DESCRIPTION": "Guides and how-tos for Tekomi AI"
+          "TITLE": "Tài liệu Tekomi AI",
+          "DESCRIPTION": "Hướng dẫn sử dụng Tekomi AI"
         },
         "PLAYGROUND": {
           "TITLE": "Sân chơi",
-          "DESCRIPTION": "Test this assistant's replies"
+          "DESCRIPTION": "Thử câu trả lời của trợ lý này"
         },
         "BILLING": {
           "TITLE": "Phí",
-          "DESCRIPTION": "Manage credits and plan"
+          "DESCRIPTION": "Quản lý tín dụng và gói"
         }
       }
     },
@@ -481,14 +481,14 @@
       "EMPTY_LIST": "Không tìm thấy trợ lý nào, vui lòng tạo một trợ lý để bắt đầu"
     },
     "COPILOT": {
-      "TITLE": "Copilot",
-      "TRY_THESE_PROMPTS": "Try these prompts",
+      "TITLE": "Trợ thủ",
+      "TRY_THESE_PROMPTS": "Thử các câu gợi ý sau",
       "PANEL_TITLE": "Bắt đầu với Copilot",
       "KICK_OFF_MESSAGE": "Cần tóm tắt nhanh, muốn kiểm tra các hội thoại trước, hay soạn câu trả lời tốt hơn? Copilot sẽ giúp tăng tốc.",
       "SEND_MESSAGE": "Gửi tin nhắn...",
       "EMPTY_MESSAGE": "Đã xảy ra lỗi khi tạo phản hồi. Vui lòng thử lại.",
       "LOADER": "Tekomi AI đang suy nghĩ",
-      "YOU": "You",
+      "YOU": "Bạn",
       "USE": "Sử dụng cái này",
       "RESET": "Đặt lại",
       "SHOW_STEPS": "Hiển thị các bước",
@@ -517,7 +517,7 @@
       }
     },
     "PLAYGROUND": {
-      "USER": "You",
+      "USER": "Bạn",
       "ASSISTANT": "Trợ lý",
       "MESSAGE_PLACEHOLDER": "Gõ tin nhắn của bạn...",
       "HEADER": "Sân chơi",
@@ -528,13 +528,13 @@
       "TITLE": "Nâng cấp để sử dụng Tekomi AI",
       "AVAILABLE_ON": "Tekomi AI không khả dụng trên gói miễn phí.",
       "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, copilot và nhiều hơn nữa.",
-      "UPGRADE_NOW": "Upgrade now",
-      "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+      "UPGRADE_NOW": "Nâng cấp ngay",
+      "CANCEL_ANYTIME": "Bạn có thể đổi hoặc huỷ gói bất cứ lúc nào"
     },
     "ENTERPRISE_PAYWALL": {
       "AVAILABLE_ON": "Tekomi AI chỉ có trong các gói Doanh nghiệp.",
       "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, copilot và nhiều hơn nữa.",
-      "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+      "ASK_ADMIN": "Vui lòng liên hệ quản trị viên để nâng cấp."
     },
     "BANNER": {
       "RESPONSES": "Bạn đã sử dụng hơn 80% giới hạn phản hồi. Để tiếp tục sử dụng Tekomi AI, vui lòng nâng cấp.",
@@ -546,243 +546,325 @@
       "EDIT": "Cập nhật"
     },
     "ASSISTANTS": {
-      "HEADER": "Assistants",
-      "NO_ASSISTANTS_AVAILABLE": "There are no assistants available in your account.",
-      "ADD_NEW": "Create a new assistant",
+      "HEADER": "Trợ lý",
+      "NO_ASSISTANTS_AVAILABLE": "Tài khoản của bạn chưa có trợ lý nào.",
+      "ADD_NEW": "Tạo trợ lý mới",
       "DELETE": {
-        "TITLE": "Are you sure to delete the assistant?",
-        "DESCRIPTION": "This action is permanent. Deleting this assistant will remove it from all connected inboxes and permanently erase all generated knowledge.",
+        "TITLE": "Bạn có chắc muốn xoá trợ lý này?",
+        "DESCRIPTION": "Thao tác này là vĩnh viễn. Xoá trợ lý này sẽ gỡ nó khỏi mọi hộp thư đã kết nối và xoá vĩnh viễn toàn bộ tri thức đã tạo ra.",
         "CONFIRM": "Có, xoá",
-        "SUCCESS_MESSAGE": "The assistant has been successfully deleted",
-        "ERROR_MESSAGE": "There was an error deleting the assistant, please try again."
+        "SUCCESS_MESSAGE": "Đã xoá trợ lý thành công",
+        "ERROR_MESSAGE": "Có lỗi khi xoá trợ lý, vui lòng thử lại."
       },
-      "FORM_DESCRIPTION": "Fill out the details below to name your assistant, describe its purpose, and specify the product it will support.",
+      "FORM_DESCRIPTION": "Điền thông tin bên dưới để đặt tên trợ lý, mô tả mục đích và chỉ định sản phẩm mà nó sẽ hỗ trợ.",
       "CREATE": {
-        "TITLE": "Create an assistant",
-        "SUCCESS_MESSAGE": "The assistant has been successfully created",
-        "ERROR_MESSAGE": "There was an error creating the assistant, please try again."
+        "TITLE": "Tạo trợ lý",
+        "SUCCESS_MESSAGE": "Đã tạo trợ lý thành công",
+        "ERROR_MESSAGE": "Có lỗi khi tạo trợ lý, vui lòng thử lại."
       },
       "FORM": {
         "UPDATE": "Cập nhật",
         "SECTIONS": {
-          "BASIC_INFO": "Basic Information",
-          "SYSTEM_MESSAGES": "System Messages",
-          "INSTRUCTIONS": "Instructions",
+          "BASIC_INFO": "Thông tin cơ bản",
+          "SYSTEM_MESSAGES": "Tin nhắn hệ thống",
+          "INSTRUCTIONS": "Hướng dẫn",
           "FEATURES": "Các tính năng",
-          "TOOLS": "Tools "
+          "TOOLS": "Công cụ "
         },
         "NAME": {
           "LABEL": "Tên",
-          "PLACEHOLDER": "Enter assistant name",
-          "ERROR": "The name is required"
+          "PLACEHOLDER": "Nhập tên trợ lý",
+          "ERROR": "Vui lòng nhập tên"
         },
         "DESCRIPTION": {
           "LABEL": "Mô tả",
-          "PLACEHOLDER": "Enter assistant description",
-          "ERROR": "The description is required"
+          "PLACEHOLDER": "Nhập mô tả trợ lý",
+          "ERROR": "Vui lòng nhập mô tả"
         },
         "PRODUCT_NAME": {
-          "LABEL": "Product Name",
-          "PLACEHOLDER": "Enter product name",
-          "ERROR": "The product name is required"
+          "LABEL": "Tên sản phẩm",
+          "PLACEHOLDER": "Nhập tên sản phẩm",
+          "ERROR": "Vui lòng nhập tên sản phẩm"
         },
         "WELCOME_MESSAGE": {
-          "LABEL": "Welcome Message",
-          "PLACEHOLDER": "Enter welcome message"
+          "LABEL": "Tin nhắn chào mừng",
+          "PLACEHOLDER": "Nhập tin nhắn chào mừng"
         },
         "HANDOFF_MESSAGE": {
           "LABEL": "Handoff Message",
-          "PLACEHOLDER": "Enter handoff message"
+          "PLACEHOLDER": "Nhập tin nhắn chuyển tiếp"
         },
         "RESOLUTION_MESSAGE": {
-          "LABEL": "Resolution Message",
-          "PLACEHOLDER": "Enter resolution message"
+          "LABEL": "Tin nhắn khi xử lý xong",
+          "PLACEHOLDER": "Nhập tin nhắn khi xử lý xong"
         },
         "INSTRUCTIONS": {
-          "LABEL": "Instructions",
-          "PLACEHOLDER": "Enter instructions for the assistant"
+          "LABEL": "Hướng dẫn",
+          "PLACEHOLDER": "Nhập hướng dẫn cho trợ lý"
         },
         "FEATURES": {
           "TITLE": "Các tính năng",
-          "ALLOW_CONVERSATION_FAQS": "Generate FAQs from resolved conversations",
-          "ALLOW_MEMORIES": "Capture key details as memories from customer interactions.",
-          "ALLOW_CITATIONS": "Include source citations in responses",
-          "ALLOW_CONTACT_ATTRIBUTES": "Allow access to contact information"
+          "ALLOW_CONVERSATION_FAQS": "Tạo câu hỏi thường gặp từ hội thoại đã xử lý xong",
+          "ALLOW_MEMORIES": "Ghi lại thông tin quan trọng như trí nhớ từ tương tác với khách.",
+          "ALLOW_CITATIONS": "Kèm trích dẫn nguồn trong câu trả lời",
+          "ALLOW_CONTACT_ATTRIBUTES": "Cho phép truy cập thông tin liên hệ"
+        },
+        "INACTIVITY_RESOLUTION": {
+          "TITLE": "Khi khách ngừng trả lời",
+          "DESCRIPTION": "Chọn cách Tekomi AI xử lý hội thoại.",
+          "MODE_LABEL": "Hành động khi khách ngừng trả lời",
+          "REVIEW_AFTER": "Xem lại sau",
+          "RESOLVE_AFTER": "Xử lý xong sau",
+          "ALWAYS_WARNING": "Tekomi AI sẽ đánh dấu mọi hội thoại là xử lý xong sau khoảng thời gian đã chọn mà không xem lại. Một số hội thoại vẫn cần hỗ trợ có thể bị đóng nhầm.",
+          "PENDING_INFO": "Hội thoại vẫn ở trạng thái chờ cho tới khi khách trả lời.",
+          "RESOLUTION_MESSAGE": {
+            "TITLE": "Gửi tin nhắn khi xử lý xong",
+            "DESCRIPTION": "Tekomi AI gửi tin nhắn kết thúc này trước khi đánh dấu hội thoại là xử lý xong."
+          },
+          "MODES": {
+            "DISABLED": {
+              "LABEL": "Chờ khách trả lời",
+              "DESCRIPTION": "Tekomi AI không tự đánh dấu hội thoại là xử lý xong. Vẫn có thể chuyển tiếp nếu khách yêu cầu."
+            },
+            "LEGACY": {
+              "LABEL": "Luôn xử lý xong",
+              "DESCRIPTION": "Tekomi AI đánh dấu mọi hội thoại là xử lý xong sau khoảng thời gian đã chọn."
+            },
+            "EVALUATED": {
+              "LABEL": "Để Tekomi AI tự xem xét (khuyên dùng)",
+              "DESCRIPTION": "Tekomi AI tự quyết định đánh dấu xử lý xong hay chuyển tiếp."
+            }
+          },
+          "DURATION_HOURS_ARIA_LABEL": "Số giờ trước khi hành động",
+          "DURATION_MINUTES_ARIA_LABEL": "Số phút trước khi hành động",
+          "DURATION_HOURS_SHORT": "{count} giờ",
+          "DURATION_MINUTES_SHORT": "{count} phút"
+        },
+        "AUDIENCE": {
+          "EVERYONE": {
+            "LABEL": "Mọi người",
+            "DESC": "Tekomi AI trả lời mọi hội thoại trong các hộp thư đã kết nối."
+          },
+          "SPECIFIC": {
+            "LABEL": "Đối tượng cụ thể",
+            "DESC": "Tekomi AI chỉ trả lời khách hàng thoả các điều kiện bên dưới."
+          },
+          "ADD_CONDITION": "Thêm điều kiện",
+          "ADD_GROUP": "Thêm nhóm điều kiện",
+          "EMPTY_TITLE": "Chưa có điều kiện nào",
+          "EMPTY_BODY": "Thêm điều kiện để nhắm tới khách hàng cụ thể, hoặc thêm nhóm điều kiện để kết hợp bằng logic và/hoặc.",
+          "EMPTY_ERROR": "Thêm ít nhất một điều kiện cho đối tượng cụ thể.",
+          "MATCH_PREFIX": "Khớp",
+          "MATCH_SUFFIX": "trong số các điều kiện sau",
+          "MATCH_ALL": "tất cả",
+          "MATCH_ANY": "bất kỳ",
+          "GROUP_CONTACT": "Thuộc tính liên hệ",
+          "GROUP_CONVERSATION": "Hội thoại",
+          "GROUP_CUSTOM": "Thuộc tính tuỳ chỉnh",
+          "BROWSER_LANGUAGE": "Ngôn ngữ trình duyệt",
+          "CONVERSATION_LANGUAGE": "Ngôn ngữ tin nhắn đầu tiên",
+          "LOGGED_IN": "Người dùng đã đăng nhập",
+          "LOGGED_IN_TRUE": "Có",
+          "LOGGED_IN_FALSE": "Không"
+        },
+        "SCHEDULE": {
+          "ALWAYS": {
+            "LABEL": "Mọi lúc",
+            "DESC": "Tekomi AI trả lời mọi hội thoại, bất kể thời gian."
+          },
+          "BUSINESS_HOURS": {
+            "LABEL": "Trong giờ làm việc",
+            "DESC": "Tekomi AI chỉ trả lời trong giờ làm việc của từng hộp thư."
+          },
+          "OUTSIDE_BUSINESS_HOURS": {
+            "LABEL": "Ngoài giờ làm việc",
+            "DESC": "Tekomi AI chỉ trả lời khi hộp thư đang đóng cửa."
+          },
+          "HINT": "Hộp thư chưa cấu hình giờ làm việc thì luôn được bao phủ."
         }
       },
       "EDIT": {
-        "TITLE": "Update the assistant",
-        "SUCCESS_MESSAGE": "The assistant has been successfully updated",
-        "ERROR_MESSAGE": "There was an error updating the assistant, please try again.",
-        "NOT_FOUND": "Could not find the assistant. Please try again."
+        "TITLE": "Cập nhật trợ lý",
+        "SUCCESS_MESSAGE": "Đã cập nhật trợ lý thành công",
+        "ERROR_MESSAGE": "Có lỗi khi cập nhật trợ lý, vui lòng thử lại.",
+        "NOT_FOUND": "Không tìm thấy trợ lý. Vui lòng thử lại."
       },
       "SETTINGS": {
         "HEADER": "Cài đặt",
         "BASIC_SETTINGS": {
-          "TITLE": "Basic settings",
-          "DESCRIPTION": "Customize what the assistant says when ending a conversation or transferring to a human."
+          "TITLE": "Cài đặt cơ bản",
+          "DESCRIPTION": "Tuỳ chỉnh những gì trợ lý nói khi kết thúc hội thoại hoặc chuyển cho người thật."
         },
         "SYSTEM_SETTINGS": {
-          "TITLE": "System settings",
-          "DESCRIPTION": "Customize what the assistant says when ending a conversation or transferring to a human."
+          "TITLE": "Cài đặt hệ thống",
+          "DESCRIPTION": "Tuỳ chỉnh những gì trợ lý nói khi kết thúc hội thoại hoặc chuyển cho người thật.",
+          "DESCRIPTION_V2": "Quản lý việc Tekomi AI làm khi khách ngừng trả lời và đặt tin nhắn chuyển tiếp."
         },
         "CONTROL_ITEMS": {
-          "TITLE": "The Fun Stuff",
-          "DESCRIPTION": "Add more control to the assistant. (a bit more visual like a story : Query guardrail → scenarios → output) Nudges user to actually utilise these.",
+          "TITLE": "Tuỳ chỉnh nâng cao",
+          "DESCRIPTION": "Thêm quyền kiểm soát cho trợ lý.",
           "OPTIONS": {
             "GUARDRAILS": {
-              "TITLE": "Guardrails",
-              "DESCRIPTION": "Keeps things on track—only the kinds of questions you want your assistant to answer, nothing off-limits or off-topic."
+              "TITLE": "Giới hạn an toàn",
+              "DESCRIPTION": "Giữ trợ lý đi đúng hướng — chỉ trả lời những loại câu hỏi bạn muốn, không lạc đề hay vượt giới hạn."
             },
             "RESPONSE_GUIDELINES": {
-              "TITLE": "Response guidelines",
-              "DESCRIPTION": "The vibe and structure of your assistant’s replies—clear and friendly? Short and snappy? Detailed and formal?"
+              "TITLE": "Nguyên tắc trả lời",
+              "DESCRIPTION": "Giọng điệu và cấu trúc câu trả lời của trợ lý — rõ ràng thân thiện? Ngắn gọn dứt khoát? Chi tiết trang trọng?"
             }
           }
         },
         "DELETE": {
-          "TITLE": "Delete Assistant",
-          "DESCRIPTION": "This action is permanent. Deleting this assistant will remove it from all connected inboxes and permanently erase all generated knowledge.",
-          "BUTTON_TEXT": "Delete {assistantName}"
+          "TITLE": "Xoá trợ lý",
+          "DESCRIPTION": "Thao tác này là vĩnh viễn. Xoá trợ lý này sẽ gỡ nó khỏi mọi hộp thư đã kết nối và xoá vĩnh viễn toàn bộ tri thức đã tạo ra.",
+          "BUTTON_TEXT": "Xoá {assistantName}"
+        },
+        "AUDIENCE": {
+          "TITLE": "Đối tượng",
+          "DESCRIPTION": "Chọn xem trợ lý này trả lời tất cả mọi người hay chỉ một nhóm đối tượng cụ thể."
+        },
+        "SCHEDULE": {
+          "TITLE": "Lịch hoạt động",
+          "DESCRIPTION": "Chọn thời điểm Tekomi AI trả lời. Ngoài khung giờ này, hội thoại sẽ chuyển cho đội của bạn."
         }
       },
       "OPTIONS": {
-        "EDIT_ASSISTANT": "Edit Assistant",
-        "DELETE_ASSISTANT": "Delete Assistant",
-        "VIEW_CONNECTED_INBOXES": "View connected inboxes"
+        "EDIT_ASSISTANT": "Sửa trợ lý",
+        "DELETE_ASSISTANT": "Xoá trợ lý",
+        "VIEW_CONNECTED_INBOXES": "Xem hộp thư đã kết nối"
       },
       "EMPTY_STATE": {
-        "TITLE": "No assistants available",
-        "SUBTITLE": "Create an assistant to provide quick and accurate responses to your users. It can learn from your help articles and past conversations.",
+        "TITLE": "Chưa có trợ lý nào",
+        "SUBTITLE": "Tạo trợ lý để trả lời nhanh và chính xác cho người dùng của bạn. Trợ lý có thể học từ bài viết trợ giúp và hội thoại cũ.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Tekomi AI Assistant",
-          "NOTE": "Tekomi AI Assistant engages directly with customers, learns from your help docs and past conversations, and delivers instant, accurate responses. It handles the initial queries, providing quick resolutions before  transferring to an agent when needed."
+          "TITLE": "Trợ lý Tekomi AI",
+          "NOTE": "Trợ lý Tekomi AI tương tác trực tiếp với khách hàng, học từ tài liệu trợ giúp và hội thoại cũ, đưa ra câu trả lời chính xác tức thì. Nó xử lý các câu hỏi ban đầu, giải quyết nhanh trước khi chuyển cho nhân viên khi cần."
         }
       },
       "GUARDRAILS": {
-        "TITLE": "Guardrails",
-        "DESCRIPTION": "Keeps things on track—only the kinds of questions you want your assistant to answer, nothing off-limits or off-topic.",
+        "TITLE": "Giới hạn an toàn",
+        "DESCRIPTION": "Giữ trợ lý đi đúng hướng — chỉ trả lời những loại câu hỏi bạn muốn, không lạc đề hay vượt giới hạn.",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "Đã chọn {count} mục | Đã chọn {count} mục",
+          "SELECT_ALL": "Chọn tất cả ({count})",
+          "UNSELECT_ALL": "Bỏ chọn tất cả ({count})",
           "BULK_DELETE_BUTTON": "Xoá"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example guardrails",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "SAVE": "Add and save (↵)",
-            "PLACEHOLDER": "Type in another guardrail..."
+            "TITLE": "Ví dụ giới hạn an toàn",
+            "ADD": "Thêm tất cả",
+            "ADD_SINGLE": "Thêm mục này",
+            "SAVE": "Thêm và lưu (↵)",
+            "PLACEHOLDER": "Nhập giới hạn an toàn khác..."
           },
           "NEW": {
-            "TITLE": "Add a guardrail",
+            "TITLE": "Thêm giới hạn an toàn",
             "CREATE": "Tạo",
             "CANCEL": "Huỷ",
-            "PLACEHOLDER": "Type in another guardrail...",
-            "TEST_ALL": "Test all"
+            "PLACEHOLDER": "Nhập giới hạn an toàn khác...",
+            "TEST_ALL": "Thử tất cả"
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Tìm kiếm..."
         },
-        "EMPTY_MESSAGE": "No guardrails found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No guardrails found for this search.",
+        "EMPTY_MESSAGE": "Không tìm thấy giới hạn an toàn nào. Tạo mới hoặc thêm ví dụ để bắt đầu.",
+        "SEARCH_EMPTY_MESSAGE": "Không tìm thấy giới hạn an toàn nào phù hợp.",
         "API": {
           "ADD": {
-            "SUCCESS": "Guardrails added successfully",
-            "ERROR": "There was an error adding guardrails, please try again."
+            "SUCCESS": "Đã thêm giới hạn an toàn thành công",
+            "ERROR": "Có lỗi khi thêm giới hạn an toàn, vui lòng thử lại."
           },
           "UPDATE": {
-            "SUCCESS": "Guardrails updated successfully",
-            "ERROR": "There was an error updating guardrails, please try again."
+            "SUCCESS": "Đã cập nhật giới hạn an toàn thành công",
+            "ERROR": "Có lỗi khi cập nhật giới hạn an toàn, vui lòng thử lại."
           },
           "DELETE": {
-            "SUCCESS": "Guardrails deleted successfully",
-            "ERROR": "There was an error deleting guardrails, please try again."
+            "SUCCESS": "Đã xoá giới hạn an toàn thành công",
+            "ERROR": "Có lỗi khi xoá giới hạn an toàn, vui lòng thử lại."
           }
         }
       },
       "RESPONSE_GUIDELINES": {
-        "TITLE": "Response Guidelines",
-        "DESCRIPTION": "The vibe and structure of your assistant’s replies—clear and friendly? Short and snappy? Detailed and formal?",
+        "TITLE": "Nguyên tắc trả lời",
+        "DESCRIPTION": "Giọng điệu và cấu trúc câu trả lời của trợ lý — rõ ràng thân thiện? Ngắn gọn dứt khoát? Chi tiết trang trọng?",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "Đã chọn {count} mục | Đã chọn {count} mục",
+          "SELECT_ALL": "Chọn tất cả ({count})",
+          "UNSELECT_ALL": "Bỏ chọn tất cả ({count})",
           "BULK_DELETE_BUTTON": "Xoá"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example response guidelines",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "SAVE": "Add and save (↵)",
-            "PLACEHOLDER": "Type in another response guideline..."
+            "TITLE": "Ví dụ nguyên tắc trả lời",
+            "ADD": "Thêm tất cả",
+            "ADD_SINGLE": "Thêm mục này",
+            "SAVE": "Thêm và lưu (↵)",
+            "PLACEHOLDER": "Nhập nguyên tắc trả lời khác..."
           },
           "NEW": {
-            "TITLE": "Add a response guideline",
+            "TITLE": "Thêm nguyên tắc trả lời",
             "CREATE": "Tạo",
             "CANCEL": "Huỷ",
-            "PLACEHOLDER": "Type in another response guideline...",
-            "TEST_ALL": "Test all"
+            "PLACEHOLDER": "Nhập nguyên tắc trả lời khác...",
+            "TEST_ALL": "Thử tất cả"
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Tìm kiếm..."
         },
-        "EMPTY_MESSAGE": "No response guidelines found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No response guidelines found for this search.",
+        "EMPTY_MESSAGE": "Không tìm thấy nguyên tắc trả lời nào. Tạo mới hoặc thêm ví dụ để bắt đầu.",
+        "SEARCH_EMPTY_MESSAGE": "Không tìm thấy nguyên tắc trả lời nào phù hợp.",
         "API": {
           "ADD": {
-            "SUCCESS": "Response Guidelines added successfully",
-            "ERROR": "There was an error adding response guidelines, please try again."
+            "SUCCESS": "Đã thêm nguyên tắc trả lời thành công",
+            "ERROR": "Có lỗi khi thêm nguyên tắc trả lời, vui lòng thử lại."
           },
           "UPDATE": {
-            "SUCCESS": "Response Guidelines updated successfully",
-            "ERROR": "There was an error updating response guidelines, please try again."
+            "SUCCESS": "Đã cập nhật nguyên tắc trả lời thành công",
+            "ERROR": "Có lỗi khi cập nhật nguyên tắc trả lời, vui lòng thử lại."
           },
           "DELETE": {
-            "SUCCESS": "Response Guidelines deleted successfully",
-            "ERROR": "There was an error deleting response guidelines, please try again."
+            "SUCCESS": "Đã xoá nguyên tắc trả lời thành công",
+            "ERROR": "Có lỗi khi xoá nguyên tắc trả lời, vui lòng thử lại."
           }
         }
       },
       "SCENARIOS": {
-        "TITLE": "Scenarios",
-        "DESCRIPTION": "Give your assistant some context—like “what to do when a user is stuck,” or “how to act during a refund request.”",
+        "TITLE": "Kịch bản",
+        "DESCRIPTION": "Cho trợ lý biết bối cảnh — như 'làm gì khi khách hàng bế tắc', hay 'xử lý thế nào khi có yêu cầu hoàn tiền'.",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "Đã chọn {count} mục | Đã chọn {count} mục",
+          "SELECT_ALL": "Chọn tất cả ({count})",
+          "UNSELECT_ALL": "Bỏ chọn tất cả ({count})",
           "BULK_DELETE_BUTTON": "Xoá"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example scenarios",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "TOOLS_USED": "Tools used :"
+            "TITLE": "Ví dụ kịch bản",
+            "ADD": "Thêm tất cả",
+            "ADD_SINGLE": "Thêm mục này",
+            "TOOLS_USED": "Công cụ dùng:"
           },
           "NEW": {
-            "CREATE": "Add a scenario",
-            "TITLE": "Create a scenario",
+            "CREATE": "Thêm kịch bản",
+            "TITLE": "Tạo kịch bản",
             "FORM": {
               "TITLE": {
                 "LABEL": "Tiêu đề",
-                "PLACEHOLDER": "Enter a name for the scenario",
-                "ERROR": "Scenario name is required"
+                "PLACEHOLDER": "Nhập tên cho kịch bản",
+                "ERROR": "Vui lòng nhập tên kịch bản"
               },
               "DESCRIPTION": {
                 "LABEL": "Mô tả",
-                "PLACEHOLDER": "Describe how and where this scenario will be used",
-                "ERROR": "Scenario description is required"
+                "PLACEHOLDER": "Mô tả cách và nơi kịch bản này được dùng",
+                "ERROR": "Vui lòng nhập mô tả kịch bản"
               },
               "INSTRUCTION": {
-                "LABEL": "How to handle",
-                "PLACEHOLDER": "Describe how and where this scenario will be handled",
-                "ERROR": "Scenario content is required"
+                "LABEL": "Cách xử lý",
+                "PLACEHOLDER": "Mô tả cách và nơi kịch bản này được xử lý",
+                "ERROR": "Vui lòng nhập nội dung kịch bản"
               },
               "CREATE": "Tạo",
               "CANCEL": "Huỷ"
@@ -791,434 +873,439 @@
         },
         "UPDATE": {
           "CANCEL": "Huỷ",
-          "UPDATE": "Update changes"
+          "UPDATE": "Cập nhật thay đổi"
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Tìm kiếm..."
         },
-        "EMPTY_MESSAGE": "No scenarios found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No scenarios found for this search.",
+        "EMPTY_MESSAGE": "Không tìm thấy kịch bản nào. Tạo mới hoặc thêm ví dụ để bắt đầu.",
+        "SEARCH_EMPTY_MESSAGE": "Không tìm thấy kịch bản nào phù hợp.",
         "API": {
           "ADD": {
-            "SUCCESS": "Scenarios added successfully",
-            "ERROR": "There was an error adding scenarios, please try again."
+            "SUCCESS": "Đã thêm kịch bản thành công",
+            "ERROR": "Có lỗi khi thêm kịch bản, vui lòng thử lại."
           },
           "UPDATE": {
-            "SUCCESS": "Scenarios updated successfully",
-            "ERROR": "There was an error updating scenarios, please try again."
+            "SUCCESS": "Đã cập nhật kịch bản thành công",
+            "ERROR": "Có lỗi khi cập nhật kịch bản, vui lòng thử lại."
           },
           "DELETE": {
-            "SUCCESS": "Scenarios deleted successfully",
-            "ERROR": "There was an error deleting scenarios, please try again."
+            "SUCCESS": "Đã xoá kịch bản thành công",
+            "ERROR": "Có lỗi khi xoá kịch bản, vui lòng thử lại."
           }
         }
       }
     },
     "DOCUMENTS": {
-      "HEADER": "Documents",
-      "ADD_NEW": "Create a new document",
-      "FAQ_COUNT": "{n} FAQ | {n} FAQs",
-      "SELECTED": "{count} selected",
-      "SELECT_ALL": "Select all ({count})",
-      "UNSELECT_ALL": "Unselect all ({count})",
+      "HEADER": "Tài liệu",
+      "ADD_NEW": "Tạo tài liệu mới",
+      "FAQ_COUNT": "{n} câu hỏi thường gặp | {n} câu hỏi thường gặp",
+      "SELECTED": "Đã chọn {count}",
+      "SELECT_ALL": "Chọn tất cả ({count})",
+      "UNSELECT_ALL": "Bỏ chọn tất cả ({count})",
       "BULK_DELETE_BUTTON": "Xoá",
       "BULK_SYNC_BUTTON": "Làm mới",
       "BULK_DELETE": {
-        "TITLE": "Delete documents?",
-        "DESCRIPTION": "Are you sure you want to delete the selected documents? This action cannot be undone.",
-        "CONFIRM": "Yes, delete all",
-        "SUCCESS_MESSAGE": "Documents deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the documents, please try again."
+        "TITLE": "Xoá tài liệu?",
+        "DESCRIPTION": "Bạn có chắc muốn xoá các tài liệu đã chọn? Thao tác không thể hoàn tác.",
+        "CONFIRM": "Có, xoá tất cả",
+        "SUCCESS_MESSAGE": "Đã xoá tài liệu thành công",
+        "ERROR_MESSAGE": "Có lỗi khi xoá tài liệu, vui lòng thử lại."
       },
       "BULK_SYNC": {
-        "SUCCESS_MESSAGE_ONE": "Refresh queued for 1 document",
-        "SUCCESS_MESSAGE": "Refresh queued for {count} documents",
-        "ZERO_MESSAGE": "No documents marked for refresh.",
-        "ERROR_MESSAGE": "There was an error queuing the refresh, please try again."
+        "SUCCESS_MESSAGE_ONE": "Đã xếp hàng làm mới cho 1 tài liệu",
+        "SUCCESS_MESSAGE": "Đã xếp hàng làm mới cho {count} tài liệu",
+        "ZERO_MESSAGE": "Không có tài liệu nào được đánh dấu làm mới.",
+        "ERROR_MESSAGE": "Có lỗi khi xếp hàng làm mới, vui lòng thử lại."
       },
       "SYNC": {
-        "QUEUED_MESSAGE": "Refresh queued. We'll update the document shortly.",
-        "ERROR_MESSAGE": "Could not queue refresh, please try again."
+        "QUEUED_MESSAGE": "Đã xếp hàng làm mới. Tài liệu sẽ được cập nhật trong ít phút.",
+        "ERROR_MESSAGE": "Không xếp hàng được việc làm mới, vui lòng thử lại."
       },
       "FILTERS": {
         "SOURCE": {
-          "ALL": "All sources",
-          "WEB": "Web pages",
-          "PDF": "PDFs"
+          "ALL": "Tất cả nguồn",
+          "WEB": "Trang web",
+          "PDF": "Tệp PDF"
         },
         "STATUS": {
-          "ANY": "Any status",
-          "UPDATED": "Updated",
-          "NEEDS_UPDATE": "Needs update",
-          "UPDATING": "Updating",
-          "FAILED": "Failed"
+          "ANY": "Mọi trạng thái",
+          "UPDATED": "Đã cập nhật",
+          "NEEDS_UPDATE": "Cần cập nhật",
+          "UPDATING": "Đang cập nhật",
+          "FAILED": "Thất bại"
         },
         "SORT": {
-          "RECENTLY_UPDATED": "Recently updated",
-          "RECENTLY_CREATED": "Recently created"
+          "RECENTLY_UPDATED": "Cập nhật gần đây",
+          "RECENTLY_CREATED": "Tạo gần đây",
+          "MOST_USED": "Dùng nhiều nhất trong hội thoại"
         },
-        "SEARCH_PLACEHOLDER": "Search..."
+        "SEARCH_PLACEHOLDER": "Tìm kiếm..."
       },
       "SYNC_STATUS": {
-        "SYNCED": "last updated {time}",
+        "SYNCED": "cập nhật lần cuối {time}",
         "SYNCING": "đang cập nhật...",
-        "STALE_SYNC": "update stalled",
-        "FAILED": "Failed to sync",
-        "NEVER_SYNCED": "not updated yet"
+        "STALE_SYNC": "cập nhật bị treo",
+        "FAILED": "Đồng bộ thất bại",
+        "NEVER_SYNCED": "chưa từng cập nhật"
       },
       "SYNC_ERRORS": {
-        "NOT_FOUND": "Page not found",
-        "ACCESS_DENIED": "Access denied",
-        "TIMEOUT": "Page took too long to respond",
-        "CONTENT_EMPTY": "Page returned empty content",
-        "FETCH_FAILED": "Could not fetch page",
-        "SYNC_ERROR": "Unexpected error",
-        "DEFAULT": "Sync error"
+        "NOT_FOUND": "Không tìm thấy trang",
+        "ACCESS_DENIED": "Bị từ chối truy cập",
+        "TIMEOUT": "Trang phản hồi quá lâu",
+        "CONTENT_EMPTY": "Trang trả về nội dung trống",
+        "FETCH_FAILED": "Không tải được trang",
+        "SYNC_ERROR": "Lỗi không xác định",
+        "DEFAULT": "Lỗi đồng bộ"
       },
       "RELATED_RESPONSES": {
-        "TITLE": "Related FAQs",
-        "EMPTY": "No FAQs have been generated from this document yet."
+        "TITLE": "Câu hỏi thường gặp liên quan",
+        "EMPTY": "Chưa có câu hỏi thường gặp nào được tạo từ tài liệu này."
       },
       "DETAILS": {
-        "DESCRIPTION": "Review the crawled content and the FAQs generated from this source.",
-        "SOURCE": "Source",
-        "GENERATED_FAQS": "Generated FAQs",
-        "LAST_UPDATED": "Last updated",
-        "NOT_AVAILABLE": "Not available",
-        "CONTENT_TAB": "Crawled content",
-        "PDF_TAB": "PDF details",
-        "CONTENT_TITLE": "Crawled content",
-        "PDF_TITLE": "PDF file",
-        "PDF_DESCRIPTION": "Review the original PDF source.",
-        "CHARACTER_COUNT": "{count} characters extracted",
+        "DESCRIPTION": "Xem nội dung đã thu thập và các câu hỏi thường gặp được tạo từ nguồn này.",
+        "SOURCE": "Nguồn",
+        "GENERATED_FAQS": "Câu hỏi thường gặp đã tạo",
+        "LAST_UPDATED": "Cập nhật lần cuối",
+        "NOT_AVAILABLE": "Không có sẵn",
+        "CONTENT_TAB": "Nội dung đã thu thập",
+        "PDF_TAB": "Chi tiết PDF",
+        "CONTENT_TITLE": "Nội dung đã thu thập",
+        "PDF_TITLE": "Tệp PDF",
+        "PDF_DESCRIPTION": "Xem lại tệp PDF nguồn.",
+        "CHARACTER_COUNT": "Đã trích {count} ký tự",
         "COPY_CONTENT": "Sao Chép",
-        "COPY_SUCCESS": "Crawled content copied to clipboard",
-        "COPY_ERROR": "Could not copy crawled content",
-        "VIEW_RAW": "View raw",
-        "VIEW_PREVIEW": "View preview",
-        "UNREADABLE_CONTENT": "Readable content could not be extracted from this document. You can view the raw extracted content.",
-        "EMPTY_CONTENT": "No crawled content is available for this document yet."
+        "COPY_SUCCESS": "Đã sao chép nội dung thu thập",
+        "COPY_ERROR": "Không sao chép được nội dung thu thập",
+        "VIEW_RAW": "Xem thô",
+        "VIEW_PREVIEW": "Xem trước",
+        "UNREADABLE_CONTENT": "Không trích được nội dung có thể đọc từ tài liệu này. Bạn có thể xem nội dung thô đã trích.",
+        "EMPTY_CONTENT": "Chưa có nội dung thu thập nào cho tài liệu này.",
+        "USED_IN_CONVERSATIONS": "Dùng trong hội thoại"
       },
-      "FORM_DESCRIPTION": "Enter the URL of the document to add it as a knowledge source and choose the assistant to associate it with.",
+      "FORM_DESCRIPTION": "Nhập URL của tài liệu để thêm làm nguồn tri thức, rồi chọn trợ lý sẽ dùng nó.",
       "CREATE": {
-        "TITLE": "Add a document",
-        "SUCCESS_MESSAGE": "The document has been successfully created",
-        "ERROR_MESSAGE": "There was an error creating the document, please try again."
+        "TITLE": "Thêm tài liệu",
+        "SUCCESS_MESSAGE": "Đã tạo tài liệu thành công",
+        "ERROR_MESSAGE": "Có lỗi khi tạo tài liệu, vui lòng thử lại."
       },
       "FORM": {
         "TYPE": {
-          "LABEL": "Document Type",
+          "LABEL": "Loại tài liệu",
           "URL": "URL",
-          "PDF": "PDF File"
+          "PDF": "Tệp PDF"
         },
         "URL": {
           "LABEL": "URL",
-          "PLACEHOLDER": "Enter the URL of the document",
-          "ERROR": "Please provide a valid URL for the document"
+          "PLACEHOLDER": "Nhập URL của tài liệu",
+          "ERROR": "Vui lòng nhập URL hợp lệ cho tài liệu"
         },
         "PDF_FILE": {
-          "LABEL": "PDF File",
-          "CHOOSE_FILE": "Choose PDF file",
-          "ERROR": "Please select a PDF file",
-          "HELP_TEXT": "Maximum file size: 10MB",
-          "INVALID_TYPE": "Please select a valid PDF file",
-          "TOO_LARGE": "File size exceeds 10MB limit"
+          "LABEL": "Tệp PDF",
+          "CHOOSE_FILE": "Chọn tệp PDF",
+          "ERROR": "Vui lòng chọn một tệp PDF",
+          "HELP_TEXT": "Kích thước tối đa: 10MB",
+          "INVALID_TYPE": "Vui lòng chọn tệp PDF hợp lệ",
+          "TOO_LARGE": "Kích thước tệp vượt quá giới hạn 10MB"
         },
         "NAME": {
-          "LABEL": "Document Name (Optional)",
-          "PLACEHOLDER": "Enter a name for the document"
+          "LABEL": "Tên tài liệu (không bắt buộc)",
+          "PLACEHOLDER": "Nhập tên cho tài liệu"
         }
       },
       "DELETE": {
-        "TITLE": "Are you sure to delete the document?",
-        "DESCRIPTION": "This action is permanent. Deleting this document will permanently erase all generated knowledge.",
+        "TITLE": "Bạn có chắc muốn xoá tài liệu này?",
+        "DESCRIPTION": "Thao tác này là vĩnh viễn. Xoá tài liệu này sẽ xoá vĩnh viễn toàn bộ tri thức đã tạo ra từ nó.",
         "CONFIRM": "Có, xoá",
-        "SUCCESS_MESSAGE": "The document has been successfully deleted",
-        "ERROR_MESSAGE": "There was an error deleting the document, please try again."
+        "SUCCESS_MESSAGE": "Đã xoá tài liệu thành công",
+        "ERROR_MESSAGE": "Có lỗi khi xoá tài liệu, vui lòng thử lại."
       },
       "OPTIONS": {
         "VIEW_DETAILS": "Xem chi tiết",
-        "SYNC_NOW": "Refresh now",
-        "RETRY_SYNC": "Retry refresh",
-        "DELETE_DOCUMENT": "Delete Document"
+        "SYNC_NOW": "Làm mới ngay",
+        "RETRY_SYNC": "Thử làm mới lại",
+        "DELETE_DOCUMENT": "Xoá tài liệu"
       },
       "EMPTY_STATE": {
-        "TITLE": "No documents available",
-        "SUBTITLE": "Documents are used by your assistant to generate FAQs. You can import documents to provide context for your assistant.",
-        "FILTERED_TITLE": "No matching documents",
-        "FILTERED_SUBTITLE": "Try changing the source, status, or search term.",
+        "TITLE": "Chưa có tài liệu nào",
+        "SUBTITLE": "Trợ lý dùng tài liệu để tạo câu hỏi thường gặp. Bạn có thể nhập tài liệu để cung cấp bối cảnh cho trợ lý.",
+        "FILTERED_TITLE": "Không có tài liệu phù hợp",
+        "FILTERED_SUBTITLE": "Hãy thử đổi nguồn, trạng thái hoặc từ khoá tìm kiếm.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Tekomi AI Document",
-          "NOTE": "A document in Tekomi AI serves as a knowledge resource for the assistant. By connecting your help center or guides, Tekomi AI can analyze the content and provide accurate responses for customer inquiries."
+          "TITLE": "Tài liệu Tekomi AI",
+          "NOTE": "Tài liệu trong Tekomi AI đóng vai trò nguồn tri thức cho trợ lý. Bằng cách kết nối trung tâm trợ giúp hoặc hướng dẫn của bạn, Tekomi AI có thể phân tích nội dung và trả lời chính xác các câu hỏi của khách hàng."
         }
-      }
+      },
+      "USED_IN_CONVERSATIONS": "Dùng trong {n} hội thoại | Dùng trong {n} hội thoại",
+      "NO_USED_CONVERSATIONS": "Không tìm thấy hội thoại nào cho tài liệu này."
     },
     "CUSTOM_TOOLS": {
-      "HEADER": "Tools",
-      "ADD_NEW": "Create a new tool",
-      "SOFT_LIMIT_WARNING": "Having more than 10 tools may reduce the assistant's reliability in selecting the right tool. Consider removing unused tools for better results.",
+      "HEADER": "Công cụ",
+      "ADD_NEW": "Tạo công cụ mới",
+      "SOFT_LIMIT_WARNING": "Có hơn 10 công cụ có thể làm giảm độ chính xác khi trợ lý chọn công cụ phù hợp. Cân nhắc gỡ các công cụ không dùng để có kết quả tốt hơn.",
       "EMPTY_STATE": {
-        "TITLE": "No custom tools available",
-        "SUBTITLE": "Create custom tools to connect your assistant with external APIs and services, enabling it to fetch data and perform actions on your behalf.",
+        "TITLE": "Chưa có công cụ tuỳ chỉnh nào",
+        "SUBTITLE": "Tạo công cụ tuỳ chỉnh để kết nối trợ lý với API và dịch vụ bên ngoài, giúp trợ lý lấy dữ liệu và thực hiện thao tác thay bạn.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Custom Tools",
-          "NOTE": "Custom tools allow your assistant to interact with external APIs and services. Create tools to fetch data, perform actions, or integrate with your existing systems to enhance your assistant's capabilities."
+          "TITLE": "Công cụ tuỳ chỉnh",
+          "NOTE": "Công cụ tuỳ chỉnh cho phép trợ lý tương tác với API và dịch vụ bên ngoài. Tạo công cụ để lấy dữ liệu, thực hiện thao tác, hoặc tích hợp với hệ thống sẵn có nhằm mở rộng khả năng của trợ lý."
         }
       },
-      "FORM_DESCRIPTION": "Configure your custom tool to connect with external APIs",
+      "FORM_DESCRIPTION": "Cấu hình công cụ tuỳ chỉnh để kết nối với API bên ngoài",
       "OPTIONS": {
-        "EDIT_TOOL": "Edit tool",
-        "DELETE_TOOL": "Delete tool"
+        "EDIT_TOOL": "Sửa công cụ",
+        "DELETE_TOOL": "Xoá công cụ"
       },
       "CREATE": {
-        "TITLE": "Create Custom Tool",
-        "SUCCESS_MESSAGE": "Custom tool created successfully",
-        "ERROR_MESSAGE": "Failed to create custom tool"
+        "TITLE": "Tạo công cụ tuỳ chỉnh",
+        "SUCCESS_MESSAGE": "Đã tạo công cụ tuỳ chỉnh thành công",
+        "ERROR_MESSAGE": "Không tạo được công cụ tuỳ chỉnh"
       },
       "EDIT": {
-        "TITLE": "Edit Custom Tool",
-        "SUCCESS_MESSAGE": "Custom tool updated successfully",
-        "ERROR_MESSAGE": "Failed to update custom tool"
+        "TITLE": "Sửa công cụ tuỳ chỉnh",
+        "SUCCESS_MESSAGE": "Đã cập nhật công cụ tuỳ chỉnh thành công",
+        "ERROR_MESSAGE": "Không cập nhật được công cụ tuỳ chỉnh"
       },
       "DELETE": {
-        "TITLE": "Delete Custom Tool",
-        "DESCRIPTION": "Are you sure you want to delete this custom tool? This action cannot be undone.",
+        "TITLE": "Xoá công cụ tuỳ chỉnh",
+        "DESCRIPTION": "Bạn có chắc muốn xoá công cụ tuỳ chỉnh này? Thao tác không thể hoàn tác.",
         "CONFIRM": "Có, xoá",
-        "SUCCESS_MESSAGE": "Custom tool deleted successfully",
-        "ERROR_MESSAGE": "Failed to delete custom tool"
+        "SUCCESS_MESSAGE": "Đã xoá công cụ tuỳ chỉnh thành công",
+        "ERROR_MESSAGE": "Không xoá được công cụ tuỳ chỉnh"
       },
       "PAYWALL": {
-        "TITLE": "Upgrade to use tools with Tekomi AI",
-        "AVAILABLE_ON": "Tekomi AI Tools are only available in Business and Enterprise plans. Please upgrade to Business plan to use the feature.",
+        "TITLE": "Nâng cấp để dùng công cụ với Tekomi AI",
+        "AVAILABLE_ON": "Công cụ Tekomi AI chỉ có ở gói Business và Enterprise. Vui lòng nâng cấp lên gói Business để dùng tính năng này.",
         "UPGRADE_PROMPT": "",
-        "UPGRADE_NOW": "Open billing",
+        "UPGRADE_NOW": "Mở trang thanh toán",
         "CANCEL_ANYTIME": ""
       },
       "ENTERPRISE_PAYWALL": {
-        "AVAILABLE_ON": "Tekomi AI Tools are only available in the paid plans.",
-        "UPGRADE_PROMPT": "Please upgrade to a paid plan to use this feature.",
-        "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+        "AVAILABLE_ON": "Công cụ Tekomi AI chỉ có ở các gói trả phí.",
+        "UPGRADE_PROMPT": "Vui lòng nâng cấp lên gói trả phí để dùng tính năng này.",
+        "ASK_ADMIN": "Vui lòng liên hệ quản trị viên để nâng cấp."
       },
       "TEST": {
-        "BUTTON": "Test connection",
-        "SUCCESS": "Endpoint returned HTTP {status}",
-        "ERROR": "Connection failed",
-        "DISABLED_HINT": "Testing is only available for endpoints without templates or request bodies."
+        "BUTTON": "Kiểm tra kết nối",
+        "SUCCESS": "Endpoint trả về HTTP {status}",
+        "ERROR": "Kết nối thất bại",
+        "DISABLED_HINT": "Chỉ kiểm tra được với endpoint không có mẫu hoặc request body."
       },
       "FORM": {
         "TITLE": {
-          "LABEL": "Tool Name",
-          "PLACEHOLDER": "Order Lookup",
-          "ERROR": "Tool name is required",
-          "MAX_LENGTH_ERROR": "Tool name must be {max} characters or fewer"
+          "LABEL": "Tên công cụ",
+          "PLACEHOLDER": "Tra cứu đơn hàng",
+          "ERROR": "Vui lòng nhập tên công cụ",
+          "MAX_LENGTH_ERROR": "Tên công cụ tối đa {max} ký tự"
         },
         "DESCRIPTION": {
           "LABEL": "Mô tả",
-          "PLACEHOLDER": "Looks up order details by order ID"
+          "PLACEHOLDER": "Tra cứu thông tin đơn hàng theo mã đơn"
         },
         "HTTP_METHOD": {
-          "LABEL": "Method"
+          "LABEL": "Phương thức"
         },
         "ENDPOINT_URL": {
-          "LABEL": "Endpoint URL",
+          "LABEL": "URL Endpoint",
           "PLACEHOLDER": "https://api.example.com/orders/{'{{'} order_id {'}}'}",
-          "ERROR": "Valid URL is required"
+          "ERROR": "Vui lòng nhập URL hợp lệ"
         },
         "AUTH_TYPE": {
-          "LABEL": "Authentication Type"
+          "LABEL": "Kiểu xác thực"
         },
         "AUTH_TYPES": {
           "NONE": "Không có",
           "BEARER": "Bearer Token",
-          "BASIC": "Basic Auth",
+          "BASIC": "Xác thực cơ bản",
           "API_KEY": "Khoá API"
         },
         "AUTH_CONFIG": {
           "BEARER_TOKEN": "Bearer Token",
-          "BEARER_TOKEN_PLACEHOLDER": "Enter your bearer token",
-          "USERNAME": "Username",
-          "USERNAME_PLACEHOLDER": "Enter username",
+          "BEARER_TOKEN_PLACEHOLDER": "Nhập bearer token của bạn",
+          "USERNAME": "Tên đăng nhập",
+          "USERNAME_PLACEHOLDER": "Nhập tên đăng nhập",
           "PASSWORD": "Mật khẩu",
-          "PASSWORD_PLACEHOLDER": "Enter password",
-          "API_KEY": "Header Name",
+          "PASSWORD_PLACEHOLDER": "Nhập mật khẩu",
+          "API_KEY": "Tên header",
           "API_KEY_PLACEHOLDER": "X-API-Key",
-          "API_VALUE": "Header Value",
-          "API_VALUE_PLACEHOLDER": "Enter API key value"
+          "API_VALUE": "Giá trị header",
+          "API_VALUE_PLACEHOLDER": "Nhập giá trị API key"
         },
         "PARAMETERS": {
-          "LABEL": "Parameters",
-          "HELP_TEXT": "Define the parameters that will be extracted from user queries"
+          "LABEL": "Tham số",
+          "HELP_TEXT": "Định nghĩa các tham số sẽ được trích từ câu hỏi của người dùng"
         },
-        "ADD_PARAMETER": "Add Parameter",
+        "ADD_PARAMETER": "Thêm tham số",
         "PARAM_NAME": {
-          "PLACEHOLDER": "Parameter name (e.g., order_id)"
+          "PLACEHOLDER": "Tên tham số (ví dụ: order_id)"
         },
         "PARAM_TYPE": {
           "PLACEHOLDER": "Kiểu"
         },
         "PARAM_TYPES": {
-          "STRING": "String",
+          "STRING": "Chuỗi",
           "NUMBER": "Số",
           "BOOLEAN": "Boolean",
-          "ARRAY": "Array",
-          "OBJECT": "Object"
+          "ARRAY": "Mảng",
+          "OBJECT": "Đối tượng"
         },
         "PARAM_DESCRIPTION": {
-          "PLACEHOLDER": "Description of the parameter"
+          "PLACEHOLDER": "Mô tả tham số"
         },
         "PARAM_REQUIRED": {
           "LABEL": "Bắt buộc"
         },
         "REQUEST_TEMPLATE": {
-          "LABEL": "Request Body Template (Optional)",
+          "LABEL": "Mẫu Request Body (không bắt buộc)",
           "PLACEHOLDER": "{'{'}\n  \"order_id\": \"{'{{'} order_id {'}}'}\"\n{'}'}"
         },
         "RESPONSE_TEMPLATE": {
-          "LABEL": "Response Template (Optional)",
+          "LABEL": "Mẫu phản hồi (không bắt buộc)",
           "PLACEHOLDER": "Order {'{{'} order_id {'}}'} status: {'{{'} status {'}}'}"
         },
         "ERRORS": {
-          "PARAM_NAME_REQUIRED": "Parameter name is required"
+          "PARAM_NAME_REQUIRED": "Vui lòng nhập tên tham số"
         }
       }
     },
     "RESPONSES": {
-      "HEADER": "FAQs",
-      "ADD_NEW": "Create new FAQ",
+      "HEADER": "Câu hỏi thường gặp",
+      "ADD_NEW": "Tạo câu hỏi thường gặp",
       "DOCUMENTABLE": {
-        "CONVERSATION": "Conversation #{id}"
+        "CONVERSATION": "Hội thoại #{id}"
       },
-      "SELECTED": "{count} selected",
-      "SELECT_ALL": "Select all ({count})",
-      "UNSELECT_ALL": "Unselect all ({count})",
-      "SEARCH_PLACEHOLDER": "Search FAQs...",
+      "SELECTED": "Đã chọn {count}",
+      "SELECT_ALL": "Chọn tất cả ({count})",
+      "UNSELECT_ALL": "Bỏ chọn tất cả ({count})",
+      "SEARCH_PLACEHOLDER": "Tìm câu hỏi thường gặp...",
       "ERRORS": {
-        "LOAD": "There was an error loading FAQs. Please try again."
+        "LOAD": "Có lỗi khi tải câu hỏi thường gặp. Vui lòng thử lại."
       },
       "BULK_DELETE_BUTTON": "Xoá",
       "BULK_DELETE": {
-        "TITLE": "Delete FAQs?",
-        "DESCRIPTION": "Are you sure you want to delete the selected FAQs? This action cannot be undone.",
-        "CONFIRM": "Yes, delete all",
-        "SUCCESS_MESSAGE": "FAQs deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the FAQs, please try again."
+        "TITLE": "Xoá các câu hỏi thường gặp?",
+        "DESCRIPTION": "Bạn có chắc muốn xoá các câu hỏi thường gặp đã chọn? Thao tác không thể hoàn tác.",
+        "CONFIRM": "Có, xoá tất cả",
+        "SUCCESS_MESSAGE": "Đã xoá câu hỏi thường gặp thành công",
+        "ERROR_MESSAGE": "Có lỗi khi xoá câu hỏi thường gặp, vui lòng thử lại."
       },
       "DELETE": {
-        "TITLE": "Are you sure to delete the FAQ?",
+        "TITLE": "Bạn có chắc muốn xoá câu hỏi thường gặp này?",
         "DESCRIPTION": "",
         "CONFIRM": "Có, xoá",
-        "SUCCESS_MESSAGE": "FAQ deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the FAQ, please try again."
+        "SUCCESS_MESSAGE": "Đã xoá câu hỏi thường gặp thành công",
+        "ERROR_MESSAGE": "Có lỗi khi xoá câu hỏi thường gặp, vui lòng thử lại."
       },
       "SUGGESTIONS_BANNER": {
-        "TITLE": "Tekomi AI grouped recurring customer questions into FAQ suggestions.",
-        "ACTION": "Review suggestions"
+        "TITLE": "Tekomi AI đã gom các câu hỏi lặp lại của khách thành gợi ý câu hỏi thường gặp.",
+        "ACTION": "Xem gợi ý"
       },
-      "FORM_DESCRIPTION": "Add a question and its corresponding answer to the knowledge base and select the assistant it should be associated with.",
+      "FORM_DESCRIPTION": "Thêm một câu hỏi và câu trả lời tương ứng vào cơ sở tri thức, rồi chọn trợ lý sẽ dùng nó.",
       "CREATE": {
-        "TITLE": "Add an FAQ",
-        "SUCCESS_MESSAGE": "The response has been added successfully.",
-        "ERROR_MESSAGE": "An error occurred while adding the response. Please try again."
+        "TITLE": "Thêm câu hỏi thường gặp",
+        "SUCCESS_MESSAGE": "Đã thêm câu trả lời thành công.",
+        "ERROR_MESSAGE": "Có lỗi khi thêm câu trả lời. Vui lòng thử lại."
       },
       "FORM": {
         "QUESTION": {
-          "LABEL": "Question",
-          "PLACEHOLDER": "Enter the question here",
-          "ERROR": "Please provide a valid question."
+          "LABEL": "Câu hỏi",
+          "PLACEHOLDER": "Nhập câu hỏi tại đây",
+          "ERROR": "Vui lòng nhập câu hỏi hợp lệ."
         },
         "ANSWER": {
-          "LABEL": "Answer",
-          "PLACEHOLDER": "Enter the answer here",
-          "ERROR": "Please provide a valid answer."
+          "LABEL": "Câu trả lời",
+          "PLACEHOLDER": "Nhập câu trả lời tại đây",
+          "ERROR": "Vui lòng nhập câu trả lời hợp lệ."
         }
       },
       "EDIT": {
-        "TITLE": "Update the FAQ",
-        "SUCCESS_MESSAGE": "The FAQ has been successfully updated",
-        "ERROR_MESSAGE": "There was an error updating the FAQ, please try again",
-        "APPROVE_SUCCESS_MESSAGE": "The FAQ was marked as approved"
+        "TITLE": "Cập nhật câu hỏi thường gặp",
+        "SUCCESS_MESSAGE": "Đã cập nhật câu hỏi thường gặp thành công",
+        "ERROR_MESSAGE": "Có lỗi khi cập nhật câu hỏi thường gặp, vui lòng thử lại",
+        "APPROVE_SUCCESS_MESSAGE": "Câu hỏi thường gặp đã được đánh dấu duyệt"
       },
       "OPTIONS": {
-        "APPROVE": "Approve",
+        "APPROVE": "Duyệt",
         "EDIT_RESPONSE": "Chỉnh sửa",
         "DELETE_RESPONSE": "Xoá"
       },
       "EMPTY_STATE": {
-        "TITLE": "No FAQs Found",
-        "SUBTITLE": "FAQs help your assistant provide quick and accurate answers to questions from your customers. They can be generated automatically from your content or can be added manually.",
-        "CLEAR_SEARCH": "Clear active filters",
+        "TITLE": "Không tìm thấy câu hỏi thường gặp nào",
+        "SUBTITLE": "Câu hỏi thường gặp giúp trợ lý trả lời nhanh và chính xác cho khách hàng. Chúng có thể được tạo tự động từ nội dung của bạn hoặc thêm thủ công.",
+        "CLEAR_SEARCH": "Xoá bộ lọc đang áp dụng",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Tekomi AI FAQ",
-          "NOTE": "Tekomi AI FAQs detects common customer questions—whether missing from your knowledge base or frequently asked—and generates relevant FAQs to improve support. You can review each suggestion and decide whether to approve or reject it."
+          "TITLE": "Câu hỏi thường gặp Tekomi AI",
+          "NOTE": "Tính năng này phát hiện các câu hỏi phổ biến của khách — dù thiếu trong cơ sở tri thức hay được hỏi thường xuyên — và tạo câu hỏi thường gặp phù hợp để cải thiện hỗ trợ. Bạn có thể xem từng gợi ý và quyết định duyệt hay từ chối."
         }
-      }
+      },
+      "NO_USED_CONVERSATIONS": "Không tìm thấy hội thoại nào cho câu hỏi thường gặp này."
     },
     "FAQ_SUGGESTIONS": {
-      "HEADER": "FAQ suggestions",
-      "SEARCH_PLACEHOLDER": "Search suggestions...",
-      "QUEUE_COUNT": "{count} suggestion to review | {count} suggestions to review",
-      "QUEUE_HINT": "Ranked by customer demand",
-      "SOURCE_COUNT": "{count} conversation | {count} conversations",
-      "REVIEW": "Review sources",
-      "APPROVE": "Approve",
-      "APPROVE_FAQ": "Approve FAQ",
-      "DISMISS": "Dismiss",
-      "SAVE": "Save changes",
+      "HEADER": "Gợi ý câu hỏi thường gặp",
+      "SEARCH_PLACEHOLDER": "Tìm gợi ý...",
+      "QUEUE_COUNT": "{count} gợi ý cần xem | {count} gợi ý cần xem",
+      "QUEUE_HINT": "Xếp hạng theo nhu cầu của khách",
+      "SOURCE_COUNT": "{count} hội thoại | {count} hội thoại",
+      "REVIEW": "Xem nguồn",
+      "APPROVE": "Duyệt",
+      "APPROVE_FAQ": "Duyệt câu hỏi thường gặp",
+      "DISMISS": "Bỏ qua",
+      "SAVE": "Lưu thay đổi",
       "DETAILS": {
-        "TITLE": "Review FAQ suggestion",
-        "DESCRIPTION": "Tekomi AI grouped {count} conversation into this suggestion. Review the evidence and refine the FAQ before approval. | Tekomi AI grouped {count} conversations into this suggestion. Review the evidence and refine the FAQ before approval.",
-        "SOURCES": "Source conversations",
-        "SOURCE_PROGRESS": "{visible} of {total}",
-        "NO_SOURCES": "No accessible source conversations were found.",
-        "RETRY": "Retry"
+        "TITLE": "Xem gợi ý câu hỏi thường gặp",
+        "DESCRIPTION": "Tekomi AI đã gom {count} hội thoại vào gợi ý này. Hãy xem bằng chứng và tinh chỉnh câu hỏi thường gặp trước khi duyệt. | Tekomi AI đã gom {count} hội thoại vào gợi ý này. Hãy xem bằng chứng và tinh chỉnh câu hỏi thường gặp trước khi duyệt.",
+        "SOURCES": "Hội thoại nguồn",
+        "SOURCE_PROGRESS": "{visible} trong {total}",
+        "NO_SOURCES": "Không tìm thấy hội thoại nguồn nào có thể truy cập.",
+        "RETRY": "Thử lại"
       },
       "EMPTY_STATE": {
-        "TITLE": "The review queue is clear",
-        "SUBTITLE": "New FAQ suggestions will appear here when they are ready to review.",
-        "CLEAR_SEARCH": "Clear search"
+        "TITLE": "Hàng chờ xem đã trống",
+        "SUBTITLE": "Gợi ý câu hỏi thường gặp mới sẽ hiện ở đây khi sẵn sàng để xem.",
+        "CLEAR_SEARCH": "Xoá tìm kiếm"
       },
       "SUCCESS": {
-        "APPROVED": "FAQ approved and added to Tekomi AI's knowledge.",
-        "DISMISSED": "Suggestion dismissed.",
-        "SAVED": "Suggestion updated."
+        "APPROVED": "Đã duyệt và thêm câu hỏi thường gặp vào kiến thức của Tekomi AI.",
+        "DISMISSED": "Đã bỏ qua gợi ý.",
+        "SAVED": "Đã cập nhật gợi ý."
       },
       "ERRORS": {
-        "LOAD": "There was an error loading FAQ suggestions. Please try again.",
-        "LOAD_DETAILS": "There was an error loading the source conversations.",
-        "APPROVE": "There was an error approving the FAQ. Please try again.",
-        "DISMISS": "There was an error dismissing the suggestion. Please try again.",
-        "SAVE": "There was an error saving the suggestion. Please try again."
+        "LOAD": "Có lỗi khi tải gợi ý câu hỏi thường gặp. Vui lòng thử lại.",
+        "LOAD_DETAILS": "Có lỗi khi tải hội thoại nguồn.",
+        "APPROVE": "Có lỗi khi duyệt câu hỏi thường gặp. Vui lòng thử lại.",
+        "DISMISS": "Có lỗi khi bỏ qua gợi ý. Vui lòng thử lại.",
+        "SAVE": "Có lỗi khi lưu gợi ý. Vui lòng thử lại."
       }
     },
     "INBOXES": {
-      "HEADER": "Connected Inboxes",
-      "ADD_NEW": "Connect a new inbox",
+      "HEADER": "Hộp thư đã kết nối",
+      "ADD_NEW": "Kết nối hộp thư mới",
       "OPTIONS": {
         "DISCONNECT": "Ngắt kết nối"
       },
       "DELETE": {
-        "TITLE": "Are you sure to disconnect the inbox?",
+        "TITLE": "Bạn có chắc muốn ngắt kết nối hộp thư?",
         "DESCRIPTION": "",
         "CONFIRM": "Có, xoá",
-        "SUCCESS_MESSAGE": "The inbox was successfully disconnected.",
-        "ERROR_MESSAGE": "There was an error disconnecting the inbox, please try again."
+        "SUCCESS_MESSAGE": "Đã ngắt kết nối hộp thư thành công.",
+        "ERROR_MESSAGE": "Có lỗi khi ngắt kết nối hộp thư, vui lòng thử lại."
       },
-      "FORM_DESCRIPTION": "Choose an inbox to connect with the assistant.",
+      "FORM_DESCRIPTION": "Chọn hộp thư để kết nối với trợ lý.",
       "CREATE": {
-        "TITLE": "Connect an Inbox",
-        "SUCCESS_MESSAGE": "The inbox was successfully connected.",
-        "ERROR_MESSAGE": "An error occurred while connecting the inbox. Please try again."
+        "TITLE": "Kết nối hộp thư",
+        "SUCCESS_MESSAGE": "Đã kết nối hộp thư thành công.",
+        "ERROR_MESSAGE": "Có lỗi khi kết nối hộp thư. Vui lòng thử lại."
       },
       "FORM": {
         "INBOX": {
           "LABEL": "Hộp thư",
-          "PLACEHOLDER": "Choose the inbox to deploy the assistant.",
-          "ERROR": "An inbox selection is required."
+          "PLACEHOLDER": "Chọn hộp thư để triển khai trợ lý.",
+          "ERROR": "Vui lòng chọn một hộp thư."
         }
       },
       "EMPTY_STATE": {
-        "TITLE": "No Connected Inboxes",
-        "SUBTITLE": "Connecting an inbox allows the assistant to handle initial questions from your customers before transferring them to you."
+        "TITLE": "Chưa có hộp thư nào kết nối",
+        "SUBTITLE": "Kết nối một hộp thư để trợ lý xử lý các câu hỏi ban đầu của khách trước khi chuyển cho bạn."
       }
     }
   }
