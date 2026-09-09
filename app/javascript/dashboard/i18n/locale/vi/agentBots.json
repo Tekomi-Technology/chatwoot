@@ -1,117 +1,117 @@
 {
   "AGENT_BOTS": {
     "HEADER": "Bots",
-    "LOADING_EDITOR": "Loading editor...",
-    "DESCRIPTION": "Agent Bots are like the most fabulous members of your team. They can handle the small stuff, so you can focus on the stuff that matters. Give them a try. You can manage your bots from this page or create new ones using the 'Add Bot' button.",
-    "LEARN_MORE": "Learn about agent bots",
-    "COUNT": "{n} bot | {n} bots",
-    "SEARCH_PLACEHOLDER": "Search bots...",
-    "NO_RESULTS": "No bots found matching your search",
-    "GLOBAL_BOT": "System bot",
-    "GLOBAL_BOT_BADGE": "System",
+    "LOADING_EDITOR": "Đang tải trình soạn thảo...",
+    "DESCRIPTION": "Bot là những thành viên đắc lực trong đội của bạn. Chúng lo các việc nhỏ để bạn tập trung vào việc quan trọng. Bạn có thể quản lý bot tại trang này hoặc tạo bot mới bằng nút 'Thêm bot'.",
+    "LEARN_MORE": "Tìm hiểu về bot",
+    "COUNT": "{n} bot | {n} bot",
+    "SEARCH_PLACEHOLDER": "Tìm bot...",
+    "NO_RESULTS": "Không tìm thấy bot nào phù hợp",
+    "GLOBAL_BOT": "Bot hệ thống",
+    "GLOBAL_BOT_BADGE": "Hệ thống",
     "AVATAR": {
-      "SUCCESS_DELETE": "Bot avatar deleted successfully",
-      "ERROR_DELETE": "Error deleting bot avatar, please try again"
+      "SUCCESS_DELETE": "Đã xoá ảnh đại diện bot thành công",
+      "ERROR_DELETE": "Lỗi khi xoá ảnh đại diện bot, vui lòng thử lại"
     },
     "BOT_CONFIGURATION": {
-      "TITLE": "Select an agent bot",
-      "DESC": "Assign an Agent Bot to your inbox. They can handle initial conversations and transfer them to a live agent when necessary.",
+      "TITLE": "Chọn một bot",
+      "DESC": "Gán bot cho hộp thư của bạn. Bot có thể tiếp nhận hội thoại ban đầu và chuyển cho nhân viên khi cần.",
       "SUBMIT": "Cập nhật",
-      "DISCONNECT": "Disconnect bot",
-      "SUCCESS_MESSAGE": "Successfully updated the agent bot.",
-      "DISCONNECTED_SUCCESS_MESSAGE": "Successfully disconnected the agent bot.",
-      "ERROR_MESSAGE": "Could not update the agent bot. Please try again.",
-      "DISCONNECTED_ERROR_MESSAGE": "Could not disconnect the agent bot. Please try again.",
-      "SELECT_PLACEHOLDER": "Select bot"
+      "DISCONNECT": "Ngắt kết nối bot",
+      "SUCCESS_MESSAGE": "Đã cập nhật bot thành công.",
+      "DISCONNECTED_SUCCESS_MESSAGE": "Đã ngắt kết nối bot thành công.",
+      "ERROR_MESSAGE": "Không cập nhật được bot. Vui lòng thử lại.",
+      "DISCONNECTED_ERROR_MESSAGE": "Không ngắt kết nối được bot. Vui lòng thử lại.",
+      "SELECT_PLACEHOLDER": "Chọn bot"
     },
     "ADD": {
-      "TITLE": "Add Bot",
+      "TITLE": "Thêm bot",
       "CANCEL_BUTTON_TEXT": "Huỷ",
       "API": {
-        "SUCCESS_MESSAGE": "Bot added successfully.",
-        "ERROR_MESSAGE": "Could not add bot. Please try again later."
+        "SUCCESS_MESSAGE": "Đã thêm bot thành công.",
+        "ERROR_MESSAGE": "Không thêm được bot. Vui lòng thử lại sau."
       }
     },
     "LIST": {
-      "404": "No bots found. You can create a bot by clicking the 'Add Bot' button.",
-      "LOADING": "Fetching bots...",
+      "404": "Không tìm thấy bot nào. Bạn có thể tạo bot bằng nút 'Thêm bot'.",
+      "LOADING": "Đang tải danh sách bot...",
       "TABLE_HEADER": {
-        "DETAILS": "Bot Details",
-        "URL": "Webhook URL",
+        "DETAILS": "Thông tin bot",
+        "URL": "Đường dẫn webhook",
         "ACTIONS": "Hành động"
       }
     },
     "DELETE": {
       "BUTTON_TEXT": "Xoá",
-      "TITLE": "Delete bot",
+      "TITLE": "Xoá bot",
       "CONFIRM": {
         "TITLE": "Xác nhận xoá",
-        "MESSAGE": "Are you sure you want to delete {name}?",
+        "MESSAGE": "Bạn có chắc muốn xoá {name}?",
         "YES": "Có, Xoá",
         "NO": "Không, giữ"
       },
       "API": {
-        "SUCCESS_MESSAGE": "Bot deleted successfully.",
-        "ERROR_MESSAGE": "Could not delete bot. Please try again."
+        "SUCCESS_MESSAGE": "Đã xoá bot thành công.",
+        "ERROR_MESSAGE": "Không xoá được bot. Vui lòng thử lại."
       }
     },
     "EDIT": {
       "BUTTON_TEXT": "Chỉnh sửa",
-      "TITLE": "Edit bot",
+      "TITLE": "Sửa bot",
       "API": {
-        "SUCCESS_MESSAGE": "Bot updated successfully.",
-        "ERROR_MESSAGE": "Could not update bot. Please try again."
+        "SUCCESS_MESSAGE": "Đã cập nhật bot thành công.",
+        "ERROR_MESSAGE": "Không cập nhật được bot. Vui lòng thử lại."
       }
     },
     "SECRET": {
-      "LABEL": "Webhook Secret",
-      "COPY": "Copy secret to clipboard",
-      "COPY_SUCCESS": "Secret copied to clipboard",
-      "TOGGLE": "Toggle secret visibility",
-      "CREATED_DESC": "Use the secret below to verify webhook signatures. Please copy it now, you can also find it later in the bot settings.",
-      "DONE": "Done",
-      "RESET_SUCCESS": "Webhook secret regenerated successfully",
-      "RESET_ERROR": "Unable to regenerate webhook secret. Please try again"
+      "LABEL": "Khoá bí mật webhook",
+      "COPY": "Sao chép khoá bí mật",
+      "COPY_SUCCESS": "Đã sao chép khoá bí mật",
+      "TOGGLE": "Ẩn/hiện khoá bí mật",
+      "CREATED_DESC": "Dùng khoá bí mật bên dưới để xác minh chữ ký webhook. Hãy sao chép ngay, bạn cũng có thể xem lại sau trong cài đặt bot.",
+      "DONE": "Xong",
+      "RESET_SUCCESS": "Đã tạo lại khoá bí mật webhook thành công",
+      "RESET_ERROR": "Không tạo lại được khoá bí mật webhook. Vui lòng thử lại"
     },
     "ACCESS_TOKEN": {
       "TITLE": "Token truy cập",
-      "DESCRIPTION": "Copy the access token and save it securely",
-      "COPY_SUCCESSFUL": "Access token copied to clipboard",
-      "RESET_SUCCESS": "Access token regenerated successfully",
-      "RESET_ERROR": "Unable to regenerate access token. Please try again"
+      "DESCRIPTION": "Sao chép token truy cập và lưu ở nơi an toàn",
+      "COPY_SUCCESSFUL": "Đã sao chép token truy cập",
+      "RESET_SUCCESS": "Đã tạo lại token truy cập thành công",
+      "RESET_ERROR": "Không tạo lại được token truy cập. Vui lòng thử lại"
     },
     "FORM": {
       "AVATAR": {
-        "LABEL": "Bot avatar"
+        "LABEL": "Ảnh đại diện bot"
       },
       "NAME": {
-        "LABEL": "Bot name",
-        "PLACEHOLDER": "Enter bot name",
-        "REQUIRED": "Bot name is required"
+        "LABEL": "Tên bot",
+        "PLACEHOLDER": "Nhập tên bot",
+        "REQUIRED": "Vui lòng nhập tên bot"
       },
       "DESCRIPTION": {
         "LABEL": "Mô tả",
         "PLACEHOLDER": "Bot này sẽ làm gì?"
       },
       "WEBHOOK_URL": {
-        "LABEL": "Webhook URL",
+        "LABEL": "Đường dẫn webhook",
         "PLACEHOLDER": "https://example.com/webhook",
-        "REQUIRED": "Webhook URL is required"
+        "REQUIRED": "Vui lòng nhập đường dẫn webhook"
       },
       "ERRORS": {
-        "NAME": "Bot name is required",
-        "URL": "Webhook URL is required",
-        "VALID_URL": "Please enter a valid URL starting with http:// or https://"
+        "NAME": "Vui lòng nhập tên bot",
+        "URL": "Vui lòng nhập đường dẫn webhook",
+        "VALID_URL": "Vui lòng nhập đường dẫn hợp lệ bắt đầu bằng http:// hoặc https://"
       },
       "CANCEL": "Huỷ",
-      "CREATE": "Create Bot",
-      "UPDATE": "Update Bot"
+      "CREATE": "Tạo bot",
+      "UPDATE": "Cập nhật bot"
     },
     "WEBHOOK": {
-      "DESCRIPTION": "Configure a webhook bot to integrate with your custom services. The bot will receive and process events from conversations and can respond to them."
+      "DESCRIPTION": "Cấu hình bot webhook để tích hợp với dịch vụ riêng của bạn. Bot sẽ nhận và xử lý các sự kiện từ hội thoại, đồng thời có thể phản hồi lại."
     },
     "TYPES": {
-      "WEBHOOK": "Webhook bot"
+      "WEBHOOK": "Bot webhook"
     }
   }
 }

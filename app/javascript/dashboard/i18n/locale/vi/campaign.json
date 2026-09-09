@@ -1,8 +1,8 @@
 {
   "CAMPAIGN": {
     "LIVE_CHAT": {
-      "HEADER_TITLE": "Live chat campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "Chiến dịch chat trực tuyến",
+      "NEW_CAMPAIGN": "Tạo chiến dịch",
       "CARD": {
         "STATUS": {
           "ENABLED": "Bật",
@@ -12,15 +12,15 @@
           "SENT_BY": "Gửi bởi",
           "BOT": "Bot",
           "FROM": "từ",
-          "URL": "URL:"
+          "URL": "Đường dẫn:"
         }
       },
       "EMPTY_STATE": {
-        "TITLE": "No live chat campaigns are available",
-        "SUBTITLE": "Connect with your customers using proactive messages.  Click 'Create campaign' to get started."
+        "TITLE": "Chưa có chiến dịch chat trực tuyến nào",
+        "SUBTITLE": "Kết nối với khách hàng bằng tin nhắn chủ động. Bấm 'Tạo chiến dịch' để bắt đầu."
       },
       "CREATE": {
-        "TITLE": "Create a live chat campaign",
+        "TITLE": "Tạo chiến dịch chat trực tuyến",
         "CANCEL_BUTTON_TEXT": "Huỷ",
         "CREATE_BUTTON_TEXT": "Tạo",
         "FORM": {
@@ -35,17 +35,17 @@
             "ERROR": "Thông điệp bắt buộc có"
           },
           "INBOX": {
-            "LABEL": "Chọn Hộp thư đến",
-            "PLACEHOLDER": "Chọn Hộp thư đến",
+            "LABEL": "Chọn Hộp thư",
+            "PLACEHOLDER": "Chọn Hộp thư",
             "ERROR": "Cần phải có kênh"
           },
           "SENT_BY": {
             "LABEL": "Gửi bởi",
-            "PLACEHOLDER": "Please select sender",
+            "PLACEHOLDER": "Vui lòng chọn người gửi",
             "ERROR": "Người gửi cần có"
           },
           "END_POINT": {
-            "LABEL": "URL",
+            "LABEL": "Đường dẫn",
             "PLACEHOLDER": "Vui lòng nhập URL",
             "ERROR": "Vui lòng nhập một URL hợp lệ"
           },
@@ -55,7 +55,7 @@
             "ERROR": "Thời gian trên trang là bắt buộc"
           },
           "OTHER_PREFERENCES": {
-            "TITLE": "Other preferences",
+            "TITLE": "Tuỳ chọn khác",
             "ENABLED": "Vận hành chiến dịch",
             "TRIGGER_ONLY_BUSINESS_HOURS": "Chỉ kích hoạt trong giờ làm việc"
           },
@@ -64,41 +64,41 @@
             "CANCEL": "Huỷ"
           },
           "API": {
-            "SUCCESS_MESSAGE": "Live chat campaign created successfully",
+            "SUCCESS_MESSAGE": "Đã tạo chiến dịch chat trực tuyến thành công",
             "ERROR_MESSAGE": "Đã có lỗi. Vui lòng thử lại."
           }
         }
       },
       "EDIT": {
-        "TITLE": "Edit live chat campaign",
+        "TITLE": "Sửa chiến dịch chat trực tuyến",
         "FORM": {
           "API": {
-            "SUCCESS_MESSAGE": "Live chat campaign updated successfully",
+            "SUCCESS_MESSAGE": "Đã cập nhật chiến dịch chat trực tuyến thành công",
             "ERROR_MESSAGE": "Đã có lỗi. Vui lòng thử lại."
           }
         }
       }
     },
     "SMS": {
-      "HEADER_TITLE": "SMS campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "Chiến dịch SMS",
+      "NEW_CAMPAIGN": "Tạo chiến dịch",
       "EMPTY_STATE": {
-        "TITLE": "No SMS campaigns are available",
-        "SUBTITLE": "Launch an SMS campaign to reach your customers directly. Send offers or make announcements with ease. Click 'Create campaign' to get started."
+        "TITLE": "Chưa có chiến dịch SMS nào",
+        "SUBTITLE": "Chạy chiến dịch SMS để tiếp cận khách hàng trực tiếp. Gửi ưu đãi hoặc thông báo dễ dàng. Bấm 'Tạo chiến dịch' để bắt đầu."
       },
       "CARD": {
         "STATUS": {
-          "PROCESSING": "Processing",
+          "PROCESSING": "Đang xử lý",
           "COMPLETED": "Hoàn tất",
-          "SCHEDULED": "Scheduled"
+          "SCHEDULED": "Đã lên lịch"
         },
         "CAMPAIGN_DETAILS": {
-          "SENT_FROM": "Sent from",
-          "ON": "on"
+          "SENT_FROM": "Gửi từ",
+          "ON": "vào"
         }
       },
       "CREATE": {
-        "TITLE": "Create SMS campaign",
+        "TITLE": "Tạo chiến dịch SMS",
         "CANCEL_BUTTON_TEXT": "Huỷ",
         "CREATE_BUTTON_TEXT": "Tạo",
         "FORM": {
@@ -113,8 +113,8 @@
             "ERROR": "Thông điệp bắt buộc có"
           },
           "INBOX": {
-            "LABEL": "Chọn Hộp thư đến",
-            "PLACEHOLDER": "Chọn Hộp thư đến",
+            "LABEL": "Chọn Hộp thư",
+            "PLACEHOLDER": "Chọn Hộp thư",
             "ERROR": "Cần phải có kênh"
           },
           "AUDIENCE": {
@@ -132,32 +132,33 @@
             "CANCEL": "Huỷ"
           },
           "API": {
-            "SUCCESS_MESSAGE": "SMS campaign created successfully",
+            "SUCCESS_MESSAGE": "Đã tạo chiến dịch SMS thành công",
             "ERROR_MESSAGE": "Đã có lỗi. Vui lòng thử lại."
           }
         }
       }
     },
     "WHATSAPP": {
-      "HEADER_TITLE": "WhatsApp campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "Chiến dịch WhatsApp",
+      "NEW_CAMPAIGN": "Tạo chiến dịch",
       "EMPTY_STATE": {
-        "TITLE": "No WhatsApp campaigns are available",
-        "SUBTITLE": "Launch a WhatsApp campaign to reach your customers directly. Send offers or make announcements with ease. Click 'Create campaign' to get started."
+        "TITLE": "Chưa có chiến dịch WhatsApp nào",
+        "SUBTITLE": "Chạy chiến dịch WhatsApp để tiếp cận khách hàng trực tiếp. Gửi ưu đãi hoặc thông báo dễ dàng. Bấm 'Tạo chiến dịch' để bắt đầu."
       },
       "CARD": {
         "STATUS": {
-          "PROCESSING": "Processing",
+          "PROCESSING": "Đang xử lý",
           "COMPLETED": "Hoàn tất",
-          "SCHEDULED": "Scheduled"
+          "SCHEDULED": "Đã lên lịch"
         },
         "CAMPAIGN_DETAILS": {
-          "SENT_FROM": "Sent from",
-          "ON": "on"
-        }
+          "SENT_FROM": "Gửi từ",
+          "ON": "vào"
+        },
+        "ANALYTICS": "Xem thống kê"
       },
       "CREATE": {
-        "TITLE": "Create WhatsApp campaign",
+        "TITLE": "Tạo chiến dịch WhatsApp",
         "CANCEL_BUTTON_TEXT": "Huỷ",
         "CREATE_BUTTON_TEXT": "Tạo",
         "FORM": {
@@ -167,20 +168,20 @@
             "ERROR": "Tiêu đề bắt buộc có"
           },
           "INBOX": {
-            "LABEL": "Chọn Hộp thư đến",
-            "PLACEHOLDER": "Chọn Hộp thư đến",
+            "LABEL": "Chọn Hộp thư",
+            "PLACEHOLDER": "Chọn Hộp thư",
             "ERROR": "Cần phải có kênh"
           },
           "TEMPLATE": {
-            "LABEL": "WhatsApp Template",
-            "PLACEHOLDER": "Select a template",
-            "INFO": "Select a template to use for this campaign.",
-            "ERROR": "Template is required",
+            "LABEL": "Mẫu tin WhatsApp",
+            "PLACEHOLDER": "Chọn một mẫu tin",
+            "INFO": "Chọn mẫu tin dùng cho chiến dịch này.",
+            "ERROR": "Vui lòng chọn mẫu tin",
             "PREVIEW_TITLE": "Xử lý {templateName}",
             "LANGUAGE": "Ngôn ngữ",
             "CATEGORY": "Loại",
             "VARIABLES_LABEL": "Biến",
-            "VARIABLE_PLACEHOLDER": "Enter value for {variable}"
+            "VARIABLE_PLACEHOLDER": "Nhập giá trị cho {variable}"
           },
           "AUDIENCE": {
             "LABEL": "Khán giả",
@@ -197,15 +198,108 @@
             "CANCEL": "Huỷ"
           },
           "API": {
-            "SUCCESS_MESSAGE": "WhatsApp campaign created successfully",
+            "SUCCESS_MESSAGE": "Đã tạo chiến dịch WhatsApp thành công",
             "ERROR_MESSAGE": "Đã có lỗi. Vui lòng thử lại."
           }
+        }
+      },
+      "ANALYTICS": {
+        "LOADING": "Đang tải thống kê...",
+        "EMPTY": "Không có bản ghi gửi nào.",
+        "EMPTY_FILTER": "Không có bản ghi gửi nào ở trạng thái {status}.",
+        "DELIVERIES_ERROR": "Không tải được bản ghi gửi. Hãy tải lại trang để thử lại.",
+        "EMPTY_STATE": {
+          "ERROR": {
+            "TITLE": "Không tải được thống kê",
+            "DESCRIPTION": "Hãy tải lại trang để thử lại."
+          },
+          "PENDING": {
+            "TITLE": "Dữ liệu gửi sẽ hiện ra khi chiến dịch bắt đầu chạy",
+            "DESCRIPTION": "Chiến dịch này chưa có bản ghi gửi nào."
+          },
+          "UNAVAILABLE": {
+            "TITLE": "Chiến dịch này không có thống kê",
+            "DESCRIPTION": "Không có dữ liệu gửi nào được ghi lại cho chiến dịch này. Điều này thường xảy ra với các chiến dịch chạy trước khi tính năng thống kê ra đời."
+          }
+        },
+        "PROCESSING_BANNER": {
+          "DEFAULT": "Chiến dịch này vẫn đang chạy. Thống kê sẽ tự cập nhật.",
+          "BOTH": "Chiến dịch này vẫn đang chạy. {queued} tin đang xếp hàng và {awaitingUpdate} tin đang chờ WhatsApp cập nhật trạng thái gửi.",
+          "BOTH_SINGLE": "Chiến dịch này vẫn đang chạy. {queued} tin đang xếp hàng và {awaitingUpdate} tin đang chờ WhatsApp cập nhật trạng thái gửi.",
+          "BOTH_QUEUED_SINGLE": "Chiến dịch này vẫn đang chạy. {queued} tin đang xếp hàng và {awaitingUpdate} tin đang chờ WhatsApp cập nhật trạng thái gửi.",
+          "BOTH_AWAITING_SINGLE": "Chiến dịch này vẫn đang chạy. {queued} tin đang xếp hàng và {awaitingUpdate} tin đang chờ WhatsApp cập nhật trạng thái gửi.",
+          "QUEUED": "Chiến dịch này vẫn đang chạy. {count} tin đang xếp hàng. | Chiến dịch này vẫn đang chạy. {count} tin đang xếp hàng.",
+          "AWAITING_UPDATE": "Chiến dịch này vẫn đang chạy. {count} tin đang chờ WhatsApp cập nhật trạng thái gửi. | Chiến dịch này vẫn đang chạy. {count} tin đang chờ WhatsApp cập nhật trạng thái gửi.",
+          "COMPLETING": "Chiến dịch đang hoàn tất. Thống kê sẽ tự cập nhật."
+        },
+        "RATE": "{value}% tệp khách",
+        "SENT_ON": "Gửi ngày {date}",
+        "PAGE_INFO": "Hiển thị {startItem} - {endItem} trong {totalItems} liên hệ | Hiển thị {startItem} - {endItem} trong {totalItems} liên hệ",
+        "BREADCRUMB": {
+          "CAMPAIGNS": "Chiến dịch"
+        },
+        "FILTERS": {
+          "ALL": "Tất cả"
+        },
+        "METRICS": {
+          "AUDIENCE": {
+            "LABEL": "Tệp khách",
+            "HINT": "Các liên hệ nằm trong chiến dịch này."
+          },
+          "SENT": {
+            "LABEL": "Đã chuyển cho WhatsApp",
+            "HINT": "Số tin WhatsApp đã tiếp nhận để gửi đi."
+          },
+          "DELIVERED": {
+            "LABEL": "Đã gửi tới",
+            "HINT": "Số tin đã tới thiết bị của khách, bao gồm cả tin đã được đọc."
+          },
+          "READ": {
+            "LABEL": "Đã đọc",
+            "HINT": "Số tin khách đã mở xem."
+          },
+          "FAILED": {
+            "LABEL": "Thất bại",
+            "HINT": "Số tin WhatsApp không gửi được."
+          },
+          "SKIPPED": {
+            "LABEL": "Đã bỏ qua",
+            "HINT": "Các liên hệ bị bỏ qua trước khi gửi, thường do thiếu số điện thoại hoặc số không hợp lệ."
+          }
+        },
+        "STATUS": {
+          "QUEUED": "Đang xếp hàng",
+          "SENT": "Chờ cập nhật trạng thái gửi",
+          "DELIVERED": "Đã gửi tới",
+          "READ": "Đã đọc",
+          "FAILED": "Thất bại",
+          "SKIPPED": "Đã bỏ qua"
+        },
+        "BREAKDOWN": {
+          "TITLE": "Chi tiết kết quả gửi",
+          "DELIVERY_RATE": "{value}% đã gửi tới",
+          "LEGEND": {
+            "READ": "Đã đọc",
+            "DELIVERED": "Đã gửi tới",
+            "FAILED": "Thất bại",
+            "SKIPPED": "Đã bỏ qua",
+            "PENDING": "Đang xếp hàng hoặc chờ cập nhật"
+          }
+        },
+        "TABLE": {
+          "TITLE": "Danh sách gửi",
+          "CONTACT": "Liên hệ",
+          "STATUS": "Trạng thái",
+          "MESSAGE": "Tin nhắn",
+          "MESSAGE_NOT_GENERATED": "Chưa tạo",
+          "REASON": "Lý do",
+          "ERROR_CODE": "Mã {code}"
         }
       }
     },
     "CONFIRM_DELETE": {
       "TITLE": "Bạn có chắc muốn xoá?",
-      "DESCRIPTION": "The delete action is permanent and cannot be reversed.",
+      "DESCRIPTION": "Thao tác xoá là vĩnh viễn và không thể hoàn tác.",
       "CONFIRM": "Xoá",
       "API": {
         "SUCCESS_MESSAGE": "Chiến dịch được xoá thành công",

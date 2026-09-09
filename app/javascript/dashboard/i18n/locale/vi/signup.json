@@ -1,27 +1,27 @@
 {
   "REGISTER": {
-    "TRY_WOOT": "Create an account",
+    "TRY_WOOT": "Tạo tài khoản",
     "GET_STARTED": "Get started with Chatwoot",
     "TITLE": "Đăng kí",
     "TESTIMONIAL_HEADER": "Tất cả chỉ cần một bước để tiến về phía trước",
     "TESTIMONIAL_CONTENT": "Bạn chỉ còn một bước nữa là có thể thu hút khách hàng của mình, giữ chân họ và tìm kiếm những khách hàng mới.",
-    "TERMS_ACCEPT": "By creating an account, you agree to our <a href=\"https://www.chatwoot.com/terms\">T & C</a> and <a href=\"https://www.chatwoot.com/privacy-policy\">Privacy policy</a>",
+    "TERMS_ACCEPT": "Khi tạo tài khoản, bạn đồng ý với <a href=\"https://www.chatwoot.com/terms\">Điều khoản</a> và <a href=\"https://www.chatwoot.com/privacy-policy\">Chính sách bảo mật</a> của chúng tôi",
     "OAUTH": {
-      "GOOGLE_SIGNUP": "Sign up with Google"
+      "GOOGLE_SIGNUP": "Đăng ký bằng Google"
     },
     "COMPANY_NAME": {
       "LABEL": "Tên công ty",
-      "PLACEHOLDER": "Enter your company name. E.g., Wayne Enterprises",
+      "PLACEHOLDER": "Nhập tên công ty của bạn. Ví dụ: Công ty Ánh Dương",
       "ERROR": "Tên công ty quá ngắn."
     },
     "FULL_NAME": {
       "LABEL": "Tên đầy đủ",
-      "PLACEHOLDER": "Enter your full name. E.g., Bruce Wayne",
+      "PLACEHOLDER": "Nhập họ và tên của bạn. Ví dụ: Nguyễn Văn An",
       "ERROR": "Tên đầy đủ quá ngắn."
     },
     "EMAIL": {
       "LABEL": "Email công việc",
-      "PLACEHOLDER": "Enter your work email address. E.g., bruce{'@'}wayne{'.'}enterprises",
+      "PLACEHOLDER": "Nhập email công việc. Ví dụ: an{'@'}anhduong{'.'}vn",
       "ERROR": "Vui lòng nhập địa chỉ email công việc hợp lệ."
     },
     "PASSWORD": {
@@ -29,29 +29,29 @@
       "PLACEHOLDER": "Mật khẩu",
       "ERROR": "Mật khẩu quá ngắn.",
       "IS_INVALID_PASSWORD": "Mật khẩu phải chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt.",
-      "REQUIREMENTS_LENGTH": "At least 6 characters long",
-      "REQUIREMENTS_UPPERCASE": "At least one uppercase letter",
-      "REQUIREMENTS_LOWERCASE": "At least one lowercase letter",
-      "REQUIREMENTS_NUMBER": "At least one number",
-      "REQUIREMENTS_SPECIAL": "At least one special character"
+      "REQUIREMENTS_LENGTH": "Ít nhất 6 ký tự",
+      "REQUIREMENTS_UPPERCASE": "Ít nhất một chữ in hoa",
+      "REQUIREMENTS_LOWERCASE": "Ít nhất một chữ thường",
+      "REQUIREMENTS_NUMBER": "Ít nhất một chữ số",
+      "REQUIREMENTS_SPECIAL": "Ít nhất một ký tự đặc biệt"
     },
     "CONFIRM_PASSWORD": {
-      "LABEL": "Confirm password",
-      "PLACEHOLDER": "Confirm password",
+      "LABEL": "Xác nhận mật khẩu",
+      "PLACEHOLDER": "Xác nhận mật khẩu",
       "ERROR": "Mật khẩu không khớp."
     },
     "API": {
-      "SUCCESS_MESSAGE": "Registration Successful",
-      "ERROR_MESSAGE": "Could not connect to Woot server. Please try again."
+      "SUCCESS_MESSAGE": "Đăng ký thành công",
+      "ERROR_MESSAGE": "Không kết nối được tới máy chủ. Vui lòng thử lại."
     },
-    "SUBMIT": "Create account",
+    "SUBMIT": "Tạo tài khoản",
     "HAVE_AN_ACCOUNT": "Đã có tài khoản?",
     "VERIFY_EMAIL": {
-      "TITLE": "Check your inbox",
-      "DESCRIPTION": "We sent a verification link to {email}. Click the link to verify your email and get started.",
-      "RESEND": "Resend verification email",
-      "RESEND_SUCCESS": "Verification email sent. Please check your inbox.",
-      "RESEND_ERROR": "Could not send verification email. Please try again."
+      "TITLE": "Kiểm tra hộp thư của bạn",
+      "DESCRIPTION": "Chúng tôi đã gửi liên kết xác minh tới {email}. Bấm vào liên kết để xác minh email và bắt đầu sử dụng.",
+      "RESEND": "Gửi lại email xác minh",
+      "RESEND_SUCCESS": "Đã gửi email xác minh. Vui lòng kiểm tra hộp thư.",
+      "RESEND_ERROR": "Không gửi được email xác minh. Vui lòng thử lại."
     }
   }
 }

@@ -7,28 +7,49 @@
       "OPEN": "Hội thoại mới",
       "PENDING": "Đang chờ xử lý",
       "SLA": "Quá hạn SLA",
-      "ONLINE": "Đang online"
+      "ONLINE": "Đang online",
+      "RESOLVED": "Đã xử lý hôm nay",
+      "RESPONSE": "Thời gian phản hồi TB",
+      "CSAT": "Điểm CSAT",
+      "LIVE": "Đang trực tuyến",
+      "VOLUME": "Lượng 7 ngày",
+      "VS_YESTERDAY": "so với hôm qua",
+      "UNATTENDED": "{count} chưa xử lý",
+      "ATTENDED": "Đã xử lý hết",
+      "RATINGS": "{count} lượt đánh giá"
     },
     "ATTENTION": {
       "TITLE": "Cần chú ý",
       "VIEW_ALL": "Xem tất cả",
       "EMPTY": "Bạn đã hoàn thành tất cả công việc!",
       "WAITED": "Chờ {minutes} phút",
-      "UNKNOWN_CONTACT": "Khách hàng chưa xác định"
+      "UNKNOWN_CONTACT": "Khách hàng chưa xác định",
+      "SUBTITLE": "Luồng phân loại thời gian thực trên các kênh đã kết nối",
+      "UNASSIGNED": "Chưa phân công",
+      "TAB_ALL": "Tất cả ({count})",
+      "TAB_SLA": "Sắp vi phạm SLA ({count})",
+      "TAB_VIP": "Khách VIP ({count})",
+      "SHOWING": "Hiển thị {shown} trong {total}",
+      "REPLY": "Trả lời"
     },
     "WEEK": {
       "TITLE": "Tuần của tôi",
       "FRT": "Phản hồi H1",
       "RESOLVED": "Đã giải quyết",
-      "CSAT": "CSAT"
+      "CSAT": "CSAT",
+      "SUBTITLE": "Chỉ số hiệu suất mục tiêu",
+      "RATE": "Tỷ lệ xử lý",
+      "WEEK_BADGE": "T{week}"
     },
     "ACCOUNT": {
       "TITLE": "Tổng quan tài khoản",
-      "ADMIN": "Admin",
+      "ADMIN": "Quản trị viên",
       "OPEN": "Đang mở: {count}",
       "PENDING": "Đang chờ: {count}",
       "UNATTENDED": "Trong đó chưa phục vụ: {count}",
-      "UNASSIGNED": "Trong đó chưa gán: {count}"
+      "UNASSIGNED": "Trong đó chưa gán: {count}",
+      "SUBTITLE": "Lượng hội thoại & phân bổ theo kênh",
+      "VOLUME": "Phân bổ ticket theo ngày"
     }
   }
 }

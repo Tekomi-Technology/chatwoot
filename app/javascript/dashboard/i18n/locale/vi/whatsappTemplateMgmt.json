@@ -1,47 +1,55 @@
 {
   "WHATSAPP_TEMPLATE_MGMT": {
-    "TITLE": "Templates",
-    "DESCRIPTION": "View the message templates synced from your WhatsApp inboxes. To create or edit a template, manage it with your provider.",
-    "COUNT": "{n} template | {n} templates",
+    "TITLE": "Mẫu tin",
+    "DESCRIPTION": "Xem các mẫu tin được đồng bộ từ hộp thư WhatsApp của bạn. Để tạo hoặc sửa mẫu tin, hãy thao tác bên phía nhà cung cấp.",
+    "COUNT": "{n} mẫu tin | {n} mẫu tin",
     "KNOW_MORE": "Tìm hiểu thêm",
     "NEW_TEMPLATE": "New template",
-    "SEARCH_PLACEHOLDER": "Search by content or name...",
-    "MANAGE_IN_META": "Manage in Meta",
-    "MANAGE_IN_TWILIO": "Manage in Twilio",
-    "LOADING": "Loading WhatsApp templates...",
-    "EMPTY": "No WhatsApp templates found.",
-    "NO_RESULTS": "No templates match your filters.",
-    "FETCH_ERROR": "Unable to load WhatsApp templates. Please try again.",
-    "PARTIAL_FETCH_ERROR": "Some WhatsApp templates could not be loaded. Please try again.",
-    "LAST_SYNC_ATTEMPT": "Last sync attempt on {date}",
+    "SEARCH_PLACEHOLDER": "Tìm theo nội dung hoặc tên...",
+    "MANAGE_IN_META": "Quản lý trong Meta",
+    "MANAGE_IN_TWILIO": "Quản lý trong Twilio",
+    "LOADING": "Đang tải mẫu tin WhatsApp...",
+    "EMPTY": "Không tìm thấy mẫu tin WhatsApp nào.",
+    "NO_RESULTS": "Không có mẫu tin nào khớp bộ lọc.",
+    "FETCH_ERROR": "Không tải được mẫu tin WhatsApp. Vui lòng thử lại.",
+    "PARTIAL_FETCH_ERROR": "Một số mẫu tin WhatsApp không tải được. Vui lòng thử lại.",
+    "LAST_SYNC_ATTEMPT": "Lần đồng bộ gần nhất {date}",
     "MORE_INBOXES": "+{n}",
     "FILTERS": {
-      "ALL_INBOXES": "All inboxes",
-      "ALL_LANGUAGES": "All languages"
+      "ALL_INBOXES": "Tất cả hộp thư",
+      "ALL_LANGUAGES": "Tất cả ngôn ngữ",
+      "ALL_TYPES": "Tất cả loại"
     },
     "TYPES": {
       "TEXT": "Văn bản",
-      "IMAGE": "Image",
+      "IMAGE": "Hình ảnh",
       "VIDEO": "Video",
-      "DOCUMENT": "Document",
-      "MEDIA": "Media",
-      "QUICK_REPLY": "Quick reply",
-      "CALL_TO_ACTION": "Call to action",
-      "CATALOG": "Catalog",
-      "COPY_CODE": "Copy code"
+      "DOCUMENT": "Tài liệu",
+      "MEDIA": "Đa phương tiện",
+      "QUICK_REPLY": "Trả lời nhanh",
+      "CALL_TO_ACTION": "Kêu gọi hành động",
+      "CATALOG": "Danh mục sản phẩm",
+      "COPY_CODE": "Sao chép mã"
     },
     "PREVIEW": {
-      "TITLE": "Template preview",
-      "DESCRIPTION": "Preview how this template appears in WhatsApp.",
-      "OPEN": "Preview {name}",
-      "CLOSE": "Close preview",
-      "DETAILS": "Template details",
+      "TITLE": "Xem trước mẫu tin",
+      "DESCRIPTION": "Xem mẫu tin này hiển thị thế nào trên WhatsApp.",
+      "OPEN": "Xem trước {name}",
+      "CLOSE": "Đóng xem trước",
+      "DETAILS": "Chi tiết mẫu tin",
       "STATUS": "Trạng thái",
-      "TYPE": "Content type",
+      "TYPE": "Loại nội dung",
       "CATEGORY": "Loại",
       "LANGUAGE": "Ngôn ngữ",
-      "INBOXES": "Hộp thư đến",
+      "INBOXES": "Hộp thư",
       "LAST_SYNC_ATTEMPT": "Last sync attempt"
+    },
+    "SYNC_TEMPLATES": "Đồng bộ mẫu tin",
+    "SYNC_SUCCESS": "Đã bắt đầu đồng bộ mẫu tin cho tất cả hộp thư WhatsApp. Có thể mất vài phút để cập nhật.",
+    "PARTIAL_SYNC_ERROR": "Đã đồng bộ mẫu tin cho một số hộp thư WhatsApp, nhưng số còn lại không đồng bộ được.",
+    "SYNC_ERROR": "Không bắt đầu được việc đồng bộ mẫu tin. Vui lòng thử lại.",
+    "STATUSES": {
+      "UNSUBMITTED": "Chưa gửi WhatsApp duyệt"
     }
   }
 }

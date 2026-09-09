@@ -1,34 +1,34 @@
 {
   "CONTENT_TEMPLATES": {
     "MODAL": {
-      "TITLE": "Twilio Templates",
-      "SUBTITLE": "Select the Twilio template you want to send",
-      "TEMPLATE_SELECTED_SUBTITLE": "Configure template: {templateName}"
+      "TITLE": "Mẫu tin Twilio",
+      "SUBTITLE": "Chọn mẫu tin Twilio bạn muốn gửi",
+      "TEMPLATE_SELECTED_SUBTITLE": "Cấu hình mẫu tin: {templateName}"
     },
     "PICKER": {
       "SEARCH_PLACEHOLDER": "Tìm kiếm Mẫu",
       "NO_TEMPLATES_FOUND": "Không tìm thấy mẫu nào cho",
-      "NO_CONTENT": "No content",
-      "HEADER": "Header",
-      "BODY": "Body",
-      "FOOTER": "Footer",
-      "BUTTONS": "Buttons",
+      "NO_CONTENT": "Không có nội dung",
+      "HEADER": "Phần đầu",
+      "BODY": "Nội dung",
+      "FOOTER": "Phần cuối",
+      "BUTTONS": "Nút bấm",
       "CATEGORY": "Loại",
-      "MEDIA_CONTENT": "Media Content",
-      "MEDIA_CONTENT_FALLBACK": "media content",
-      "NO_TEMPLATES_AVAILABLE": "No Twilio templates available. Click refresh to sync templates from Twilio.",
-      "REFRESH_BUTTON": "Refresh templates",
-      "REFRESH_SUCCESS": "Templates refresh initiated. It may take a couple of minutes to update.",
-      "REFRESH_ERROR": "Failed to refresh templates. Please try again.",
+      "MEDIA_CONTENT": "Nội dung đa phương tiện",
+      "MEDIA_CONTENT_FALLBACK": "nội dung đa phương tiện",
+      "NO_TEMPLATES_AVAILABLE": "Chưa có mẫu tin Twilio nào. Bấm làm mới để đồng bộ mẫu tin từ Twilio.",
+      "REFRESH_BUTTON": "Làm mới mẫu tin",
+      "REFRESH_SUCCESS": "Đã bắt đầu làm mới mẫu tin. Có thể mất vài phút để cập nhật.",
+      "REFRESH_ERROR": "Không làm mới được mẫu tin. Vui lòng thử lại.",
       "LABELS": {
         "LANGUAGE": "Ngôn ngữ",
         "TEMPLATE_BODY": "Nội dung của Mẫu",
         "CATEGORY": "Loại"
       },
       "TYPES": {
-        "MEDIA": "Media",
-        "QUICK_REPLY": "Quick Reply",
-        "CALL_TO_ACTION": "Call to Action",
+        "MEDIA": "Đa phương tiện",
+        "QUICK_REPLY": "Trả lời nhanh",
+        "CALL_TO_ACTION": "Kêu gọi hành động",
         "TEXT": "Văn bản"
       }
     },
@@ -40,8 +40,8 @@
       "GO_BACK_LABEL": "Quay lại",
       "SEND_MESSAGE_LABEL": "Gửi tin nhắn",
       "FORM_ERROR_MESSAGE": "Vui lòng điền vào tất cả các biến trước khi gửi",
-      "MEDIA_HEADER_LABEL": "{type} Header",
-      "MEDIA_URL_LABEL": "Enter full media URL",
+      "MEDIA_HEADER_LABEL": "Phần đầu {type}",
+      "MEDIA_URL_LABEL": "Nhập đường dẫn đầy đủ tới tệp",
       "MEDIA_URL_PLACEHOLDER": "https://example.com/image.jpg"
     },
     "FORM": {

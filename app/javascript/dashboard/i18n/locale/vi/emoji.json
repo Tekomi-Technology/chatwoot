@@ -1,35 +1,35 @@
 {
   "EMOJI": {
-    "PLACEHOLDER": "Search emojis",
-    "NOT_FOUND": "No emoji match your search",
+    "PLACEHOLDER": "Tìm biểu tượng cảm xúc",
+    "NOT_FOUND": "Không có biểu tượng cảm xúc nào phù hợp",
     "REMOVE": "Xoá"
   },
   "EMOJI_ICON_PICKER": {
     "TABS": {
-      "ICONS": "Icons",
-      "EMOJIS": "Emojis"
+      "ICONS": "Biểu tượng",
+      "EMOJIS": "Cảm xúc"
     },
-    "SEARCH_EMOJI": "Search emoji…",
-    "SEARCH_ICON": "Search icons…",
-    "FREQUENTLY_USED": "Frequently used",
-    "NO_EMOJI": "No emoji match your search",
-    "NO_ICON": "No icons match your search",
+    "SEARCH_EMOJI": "Tìm biểu tượng cảm xúc…",
+    "SEARCH_ICON": "Tìm biểu tượng…",
+    "FREQUENTLY_USED": "Hay dùng",
+    "NO_EMOJI": "Không có biểu tượng cảm xúc nào phù hợp",
+    "NO_ICON": "Không có biểu tượng nào phù hợp",
     "REMOVE": "Xoá",
     "STYLE": {
-      "OUTLINE": "Outline icons",
-      "FILLED": "Filled icons"
+      "OUTLINE": "Biểu tượng nét viền",
+      "FILLED": "Biểu tượng tô đặc"
     },
     "COLORS": {
-      "SLATE": "Slate",
-      "RED": "Red",
-      "ORANGE": "Orange",
-      "AMBER": "Amber",
-      "GREEN": "Green",
-      "TEAL": "Teal",
-      "BLUE": "Blue",
-      "INDIGO": "Indigo",
-      "VIOLET": "Violet",
-      "PINK": "Pink"
+      "SLATE": "Xám đá",
+      "RED": "Đỏ",
+      "ORANGE": "Cam",
+      "AMBER": "Hổ phách",
+      "GREEN": "Xanh lá",
+      "TEAL": "Xanh mòng két",
+      "BLUE": "Xanh dương",
+      "INDIGO": "Chàm",
+      "VIOLET": "Tím",
+      "PINK": "Hồng"
     }
   }
 }

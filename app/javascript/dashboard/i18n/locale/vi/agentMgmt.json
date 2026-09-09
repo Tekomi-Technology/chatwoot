@@ -1,30 +1,30 @@
 {
   "AGENT_MGMT": {
     "HEADER": "Nhà cung cấp",
-    "HEADER_BTN_TXT": "Thêm nhà cung cấp / đại lý",
+    "HEADER_BTN_TXT": "Thêm nhà cung cấp / nhân viên",
     "LOADING": "Tải danh sách nhà cung cấp",
-    "DESCRIPTION": "An agent is a member of your customer support team who can view and respond to user messages. The list below shows all the agents in your account.",
-    "LEARN_MORE": "Learn about user roles",
+    "DESCRIPTION": "Nhân viên là thành viên trong đội hỗ trợ khách hàng, có thể xem và trả lời tin nhắn của người dùng. Danh sách dưới đây hiển thị toàn bộ nhân viên trong tài khoản của bạn.",
+    "LEARN_MORE": "Tìm hiểu về vai trò người dùng",
     "AGENT_TYPES": {
       "ADMINISTRATOR": "Quản trị viên",
       "AGENT": "Nhà cung cấp"
     },
-    "COUNT": "{n} agent | {n} agents",
+    "COUNT": "{n} nhân viên | {n} nhân viên",
     "LIST": {
       "404": "Không có tác nhân nào được liên kết với tài khoản này",
-      "TITLE": "Quản lý các đại lý trong nhóm của bạn",
-      "DESC": "Bạn có thể thêm / bớt đại lý vào / trong nhóm của mình.",
+      "TITLE": "Quản lý các nhân viên trong nhóm của bạn",
+      "DESC": "Bạn có thể thêm / bớt nhân viên vào / trong nhóm của mình.",
       "NAME": "Tên",
       "EMAIL": "EMAIL",
       "STATUS": "Trạng thái",
       "ACTIONS": "Hành động",
       "VERIFIED": "Đã xác minh",
       "VERIFICATION_PENDING": "Đang chờ xác minh",
-      "AVAILABLE_CUSTOM_ROLE": "Available custom role permissions"
+      "AVAILABLE_CUSTOM_ROLE": "Quyền của vai trò tuỳ chỉnh hiện có"
     },
     "ADD": {
-      "TITLE": "Thêm đại lý vào nhóm của bạn",
-      "DESC": "Bạn có thể thêm những người có thể xử lý hỗ trợ cho hộp thư đến của bạn.",
+      "TITLE": "Thêm nhân viên vào nhóm của bạn",
+      "DESC": "Bạn có thể thêm những người có thể xử lý hỗ trợ cho hộp thư của bạn.",
       "CANCEL_BUTTON_TEXT": "Huỷ",
       "FORM": {
         "NAME": {
@@ -79,8 +79,8 @@
         },
         "AGENT_AVAILABILITY": {
           "LABEL": "Khả dụng",
-          "PLACEHOLDER": "Please select an availability status",
-          "ERROR": "Availability is required"
+          "PLACEHOLDER": "Vui lòng chọn trạng thái sẵn sàng",
+          "ERROR": "Vui lòng chọn trạng thái sẵn sàng"
         },
         "SUBMIT": "Chỉnh sửa nhà cung cấp"
       },
@@ -92,13 +92,13 @@
       },
       "PASSWORD_RESET": {
         "ADMIN_RESET_BUTTON": "Đặt lại mật khẩu",
-        "ADMIN_SUCCESS_MESSAGE": "Một email với hướng dẫn đặt lại mật khẩu đã được gửi đến đại lý",
-        "SUCCESS_MESSAGE": "Đặt lại mật khẩu đại lý thành công",
+        "ADMIN_SUCCESS_MESSAGE": "Một email với hướng dẫn đặt lại mật khẩu đã được gửi đến nhân viên",
+        "SUCCESS_MESSAGE": "Đặt lại mật khẩu nhân viên thành công",
         "ERROR_MESSAGE": "Không thể kết nối với Máy chủ Woot, Vui lòng thử lại sau"
       }
     },
     "SEARCH_PLACEHOLDER": "Tìm kiếm nhân viên...",
-    "NO_RESULTS": "No agents found matching your search",
+    "NO_RESULTS": "Không tìm thấy nhân viên nào phù hợp",
     "SEARCH": {
       "NO_RESULTS": "Không tìm thấy kết quả."
     },

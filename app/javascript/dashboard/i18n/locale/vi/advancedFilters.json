@@ -1,7 +1,7 @@
 {
   "FILTER": {
     "TITLE": "Lọc cuộc hội thoại",
-    "SUBTITLE": "Thêm các bộ lọc của bạn bên dưới và nhấn \"Áp dụng bộ lọc\", để loại bỏ các cuộc trò chuyện lộn xộn.",
+    "SUBTITLE": "Thêm các bộ lọc của bạn bên dưới và nhấn \"Áp dụng bộ lọc\", để loại bỏ các hội thoại lộn xộn.",
     "EDIT_CUSTOM_FILTER": "Sửa Thư Mục",
     "CUSTOM_VIEWS_SUBTITLE": "Thêm hoặc xóa bộ lọc và cập nhật thư mục của bạn.",
     "ADD_NEW_FILTER": "Thêm bộ lọc",
@@ -18,9 +18,9 @@
       "AND": "VÀ",
       "OR": "HOẶC"
     },
-    "INPUT_PLACEHOLDER": "Enter value",
+    "INPUT_PLACEHOLDER": "Nhập giá trị",
     "CONTACT_SEARCH_PLACEHOLDER": "Tìm kiếm liên hệ",
-    "CONTACT_FALLBACK": "Contact #{id}",
+    "CONTACT_FALLBACK": "Liên hệ #{id}",
     "OPERATOR_LABELS": {
       "equal_to": "Bằng",
       "not_equal_to": "Không bằng",
@@ -69,9 +69,9 @@
     },
     "ERRORS": {
       "VALUE_REQUIRED": "Giá trị bắt buộc có",
-      "ATTRIBUTE_KEY_REQUIRED": "Attribute key is required",
-      "FILTER_OPERATOR_REQUIRED": "Filter operator is required",
-      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Value must be between 1 and 998"
+      "ATTRIBUTE_KEY_REQUIRED": "Vui lòng chọn thuộc tính",
+      "FILTER_OPERATOR_REQUIRED": "Vui lòng chọn toán tử lọc",
+      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Giá trị phải nằm trong khoảng từ 1 đến 998"
     },
     "GROUPS": {
       "STANDARD_FILTERS": "Bộ lọc tiêu chuẩn",

@@ -1,17 +1,17 @@
 {
   "INBOX_MGMT": {
-    "HEADER": "Hộp thư đến",
-    "DESCRIPTION": "A channel is the mode of communication your customer chooses to interact with you. An inbox is where you manage interactions for a specific channel. It can include communications from various sources such as email, live chat, and social media.",
-    "LEARN_MORE": "Learn more about inboxes",
-    "COUNT": "{n} inbox | {n} inboxes",
-    "SEARCH_PLACEHOLDER": "Search inboxes...",
-    "NO_RESULTS": "No inboxes found matching your search",
-    "RECONNECTION_REQUIRED": "Your inbox is disconnected. You won't receive new messages until you reauthorize it.",
-    "CLICK_TO_RECONNECT": "Click here to reconnect.",
-    "WHATSAPP_REGISTRATION_INCOMPLETE": "Your WhatsApp Business registration isn’t complete. Please check your display name status in Meta Business Manager before reconnecting.",
-    "COMPLETE_REGISTRATION": "Complete Registration",
+    "HEADER": "Hộp thư",
+    "DESCRIPTION": "Kênh là cách khách hàng của bạn chọn để liên hệ. Hộp thư là nơi bạn quản lý tương tác cho một kênh cụ thể, có thể gồm nhiều nguồn như email, chat trực tuyến và mạng xã hội.",
+    "LEARN_MORE": "Tìm hiểu thêm về hộp thư",
+    "COUNT": "{n} hộp thư | {n} hộp thư",
+    "SEARCH_PLACEHOLDER": "Tìm hộp thư...",
+    "NO_RESULTS": "Không tìm thấy hộp thư nào phù hợp",
+    "RECONNECTION_REQUIRED": "Hộp thư của bạn đã bị ngắt kết nối. Bạn sẽ không nhận được tin nhắn mới cho tới khi xác thực lại.",
+    "CLICK_TO_RECONNECT": "Bấm vào đây để kết nối lại.",
+    "WHATSAPP_REGISTRATION_INCOMPLETE": "Đăng ký WhatsApp Business của bạn chưa hoàn tất. Vui lòng kiểm tra trạng thái tên hiển thị trong Meta Business Manager trước khi kết nối lại.",
+    "COMPLETE_REGISTRATION": "Hoàn tất đăng ký",
     "LIST": {
-      "404": "Không có hộp thư đến nào được đính kèm với tài khoản này."
+      "404": "Không có hộp thư nào được đính kèm với tài khoản này."
     },
     "CREATE_FLOW": {
       "CHANNEL": {
@@ -19,21 +19,21 @@
         "BODY": "Chọn nhà cung cấp bạn muốn tích hợp với Chatwoot."
       },
       "INBOX": {
-        "TITLE": "Tạo Hộp thư đến",
-        "BODY": "Xác thực tài khoản của bạn và tạo hộp thư đến."
+        "TITLE": "Tạo Hộp thư",
+        "BODY": "Xác thực tài khoản của bạn và tạo hộp thư."
       },
       "AGENT": {
-        "TITLE": "Thêm đại lý",
-        "BODY": "Thêm đại lý vào hộp thư đến đã tạo."
+        "TITLE": "Thêm nhân viên",
+        "BODY": "Thêm nhân viên vào hộp thư đã tạo."
       },
       "FINISH": {
-        "TITLE": "Voilà!",
+        "TITLE": "Xong rồi!",
         "BODY": "Bạn đã sẵn sàng để đi!"
       }
     },
     "ADD": {
       "CHANNEL_NAME": {
-        "LABEL": "Tên hộp thư đến",
+        "LABEL": "Tên hộp thư",
         "PLACEHOLDER": "Nhập tên kênh của bạn (ví dụ: WebA)",
         "ERROR": "Vui lòng nhập tên kênh hợp lệ"
       },
@@ -45,39 +45,39 @@
         "HELP": "Tái bút: Bằng cách đăng nhập, chúng tôi chỉ có quyền truy cập vào các tin nhắn trên Trang của bạn. Chatwoot không bao giờ có thể truy cập tin nhắn riêng tư của bạn.",
         "CHOOSE_PAGE": "Chọn trang",
         "CHOOSE_PLACEHOLDER": "Chọn một trang từ danh sách",
-        "INBOX_NAME": "Tên hộp thư đến",
-        "ADD_NAME": "Thêm tên cho hộp thư đến của bạn",
-        "PICK_NAME": "Pick a Name for your Inbox",
+        "INBOX_NAME": "Tên hộp thư",
+        "ADD_NAME": "Thêm tên cho hộp thư của bạn",
+        "PICK_NAME": "Chọn tên cho hộp thư của bạn",
         "PICK_A_VALUE": "Chọn một giá trị",
-        "CREATE_INBOX": "Tạo Hộp thư đến",
+        "CREATE_INBOX": "Tạo Hộp thư",
         "RESTRICTED_WARNING": "Facebook inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatwoot. We’re working closely with Meta to resolve it as quickly as possible.",
         "STATUS_LINK": "View status updates"
       },
       "INSTAGRAM": {
-        "CONTINUE_WITH_INSTAGRAM": "Continue with Instagram",
-        "CONNECT_YOUR_INSTAGRAM_PROFILE": "Connect your Instagram Profile",
-        "HELP": "To add your Instagram profile as a channel, you need to authenticate your Instagram Profile by clicking on 'Continue with Instagram' ",
-        "ERROR_MESSAGE": "There was an error connecting to Instagram, please try again",
-        "ERROR_AUTH": "There was an error connecting to Instagram, please try again",
-        "NEW_INBOX_SUGGESTION": "This Instagram account was previously linked to a different inbox and has now been migrated here. All new messages will appear here. The old inbox will no longer be able to send or receive messages for this account.",
-        "DUPLICATE_INBOX_BANNER": "This Instagram account was migrated to the new Instagram channel inbox. You won’t be able to send/receive Instagram messages from this inbox anymore.",
+        "CONTINUE_WITH_INSTAGRAM": "Tiếp tục với Instagram",
+        "CONNECT_YOUR_INSTAGRAM_PROFILE": "Kết nối hồ sơ Instagram của bạn",
+        "HELP": "Để thêm hồ sơ Instagram làm kênh, bạn cần xác thực hồ sơ Instagram bằng cách bấm 'Tiếp tục với Instagram' ",
+        "ERROR_MESSAGE": "Có lỗi khi kết nối với Instagram, vui lòng thử lại",
+        "ERROR_AUTH": "Có lỗi khi kết nối với Instagram, vui lòng thử lại",
+        "NEW_INBOX_SUGGESTION": "Tài khoản Instagram này trước đây được gắn với hộp thư khác, nay đã chuyển sang đây. Mọi tin nhắn mới sẽ hiện ở đây. Hộp thư cũ sẽ không gửi/nhận được tin cho tài khoản này nữa.",
+        "DUPLICATE_INBOX_BANNER": "Tài khoản Instagram này đã chuyển sang hộp thư kênh Instagram mới. Bạn không thể gửi/nhận tin Instagram từ hộp thư này nữa.",
         "RESTRICTED_WARNING": "Instagram inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatwoot. We’re working closely with Meta to resolve it as quickly as possible.",
         "SETTINGS_RESTRICTED_WARNING": "Instagram messaging is currently affected by an API-level issue on Meta’s side, not a problem with Chatwoot. Some messages or actions may be delayed or unavailable. We’re working closely with Meta to resolve it as quickly as possible.",
         "STATUS_LINK": "View status updates"
       },
       "TIKTOK": {
-        "CONTINUE_WITH_TIKTOK": "Continue with TikTok",
-        "CONNECT_YOUR_TIKTOK_PROFILE": "Connect your TikTok Profile",
-        "HELP": "To add your TikTok profile as a channel, you need to authenticate your TikTok Profile by clicking on 'Continue with TikTok' ",
-        "ERROR_MESSAGE": "There was an error connecting to TikTok, please try again",
-        "ERROR_AUTH": "There was an error connecting to TikTok, please try again",
-        "NORTH_AMERICA_WARNING": "TikTok connections for North American accounts are temporarily unavailable while we wait for an update from the TikTok team."
+        "CONTINUE_WITH_TIKTOK": "Tiếp tục với TikTok",
+        "CONNECT_YOUR_TIKTOK_PROFILE": "Kết nối hồ sơ TikTok của bạn",
+        "HELP": "Để thêm hồ sơ TikTok làm kênh, bạn cần xác thực hồ sơ TikTok bằng cách bấm 'Tiếp tục với TikTok' ",
+        "ERROR_MESSAGE": "Có lỗi khi kết nối với TikTok, vui lòng thử lại",
+        "ERROR_AUTH": "Có lỗi khi kết nối với TikTok, vui lòng thử lại",
+        "NORTH_AMERICA_WARNING": "Kết nối TikTok cho tài khoản Bắc Mỹ tạm thời không khả dụng trong lúc chờ cập nhật từ đội ngũ TikTok."
       },
       "TWITTER": {
         "HELP": "Để thêm hồ sơ Twitter của bạn làm kênh, bạn cần xác thực Hồ sơ Twitter của mình bằng cách nhấp vào 'Đăng nhập bằng Twitter",
         "ERROR_MESSAGE": "Đã xảy ra lỗi khi kết nối đến Twitter, vui lòng thử lại",
         "TWEETS": {
-          "ENABLE": "Tạo cuộc trò chuyện từ các dòng Tweet được nhắn đến"
+          "ENABLE": "Tạo hội thoại từ các dòng Tweet được nhắn đến"
         }
       },
       "WEBSITE_CHANNEL": {
@@ -88,17 +88,17 @@
           "LABEL": "Hình đại diện kênh"
         },
         "CHANNEL_WEBHOOK_URL": {
-          "LABEL": "Webhook URL",
-          "PLACEHOLDER": "Please enter your Webhook URL",
+          "LABEL": "URL webhook",
+          "PLACEHOLDER": "Vui lòng nhập URL webhook của bạn",
           "ERROR": "Vui lòng nhập một URL hợp lệ"
         },
         "CHANNEL_WEBHOOK_SECRET": {
-          "LABEL": "Webhook Secret",
-          "COPY": "Copy secret to clipboard",
-          "COPY_SUCCESS": "Secret copied to clipboard",
-          "TOGGLE": "Toggle secret visibility",
-          "RESET_SUCCESS": "Webhook secret regenerated successfully",
-          "RESET_ERROR": "Unable to regenerate webhook secret. Please try again"
+          "LABEL": "Khoá bí mật webhook",
+          "COPY": "Sao chép khoá bí mật",
+          "COPY_SUCCESS": "Đã sao chép khoá bí mật",
+          "TOGGLE": "Ẩn/hiện khoá bí mật",
+          "RESET_SUCCESS": "Đã tạo lại khoá bí mật webhook thành công",
+          "RESET_ERROR": "Không tạo lại được khoá bí mật webhook. Vui lòng thử lại"
         },
         "CHANNEL_DOMAIN": {
           "LABEL": "Domain trang web",
@@ -133,7 +133,7 @@
           "LABEL": "Màu tiện ích",
           "PLACEHOLDER": "Cập nhật màu tiện ích con được sử dụng trong tiện ích con"
         },
-        "SUBMIT_BUTTON": "Tạo hộp thư đến",
+        "SUBMIT_BUTTON": "Tạo hộp thư",
         "API": {
           "ERROR_MESSAGE": "Chúng tôi không thể tạo kênh trang web, vui lòng thử lại"
         }
@@ -147,14 +147,14 @@
           "ERROR": "Trường này là bắt buộc"
         },
         "API_KEY": {
-          "USE_API_KEY": "Use API Key Authentication",
+          "USE_API_KEY": "Dùng xác thực bằng API Key",
           "LABEL": "API Key SID",
-          "PLACEHOLDER": "Please enter your API Key SID",
+          "PLACEHOLDER": "Vui lòng nhập API Key SID của bạn",
           "ERROR": "Trường này là bắt buộc"
         },
         "API_KEY_SECRET": {
           "LABEL": "API Key Secret",
-          "PLACEHOLDER": "Please enter your API Key Secret",
+          "PLACEHOLDER": "Vui lòng nhập API Key Secret của bạn",
           "ERROR": "Trường này là bắt buộc"
         },
         "MESSAGING_SERVICE_SID": {
@@ -173,8 +173,8 @@
           "ERROR": "Trường này là bắt buộc"
         },
         "CHANNEL_NAME": {
-          "LABEL": "Tên hộp thư đến",
-          "PLACEHOLDER": "Vui lòng điền tên hộp thư đến",
+          "LABEL": "Tên hộp thư",
+          "PLACEHOLDER": "Vui lòng điền tên hộp thư",
           "ERROR": "Trường này là bắt buộc"
         },
         "PHONE_NUMBER": {
@@ -210,12 +210,12 @@
           },
           "API_KEY": {
             "LABEL": "Khoá API",
-            "PLACEHOLDER": "Please enter your Bandwidth API Key",
+            "PLACEHOLDER": "Vui lòng nhập API Key Bandwidth của bạn",
             "ERROR": "Trường này là bắt buộc"
           },
           "API_SECRET": {
             "LABEL": "Bí mật API",
-            "PLACEHOLDER": "Please enter your Bandwidth API Secret",
+            "PLACEHOLDER": "Vui lòng nhập API Secret Bandwidth của bạn",
             "ERROR": "Trường này là bắt buộc"
           },
           "APPLICATION_ID": {
@@ -224,7 +224,7 @@
             "ERROR": "Trường này là bắt buộc"
           },
           "INBOX_NAME": {
-            "LABEL": "Tên hộp thư đến",
+            "LABEL": "Tên hộp thư",
             "PLACEHOLDER": "Vui lòng điền tên kênh",
             "ERROR": "Trường này là bắt buộc"
           },
@@ -251,18 +251,18 @@
           "WHATSAPP_EMBEDDED": "WhatsApp Business",
           "TWILIO": "Twilio",
           "WHATSAPP_CLOUD": "Đám mây WhatsApp",
-          "WHATSAPP_CLOUD_DESC": "Quick setup through Meta",
-          "WHATSAPP_CLOUD_MANUAL_SETUP_DESC": "Manual setup with Cloud API credentials",
-          "TWILIO_DESC": "Connect via Twilio credentials",
+          "WHATSAPP_CLOUD_DESC": "Thiết lập nhanh qua Meta",
+          "WHATSAPP_CLOUD_MANUAL_SETUP_DESC": "Thiết lập thủ công bằng thông tin xác thực Cloud API",
+          "TWILIO_DESC": "Kết nối qua thông tin xác thực Twilio",
           "360_DIALOG": "360Dialog"
         },
         "SELECT_PROVIDER": {
-          "TITLE": "Select your API provider",
-          "DESCRIPTION": "Choose your WhatsApp provider. You can connect directly through Meta which requires no setup, or connect through Twilio using your account credentials.",
-          "RESTRICTION_DESCRIPTION": "Choose your WhatsApp provider. You can connect WhatsApp Cloud manually using your Cloud API credentials, or connect through Twilio using your account credentials."
+          "TITLE": "Chọn nhà cung cấp API của bạn",
+          "DESCRIPTION": "Chọn nhà cung cấp WhatsApp của bạn. Bạn có thể kết nối trực tiếp qua Meta mà không cần thiết lập, hoặc kết nối qua Twilio bằng thông tin xác thực tài khoản của bạn.",
+          "RESTRICTION_DESCRIPTION": "Chọn nhà cung cấp WhatsApp của bạn. Bạn có thể kết nối WhatsApp Cloud thủ công bằng thông tin xác thực Cloud API, hoặc kết nối qua Twilio bằng thông tin xác thực tài khoản của bạn."
         },
         "INBOX_NAME": {
-          "LABEL": "Tên hộp thư đến",
+          "LABEL": "Tên hộp thư",
           "PLACEHOLDER": "Vui lòng điền tên kênh",
           "ERROR": "Trường này là bắt buộc"
         },
@@ -283,7 +283,7 @@
         },
         "WEBHOOK_VERIFY_TOKEN": {
           "LABEL": "Token xác thực Webhook",
-          "PLACEHOLDER": "Enter a verify token which you want to configure for Facebook webhooks.",
+          "PLACEHOLDER": "Nhập một verify token bạn muốn cấu hình cho webhook của Facebook.",
           "ERROR": "Vui lòng điền giá trị hợp lệ."
         },
         "API_KEY": {
@@ -295,47 +295,47 @@
         "API_CALLBACK": {
           "TITLE": "URL gọi lại",
           "SUBTITLE": "Bạn phải định cấu hình URL webhook và mã xác minh trong cổng Nhà phát triển của Facebook với các giá trị được hiển thị bên dưới.",
-          "WEBHOOK_URL": "Webhook URL",
+          "WEBHOOK_URL": "URL webhook",
           "WEBHOOK_VERIFICATION_TOKEN": "Mã xác minh Webhook"
         },
         "SUBMIT_BUTTON": "Tạo kênh WhatsApp",
         "EMBEDDED_SIGNUP": {
-          "TITLE": "Quick setup with Meta",
-          "DESC": "Use Quick setup with Meta to connect a new number or an existing number from the WhatsApp Business app. You will be redirected to Meta to log into your WhatsApp Business account. Having admin access will help make the setup smooth and easy.",
+          "TITLE": "Thiết lập nhanh với Meta",
+          "DESC": "Dùng Thiết lập nhanh với Meta để kết nối số mới hoặc số đã có từ ứng dụng WhatsApp Business. Bạn sẽ được chuyển đến Meta để đăng nhập tài khoản WhatsApp Business. Có quyền quản trị sẽ giúp việc thiết lập suôn sẻ hơn.",
           "BENEFITS": {
-            "TITLE": "Benefits of Embedded Signup:",
-            "EASY_SETUP": "No manual configuration required",
-            "SECURE_AUTH": "Secure OAuth based authentication",
-            "AUTO_CONFIG": "Automatic webhook and phone number configuration"
+            "TITLE": "Lợi ích của Đăng ký nhúng:",
+            "EASY_SETUP": "Không cần cấu hình thủ công",
+            "SECURE_AUTH": "Xác thực an toàn dựa trên OAuth",
+            "AUTO_CONFIG": "Tự động cấu hình webhook và số điện thoại"
           },
           "LEARN_MORE": {
-            "TEXT": "To learn more about quick setup, pricing, and limitations, visit {link}.",
-            "LINK_TEXT": "this link"
+            "TEXT": "Để tìm hiểu thêm về thiết lập nhanh, giá cả và giới hạn, truy cập {link}.",
+            "LINK_TEXT": "liên kết này"
           },
-          "SUBMIT_BUTTON": "Connect with WhatsApp Business",
-          "AUTH_PROCESSING": "Authenticating with Meta",
-          "WAITING_FOR_BUSINESS_INFO": "Please complete business setup in the Meta window...",
-          "PROCESSING": "Setting up your WhatsApp Business Account",
-          "ENABLING_CALLING": "Enabling WhatsApp Calling on your number…",
-          "LOADING_SDK": "Loading Facebook SDK...",
-          "CANCELLED": "WhatsApp Signup was cancelled",
-          "SUCCESS_TITLE": "WhatsApp Business Account Connected!",
-          "WAITING_FOR_AUTH": "Waiting for authentication...",
-          "INVALID_BUSINESS_DATA": "Invalid business data received from Facebook. Please try again.",
-          "SIGNUP_ERROR": "Signup error occurred",
-          "AUTH_NOT_COMPLETED": "Authentication not completed. Please restart the process.",
-          "SUCCESS_FALLBACK": "WhatsApp Business Account has been successfully configured",
-          "MANUAL_FALLBACK": "If your number is already connected to the WhatsApp Business Platform (API), or if you’re a tech provider onboarding your own number, please use the {link} flow",
-          "MANUAL_LINK_TEXT": "manual setup flow",
+          "SUBMIT_BUTTON": "Kết nối với WhatsApp Business",
+          "AUTH_PROCESSING": "Đang xác thực với Meta",
+          "WAITING_FOR_BUSINESS_INFO": "Vui lòng hoàn tất thiết lập doanh nghiệp trong cửa sổ Meta...",
+          "PROCESSING": "Đang thiết lập tài khoản WhatsApp Business của bạn",
+          "ENABLING_CALLING": "Đang bật gọi thoại WhatsApp cho số của bạn…",
+          "LOADING_SDK": "Đang tải Facebook SDK...",
+          "CANCELLED": "Đã huỷ đăng ký WhatsApp",
+          "SUCCESS_TITLE": "Đã kết nối tài khoản WhatsApp Business!",
+          "WAITING_FOR_AUTH": "Đang chờ xác thực...",
+          "INVALID_BUSINESS_DATA": "Dữ liệu doanh nghiệp nhận từ Facebook không hợp lệ. Vui lòng thử lại.",
+          "SIGNUP_ERROR": "Đã xảy ra lỗi khi đăng ký",
+          "AUTH_NOT_COMPLETED": "Xác thực chưa hoàn tất. Vui lòng bắt đầu lại quy trình.",
+          "SUCCESS_FALLBACK": "Tài khoản WhatsApp Business đã được cấu hình thành công",
+          "MANUAL_FALLBACK": "Nếu số của bạn đã kết nối với nền tảng WhatsApp Business (API), hoặc bạn là nhà cung cấp kỹ thuật đang thiết lập số riêng, vui lòng dùng quy trình {link}",
+          "MANUAL_LINK_TEXT": "thiết lập thủ công",
           "ACCESS_REQUEST": {
-            "TITLE": "Quick setup with Meta",
+            "TITLE": "Thiết lập nhanh với Meta",
             "DESCRIPTION": "Connect a new number or an existing number from the WhatsApp Business app without manual configuration. To request this option, tell our team what your business does, how you’ll use WhatsApp, and which Chatwoot account needs access.",
-            "FOOTNOTE": "We’ll review your request and let you know if this option can be enabled. You can also continue with manual setup below.",
-            "BUTTON": "Request access"
+            "FOOTNOTE": "Chúng tôi sẽ xem xét yêu cầu của bạn và báo lại xem tuỳ chọn này có bật được không. Bạn cũng có thể tiếp tục bằng thiết lập thủ công bên dưới.",
+            "BUTTON": "Yêu cầu quyền truy cập"
           },
           "RESTRICTED_WARNING": "WhatsApp Embedded Signup is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatwoot. You can use manual setup for eligible Cloud API numbers. We’re working closely with Meta to resolve it as quickly as possible.",
           "STATUS_LINK": "View status updates",
-          "CALLING_ENABLE_FAILED": "Your WhatsApp inbox is ready, but voice calling couldn't be turned on — this number isn't enrolled in the WhatsApp Business Calling API yet. Reach out to Meta or your WhatsApp Business Solution Provider to onboard it, then turn calling on from the inbox's Calls settings."
+          "CALLING_ENABLE_FAILED": "Hộp thư WhatsApp của bạn đã sẵn sàng, nhưng chưa bật được gọi thoại — số này chưa đăng ký với WhatsApp Business Calling API. Liên hệ Meta hoặc nhà cung cấp giải pháp WhatsApp Business của bạn để đăng ký, rồi bật gọi thoại từ cài đặt Cuộc gọi của hộp thư."
         },
         "API": {
           "ERROR_MESSAGE": "Chúng tôi không thể lưu kênh WhatsApp",
@@ -344,44 +344,44 @@
         }
       },
       "VOICE": {
-        "TITLE": "Voice Channel",
-        "DESC": "Integrate Twilio Voice and start supporting your customers via phone calls.",
+        "TITLE": "Kênh thoại",
+        "DESC": "Tích hợp Twilio Voice và bắt đầu hỗ trợ khách hàng qua cuộc gọi điện thoại.",
         "PHONE_NUMBER": {
           "LABEL": "Số điện thoại",
-          "PLACEHOLDER": "Enter your phone number (e.g. +1234567890)",
-          "ERROR": "Please provide a valid phone number in E.164 format (e.g. +1234567890)"
+          "PLACEHOLDER": "Nhập số điện thoại của bạn (ví dụ: +84912345678)",
+          "ERROR": "Vui lòng nhập số điện thoại hợp lệ theo định dạng E.164 (ví dụ: +84912345678)"
         },
         "TWILIO": {
           "ACCOUNT_SID": {
             "LABEL": "Tài khoản SID",
-            "PLACEHOLDER": "Enter your Twilio Account SID",
-            "REQUIRED": "Account SID is required"
+            "PLACEHOLDER": "Nhập Account SID Twilio của bạn",
+            "REQUIRED": "Vui lòng nhập Account SID"
           },
           "AUTH_TOKEN": {
             "LABEL": "Token xác thực",
-            "PLACEHOLDER": "Enter your Twilio Auth Token",
-            "REQUIRED": "Auth Token is required"
+            "PLACEHOLDER": "Nhập Auth Token Twilio của bạn",
+            "REQUIRED": "Vui lòng nhập Auth Token"
           },
           "API_KEY_SID": {
             "LABEL": "API Key SID",
-            "PLACEHOLDER": "Enter your Twilio API Key SID",
-            "REQUIRED": "API Key SID is required"
+            "PLACEHOLDER": "Nhập API Key SID Twilio của bạn",
+            "REQUIRED": "Vui lòng nhập API Key SID"
           },
           "API_KEY_SECRET": {
             "LABEL": "API Key Secret",
-            "PLACEHOLDER": "Enter your Twilio API Key Secret",
-            "REQUIRED": "API Key Secret is required"
+            "PLACEHOLDER": "Nhập API Key Secret Twilio của bạn",
+            "REQUIRED": "Vui lòng nhập API Key Secret"
           }
         },
         "CONFIGURATION": {
-          "TWILIO_VOICE_URL_TITLE": "Twilio Voice URL",
-          "TWILIO_VOICE_URL_SUBTITLE": "Configure this URL as the Voice URL on your Twilio phone number and TwiML App.",
-          "TWILIO_STATUS_URL_TITLE": "Twilio Status Callback URL",
-          "TWILIO_STATUS_URL_SUBTITLE": "Configure this URL as the Status Callback URL on your Twilio phone number."
+          "TWILIO_VOICE_URL_TITLE": "URL Voice Twilio",
+          "TWILIO_VOICE_URL_SUBTITLE": "Cấu hình URL này làm Voice URL trên số điện thoại Twilio và ứng dụng TwiML của bạn.",
+          "TWILIO_STATUS_URL_TITLE": "URL Callback trạng thái Twilio",
+          "TWILIO_STATUS_URL_SUBTITLE": "Cấu hình URL này làm Status Callback URL trên số điện thoại Twilio của bạn."
         },
-        "SUBMIT_BUTTON": "Create Voice Channel",
+        "SUBMIT_BUTTON": "Tạo kênh thoại",
         "API": {
-          "ERROR_MESSAGE": "We were not able to create the voice channel"
+          "ERROR_MESSAGE": "Không tạo được kênh thoại"
         }
       },
       "API_CHANNEL": {
@@ -394,8 +394,8 @@
         },
         "WEBHOOK_URL": {
           "LABEL": "Webhook URL",
-          "SUBTITLE": "Configure the URL where you want to receive callbacks on events.",
-          "PLACEHOLDER": "Webhook URL"
+          "SUBTITLE": "Cấu hình URL nơi bạn muốn nhận callback sự kiện.",
+          "PLACEHOLDER": "URL webhook"
         },
         "SUBMIT_BUTTON": "Tạo kênh API",
         "API": {
@@ -404,7 +404,7 @@
       },
       "EMAIL_CHANNEL": {
         "TITLE": "Kênh Email",
-        "DESC": "Integrate your email inbox.",
+        "DESC": "Tích hợp hộp thư email của bạn.",
         "CHANNEL_NAME": {
           "LABEL": "Tên kênh",
           "PLACEHOLDER": "Vui lòng nhập tên kênh",
@@ -412,7 +412,7 @@
         },
         "EMAIL": {
           "LABEL": "Email",
-          "SUBTITLE": "Provide the email address where your customers send support requests.",
+          "SUBTITLE": "Nhập địa chỉ email mà khách hàng sẽ gửi yêu cầu hỗ trợ tới.",
           "PLACEHOLDER": "Email"
         },
         "SUBMIT_BUTTON": "Tạo kênh Email",
@@ -420,10 +420,10 @@
           "ERROR_MESSAGE": "Chúng tôi không thể lưu kênh email"
         },
         "FINISH_MESSAGE": "Bắt đầu chuyển tiếp email của bạn tới địa chỉ email sau.",
-        "FINISH_MESSAGE_NO_FORWARDING": "Your email inbox has been created successfully! You need to configure SMTP and IMAP credentials to send and receive emails. Without these settings, no emails will be processed.",
-        "FORWARDING_ADDRESS_LABEL": "Forward emails to this address:",
+        "FINISH_MESSAGE_NO_FORWARDING": "Hộp thư email của bạn đã được tạo thành công! Bạn cần cấu hình thông tin xác thực SMTP và IMAP để gửi và nhận email. Nếu chưa có các cài đặt này, sẽ không có email nào được xử lý.",
+        "FORWARDING_ADDRESS_LABEL": "Chuyển tiếp email đến địa chỉ này:",
         "CONFIGURE_SMTP_IMAP_LINK": "Click vào đây",
-        "CONFIGURE_SMTP_IMAP_TEXT": " to configure IMAP and SMTP settings"
+        "CONFIGURE_SMTP_IMAP_TEXT": " để cấu hình cài đặt IMAP và SMTP"
       },
       "LINE_CHANNEL": {
         "TITLE": "Kênh LINE",
@@ -472,8 +472,8 @@
         "DESC": "Kết nối extension SIP FreeSWITCH hiện có để gọi và nhận cuộc gọi trên trình duyệt.",
         "NAME": "Tên hộp thư",
         "WSS_URL": "URL WebSocket bảo mật",
-        "SIP_DOMAIN": "SIP domain",
-        "SIP_USERNAME": "SIP username / extension",
+        "SIP_DOMAIN": "Tên miền SIP",
+        "SIP_USERNAME": "Tên đăng nhập SIP / số nội bộ",
         "SIP_PASSWORD": "Mật khẩu SIP",
         "STUN_URL": "STUN URL (không bắt buộc)",
         "WSS_PLACEHOLDER": "wss://pbx.example.com:7443",
@@ -483,7 +483,9 @@
         "VALIDATION_ERROR": "Hãy nhập tên hộp thư, URL wss://, SIP domain, username và mật khẩu.",
         "API": {
           "ERROR_MESSAGE": "Không thể tạo kênh điện thoại"
-        }
+        },
+        "TURN_URLS": "URL TURN (không bắt buộc, mỗi dòng một URL)",
+        "TURN_SECRET": "Khoá bí mật dùng chung TURN"
       },
       "SOFTPHONE": {
         "HIDE": "Ẩn bàn phím gọi điện",
@@ -508,49 +510,52 @@
           "OUTGOING_RINGING": "Đang đổ chuông…",
           "ACTIVE": "Đang đàm thoại",
           "ERROR": "Lỗi kết nối"
-        }
+        },
+        "MIC_PROMPT": "Cần quyền truy cập micro để thực hiện cuộc gọi.",
+        "MIC_ENABLE": "Bật",
+        "MIC_DENIED": "Micro đang bị chặn. Hãy cho phép trong cài đặt trang của trình duyệt rồi tải lại trang này."
       },
       "AUTH": {
         "TITLE": "Chọn kênh",
         "DESC": "Chatwoot hỗ trợ các tiện ích trò chuyện trực tiếp, Facebook Messenger, hồ sơ Twitter, WhatsApp, Email, v. v., dưới dạng các kênh. Nếu bạn muốn xây dựng một kênh tùy chỉnh, bạn có thể tạo kênh này bằng cách sử dụng kênh API. Để bắt đầu, hãy chọn một trong các kênh bên dưới.",
-        "TITLE_NEXT": "Complete the setup",
-        "TITLE_FINISH": "Voilà!",
+        "TITLE_NEXT": "Hoàn tất thiết lập",
+        "TITLE_FINISH": "Xong rồi!",
         "CHANNEL": {
           "WEBSITE": {
             "TITLE": "Website",
-            "DESCRIPTION": "Create a live-chat widget"
+            "DESCRIPTION": "Tạo khung chat trực tuyến"
           },
           "FACEBOOK": {
             "TITLE": "Facebook",
-            "DESCRIPTION": "Connect your Facebook page"
+            "DESCRIPTION": "Kết nối Trang Facebook của bạn"
           },
           "WHATSAPP": {
             "TITLE": "WhatsApp",
-            "DESCRIPTION": "Support your customers on WhatsApp"
+            "DESCRIPTION": "Hỗ trợ khách hàng qua WhatsApp"
           },
           "WHATSAPP_CALL": {
-            "TITLE": "WhatsApp Call",
-            "DESCRIPTION": "Take voice calls on your WhatsApp number"
+            "TITLE": "Gọi WhatsApp",
+            "DESCRIPTION": "Nhận cuộc gọi thoại trên số WhatsApp của bạn"
           },
           "EMAIL": {
             "TITLE": "Email",
-            "DESCRIPTION": "Connect with Gmail, Outlook, or other providers"
+            "DESCRIPTION": "Kết nối với Gmail, Outlook hoặc nhà cung cấp khác"
           },
           "SMS": {
             "TITLE": "SMS",
-            "DESCRIPTION": "Integrate SMS channel with Twilio or bandwidth"
+            "DESCRIPTION": "Tích hợp kênh SMS với Twilio hoặc Bandwidth"
           },
           "API": {
             "TITLE": "API",
-            "DESCRIPTION": "Make a custom channel using our API"
+            "DESCRIPTION": "Tạo kênh tuỳ chỉnh bằng API của chúng tôi"
           },
           "TELEGRAM": {
             "TITLE": "Telegram",
-            "DESCRIPTION": "Configure Telegram channel using Bot token"
+            "DESCRIPTION": "Cấu hình kênh Telegram bằng Bot token"
           },
           "LINE": {
             "TITLE": "Line",
-            "DESCRIPTION": "Integrate your Line channel"
+            "DESCRIPTION": "Tích hợp kênh Line của bạn"
           },
           "PHONE": {
             "TITLE": "Điện thoại",
@@ -558,80 +563,153 @@
           },
           "INSTAGRAM": {
             "TITLE": "Instagram",
-            "DESCRIPTION": "Connect your instagram account"
+            "DESCRIPTION": "Kết nối tài khoản Instagram của bạn"
           },
           "TIKTOK": {
             "TITLE": "TikTok",
-            "DESCRIPTION": "Connect your TikTok account"
+            "DESCRIPTION": "Kết nối tài khoản TikTok của bạn"
           },
           "VOICE": {
-            "TITLE": "Voice",
-            "DESCRIPTION": "Integrate with Twilio Voice"
+            "TITLE": "Thoại",
+            "DESCRIPTION": "Tích hợp với Twilio Voice"
+          },
+          "ZALO_OA": {
+            "TITLE": "Zalo OA",
+            "DESCRIPTION": "Kết nối Tài khoản Chính thức Zalo của bạn"
+          },
+          "ZALO_PERSONAL": {
+            "TITLE": "Zalo cá nhân",
+            "DESCRIPTION": "Kết nối tài khoản Zalo cá nhân để chat trực tiếp và chat nhóm"
           }
         }
       },
       "AGENTS": {
         "TITLE": "Nhà Cung Cấp",
-        "DESC": "Tại đây bạn có thể thêm các tác nhân để quản lý hộp thư đến mới tạo của mình. Chỉ những đại lý được chọn này mới có quyền truy cập vào hộp thư đến của bạn. Các nhân viên không thuộc hộp thư đến này sẽ không thể xem hoặc trả lời thư trong hộp thư đến này khi họ đăng nhập. <br> <b>PS:</b> Với tư cách là quản trị viên, nếu bạn cần quyền truy cập vào tất cả các hộp thư đến, bạn nên thêm mình làm đại lý cho tất cả các hộp thư đến mà bạn tạo.",
-        "VALIDATION_ERROR": "Add at least one agent to your new Inbox",
-        "PICK_AGENTS": "Chọn đại lý cho hộp thư đến"
+        "DESC": "Tại đây bạn có thể thêm các tác nhân để quản lý hộp thư mới tạo của mình. Chỉ những nhân viên được chọn này mới có quyền truy cập vào hộp thư của bạn. Các nhân viên không thuộc hộp thư này sẽ không thể xem hoặc trả lời thư trong hộp thư này khi họ đăng nhập. <br> <b>PS:</b> Với tư cách là quản trị viên, nếu bạn cần quyền truy cập vào tất cả các hộp thư, bạn nên thêm mình làm nhân viên cho tất cả các hộp thư mà bạn tạo.",
+        "VALIDATION_ERROR": "Thêm ít nhất một nhân viên vào hộp thư mới của bạn",
+        "PICK_AGENTS": "Chọn nhân viên cho hộp thư"
       },
       "DETAILS": {
-        "TITLE": "Chi tiết Hộp thư đến",
-        "DESC": "Từ menu thả xuống bên dưới, chọn Trang Facebook bạn muốn kết nối với Chatwoot. Bạn cũng có thể đặt tên tùy chỉnh cho hộp thư đến của mình để nhận dạng tốt hơn."
+        "TITLE": "Chi tiết Hộp thư",
+        "DESC": "Từ menu thả xuống bên dưới, chọn Trang Facebook bạn muốn kết nối với Chatwoot. Bạn cũng có thể đặt tên tùy chỉnh cho hộp thư của mình để nhận dạng tốt hơn."
       },
       "FINISH": {
         "TITLE": "Đúng rồi!",
-        "DESC": "Bạn đã tích hợp thành công Trang Facebook của mình với Chatwoot. Lần tới khi khách hàng nhắn tin cho Trang của bạn, cuộc trò chuyện sẽ tự động xuất hiện trong hộp thư đến của bạn.<br>Chúng tôi cũng đang cung cấp cho bạn tập lệnh widget mà bạn có thể dễ dàng thêm vào trang web của mình. Khi điều này xuất hiện trên trang web của bạn, khách hàng có thể nhắn tin cho bạn ngay từ trang web của bạn mà không cần sự trợ giúp của bất kỳ công cụ bên ngoài nào và cuộc trò chuyện sẽ xuất hiện ngay tại đây, trên Chatwoot.<br>Cool, huh? Well :)"
+        "DESC": "Bạn đã tích hợp thành công Trang Facebook của mình với Chatwoot. Lần tới khi khách hàng nhắn tin cho Trang của bạn, hội thoại sẽ tự động xuất hiện trong hộp thư của bạn.<br>Chúng tôi cũng đang cung cấp cho bạn tập lệnh widget mà bạn có thể dễ dàng thêm vào trang web của mình. Khi điều này xuất hiện trên trang web của bạn, khách hàng có thể nhắn tin cho bạn ngay từ trang web của bạn mà không cần sự trợ giúp của bất kỳ công cụ bên ngoài nào và hội thoại sẽ xuất hiện ngay tại đây, trên Chatwoot.<br>Cool, huh? Well :)"
       },
       "EMAIL_PROVIDER": {
-        "TITLE": "Select your email provider",
-        "DESCRIPTION": "Select an email provider from the list below. If you don't see your email provider in the list, you can select the other provider option and provide the IMAP and SMTP Credentials."
+        "TITLE": "Chọn nhà cung cấp email của bạn",
+        "DESCRIPTION": "Chọn nhà cung cấp email từ danh sách bên dưới. Nếu không thấy nhà cung cấp của bạn, chọn tuỳ chọn nhà cung cấp khác và nhập thông tin xác thực IMAP/SMTP."
       },
       "MICROSOFT": {
-        "TITLE": "Microsoft Email",
-        "DESCRIPTION": "Click on the Sign in with Microsoft button to get started. You will redirected to the email sign in page. Once you accept the requested permissions, you would be redirected back to the inbox creation step.",
-        "EMAIL_PLACEHOLDER": "Enter email address",
-        "SIGN_IN": "Sign in with Microsoft",
-        "ERROR_MESSAGE": "There was an error connecting to Microsoft, please try again"
+        "TITLE": "Email Microsoft",
+        "DESCRIPTION": "Bấm nút Đăng nhập với Microsoft để bắt đầu. Bạn sẽ được chuyển tới trang đăng nhập email. Sau khi chấp nhận các quyền được yêu cầu, bạn sẽ quay lại bước tạo hộp thư.",
+        "EMAIL_PLACEHOLDER": "Nhập địa chỉ email",
+        "SIGN_IN": "Đăng nhập với Microsoft",
+        "ERROR_MESSAGE": "Có lỗi khi kết nối với Microsoft, vui lòng thử lại"
       },
       "GOOGLE": {
-        "TITLE": "Google Email",
-        "DESCRIPTION": "Click on the Sign in with Google button to get started. You will redirected to the email sign in page. Once you accept the requested permissions, you would be redirected back to the inbox creation step.",
-        "SIGN_IN": "Sign in with Google",
-        "EMAIL_PLACEHOLDER": "Enter email address",
-        "ERROR_MESSAGE": "There was an error connecting to Google, please try again"
+        "TITLE": "Email Google",
+        "DESCRIPTION": "Bấm nút Đăng nhập với Google để bắt đầu. Bạn sẽ được chuyển tới trang đăng nhập email. Sau khi chấp nhận các quyền được yêu cầu, bạn sẽ quay lại bước tạo hộp thư.",
+        "SIGN_IN": "Đăng nhập với Google",
+        "EMAIL_PLACEHOLDER": "Nhập địa chỉ email",
+        "ERROR_MESSAGE": "Có lỗi khi kết nối với Google, vui lòng thử lại"
+      },
+      "PHONE_CONFIGURATION": {
+        "CONNECTION_TITLE": "Kết nối PBX và ICE",
+        "CONNECTION_DESC": "WSS truyền tín hiệu SIP. ICE dùng STUN cho kết nối trực tiếp và TURN làm phương án dự phòng.",
+        "STUN_URLS": "URL STUN (mỗi dòng một URL)",
+        "TURN_URLS": "URL TURN (mỗi dòng một URL)",
+        "TURN_SECRET": "Khoá bí mật dùng chung TURN",
+        "TURN_SECRET_HELP": "Phải khớp với PBX_TURN_SHARED_SECRET trên PBX. Để trống để giữ giá trị đã mã hoá.",
+        "TURN_TTL": "Thời gian sống của thông tin xác thực TURN tạm thời (giây)",
+        "SAVE_CONNECTION": "Lưu kết nối",
+        "CHANNEL_SAVED": "Đã lưu cài đặt kết nối điện thoại.",
+        "TURN_SECRET_REQUIRED": "Cần có khoá bí mật dùng chung khi cấu hình máy chủ TURN.",
+        "EXTENSIONS_TITLE": "Số nội bộ SIP của nhân viên",
+        "EXTENSIONS_DESC": "Gán một số nội bộ PBX riêng cho từng nhân viên trong hộp thư này.",
+        "ENABLED": "Đã bật điện thoại mềm",
+        "PASSWORD_PLACEHOLDER": "Để trống để giữ nguyên mật khẩu",
+        "SAVE_EXTENSION": "Lưu",
+        "DELETE_EXTENSION": "Xoá",
+        "EXTENSION_REQUIRED": "Cần nhập tên đăng nhập SIP và mật khẩu cho số nội bộ mới.",
+        "EXTENSION_SAVED": "Đã lưu số nội bộ của nhân viên.",
+        "EXTENSION_DELETED": "Đã xoá số nội bộ của nhân viên.",
+        "NO_MEMBERS": "Hãy thêm nhân viên vào hộp thư này trước khi gán số nội bộ SIP."
+      },
+      "ZALO_OA_CHANNEL": {
+        "TITLE": "Kênh Zalo OA",
+        "DESC": "Kết nối Tài khoản Chính thức Zalo và bắt đầu hỗ trợ khách hàng trên Zalo.",
+        "APP_ID": {
+          "LABEL": "App ID",
+          "PLACEHOLDER": "App ID"
+        },
+        "APP_SECRET": {
+          "LABEL": "App Secret Key",
+          "PLACEHOLDER": "App Secret Key"
+        },
+        "OA_SECRET_KEY": {
+          "LABEL": "OA Secret Key",
+          "SUBTITLE": "Dùng để xác minh sự kiện webhook. Tìm trong cài đặt Tài khoản Chính thức Zalo, khác với App Secret Key.",
+          "PLACEHOLDER": "OA Secret Key"
+        },
+        "SUBMIT_BUTTON": "Kết nối Zalo OA",
+        "API": {
+          "ERROR_MESSAGE": "Không kết nối được Tài khoản Chính thức Zalo"
+        },
+        "API_CALLBACK": {
+          "TITLE": "URL Callback",
+          "SUBTITLE": "Bạn cần cấu hình URL webhook trong cài đặt Tài khoản Chính thức Zalo bằng URL được ghi ở đây."
+        }
+      },
+      "ZALO_PERSONAL_CHANNEL": {
+        "TITLE": "Kênh Zalo cá nhân",
+        "DESC": "Kết nối tài khoản Zalo cá nhân để xử lý chat trực tiếp và chat nhóm từ hộp thư của bạn.",
+        "SUBMIT_BUTTON": "Kết nối Zalo",
+        "QR": {
+          "INTRO": "Bạn sẽ đăng nhập bằng cách quét mã QR bằng ứng dụng Zalo, giống như cách đăng nhập Zalo trên máy tính. Hãy dùng tài khoản phụ: tài khoản Zalo cá nhân kết nối qua API không chính thức và có thể bị Zalo hạn chế.",
+          "INSTRUCTIONS": "Mở Zalo trên điện thoại, bấm biểu tượng quét và quét mã này. Mã có hiệu lực trong vài phút.",
+          "ALT": "Mã QR đăng nhập Zalo",
+          "EXPIRED": "Mã QR này đã hết hạn trước khi được quét. Hãy tạo mã mới để tiếp tục.",
+          "REGENERATE": "Tạo mã mới"
+        },
+        "ERROR": {
+          "ACCOUNT_MISMATCH": "Mã QR đó đã đăng nhập một tài khoản Zalo khác với tài khoản của hộp thư này. Hãy quét lại bằng đúng tài khoản ban đầu.",
+          "DECLINED": "Việc đăng nhập đã bị từ chối trên điện thoại. Hãy tạo mã mới và chấp nhận trong ứng dụng Zalo.",
+          "GENERIC": "Không kết nối được tài khoản Zalo. Kiểm tra worker Zalo có đang chạy không, rồi thử lại."
+        }
       }
     },
     "DETAILS": {
       "LOADING_FB": "Xác thực bạn bằng Facebook...",
-      "ERROR_FB_LOADING": "Error loading Facebook SDK. Please disable any ad-blockers and try again from a different browser.",
+      "ERROR_FB_LOADING": "Lỗi khi tải Facebook SDK. Vui lòng tắt trình chặn quảng cáo và thử lại bằng trình duyệt khác.",
       "ERROR_FB_AUTH": "Đã xảy ra sự cố, Vui lòng làm mới trang...",
-      "ERROR_FB_UNAUTHORIZED": "You're not authorized to perform this action. ",
-      "ERROR_FB_UNAUTHORIZED_HELP": "Please ensure you have access to the Facebook page with full control. You can read more about Facebook roles <a href=\" https://www.facebook.com/help/187316341316631\">here</a>.",
-      "CREATING_CHANNEL": "Tạo Hộp thư đến của bạn...",
-      "TITLE": "Cấu hình chi tiết hộp thư đến",
-      "DESC": ""
+      "ERROR_FB_UNAUTHORIZED": "Bạn không có quyền thực hiện thao tác này. ",
+      "ERROR_FB_UNAUTHORIZED_HELP": "Vui lòng đảm bảo bạn có toàn quyền truy cập Trang Facebook. Đọc thêm về vai trò trên Facebook <a href=\" https://www.facebook.com/help/187316341316631\">tại đây</a>.",
+      "CREATING_CHANNEL": "Tạo Hộp thư của bạn...",
+      "TITLE": "Cấu hình chi tiết hộp thư",
+      "DESC": "",
+      "ERROR_CHANNEL_CREATION": "Không tạo được hộp thư. Vui lòng thử lại."
     },
     "AGENTS": {
       "BUTTON_TEXT": "Thêm các nhà cung cấp",
-      "ADD_AGENTS": "Thêm các nhà cung cấp vào hộp thư đến của bạn..."
+      "ADD_AGENTS": "Thêm các nhà cung cấp vào hộp thư của bạn..."
     },
     "FINISH": {
-      "TITLE": "Hộp thư đến của bạn đã sẵn sàng!",
+      "TITLE": "Hộp thư của bạn đã sẵn sàng!",
       "MESSAGE": "Giờ đây, bạn có thể tương tác với khách hàng thông qua Kênh mới của mình. Chúc vui vẻ ủng hộ",
       "BUTTON_TEXT": "Đưa cho tôi",
       "MORE_SETTINGS": "Nhiều tuỳ chọn hơn",
-      "WEBSITE_SUCCESS": "Bạn đã hoàn thành việc tạo kênh trang web thành công. Sao chép mã được hiển thị bên dưới và dán vào trang web của bạn. Lần tới khi khách hàng sử dụng cuộc trò chuyện trực tiếp, cuộc trò chuyện sẽ tự động xuất hiện trong hộp thư đến của bạn.",
-      "WHATSAPP_QR_INSTRUCTION": "Scan the QR code above to quickly test your WhatsApp inbox",
-      "MESSENGER_QR_INSTRUCTION": "Scan the QR code above to quickly test your Facebook Messenger inbox",
-      "TELEGRAM_QR_INSTRUCTION": "Scan the QR code above to quickly test your Telegram inbox"
+      "WEBSITE_SUCCESS": "Bạn đã hoàn thành việc tạo kênh trang web thành công. Sao chép mã được hiển thị bên dưới và dán vào trang web của bạn. Lần tới khi khách hàng sử dụng hội thoại trực tiếp, hội thoại sẽ tự động xuất hiện trong hộp thư của bạn.",
+      "WHATSAPP_QR_INSTRUCTION": "Quét mã QR ở trên để thử nhanh hộp thư WhatsApp của bạn",
+      "MESSENGER_QR_INSTRUCTION": "Quét mã QR ở trên để thử nhanh hộp thư Facebook Messenger của bạn",
+      "TELEGRAM_QR_INSTRUCTION": "Quét mã QR ở trên để thử nhanh hộp thư Telegram của bạn"
     },
     "REAUTH": "Ủy quyền lại",
     "VIEW": "Xem",
     "EDIT": {
       "API": {
-        "SUCCESS_MESSAGE": "Đã cập nhật cài đặt hộp thư đến thành công",
+        "SUCCESS_MESSAGE": "Đã cập nhật cài đặt hộp thư thành công",
         "AUTO_ASSIGNMENT_SUCCESS_MESSAGE": "Đã cập nhật thành công bài tập tự động",
         "ERROR_MESSAGE": "Chúng tôi không thể cập nhật cài đặt hộp thư. Vui lòng thử lại sau."
       },
@@ -644,22 +722,22 @@
         "DISABLED": "Không bật"
       },
       "SENDER_NAME_SECTION": {
-        "TITLE": "Sender name",
-        "SUB_TEXT": "Select the name shown to your customer when they receive emails from your agents.",
-        "FOR_EG": "For eg:",
+        "TITLE": "Tên người gửi",
+        "SUB_TEXT": "Chọn tên hiển thị cho khách khi họ nhận email từ nhân viên của bạn.",
+        "FOR_EG": "Ví dụ:",
         "FRIENDLY": {
-          "TITLE": "Friendly",
+          "TITLE": "Thân thiện",
           "FROM": "từ",
-          "SUBTITLE": "Add the name of the agent who sent the reply in the sender name to make it friendly."
+          "SUBTITLE": "Thêm tên nhân viên trả lời vào tên người gửi để tạo cảm giác gần gũi."
         },
         "PROFESSIONAL": {
-          "TITLE": "Professional",
-          "SUBTITLE": "Use only the configured business name as the sender name in the email header."
+          "TITLE": "Chuyên nghiệp",
+          "SUBTITLE": "Chỉ dùng tên doanh nghiệp đã cấu hình làm tên người gửi trong tiêu đề email."
         },
         "BUSINESS_NAME": {
-          "BUTTON_TEXT": "Configure your business name",
-          "PLACEHOLDER": "Enter your business name",
-          "SAVE_BUTTON_TEXT": "Save"
+          "BUTTON_TEXT": "Cấu hình tên doanh nghiệp",
+          "PLACEHOLDER": "Nhập tên doanh nghiệp của bạn",
+          "SAVE_BUTTON_TEXT": "Lưu"
         }
       },
       "ALLOW_MESSAGES_AFTER_RESOLVED": {
@@ -671,10 +749,10 @@
         "DISABLED": "Không bật"
       },
       "LOCK_TO_SINGLE_CONVERSATION": {
-        "ENABLED": "Reopen same conversation",
-        "DISABLED": "Create new conversations",
-        "ENABLED_DESCRIPTION": "When a contact messages again, the previous conversation will be reopened.",
-        "DISABLED_DESCRIPTION": "A new conversation will be created each time after the previous one is resolved."
+        "ENABLED": "Mở lại hội thoại cũ",
+        "DISABLED": "Tạo hội thoại mới",
+        "ENABLED_DESCRIPTION": "Khi liên hệ nhắn tin lại, hội thoại trước đó sẽ được mở lại.",
+        "DISABLED_DESCRIPTION": "Một hội thoại mới sẽ được tạo mỗi khi hội thoại trước đã được xử lý xong."
       },
       "ENABLE_HMAC": {
         "LABEL": "Bật"
@@ -691,10 +769,10 @@
         "NO": "Không, Giữ "
       },
       "API": {
-        "SUCCESS_MESSAGE": "Hộp thư đến đã được xóa thành công",
-        "ERROR_MESSAGE": "Không thể xóa hộp thư đến. Vui lòng thử lại sau.",
-        "AVATAR_SUCCESS_MESSAGE": "Hình đại diện của hộp thư đến đã được xoá thành công",
-        "AVATAR_ERROR_MESSAGE": "Không thể xoá hình đại diện của hộp thư đến. Vui lòng thử lại sau."
+        "SUCCESS_MESSAGE": "Hộp thư đã được xóa thành công",
+        "ERROR_MESSAGE": "Không thể xóa hộp thư. Vui lòng thử lại sau.",
+        "AVATAR_SUCCESS_MESSAGE": "Hình đại diện của hộp thư đã được xoá thành công",
+        "AVATAR_ERROR_MESSAGE": "Không thể xoá hình đại diện của hộp thư. Vui lòng thử lại sau."
       }
     },
     "TABS": {
@@ -706,181 +784,182 @@
       "BUSINESS_HOURS": "Giờ làm việc",
       "WIDGET_BUILDER": "Trình tạo widget",
       "BOT_CONFIGURATION": "Cấu hình Bot",
-      "ACCOUNT_HEALTH": "Account Health",
+      "ACCOUNT_HEALTH": "Tình trạng tài khoản",
       "CSAT": "CSAT",
-      "VOICE": "Voice",
-      "CALLS": "Calls"
+      "VOICE": "Thoại",
+      "CALLS": "Cuộc gọi",
+      "SOFTPHONE": "Điện thoại mềm"
     },
     "VOICE_CONFIGURATION": {
       "ENABLE_VOICE": {
-        "LABEL": "Enable Voice Calling",
-        "DESCRIPTION": "Enable voice calling on this inbox. Agents will be able to make and receive phone calls."
+        "LABEL": "Bật gọi thoại",
+        "DESCRIPTION": "Bật gọi thoại cho hộp thư này. Nhân viên sẽ gọi và nhận cuộc gọi được."
       },
       "CREDENTIALS": {
-        "DESCRIPTION": "Voice calling requires Twilio API Key credentials. These are used to generate tokens for agent voice connections."
+        "DESCRIPTION": "Gọi thoại cần thông tin xác thực Twilio API Key. Dùng để tạo token cho kết nối thoại của nhân viên."
       },
       "INBOUND": {
-        "LABEL": "Allow incoming calls",
-        "DESCRIPTION": "Let customers call this number. When turned off, incoming calls are declined automatically — agents aren't notified and no conversation is created. Agents can still place outgoing calls."
+        "LABEL": "Cho phép cuộc gọi đến",
+        "DESCRIPTION": "Cho phép khách gọi tới số này. Khi tắt, cuộc gọi đến sẽ tự động bị từ chối — nhân viên không nhận thông báo và không tạo hội thoại. Nhân viên vẫn gọi đi được bình thường."
       }
     },
     "WHATSAPP_CALLING": {
       "ENABLE": {
-        "LABEL": "Enable WhatsApp Calling",
-        "DESCRIPTION": "Allow agents to receive and place WhatsApp Cloud calls on this inbox. Customers can call this business number directly from WhatsApp."
+        "LABEL": "Bật gọi thoại qua WhatsApp",
+        "DESCRIPTION": "Cho phép nhân viên gọi và nhận cuộc gọi WhatsApp Cloud trên hộp thư này. Khách có thể gọi trực tiếp tới số doanh nghiệp này từ WhatsApp."
       },
-      "ENABLE_FAILED": "Voice calling couldn't be turned on for this number — it isn't enrolled in the WhatsApp Business Calling API yet. Reach out to Meta or your WhatsApp Business Solution Provider to onboard it, then try again.",
+      "ENABLE_FAILED": "Không bật được gọi thoại cho số này — số chưa đăng ký với WhatsApp Business Calling API. Liên hệ Meta hoặc nhà cung cấp giải pháp WhatsApp Business của bạn để đăng ký, rồi thử lại.",
       "PHONE_NUMBER": {
-        "LABEL": "Business phone number",
-        "HELP_TEXT": "WhatsApp number that customers will call."
+        "LABEL": "Số điện thoại doanh nghiệp",
+        "HELP_TEXT": "Số WhatsApp mà khách sẽ gọi tới."
       },
       "HOW_IT_WORKS": {
-        "LABEL": "How it works",
-        "DESCRIPTION": "Calls are placed peer-to-peer between the agent's browser and Meta — no extra credentials are required. Make sure the agent's browser has microphone permission for this site."
+        "LABEL": "Hoạt động thế nào",
+        "DESCRIPTION": "Cuộc gọi kết nối trực tiếp giữa trình duyệt của nhân viên và Meta — không cần thêm thông tin xác thực. Hãy đảm bảo trình duyệt của nhân viên được cấp quyền micro cho trang này."
       },
       "PERMISSION_REQUEST_BODY": {
-        "LABEL": "Call permission request message",
-        "HELP_TEXT": "Shown to the contact when they haven't yet consented to receive calls. Leave blank to use the default.",
-        "PLACEHOLDER": "We would like to call you regarding your conversation."
+        "LABEL": "Tin nhắn xin phép gọi",
+        "HELP_TEXT": "Hiển thị cho liên hệ khi họ chưa đồng ý nhận cuộc gọi. Để trống để dùng mặc định.",
+        "PLACEHOLDER": "Chúng tôi muốn gọi cho bạn về hội thoại này."
       }
     },
-    "CHANNEL_PREFERENCES": "Channel Preferences",
-    "WIDGET_FEATURES": "Widget features",
+    "CHANNEL_PREFERENCES": "Tuỳ chọn kênh",
+    "WIDGET_FEATURES": "Tính năng khung chat",
     "ACCOUNT_HEALTH": {
-      "TITLE": "Manage your WhatsApp account",
-      "DESCRIPTION": "Review your WhatsApp phone number health, messaging capacity, and linked Meta business details.",
-      "GO_TO_SETTINGS": "Go to Meta Business Manager",
-      "NO_DATA": "Health data is not available",
+      "TITLE": "Quản lý tài khoản WhatsApp",
+      "DESCRIPTION": "Kiểm tra tình trạng số điện thoại WhatsApp, khả năng gửi tin và thông tin doanh nghiệp Meta đã liên kết.",
+      "GO_TO_SETTINGS": "Mở Meta Business Manager",
+      "NO_DATA": "Không có dữ liệu tình trạng",
       "ERRORS": {
         "AUTHORIZATION": {
-          "EMBEDDED_TITLE": "WhatsApp connection needs to be refreshed",
-          "EMBEDDED_DESCRIPTION": "Meta could not validate the connection for this inbox. Go to Configuration to reconfigure it using Embedded Signup.",
-          "MANUAL_TITLE": "WhatsApp access token needs attention",
-          "MANUAL_DESCRIPTION": "Meta could not validate the access token for this inbox. Go to Configuration to verify or replace it."
+          "EMBEDDED_TITLE": "Cần làm mới kết nối WhatsApp",
+          "EMBEDDED_DESCRIPTION": "Meta không xác thực được kết nối cho hộp thư này. Vào phần Cấu hình để thiết lập lại bằng Embedded Signup.",
+          "MANUAL_TITLE": "Token truy cập WhatsApp cần chú ý",
+          "MANUAL_DESCRIPTION": "Meta không xác thực được token truy cập cho hộp thư này. Vào phần Cấu hình để kiểm tra hoặc thay thế."
         },
-        "GENERIC_TITLE": "WhatsApp health data is unavailable",
-        "GENERIC_DESCRIPTION": "Meta could not return the current health details. Review the error below and try again later.",
-        "GO_TO_CONFIGURATION": "Go to Configuration"
+        "GENERIC_TITLE": "Không có dữ liệu tình trạng WhatsApp",
+        "GENERIC_DESCRIPTION": "Meta không trả về được thông tin tình trạng hiện tại. Xem lỗi bên dưới và thử lại sau.",
+        "GO_TO_CONFIGURATION": "Vào phần Cấu hình"
       },
       "SECTIONS": {
         "PHONE_NUMBER": "Số điện thoại",
-        "HEALTH_AND_CAPACITY": "Health and capacity",
-        "BUSINESS_ACCOUNT": "Business account"
+        "HEALTH_AND_CAPACITY": "Tình trạng và khả năng gửi tin",
+        "BUSINESS_ACCOUNT": "Tài khoản doanh nghiệp"
       },
       "FIELDS": {
         "DISPLAY_PHONE_NUMBER": {
-          "LABEL": "Display phone number",
-          "TOOLTIP": "Phone number displayed to customers"
+          "LABEL": "Số điện thoại hiển thị",
+          "TOOLTIP": "Số điện thoại hiển thị cho khách hàng"
         },
         "VERIFIED_NAME": {
-          "LABEL": "WhatsApp display name",
-          "TOOLTIP": "Display name associated with this phone number on WhatsApp"
+          "LABEL": "Tên hiển thị WhatsApp",
+          "TOOLTIP": "Tên hiển thị gắn với số điện thoại này trên WhatsApp"
         },
         "PHONE_NUMBER_ID": {
           "LABEL": "ID số điện thoại",
-          "TOOLTIP": "Meta identifier for this WhatsApp phone number"
+          "TOOLTIP": "Mã định danh của Meta cho số điện thoại WhatsApp này"
         },
         "COEXISTENCE": {
-          "LABEL": "Coexistence",
-          "TOOLTIP": "This number is connected to both the WhatsApp Business app and Cloud API"
+          "LABEL": "Song song hai nền tảng",
+          "TOOLTIP": "Số này đang kết nối cả ứng dụng WhatsApp Business lẫn Cloud API"
         },
         "DISPLAY_NAME_STATUS": {
-          "LABEL": "Display name status",
-          "TOOLTIP": "Review status of the WhatsApp display name"
+          "LABEL": "Trạng thái tên hiển thị",
+          "TOOLTIP": "Trạng thái xét duyệt tên hiển thị WhatsApp"
         },
         "LAST_ONBOARDED_TIME": {
-          "LABEL": "Last onboarded",
-          "TOOLTIP": "Most recent time Meta onboarded this phone number"
+          "LABEL": "Lần thiết lập gần nhất",
+          "TOOLTIP": "Lần gần nhất Meta thiết lập số điện thoại này"
         },
         "PHONE_NUMBER_STATUS": {
-          "LABEL": "Phone number status",
-          "TOOLTIP": "Current connection status of this phone number on WhatsApp"
+          "LABEL": "Trạng thái số điện thoại",
+          "TOOLTIP": "Trạng thái kết nối hiện tại của số điện thoại này trên WhatsApp"
         },
         "QUALITY_RATING": {
-          "LABEL": "Quality rating",
-          "TOOLTIP": "Quality rating Meta assigns to this phone number based on recent messaging signals"
+          "LABEL": "Đánh giá chất lượng",
+          "TOOLTIP": "Mức đánh giá chất lượng Meta gán cho số này dựa trên tín hiệu gửi tin gần đây"
         },
         "MESSAGING_LIMIT_TIER": {
-          "LABEL": "Messaging limit tier",
-          "TOOLTIP": "Number of customers this phone number can initiate conversations with in 24 hours"
+          "LABEL": "Hạn mức gửi tin",
+          "TOOLTIP": "Số lượng khách mà số này có thể chủ động nhắn tin trong 24 giờ"
         },
         "ACCOUNT_MODE": {
-          "LABEL": "Account mode",
-          "TOOLTIP": "Current operating mode of this WhatsApp phone number"
+          "LABEL": "Chế độ tài khoản",
+          "TOOLTIP": "Chế độ vận hành hiện tại của số điện thoại WhatsApp này"
         },
         "CODE_VERIFICATION_STATUS": {
-          "LABEL": "Code verification",
-          "TOOLTIP": "Verification-code status reported by Meta for this phone number"
+          "LABEL": "Xác minh mã",
+          "TOOLTIP": "Trạng thái xác minh mã do Meta báo cáo cho số này"
         },
         "THROUGHPUT_LEVEL": {
-          "LABEL": "Throughput",
-          "TOOLTIP": "Message throughput level assigned to this phone number"
+          "LABEL": "Thông lượng",
+          "TOOLTIP": "Mức thông lượng tin nhắn được gán cho số này"
         },
         "BUSINESS_ACCOUNT_NAME": {
-          "LABEL": "WhatsApp Business Account name",
-          "TOOLTIP": "Name of the WhatsApp Business Account linked to this phone number"
+          "LABEL": "Tên tài khoản WhatsApp Business",
+          "TOOLTIP": "Tên tài khoản WhatsApp Business liên kết với số này"
         },
         "BUSINESS_ACCOUNT_ID": {
-          "LABEL": "WhatsApp Business Account ID",
-          "TOOLTIP": "Meta identifier for the linked WhatsApp Business Account"
+          "LABEL": "Mã tài khoản WhatsApp Business",
+          "TOOLTIP": "Mã định danh Meta cho tài khoản WhatsApp Business liên kết"
         },
         "BUSINESS_PORTFOLIO_NAME": {
-          "LABEL": "Business portfolio name",
-          "TOOLTIP": "Name of the Meta business portfolio that owns the WhatsApp Business Account"
+          "LABEL": "Tên danh mục doanh nghiệp",
+          "TOOLTIP": "Tên danh mục doanh nghiệp Meta sở hữu tài khoản WhatsApp Business này"
         },
         "BUSINESS_PORTFOLIO_ID": {
-          "LABEL": "Business portfolio ID",
-          "TOOLTIP": "Meta identifier for the business portfolio that owns the WhatsApp Business Account"
+          "LABEL": "Mã danh mục doanh nghiệp",
+          "TOOLTIP": "Mã định danh Meta cho danh mục doanh nghiệp sở hữu tài khoản WhatsApp Business này"
         }
       },
       "VALUES": {
-        "NOT_AVAILABLE": "Not available",
+        "NOT_AVAILABLE": "Không có sẵn",
         "TIERS": {
-          "TIER_250": "250 customers per 24h",
-          "TIER_1000": "1K customers per 24h",
-          "TIER_1K": "1K customers per 24h",
-          "TIER_2K": "2K customers per 24h",
-          "TIER_10K": "10K customers per 24h",
-          "TIER_100K": "100K customers per 24h",
-          "TIER_UNLIMITED": "Unlimited customers per 24h",
-          "UNKNOWN": "Rating not available"
+          "TIER_250": "250 khách / 24 giờ",
+          "TIER_1000": "1 nghìn khách / 24 giờ",
+          "TIER_1K": "1 nghìn khách / 24 giờ",
+          "TIER_2K": "2 nghìn khách / 24 giờ",
+          "TIER_10K": "10 nghìn khách / 24 giờ",
+          "TIER_100K": "100 nghìn khách / 24 giờ",
+          "TIER_UNLIMITED": "Không giới hạn khách / 24 giờ",
+          "UNKNOWN": "Chưa có đánh giá"
         },
         "STATUSES": {
-          "APPROVED": "Approved",
-          "CONNECTED": "Connected",
+          "APPROVED": "Đã duyệt",
+          "CONNECTED": "Đã kết nối",
           "VERIFIED": "Đã xác minh",
           "STANDARD": "Chuẩn",
           "ACTIVE": "Có hiệu lực",
-          "EXPIRED": "Expired",
-          "FLAGGED": "Flagged",
-          "RESTRICTED": "Restricted",
-          "BANNED": "Banned",
-          "DISCONNECTED": "Disconnected",
-          "UNKNOWN": "Not available",
-          "PENDING_REVIEW": "Pending Review",
-          "AVAILABLE_WITHOUT_REVIEW": "Available Without Review",
-          "REJECTED": "Rejected",
-          "DECLINED": "Declined",
-          "NON_EXISTS": "Non exists"
+          "EXPIRED": "Đã hết hạn",
+          "FLAGGED": "Đã bị gắn cờ",
+          "RESTRICTED": "Bị hạn chế",
+          "BANNED": "Bị cấm",
+          "DISCONNECTED": "Đã ngắt kết nối",
+          "UNKNOWN": "Không có sẵn",
+          "PENDING_REVIEW": "Đang chờ xét duyệt",
+          "AVAILABLE_WITHOUT_REVIEW": "Dùng được không cần duyệt",
+          "REJECTED": "Bị từ chối",
+          "DECLINED": "Bị từ chối",
+          "NON_EXISTS": "Không tồn tại"
         },
         "MODES": {
-          "SANDBOX": "Sandbox",
+          "SANDBOX": "Thử nghiệm",
           "LIVE": "Trực tuyến"
         }
       },
       "WEBHOOK": {
-        "TITLE": "Webhook Configuration",
-        "DESCRIPTION": "Webhook URL is required for your WhatsApp Business Account to receive messages from customers",
-        "ACTION_REQUIRED": "Webhook not configured",
-        "REGISTER_BUTTON": "Register Webhook",
-        "REGISTER_SUCCESS": "Webhook registered successfully",
-        "REGISTER_ERROR": "Failed to register webhook. Please try again.",
-        "CONFIGURED_SUCCESS": "Webhook configured successfully",
-        "URL_MISMATCH": "Webhook URL mismatch",
-        "CONFIGURED_URL": "Configured URL",
-        "EXPECTED_URL": "Expected URL",
-        "COPY_URL": "Copy webhook URL",
-        "COPY_SUCCESS": "Webhook URL copied to clipboard"
+        "TITLE": "Cấu hình Webhook",
+        "DESCRIPTION": "Cần có URL webhook để tài khoản WhatsApp Business của bạn nhận tin nhắn từ khách hàng",
+        "ACTION_REQUIRED": "Chưa cấu hình webhook",
+        "REGISTER_BUTTON": "Đăng ký webhook",
+        "REGISTER_SUCCESS": "Đã đăng ký webhook thành công",
+        "REGISTER_ERROR": "Không đăng ký được webhook. Vui lòng thử lại.",
+        "CONFIGURED_SUCCESS": "Đã cấu hình webhook thành công",
+        "URL_MISMATCH": "URL webhook không khớp",
+        "CONFIGURED_URL": "URL đã cấu hình",
+        "EXPECTED_URL": "URL mong đợi",
+        "COPY_URL": "Sao chép URL webhook",
+        "COPY_SUCCESS": "Đã sao chép URL webhook"
       }
     },
     "SETTINGS": "Cài đặt",
@@ -888,234 +967,234 @@
       "LABEL": "Các tính năng",
       "DISPLAY_FILE_PICKER": "Hiển thị bộ chọn tệp trên tiện ích con",
       "DISPLAY_EMOJI_PICKER": "Hiển thị bộ chọn biểu tượng cảm xúc trên tiện ích con",
-      "ALLOW_END_CONVERSATION": "Cho phép người dùng kết thúc cuộc trò chuyện từ công cụ chat",
-      "USE_INBOX_AVATAR_FOR_BOT": "Use inbox name and avatar for the bot"
+      "ALLOW_END_CONVERSATION": "Cho phép người dùng kết thúc hội thoại từ công cụ chat",
+      "USE_INBOX_AVATAR_FOR_BOT": "Dùng tên và ảnh đại diện hộp thư cho bot"
     },
     "SETTINGS_POPUP": {
       "MESSENGER_HEADING": "Tập lệnh Messenger",
       "MESSENGER_SUB_HEAD": "Đặt nút này bên trong thẻ body của bạn",
       "ALLOWED_DOMAINS": {
-        "TITLE": "Allowed Domains",
-        "DESCRIPTION": "Restrict which websites can embed your chat widget. For security, only add domains you own and trust. Add one or more domains separated by commas. Leave blank to allow all domains (not recommended for production).",
+        "TITLE": "Tên miền được phép",
+        "DESCRIPTION": "Giới hạn website nào được nhúng khung chat của bạn. Vì lý do bảo mật, chỉ thêm các tên miền bạn sở hữu và tin tưởng. Thêm một hoặc nhiều tên miền, cách nhau bằng dấu phẩy. Để trống để cho phép mọi tên miền (không khuyến khích cho môi trường thật).",
         "PLACEHOLDER": "example.com, www.example.com, app.example.com"
       },
       "ALLOW_MOBILE_WEBVIEW": {
-        "LABEL": "Enable widget in mobile apps",
-        "SUBTITLE": "Check this if you embed the widget in iOS or Android apps. Mobile apps don't send domain information, so they would be blocked by domain restrictions unless this is enabled."
+        "LABEL": "Bật khung chat trong ứng dụng di động",
+        "SUBTITLE": "Chọn mục này nếu bạn nhúng khung chat vào ứng dụng iOS hoặc Android. Ứng dụng di động không gửi thông tin tên miền nên sẽ bị chặn bởi giới hạn tên miền trừ khi bật mục này."
       },
       "IDENTITY_VALIDATION": {
-        "TITLE": "Identity Validation",
-        "DESCRIPTION": "Verify user authenticity by generating secure tokens. This prevents unauthorized users from impersonating others in your chat.",
-        "SECRET_KEY": "Secret Key",
-        "VIEW_DOCS": "View documentation",
-        "REQUIRE_LABEL": "Require identity validation for all conversations",
-        "REQUIRE_DESCRIPTION": "When enabled, users must provide a valid identity token to start conversations. Requests without valid tokens will be rejected."
+        "TITLE": "Xác thực danh tính",
+        "DESCRIPTION": "Xác minh danh tính người dùng bằng token bảo mật. Giúp ngăn người khác mạo danh trong khung chat của bạn.",
+        "SECRET_KEY": "Khoá bí mật",
+        "VIEW_DOCS": "Xem tài liệu",
+        "REQUIRE_LABEL": "Bắt buộc xác thực danh tính cho mọi hội thoại",
+        "REQUIRE_DESCRIPTION": "Khi bật, người dùng phải cung cấp token danh tính hợp lệ để bắt đầu hội thoại. Yêu cầu không có token hợp lệ sẽ bị từ chối."
       },
       "INBOX_AGENTS": "Nhà cung cấp",
-      "INBOX_AGENTS_SUB_TEXT": "Thêm hoặc xóa tác nhân khỏi hộp thư đến này",
-      "AGENT_ASSIGNMENT": "Phân công cuộc trò chuyện",
-      "AGENT_ASSIGNMENT_SUB_TEXT": "Cập nhật phân công cuộc trò chuyện",
+      "INBOX_AGENTS_SUB_TEXT": "Thêm hoặc xóa tác nhân khỏi hộp thư này",
+      "AGENT_ASSIGNMENT": "Phân công hội thoại",
+      "AGENT_ASSIGNMENT_SUB_TEXT": "Cập nhật phân công hội thoại",
       "UPDATE": "Cập nhật",
       "ENABLE_EMAIL_COLLECT_BOX": "Bật hộp thu thập email",
-      "ENABLE_EMAIL_COLLECT_BOX_SUB_TEXT": "Bật hoặc tắt hộp thu thập email trên cuộc trò chuyện mới",
+      "ENABLE_EMAIL_COLLECT_BOX_SUB_TEXT": "Bật hoặc tắt hộp thu thập email trên hội thoại mới",
       "AUTO_ASSIGNMENT": "Bật tự động chuyển nhượng",
-      "SENDER_NAME_SECTION": "Enable Agent Name in Email",
-      "SENDER_NAME_SECTION_TEXT": "Enable/Disable showing Agent's name in email, if disabled it will show business name",
-      "ENABLE_CONTINUITY_VIA_EMAIL": "Bật tiếp tục cuộc trò chuyện qua email",
-      "ENABLE_CONTINUITY_VIA_EMAIL_SUB_TEXT": "Cuộc trò chuyện sẽ tiếp tục qua email nếu có địa chỉ email liên lạc.",
-      "ENABLE_CONTINUITY_VIA_EMAIL_DISABLED_TEXT": "This feature is available on a paid plan. Upgrade to enable conversation continuity via email.",
-      "LOCK_TO_SINGLE_CONVERSATION": "Conversation Routing",
-      "LOCK_TO_SINGLE_CONVERSATION_SUB_TEXT": "Configure conversation creation for existing contacts",
-      "INBOX_UPDATE_TITLE": "Cài đặt Hộp thư đến",
-      "INBOX_UPDATE_SUB_TEXT": "Cập nhật cài đặt hộp thư đến của bạn",
-      "AUTO_ASSIGNMENT_SUB_TEXT": "Bật hoặc tắt tính năng tự động gán các cuộc hội thoại mới cho các tác nhân được thêm vào hộp thư đến này.",
+      "SENDER_NAME_SECTION": "Hiện tên nhân viên trong email",
+      "SENDER_NAME_SECTION_TEXT": "Bật/tắt hiển thị tên nhân viên trong email, nếu tắt sẽ hiện tên doanh nghiệp",
+      "ENABLE_CONTINUITY_VIA_EMAIL": "Bật tiếp tục hội thoại qua email",
+      "ENABLE_CONTINUITY_VIA_EMAIL_SUB_TEXT": "Hội thoại sẽ tiếp tục qua email nếu có địa chỉ email liên lạc.",
+      "ENABLE_CONTINUITY_VIA_EMAIL_DISABLED_TEXT": "Tính năng này chỉ có ở gói trả phí. Nâng cấp để bật khả năng tiếp tục hội thoại qua email.",
+      "LOCK_TO_SINGLE_CONVERSATION": "Định tuyến hội thoại",
+      "LOCK_TO_SINGLE_CONVERSATION_SUB_TEXT": "Cấu hình cách tạo hội thoại cho liên hệ đã có",
+      "INBOX_UPDATE_TITLE": "Cài đặt Hộp thư",
+      "INBOX_UPDATE_SUB_TEXT": "Cập nhật cài đặt hộp thư của bạn",
+      "AUTO_ASSIGNMENT_SUB_TEXT": "Bật hoặc tắt tính năng tự động gán các cuộc hội thoại mới cho các tác nhân được thêm vào hộp thư này.",
       "HMAC_VERIFICATION": "Xác thực danh tính người dùng",
-      "HMAC_DESCRIPTION": "With this key you can generate a secret token that can be used to verify the identity of your users.",
-      "HMAC_LINK_TO_DOCS": "You can read more here.",
+      "HMAC_DESCRIPTION": "Dùng khoá này để tạo token bí mật, giúp xác minh danh tính người dùng của bạn.",
+      "HMAC_LINK_TO_DOCS": "Đọc thêm tại đây.",
       "HMAC_MANDATORY_VERIFICATION": "Bắt buộc Xác thực danh tính người dùng",
-      "HMAC_MANDATORY_DESCRIPTION": "If enabled, requests that cannot be verified will be rejected.",
-      "INBOX_IDENTIFIER": "Định danh hộp thư đến",
-      "INBOX_IDENTIFIER_SUB_TEXT": "Dùng token định danh hộp thư đến hiện ở đây để xác thực các ứng dụng khách API của bạn.",
+      "HMAC_MANDATORY_DESCRIPTION": "Nếu bật, các yêu cầu không xác minh được sẽ bị từ chối.",
+      "INBOX_IDENTIFIER": "Định danh hộp thư",
+      "INBOX_IDENTIFIER_SUB_TEXT": "Dùng token định danh hộp thư hiện ở đây để xác thực các ứng dụng khách API của bạn.",
       "FORWARD_EMAIL_TITLE": "Chuyển tiếp đến Email",
       "FORWARD_EMAIL_SUB_TEXT": "Bắt đầu chuyển tiếp email của bạn tới địa chỉ email sau.",
-      "FORWARD_EMAIL_NOT_CONFIGURED": "Forwarding emails to your inbox is currently disabled on this installation. To use this feature, it must be enabled by your administrator. Please get in touch with them to proceed.",
-      "ALLOW_MESSAGES_AFTER_RESOLVED": "Cho phép nhắn tin sau khi cuộc trò chuyện được giải quyết",
-      "ALLOW_MESSAGES_AFTER_RESOLVED_SUB_TEXT": "Cho phép người dùng cuối nhắn tin sau khi cuộc trò chuyện được giải quyết.",
+      "FORWARD_EMAIL_NOT_CONFIGURED": "Chuyển tiếp email vào hộp thư hiện đang bị tắt trên bản cài đặt này. Để dùng tính năng này, quản trị viên của bạn cần bật nó. Vui lòng liên hệ họ để tiếp tục.",
+      "ALLOW_MESSAGES_AFTER_RESOLVED": "Cho phép nhắn tin sau khi hội thoại được giải quyết",
+      "ALLOW_MESSAGES_AFTER_RESOLVED_SUB_TEXT": "Cho phép người dùng cuối nhắn tin sau khi hội thoại được giải quyết.",
       "WHATSAPP_SECTION_SUBHEADER": "Khóa API này được sử dụng để tích hợp với các API WhatsApp.",
-      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "Enter the new API key to be used for the integration with the WhatsApp APIs.",
+      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "Nhập API key mới để dùng cho tích hợp với WhatsApp API.",
       "WHATSAPP_SECTION_TITLE": "Khoá API",
-      "WHATSAPP_SECTION_UPDATE_TITLE": "Update API Key",
-      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "Enter the new API Key here",
+      "WHATSAPP_SECTION_UPDATE_TITLE": "Cập nhật API Key",
+      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "Nhập API Key mới tại đây",
       "WHATSAPP_SECTION_UPDATE_BUTTON": "Cập nhật",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_ADD_TITLE": "Add Business Management Token",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_TITLE": "Replace Business Management Token",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_CONFIGURED": "Business management token configured",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_ADD_TITLE": "Thêm Business Management Token",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_TITLE": "Thay Business Management Token",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_CONFIGURED": "Đã cấu hình business management token",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_SUBHEADER": "Provide a token with access to this WhatsApp Business Account when Chatwoot cannot retrieve its message templates. Chatwoot uses this token only for template synchronization.",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_PLACEHOLDER": "Enter the business management token",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_PLACEHOLDER": "Nhập business management token",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_ADD_BUTTON": "Thêm",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_BUTTON": "Replace",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_SUCCESS": "WhatsApp business management token updated successfully.",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_ERROR": "Could not update the business management token. Verify its WhatsApp Business Management permission and account access, then try again.",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_GUIDE_LINK": "Learn how to generate a WhatsApp Business Management token",
-      "WHATSAPP_EMBEDDED_SIGNUP_TITLE": "WhatsApp Embedded Signup",
-      "WHATSAPP_EMBEDDED_SIGNUP_SUBHEADER": "This inbox is connected through WhatsApp embedded signup.",
-      "WHATSAPP_EMBEDDED_SIGNUP_DESCRIPTION": "You can reconfigure this inbox to update your WhatsApp Business settings.",
-      "WHATSAPP_RECONFIGURE_BUTTON": "Reconfigure",
-      "WHATSAPP_MANUAL_TRANSFER_TITLE": "Switch to Manual Setup",
-      "WHATSAPP_MANUAL_TRANSFER_SUBHEADER": "This inbox was connected through WhatsApp embedded signup, which is no longer supported. Enter the WhatsApp Cloud API credentials from your own Meta app to switch this inbox to a manual setup. Configure the webhook in your Meta app using the verification token above before switching.",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_BUTTON": "Thay thế",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_SUCCESS": "Đã cập nhật business management token của WhatsApp thành công.",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_ERROR": "Không cập nhật được business management token. Kiểm tra lại quyền WhatsApp Business Management và quyền truy cập tài khoản rồi thử lại.",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_GUIDE_LINK": "Tìm hiểu cách tạo token WhatsApp Business Management",
+      "WHATSAPP_EMBEDDED_SIGNUP_TITLE": "Đăng ký nhúng WhatsApp",
+      "WHATSAPP_EMBEDDED_SIGNUP_SUBHEADER": "Hộp thư này đang kết nối qua đăng ký nhúng WhatsApp.",
+      "WHATSAPP_EMBEDDED_SIGNUP_DESCRIPTION": "Bạn có thể cấu hình lại hộp thư này để cập nhật cài đặt WhatsApp Business.",
+      "WHATSAPP_RECONFIGURE_BUTTON": "Cấu hình lại",
+      "WHATSAPP_MANUAL_TRANSFER_TITLE": "Chuyển sang thiết lập thủ công",
+      "WHATSAPP_MANUAL_TRANSFER_SUBHEADER": "Hộp thư này được kết nối qua đăng ký nhúng WhatsApp, hiện không còn được hỗ trợ. Nhập thông tin xác thực WhatsApp Cloud API từ ứng dụng Meta của riêng bạn để chuyển hộp thư sang thiết lập thủ công. Hãy cấu hình webhook trong ứng dụng Meta bằng token xác minh ở trên trước khi chuyển.",
       "WHATSAPP_MANUAL_TRANSFER_PHONE_NUMBER_ID_LABEL": "Phone Number ID",
       "WHATSAPP_MANUAL_TRANSFER_BUSINESS_ACCOUNT_ID_LABEL": "ID tài khoản doanh nghiệp",
       "WHATSAPP_MANUAL_TRANSFER_API_KEY_LABEL": "Khoá API",
-      "WHATSAPP_MANUAL_TRANSFER_API_KEY_PLACEHOLDER": "Enter a permanent access token from your Meta app",
-      "WHATSAPP_MANUAL_TRANSFER_BUTTON": "Switch to Manual Setup",
-      "WHATSAPP_MANUAL_TRANSFER_SUCCESS": "Inbox switched to manual setup successfully.",
-      "WHATSAPP_MANUAL_TRANSFER_ERROR": "Could not switch to manual setup. Please verify the credentials and try again.",
-      "WHATSAPP_CONNECT_TITLE": "Connect to WhatsApp Business",
-      "WHATSAPP_CONNECT_SUBHEADER": "Upgrade to WhatsApp embedded signup for easier management.",
-      "WHATSAPP_CONNECT_DESCRIPTION": "Connect this inbox to WhatsApp Business for enhanced features and easier management.",
+      "WHATSAPP_MANUAL_TRANSFER_API_KEY_PLACEHOLDER": "Nhập access token vĩnh viễn từ ứng dụng Meta của bạn",
+      "WHATSAPP_MANUAL_TRANSFER_BUTTON": "Chuyển sang thiết lập thủ công",
+      "WHATSAPP_MANUAL_TRANSFER_SUCCESS": "Đã chuyển hộp thư sang thiết lập thủ công thành công.",
+      "WHATSAPP_MANUAL_TRANSFER_ERROR": "Không chuyển được sang thiết lập thủ công. Vui lòng kiểm tra lại thông tin xác thực và thử lại.",
+      "WHATSAPP_CONNECT_TITLE": "Kết nối với WhatsApp Business",
+      "WHATSAPP_CONNECT_SUBHEADER": "Nâng cấp lên đăng ký nhúng WhatsApp để quản lý dễ dàng hơn.",
+      "WHATSAPP_CONNECT_DESCRIPTION": "Kết nối hộp thư này với WhatsApp Business để có thêm tính năng và quản lý dễ dàng hơn.",
       "WHATSAPP_CONNECT_BUTTON": "Kết nối",
-      "WHATSAPP_CONNECT_SUCCESS": "Successfully connected to WhatsApp Business!",
-      "WHATSAPP_CONNECT_ERROR": "Failed to connect to WhatsApp Business. Please try again.",
-      "WHATSAPP_RECONFIGURE_SUCCESS": "Successfully reconfigured WhatsApp Business!",
-      "WHATSAPP_RECONFIGURE_ERROR": "Failed to reconfigure WhatsApp Business. Please try again.",
-      "WHATSAPP_APP_ID_MISSING": "WhatsApp App ID is not configured. Please contact your administrator.",
-      "WHATSAPP_CONFIG_ID_MISSING": "WhatsApp Configuration ID is not configured. Please contact your administrator.",
-      "WHATSAPP_LOGIN_CANCELLED": "WhatsApp login was cancelled. Please try again.",
+      "WHATSAPP_CONNECT_SUCCESS": "Đã kết nối với WhatsApp Business thành công!",
+      "WHATSAPP_CONNECT_ERROR": "Không kết nối được với WhatsApp Business. Vui lòng thử lại.",
+      "WHATSAPP_RECONFIGURE_SUCCESS": "Đã cấu hình lại WhatsApp Business thành công!",
+      "WHATSAPP_RECONFIGURE_ERROR": "Không cấu hình lại được WhatsApp Business. Vui lòng thử lại.",
+      "WHATSAPP_APP_ID_MISSING": "Chưa cấu hình WhatsApp App ID. Vui lòng liên hệ quản trị viên.",
+      "WHATSAPP_CONFIG_ID_MISSING": "Chưa cấu hình WhatsApp Configuration ID. Vui lòng liên hệ quản trị viên.",
+      "WHATSAPP_LOGIN_CANCELLED": "Đã huỷ đăng nhập WhatsApp. Vui lòng thử lại.",
       "WHATSAPP_WEBHOOK_TITLE": "Mã xác minh Webhook",
-      "WHATSAPP_WEBHOOK_SUBHEADER": "This token is used to verify the authenticity of the webhook endpoint.",
-      "WHATSAPP_TEMPLATES_SYNC_TITLE": "Sync Templates",
-      "WHATSAPP_TEMPLATES_SYNC_SUBHEADER": "Manually sync message templates from WhatsApp to update your available templates.",
-      "WHATSAPP_TEMPLATES_SYNC_BUTTON": "Sync Templates",
-      "WHATSAPP_TEMPLATES_SYNC_SUCCESS": "Templates sync initiated successfully. It may take a couple of minutes to update.",
+      "WHATSAPP_WEBHOOK_SUBHEADER": "Token này dùng để xác minh tính xác thực của endpoint webhook.",
+      "WHATSAPP_TEMPLATES_SYNC_TITLE": "Đồng bộ mẫu tin",
+      "WHATSAPP_TEMPLATES_SYNC_SUBHEADER": "Đồng bộ thủ công mẫu tin từ WhatsApp để cập nhật danh sách mẫu tin của bạn.",
+      "WHATSAPP_TEMPLATES_SYNC_BUTTON": "Đồng bộ mẫu tin",
+      "WHATSAPP_TEMPLATES_SYNC_SUCCESS": "Đã bắt đầu đồng bộ mẫu tin. Có thể mất vài phút để cập nhật.",
       "WHATSAPP_MANUAL_MIGRATION": {
         "BANNER": {
-          "TITLE": "Manual setup recommended",
-          "DESCRIPTION": "This inbox connects through the shared Meta app used for embedded signup, which recent Meta restrictions have affected. To avoid similar issues in the future, we recommend reconnecting it with your own Meta app.",
-          "START": "Start manual migration",
-          "GUIDE": "View guide"
+          "TITLE": "Nên chuyển sang thiết lập thủ công",
+          "DESCRIPTION": "Hộp thư này kết nối qua ứng dụng Meta dùng chung cho đăng ký nhúng, vốn đang bị ảnh hưởng bởi hạn chế gần đây của Meta. Để tránh gặp lại sự cố tương tự, chúng tôi khuyên bạn nên kết nối lại bằng ứng dụng Meta của riêng mình.",
+          "START": "Bắt đầu chuyển thủ công",
+          "GUIDE": "Xem hướng dẫn"
         },
         "DIALOG": {
-          "EYEBROW": "WhatsApp manual migration",
-          "TITLE": "Reconnect WhatsApp inbox",
+          "EYEBROW": "Chuyển thủ công WhatsApp",
+          "TITLE": "Kết nối lại hộp thư WhatsApp",
           "CLOSE": "Đóng",
-          "ACTION_REQUIRED_TITLE": "Reconnect with your own Meta app",
-          "ACTION_REQUIRED_DESCRIPTION": "Inboxes connected through your own Meta app are not affected by restrictions on the shared embedded signup app. This guided flow updates the WhatsApp API connection without creating a new inbox.",
-          "GUIDE_LINK": "Open the manual setup guide",
-          "PRESERVED_TITLE": "Preserved",
-          "PRESERVED_DESCRIPTION": "Conversations, contacts, collaborators, routing, business hours, and inbox settings.",
-          "UPDATED_TITLE": "Updated",
-          "UPDATED_DESCRIPTION": "WABA ID, phone number ID, access token, and webhook configuration.",
-          "WABA_ID": "WABA ID",
-          "WABA_PLACEHOLDER": "Enter WABA ID",
-          "WABA_HELP": "The WhatsApp Business Account that owns this phone number.",
+          "ACTION_REQUIRED_TITLE": "Kết nối lại bằng ứng dụng Meta của riêng bạn",
+          "ACTION_REQUIRED_DESCRIPTION": "Hộp thư kết nối qua ứng dụng Meta riêng của bạn không bị ảnh hưởng bởi hạn chế trên ứng dụng đăng ký nhúng dùng chung. Quy trình có hướng dẫn này cập nhật kết nối WhatsApp API mà không tạo hộp thư mới.",
+          "GUIDE_LINK": "Mở hướng dẫn thiết lập thủ công",
+          "PRESERVED_TITLE": "Được giữ nguyên",
+          "PRESERVED_DESCRIPTION": "Hội thoại, liên hệ, người cộng tác, định tuyến, giờ làm việc và cài đặt hộp thư.",
+          "UPDATED_TITLE": "Được cập nhật",
+          "UPDATED_DESCRIPTION": "Mã WABA, Phone Number ID, access token và cấu hình webhook.",
+          "WABA_ID": "Mã WABA",
+          "WABA_PLACEHOLDER": "Nhập mã WABA",
+          "WABA_HELP": "Tài khoản WhatsApp Business sở hữu số điện thoại này.",
           "PHONE_NUMBER_ID": "Phone Number ID",
-          "PHONE_NUMBER_PLACEHOLDER": "Enter Phone Number ID",
-          "PHONE_NUMBER_HELP": "Meta's unique ID for the WhatsApp number connected to this inbox.",
-          "DISPLAY_PHONE_NUMBER": "Display phone number",
-          "DISPLAY_PHONE_NUMBER_PLACEHOLDER": "Enter display phone number",
-          "DISPLAY_PHONE_NUMBER_HELP": "The customer-facing WhatsApp number. This cannot be changed during migration.",
-          "ACCESS_TOKEN": "Permanent access token or system user token",
-          "ACCESS_TOKEN_PLACEHOLDER": "Paste access token",
-          "TOKEN_HELP_PREFIX": "The token must include",
+          "PHONE_NUMBER_PLACEHOLDER": "Nhập Phone Number ID",
+          "PHONE_NUMBER_HELP": "Mã định danh duy nhất của Meta cho số WhatsApp kết nối với hộp thư này.",
+          "DISPLAY_PHONE_NUMBER": "Số điện thoại hiển thị",
+          "DISPLAY_PHONE_NUMBER_PLACEHOLDER": "Nhập số điện thoại hiển thị",
+          "DISPLAY_PHONE_NUMBER_HELP": "Số WhatsApp hiển thị cho khách hàng. Không thể đổi trong lúc chuyển.",
+          "ACCESS_TOKEN": "Access token vĩnh viễn hoặc system user token",
+          "ACCESS_TOKEN_PLACEHOLDER": "Dán access token",
+          "TOKEN_HELP_PREFIX": "Token phải bao gồm",
           "TOKEN_HELP_MIDDLE": "Thêm",
-          "TOKEN_HELP_SUFFIX": "for template sync and template management.",
+          "TOKEN_HELP_SUFFIX": "để đồng bộ và quản lý mẫu tin.",
           "MESSAGING_PERMISSION": "whatsapp_business_messaging.",
           "MANAGEMENT_PERMISSION": "whatsapp_business_management",
-          "REVIEW_TITLE": "Review before reconnecting",
-          "INBOX": "Hộp thư đến",
+          "REVIEW_TITLE": "Kiểm tra lại trước khi kết nối",
+          "INBOX": "Hộp thư",
           "PHONE_NUMBER": "Số điện thoại",
-          "NOT_ENTERED": "Not entered",
+          "NOT_ENTERED": "Chưa nhập",
           "VERIFY_NOTICE": "Chatwoot will verify these credentials with Meta before applying any changes. If verification fails, the current configuration is left untouched.",
           "BACK": "Trờ về",
           "CANCEL": "Huỷ",
-          "CONTINUE": "Continue",
-          "REVIEW_MIGRATION": "Review migration",
-          "RECONNECT": "Reconnect WhatsApp inbox"
+          "CONTINUE": "Tiếp tục",
+          "REVIEW_MIGRATION": "Kiểm tra lại việc chuyển đổi",
+          "RECONNECT": "Kết nối lại hộp thư WhatsApp"
         },
         "STEPS": {
           "BEFORE_YOU_START": {
-            "TITLE": "Before you start",
-            "DESCRIPTION": "This reconnects the WhatsApp API details for this inbox. Conversations, collaborators, routing, business hours, CSAT, and bot settings will be preserved."
+            "TITLE": "Trước khi bắt đầu",
+            "DESCRIPTION": "Việc này kết nối lại thông tin WhatsApp API cho hộp thư này. Hội thoại, người cộng tác, định tuyến, giờ làm việc, CSAT và cài đặt bot sẽ được giữ nguyên."
           },
           "BUSINESS_DETAILS": {
-            "TITLE": "Business details",
-            "DESCRIPTION": "Enter the WhatsApp assets from the customer Meta Business account."
+            "TITLE": "Thông tin doanh nghiệp",
+            "DESCRIPTION": "Nhập thông tin WhatsApp từ tài khoản Meta Business của khách hàng."
           },
           "ACCESS_TOKEN": {
             "TITLE": "Access token",
-            "DESCRIPTION": "Paste a permanent access token or system user token with WhatsApp permissions."
+            "DESCRIPTION": "Dán access token vĩnh viễn hoặc system user token có quyền WhatsApp."
           },
           "REVIEW_MIGRATION": {
-            "TITLE": "Review migration",
+            "TITLE": "Kiểm tra lại việc chuyển đổi",
             "DESCRIPTION": "Confirm the connection details before reconnecting this inbox. Chatwoot will verify the token, WABA, and phone number with Meta before applying changes."
           }
         }
       },
       "WHATSAPP_CALLING_ENABLED": {
-        "LABEL": "Enable voice calling",
-        "DESCRIPTION": "Allow agents to start and receive WhatsApp voice calls on this inbox. Available only on embedded-signup WhatsApp Cloud channels with calling permission granted by Meta."
+        "LABEL": "Bật gọi thoại",
+        "DESCRIPTION": "Cho phép nhân viên gọi và nhận cuộc gọi thoại WhatsApp trên hộp thư này. Chỉ khả dụng với kênh WhatsApp Cloud qua đăng ký nhúng, đã được Meta cấp quyền gọi."
       },
-      "UPDATE_PRE_CHAT_FORM_SETTINGS": "Update Pre Chat Form Settings"
+      "UPDATE_PRE_CHAT_FORM_SETTINGS": "Cập nhật cài đặt biểu mẫu trước chat"
     },
     "HELP_CENTER": {
-      "LABEL": "Help Center",
-      "PLACEHOLDER": "Select Help Center",
-      "SELECT_PLACEHOLDER": "Select Help Center",
+      "LABEL": "Trung tâm trợ giúp",
+      "PLACEHOLDER": "Chọn Trung tâm trợ giúp",
+      "SELECT_PLACEHOLDER": "Chọn Trung tâm trợ giúp",
       "NONE": "Không có",
-      "REMOVE": "Remove Help Center",
-      "SUB_TEXT": "Attach a Help Center with the inbox"
+      "REMOVE": "Gỡ Trung tâm trợ giúp",
+      "SUB_TEXT": "Gắn Trung tâm trợ giúp với hộp thư này"
     },
     "AUTO_ASSIGNMENT": {
       "MAX_ASSIGNMENT_LIMIT": "Giới hạn tự động phân công tối đa",
       "MAX_ASSIGNMENT_LIMIT_RANGE_ERROR": "Xin nhập vào một số lớn hơn 0",
-      "MAX_ASSIGNMENT_LIMIT_SUB_TEXT": "Giới hạn số cuộc trò chuyện tối đa từ hộp thư này mà có thể được tự động phân công cho một hỗ trợ viên"
+      "MAX_ASSIGNMENT_LIMIT_SUB_TEXT": "Giới hạn số hội thoại tối đa từ hộp thư này mà có thể được tự động phân công cho một hỗ trợ viên"
     },
     "ASSIGNMENT": {
-      "TITLE": "Phân công cuộc trò chuyện",
-      "DESCRIPTION": "Automatically assign incoming conversations to available agents based on assignment policies",
-      "ENABLE_AUTO_ASSIGNMENT": "Enable automatic conversation assignment",
-      "DEFAULT_RULES_TITLE": "Default assignment rules",
-      "DEFAULT_RULES_DESCRIPTION": "Using the default assignment behavior for all conversations",
-      "DEFAULT_RULE_1": "Earliest created conversations first",
-      "DEFAULT_RULE_2": "Round robin distribution",
-      "CUSTOMIZE_WITH_POLICY": "Customize with assignment policy",
-      "USING_POLICY": "Using custom assignment policy for this inbox",
-      "CUSTOMIZE_POLICY": "Customize with assignment policy",
-      "DELETE_POLICY": "Delete policy",
-      "POLICY_LABEL": "Assignment policy",
-      "ASSIGNMENT_ORDER_LABEL": "Assignment Order",
-      "ASSIGNMENT_METHOD_LABEL": "Assignment Method",
+      "TITLE": "Phân công hội thoại",
+      "DESCRIPTION": "Tự động giao hội thoại đến cho nhân viên đang sẵn sàng, dựa theo chính sách phân công",
+      "ENABLE_AUTO_ASSIGNMENT": "Bật tự động phân công hội thoại",
+      "DEFAULT_RULES_TITLE": "Quy tắc phân công mặc định",
+      "DEFAULT_RULES_DESCRIPTION": "Đang dùng cách phân công mặc định cho mọi hội thoại",
+      "DEFAULT_RULE_1": "Hội thoại tạo trước được giao trước",
+      "DEFAULT_RULE_2": "Chia đều luân phiên",
+      "CUSTOMIZE_WITH_POLICY": "Tuỳ chỉnh bằng chính sách phân công",
+      "USING_POLICY": "Đang dùng chính sách phân công riêng cho hộp thư này",
+      "CUSTOMIZE_POLICY": "Tuỳ chỉnh bằng chính sách phân công",
+      "DELETE_POLICY": "Xoá chính sách",
+      "POLICY_LABEL": "Chính sách phân công",
+      "ASSIGNMENT_ORDER_LABEL": "Thứ tự phân công",
+      "ASSIGNMENT_METHOD_LABEL": "Cách phân công",
       "POLICY_STATUS": {
         "ACTIVE": "Có hiệu lực",
-        "INACTIVE": "Inactive"
+        "INACTIVE": "Đang tắt"
       },
       "PRIORITY": {
-        "EARLIEST_CREATED": "Earliest created",
-        "LONGEST_WAITING": "Longest waiting"
+        "EARLIEST_CREATED": "Tạo sớm nhất",
+        "LONGEST_WAITING": "Chờ lâu nhất"
       },
       "METHOD": {
-        "ROUND_ROBIN": "Round robin",
-        "BALANCED": "Balanced assignment"
+        "ROUND_ROBIN": "Luân phiên",
+        "BALANCED": "Cân bằng tải"
       },
-      "UPGRADE_PROMPT": "Custom assignment policies are available on the Business plan",
-      "UPGRADE_TO_BUSINESS": "Upgrade to Business",
-      "DEFAULT_POLICY_LINKED": "Default policy linked",
-      "DEFAULT_POLICY_DESCRIPTION": "Link a custom assignment policy to customize how conversations are assigned to agents in this inbox.",
-      "LINK_EXISTING_POLICY": "Link existing policy",
-      "CREATE_NEW_POLICY": "Create new policy",
-      "NO_POLICIES": "No assignment policies found",
-      "VIEW_ALL_POLICIES": "View all policies",
-      "CURRENT_BEHAVIOR": "Currently using default assignment behavior:",
-      "LINK_SUCCESS": "Assignment policy linked successfully",
-      "LINK_ERROR": "Failed to link assignment policy"
+      "UPGRADE_PROMPT": "Chính sách phân công tuỳ chỉnh chỉ có ở gói Business",
+      "UPGRADE_TO_BUSINESS": "Nâng cấp lên Business",
+      "DEFAULT_POLICY_LINKED": "Đã gắn chính sách mặc định",
+      "DEFAULT_POLICY_DESCRIPTION": "Gắn chính sách phân công tuỳ chỉnh để thay đổi cách hội thoại được giao cho nhân viên trong hộp thư này.",
+      "LINK_EXISTING_POLICY": "Gắn chính sách có sẵn",
+      "CREATE_NEW_POLICY": "Tạo chính sách mới",
+      "NO_POLICIES": "Không tìm thấy chính sách phân công nào",
+      "VIEW_ALL_POLICIES": "Xem tất cả chính sách",
+      "CURRENT_BEHAVIOR": "Đang dùng cách phân công mặc định:",
+      "LINK_SUCCESS": "Đã gắn chính sách phân công thành công",
+      "LINK_ERROR": "Không gắn được chính sách phân công"
     },
     "ASSIGNMENT_POLICY": {
-      "DELETE_CONFIRM_TITLE": "Delete assignment policy?",
-      "DELETE_CONFIRM_MESSAGE": "Are you sure you want to remove this assignment policy from this inbox? The inbox will revert to default assignment rules.",
+      "DELETE_CONFIRM_TITLE": "Xoá chính sách phân công?",
+      "DELETE_CONFIRM_MESSAGE": "Bạn có chắc muốn gỡ chính sách phân công này khỏi hộp thư? Hộp thư sẽ quay về quy tắc phân công mặc định.",
       "CANCEL": "Huỷ",
       "CONFIRM_DELETE": "Xoá",
       "DELETE_SUCCESS": "Đã xóa chính sách phân công thành công",
-      "DELETE_ERROR": "Failed to remove assignment policy"
+      "DELETE_ERROR": "Không gỡ được chính sách phân công"
     },
     "FACEBOOK_REAUTHORIZE": {
       "TITLE": "Ủy quyền lại",
@@ -1124,8 +1203,8 @@
       "MESSAGE_ERROR": "Đã có lỗi, vui lòng thử lại"
     },
     "PRE_CHAT_FORM": {
-      "DESCRIPTION": "Biểu mẫu trước khi trò chuyện cho phép bạn nắm bắt thông tin người dùng trước khi họ bắt đầu cuộc trò chuyện với bạn.",
-      "SET_FIELDS": "Những ô cần điền vào trước cuộc trò chuyện",
+      "DESCRIPTION": "Biểu mẫu trước khi trò chuyện cho phép bạn nắm bắt thông tin người dùng trước khi họ bắt đầu hội thoại với bạn.",
+      "SET_FIELDS": "Những ô cần điền vào trước hội thoại",
       "SET_FIELDS_HEADER": {
         "FIELDS": "Ô cần điền",
         "LABEL": "Nhãn",
@@ -1151,72 +1230,72 @@
     },
     "CSAT": {
       "TITLE": "Bật chỉ số đo lường sự hài lòng khách hàng",
-      "SUBTITLE": "Automatically trigger CSAT surveys at the end of conversations to understand how customers feel about their support experience. Track satisfaction trends and identify areas for improvement over time.",
+      "SUBTITLE": "Tự động gửi khảo sát CSAT khi hội thoại kết thúc để biết cảm nhận của khách về trải nghiệm hỗ trợ. Theo dõi xu hướng hài lòng và tìm ra điểm cần cải thiện theo thời gian.",
       "DISPLAY_TYPE": {
-        "LABEL": "Display type"
+        "LABEL": "Kiểu hiển thị"
       },
       "MESSAGE": {
         "LABEL": "Tin nhắn",
-        "PLACEHOLDER": "Please enter a message to show users with the form"
+        "PLACEHOLDER": "Nhập tin nhắn hiển thị cùng biểu mẫu cho người dùng"
       },
       "BUTTON_TEXT": {
-        "LABEL": "Button text",
-        "PLACEHOLDER": "Please rate us"
+        "LABEL": "Nội dung nút",
+        "PLACEHOLDER": "Hãy đánh giá chúng tôi"
       },
       "LANGUAGE": {
         "LABEL": "Ngôn ngữ",
-        "PLACEHOLDER": "Select template language"
+        "PLACEHOLDER": "Chọn ngôn ngữ mẫu tin"
       },
       "MESSAGE_PREVIEW": {
-        "LABEL": "Message preview",
-        "TOOLTIP": "This may vary slightly when rendered on WhatsApp's platform."
+        "LABEL": "Xem trước tin nhắn",
+        "TOOLTIP": "Có thể hiển thị hơi khác một chút trên nền tảng WhatsApp."
       },
       "TEMPLATE_STATUS": {
-        "APPROVED": "Approved by WhatsApp",
-        "PENDING": "Pending WhatsApp approval",
-        "REJECTED": "Meta rejected the template",
-        "DEFAULT": "Needs WhatsApp approval",
-        "NOT_FOUND": "The template does not exist in the Meta platform."
+        "APPROVED": "Đã được WhatsApp duyệt",
+        "PENDING": "Đang chờ WhatsApp duyệt",
+        "REJECTED": "Meta đã từ chối mẫu tin",
+        "DEFAULT": "Cần WhatsApp duyệt",
+        "NOT_FOUND": "Mẫu tin này không tồn tại trên nền tảng Meta."
       },
       "TEMPLATE_CREATION": {
-        "SUCCESS_MESSAGE": "WhatsApp template created successfully and sent for approval",
-        "ERROR_MESSAGE": "Failed to create WhatsApp template"
+        "SUCCESS_MESSAGE": "Đã tạo mẫu tin WhatsApp và gửi duyệt thành công",
+        "ERROR_MESSAGE": "Không tạo được mẫu tin WhatsApp"
       },
       "TEMPLATE_UPDATE_DIALOG": {
-        "TITLE": "Edit survey details",
-        "DESCRIPTION": "We will delete the previous template and make a new one which will be sent again for WhatsApp approval",
-        "CONFIRM": "Create new template",
+        "TITLE": "Sửa thông tin khảo sát",
+        "DESCRIPTION": "Chúng tôi sẽ xoá mẫu tin cũ và tạo mẫu mới, gửi lại để WhatsApp duyệt",
+        "CONFIRM": "Tạo mẫu tin mới",
         "CANCEL": "Trở về"
       },
       "UTILITY_ANALYZER": {
-        "ACTION": "Check utility fit",
-        "HELPER_NOTE": "Check this message before submission to improve Utility fit. The system creates a dedicated CSAT template with buttons for reporting and submits it as Utility; Meta may still reclassify it as Marketing based on content.",
-        "RESULT_LABEL": "Meta category prediction",
-        "GUIDANCE_NOTE": "This is a guidance check, not a guarantee of Meta approval.",
-        "SUGGESTION_LABEL": "Suggested utility-safe rewrite",
-        "APPLY": "Use this rewrite",
-        "ERROR_MESSAGE": "Couldn't analyze the message. Please try again.",
+        "ACTION": "Kiểm tra tính phù hợp Utility",
+        "HELPER_NOTE": "Kiểm tra tin nhắn này trước khi gửi để tăng khả năng phù hợp Utility. Hệ thống tạo một mẫu CSAT riêng có nút báo cáo và gửi dưới dạng Utility; Meta vẫn có thể xếp lại là Marketing tuỳ nội dung.",
+        "RESULT_LABEL": "Dự đoán phân loại của Meta",
+        "GUIDANCE_NOTE": "Đây chỉ là gợi ý tham khảo, không đảm bảo Meta sẽ duyệt.",
+        "SUGGESTION_LABEL": "Gợi ý viết lại theo hướng an toàn cho Utility",
+        "APPLY": "Dùng bản viết lại này",
+        "ERROR_MESSAGE": "Không phân tích được tin nhắn. Vui lòng thử lại.",
         "CLASSIFICATION": {
-          "LIKELY_UTILITY": "Likely Utility",
-          "LIKELY_MARKETING": "Likely Marketing",
-          "UNCLEAR": "Needs clarification"
+          "LIKELY_UTILITY": "Có khả năng là Utility",
+          "LIKELY_MARKETING": "Có khả năng là Marketing",
+          "UNCLEAR": "Cần làm rõ thêm"
         }
       },
       "SURVEY_RULE": {
-        "LABEL": "Survey rule",
-        "DESCRIPTION_PREFIX": "Send the survey if the conversation",
-        "DESCRIPTION_SUFFIX": "any of the labels",
+        "LABEL": "Quy tắc khảo sát",
+        "DESCRIPTION_PREFIX": "Gửi khảo sát nếu hội thoại có",
+        "DESCRIPTION_SUFFIX": "một trong các nhãn",
         "OPERATOR": {
           "CONTAINS": "chứa",
           "DOES_NOT_CONTAINS": "không bao gồm"
         },
-        "SELECT_PLACEHOLDER": "select labels"
+        "SELECT_PLACEHOLDER": "chọn nhãn"
       },
-      "NOTE": "Note: CSAT surveys are sent only once per conversation",
-      "WHATSAPP_NOTE": "Note: When you save, the system creates a dedicated CSAT template in WhatsApp (used to capture rating and feedback in reports) and submits it as Utility for approval. Meta may still classify it as Marketing based on content. After approval, surveys are sent only once per conversation as per the survey rule.",
+      "NOTE": "Lưu ý: Khảo sát CSAT chỉ được gửi một lần cho mỗi hội thoại",
+      "WHATSAPP_NOTE": "Lưu ý: Khi bạn lưu, hệ thống sẽ tạo một mẫu CSAT riêng trên WhatsApp (dùng để ghi nhận đánh giá và phản hồi trong báo cáo) và gửi dưới dạng Utility để duyệt. Meta vẫn có thể xếp là Marketing tuỳ nội dung. Sau khi được duyệt, khảo sát chỉ gửi một lần mỗi hội thoại theo quy tắc khảo sát.",
       "API": {
-        "SUCCESS_MESSAGE": "CSAT settings updated successfully",
-        "ERROR_MESSAGE": "We couldn't update CSAT settings. Please try again later."
+        "SUCCESS_MESSAGE": "Đã cập nhật cài đặt CSAT thành công",
+        "ERROR_MESSAGE": "Không cập nhật được cài đặt CSAT. Vui lòng thử lại sau."
       }
     },
     "BUSINESS_HOURS": {
@@ -1225,13 +1304,13 @@
       "WEEKLY_TITLE": "Đặt giờ hàng tuần của bạn",
       "TIMEZONE_LABEL": "Chọn múi giờ",
       "UPDATE": "Cập nhật tuỳ chỉnh giờ làm việc",
-      "TOGGLE_AVAILABILITY": "Kích hoạt tính khả dụng của doanh nghiệp cho hộp thư đến này",
+      "TOGGLE_AVAILABILITY": "Kích hoạt tính khả dụng của doanh nghiệp cho hộp thư này",
       "UNAVAILABLE_MESSAGE_LABEL": "Thông báo không có sẵn cho khách truy cập",
-      "TOGGLE_HELP": "Enabling business availability will show the available hours on live chat widget even if all the agents are offline. Outside available hours visitors can be warned with a message and a pre-chat form.",
+      "TOGGLE_HELP": "Bật giờ hoạt động sẽ hiển thị giờ làm việc trên khung chat trực tuyến kể cả khi mọi nhân viên đều ngoại tuyến. Ngoài giờ, khách sẽ được cảnh báo bằng tin nhắn và biểu mẫu trước khi chat.",
       "DAY": {
         "DAY": "Ngày",
         "AVAILABILITY": "Khả dụng",
-        "HOURS": "Hours",
+        "HOURS": "Giờ",
         "ENABLE": "Kích hoạt tính khả dụng cho hôm nay",
         "UNAVAILABLE": "Không có sẵn",
         "VALIDATION_ERROR": "Giờ bắt đầu nên trước giờ đóng cửa.",
@@ -1244,8 +1323,8 @@
       "SUBTITLE": "Đặt chi tiết IMAP",
       "NOTE_TEXT": "Để bật chế độ SMTP, xin hãy cấu hình IMAP.",
       "UPDATE": "Cập nhật chi tiết IMAP",
-      "TOGGLE_AVAILABILITY": "Kích hoạt cấu hình IMAP cho hộp thư đến này",
-      "TOGGLE_HELP": "Enabling IMAP will help the user to receive email",
+      "TOGGLE_AVAILABILITY": "Kích hoạt cấu hình IMAP cho hộp thư này",
+      "TOGGLE_HELP": "Bật IMAP giúp bạn nhận được email",
       "EDIT": {
         "SUCCESS_MESSAGE": "Tuỳ chỉnh IMAP được cập nhật thành công",
         "ERROR_MESSAGE": "Không thể cập nhật tuỳ chỉnh IMAP"
@@ -1255,8 +1334,8 @@
         "PLACE_HOLDER": "Địa chỉ (Ví dụ: imap.gmail.com)"
       },
       "PORT": {
-        "LABEL": "Port",
-        "PLACE_HOLDER": "Port"
+        "LABEL": "Cổng",
+        "PLACE_HOLDER": "Cổng"
       },
       "LOGIN": {
         "LABEL": "Đăng nhập",
@@ -1271,13 +1350,13 @@
     },
     "MICROSOFT": {
       "TITLE": "Microsoft",
-      "SUBTITLE": "Reauthorize your MICROSOFT account"
+      "SUBTITLE": "Xác thực lại tài khoản Microsoft của bạn"
     },
     "SMTP": {
       "TITLE": "STMP",
       "SUBTITLE": "Đặt chi tiết SMTP",
       "UPDATE": "Cập nhật tuỳ chỉnh SMTP",
-      "TOGGLE_AVAILABILITY": "Kích hoạt cấu hình SMTP cho hộp thư đến này",
+      "TOGGLE_AVAILABILITY": "Kích hoạt cấu hình SMTP cho hộp thư này",
       "TOGGLE_HELP": "Kích hoạt SMTP sẽ giúp cho người dùng gửi email",
       "EDIT": {
         "SUCCESS_MESSAGE": "Tuỳ chỉnh SMTP được cập nhật thành công",
@@ -1288,8 +1367,8 @@
         "PLACE_HOLDER": "Địa chỉ (Ví dụ: smtp.gmail.com)"
       },
       "PORT": {
-        "LABEL": "Port",
-        "PLACE_HOLDER": "Port"
+        "LABEL": "Cổng",
+        "PLACE_HOLDER": "Cổng"
       },
       "LOGIN": {
         "LABEL": "Đăng nhập",
@@ -1341,12 +1420,12 @@
           "IN_A_DAY": "Trong một ngày"
         },
         "WIDGET_COLOR_LABEL": "Màu tiện ích",
-        "WIDGET_BUBBLE": "Bubble",
-        "WIDGET_BUBBLE_POSITION_LABEL": "Position:",
+        "WIDGET_BUBBLE": "Nút nổi",
+        "WIDGET_BUBBLE_POSITION_LABEL": "Vị trí:",
         "WIDGET_BUBBLE_TYPE_LABEL": "Kiểu:",
         "WIDGET_BUBBLE_LAUNCHER_TITLE": {
           "DEFAULT": "Trò chuyện với chúng tôi",
-          "LABEL": "Launcher Title",
+          "LABEL": "Tiêu đề nút mở",
           "PLACE_HOLDER": "Trò chuyện với chúng tôi"
         },
         "UPDATE": {
@@ -1371,7 +1450,7 @@
       },
       "WIDGET_SCREEN": {
         "DEFAULT": "Mặc định",
-        "CHAT": "Chat mode"
+        "CHAT": "Chế độ chat"
       },
       "REPLY_TIME": {
         "IN_A_FEW_MINUTES": "Thường trả lời sau vài phút",
@@ -1379,7 +1458,7 @@
         "IN_A_DAY": "Thường trả lời trong một ngày"
       },
       "FOOTER": {
-        "START_CONVERSATION_BUTTON_TEXT": "Bắt đầu một cuộc trò chuyện",
+        "START_CONVERSATION_BUTTON_TEXT": "Bắt đầu một hội thoại",
         "CHAT_INPUT_PLACEHOLDER": "Gõ tin nhắn của bạn"
       },
       "BODY": {
@@ -1396,15 +1475,15 @@
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {
         "TITLE": "Microsoft",
-        "DESCRIPTION": "Connect with Microsoft"
+        "DESCRIPTION": "Kết nối với Microsoft"
       },
       "GOOGLE": {
         "TITLE": "Google",
-        "DESCRIPTION": "Connect with Google"
+        "DESCRIPTION": "Kết nối với Google"
       },
       "OTHER_PROVIDERS": {
-        "TITLE": "Other Providers",
-        "DESCRIPTION": "Connect with Other Providers"
+        "TITLE": "Nhà cung cấp khác",
+        "DESCRIPTION": "Kết nối với nhà cung cấp khác"
       }
     },
     "CHANNELS": {
@@ -1420,7 +1499,18 @@
       "API": "Kênh API",
       "INSTAGRAM": "Instagram",
       "TIKTOK": "TikTok",
-      "VOICE": "Voice"
+      "VOICE": "Thoại"
+    },
+    "ZALO_PERSONAL_SESSION": {
+      "LABEL": "Phiên Zalo",
+      "SINCE": "từ {time}",
+      "RESCAN": "Quét QR lại",
+      "STATUS": {
+        "CONNECTED": "Đang hoạt động",
+        "RECONNECTING": "Đang kết nối lại…",
+        "EXPIRED": "Phiên đã kết thúc"
+      },
+      "EXPIRED_HINT": "Mỗi tài khoản Zalo chỉ có một phiên web, nên khi tài khoản đó đăng nhập Zalo Web ở nơi khác thì phiên này sẽ kết thúc."
     }
   }
 }

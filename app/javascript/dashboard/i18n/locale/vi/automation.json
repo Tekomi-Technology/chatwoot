@@ -1,13 +1,13 @@
 {
   "AUTOMATION": {
     "HEADER": "Tự động hoá",
-    "DESCRIPTION": "Automation can replace and streamline existing processes that require manual effort, such as adding labels and assigning conversations to the most suitable agent. This allows the team to focus on their strengths while reducing time spent on routine tasks.",
-    "LEARN_MORE": "Learn more about automation",
-    "COUNT": "{n} automation | {n} automations",
-    "HEADER_BTN_TXT": "Create Automation",
+    "DESCRIPTION": "Tự động hoá giúp thay thế và rút gọn các công việc thủ công như gắn nhãn hay giao hội thoại cho nhân viên phù hợp nhất. Nhờ đó đội của bạn tập trung vào việc quan trọng và bớt thời gian cho các thao tác lặp đi lặp lại.",
+    "LEARN_MORE": "Tìm hiểu thêm về tự động hoá",
+    "COUNT": "{n} quy tắc tự động | {n} quy tắc tự động",
+    "HEADER_BTN_TXT": "Tạo quy tắc tự động",
     "LOADING": "Đang lấy luật tự động hoá",
-    "SEARCH_PLACEHOLDER": "Search automation rules...",
-    "NO_RESULTS": "No automation rules found matching your search",
+    "SEARCH_PLACEHOLDER": "Tìm quy tắc tự động...",
+    "NO_RESULTS": "Không tìm thấy quy tắc tự động nào phù hợp",
     "ADD": {
       "TITLE": "Thêm Quy tắc Tự động hoá",
       "SUBMIT": "Tạo",
@@ -29,41 +29,41 @@
           "ERROR": "Cần phải có \u001dsự kiện"
         },
         "RUN_TYPE": {
-          "LABEL": "When should this rule run?",
+          "LABEL": "Quy tắc này nên chạy khi nào?",
           "OPTIONS": {
             "INSTANT": {
-              "LABEL": "Run instantly",
-              "DESCRIPTION": "Runs the moment an event happens, as long as the conditions match."
+              "LABEL": "Chạy ngay",
+              "DESCRIPTION": "Chạy ngay khi sự kiện xảy ra, miễn là thoả điều kiện."
             },
             "WAIT": {
-              "LABEL": "Run after a wait",
-              "DESCRIPTION": "Waits for a set time and runs only if things are still the same. If they change, the rule is skipped."
+              "LABEL": "Chạy sau một khoảng chờ",
+              "DESCRIPTION": "Chờ một khoảng thời gian rồi mới chạy, và chỉ chạy nếu mọi thứ vẫn như cũ. Nếu có thay đổi thì quy tắc bị bỏ qua."
             }
           }
         },
         "WAIT": {
-          "LABEL": "Wait condition",
-          "WHEN_LABEL": "When",
-          "STATUS_LABEL": "Status is",
-          "FOR_LABEL": "For",
-          "INBOX_LABEL": "Hộp thư đến",
-          "ERROR": "The wait must be between 10 minutes and 30 days",
+          "LABEL": "Điều kiện chờ",
+          "WHEN_LABEL": "Khi",
+          "STATUS_LABEL": "Trạng thái là",
+          "FOR_LABEL": "Trong",
+          "INBOX_LABEL": "Hộp thư",
+          "ERROR": "Khoảng chờ phải từ 10 phút đến 30 ngày",
           "OPTIONS": {
-            "CONVERSATION_STATUS": "Conversation stays in a status",
-            "CUSTOMER_UNRESPONSIVE": "Customer hasn't replied",
-            "AGENT_UNRESPONSIVE": "No teammate has replied"
+            "CONVERSATION_STATUS": "Hội thoại giữ nguyên một trạng thái",
+            "CUSTOMER_UNRESPONSIVE": "Khách chưa trả lời",
+            "AGENT_UNRESPONSIVE": "Chưa có nhân viên nào trả lời"
           },
           "DURATION": {
-            "MINUTES": "{count} minute | {count} minutes",
-            "HOURS": "{count} hour | {count} hours",
-            "DAYS": "{count} day | {count} days"
+            "MINUTES": "{count} phút | {count} phút",
+            "HOURS": "{count} giờ | {count} giờ",
+            "DAYS": "{count} ngày | {count} ngày"
           },
           "EXPLANATION": {
-            "CONVERSATION_STATUS": "The clock starts when a conversation moves into this status. If it is still there {duration} later, the actions below run. If the status changes before then, nothing happens.",
-            "CUSTOMER_UNRESPONSIVE": "The clock starts when a teammate replies. If the customer hasn't written back {duration} later, the actions below run. If they do reply, nothing happens, and the next teammate reply starts the clock again.",
-            "AGENT_UNRESPONSIVE": "The clock starts when a customer sends a message. If no teammate has replied {duration} later, the actions below run. If someone replies before then, nothing happens."
+            "CONVERSATION_STATUS": "Đồng hồ bắt đầu chạy khi hội thoại chuyển sang trạng thái này. Nếu sau {duration} nó vẫn ở đó thì các thao tác bên dưới sẽ chạy. Nếu trạng thái đổi trước đó thì không có gì xảy ra.",
+            "CUSTOMER_UNRESPONSIVE": "Đồng hồ bắt đầu chạy khi một nhân viên trả lời. Nếu sau {duration} khách vẫn chưa hồi âm thì các thao tác bên dưới sẽ chạy. Nếu khách trả lời thì không có gì xảy ra, và lần nhân viên trả lời tiếp theo sẽ tính lại từ đầu.",
+            "AGENT_UNRESPONSIVE": "Đồng hồ bắt đầu chạy khi khách gửi tin nhắn. Nếu sau {duration} vẫn chưa nhân viên nào trả lời thì các thao tác bên dưới sẽ chạy. Nếu có người trả lời trước đó thì không có gì xảy ra."
           },
-          "FOOTNOTE": "Only new activity starts a clock. Conversations already sitting in this state are picked up the next time something happens on them."
+          "FOOTNOTE": "Chỉ hoạt động mới làm đồng hồ bắt đầu chạy. Những hội thoại đang sẵn ở trạng thái này sẽ được tính vào lần có hoạt động tiếp theo."
         },
         "CONDITIONS": {
           "LABEL": "Điều kiện"
@@ -87,13 +87,13 @@
         "ACTIONS": "Hành động"
       },
       "404": "Không tìm thấy luật tự động hoá",
-      "404_DELAYED": "No rules run after a wait yet",
+      "404_DELAYED": "Chưa có quy tắc nào chạy sau khoảng chờ",
       "TABS": {
-        "INSTANT": "Runs instantly",
-        "DELAYED": "Runs after a wait"
+        "INSTANT": "Chạy ngay",
+        "DELAYED": "Chạy sau khoảng chờ"
       },
-      "DELAY_BADGE": "Runs after {delay}",
-      "DELAY_DISABLED_BANNER": "Delayed execution is turned off for this account, so the rules below that run after a wait are paused until it is turned back on."
+      "DELAY_BADGE": "Chạy sau {delay}",
+      "DELAY_DISABLED_BANNER": "Tính năng chạy trễ đang tắt cho tài khoản này, nên các quy tắc chạy sau khoảng chờ bên dưới đang tạm dừng cho tới khi bật lại."
     },
     "DELETE": {
       "TITLE": "Xoá luật Tự động hoá",
@@ -142,8 +142,9 @@
       "DELETE_MESSAGE": "Bạn cần có ít nhất một hành động để lưu",
       "TEAM_MESSAGE_INPUT_PLACEHOLDER": "Viết tin nhắn ở đây",
       "TEAM_DROPDOWN_PLACEHOLDER": "Chọn nhóm",
-      "EMAIL_INPUT_PLACEHOLDER": "Enter email",
-      "URL_INPUT_PLACEHOLDER": "Enter URL"
+      "EMAIL_INPUT_PLACEHOLDER": "Nhập email",
+      "URL_INPUT_PLACEHOLDER": "Nhập đường dẫn",
+      "INSERT_CONTACT_EMAIL": "Dùng email của liên hệ"
     },
     "TOGGLE": {
       "ACTIVATION_TITLE": "Kích hoạt Luật Tự động hoá",
@@ -165,47 +166,47 @@
       "LABEL_UPLOAD_FAILED": "Không tải lên được"
     },
     "ERRORS": {
-      "ATTRIBUTE_KEY_REQUIRED": "Attribute key is required",
-      "FILTER_OPERATOR_REQUIRED": "Filter operator is required",
+      "ATTRIBUTE_KEY_REQUIRED": "Vui lòng chọn thuộc tính",
+      "FILTER_OPERATOR_REQUIRED": "Vui lòng chọn toán tử lọc",
       "VALUE_REQUIRED": "Giá trị bắt buộc có",
-      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Value must be between 1 and 998",
-      "ACTION_PARAMETERS_REQUIRED": "Action parameters are required",
-      "ATLEAST_ONE_CONDITION_REQUIRED": "At least one condition is required",
-      "ATLEAST_ONE_ACTION_REQUIRED": "At least one action is required"
+      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Giá trị phải nằm trong khoảng từ 1 đến 998",
+      "ACTION_PARAMETERS_REQUIRED": "Vui lòng nhập tham số cho thao tác",
+      "ATLEAST_ONE_CONDITION_REQUIRED": "Cần ít nhất một điều kiện",
+      "ATLEAST_ONE_ACTION_REQUIRED": "Cần ít nhất một thao tác"
     },
     "NONE_OPTION": "Không có",
-    "LAST_RESPONDING_AGENT": "Last Responding Agent",
+    "LAST_RESPONDING_AGENT": "Nhân viên trả lời gần nhất",
     "EVENTS": {
-      "CONVERSATION_CREATED": "Cuộc trò chuyện đã được tạo",
-      "CONVERSATION_UPDATED": "Cuộc trò chuyện đã được cập nhật",
-      "MESSAGE_CREATED": "Message Created",
-      "CONVERSATION_RESOLVED": "Conversation Resolved",
-      "CONVERSATION_OPENED": "Conversation Opened"
+      "CONVERSATION_CREATED": "Hội thoại đã được tạo",
+      "CONVERSATION_UPDATED": "Hội thoại đã được cập nhật",
+      "MESSAGE_CREATED": "Có tin nhắn mới",
+      "CONVERSATION_RESOLVED": "Hội thoại đã xử lý xong",
+      "CONVERSATION_OPENED": "Hội thoại được mở"
     },
     "ACTIONS": {
-      "ASSIGN_AGENT": "Assign to Agent",
-      "ASSIGN_TEAM": "Assign a Team",
-      "REMOVE_ASSIGNED_AGENT": "Remove Assigned Agent",
-      "REMOVE_ASSIGNED_TEAM": "Remove Assigned Team",
-      "ADD_LABEL": "Add a Label",
-      "REMOVE_LABEL": "Remove a Label",
-      "SEND_EMAIL_TO_TEAM": "Send an Email to Team",
-      "SEND_EMAIL_TRANSCRIPT": "Send an Email Transcript",
-      "MUTE_CONVERSATION": "Tắt tiếng cuộc trò chuyện",
+      "ASSIGN_AGENT": "Giao cho nhân viên",
+      "ASSIGN_TEAM": "Giao cho nhóm",
+      "REMOVE_ASSIGNED_AGENT": "Bỏ nhân viên được giao",
+      "REMOVE_ASSIGNED_TEAM": "Bỏ nhóm được giao",
+      "ADD_LABEL": "Thêm nhãn",
+      "REMOVE_LABEL": "Gỡ nhãn",
+      "SEND_EMAIL_TO_TEAM": "Gửi email cho nhóm",
+      "SEND_EMAIL_TRANSCRIPT": "Gửi bản ghi hội thoại qua email",
+      "MUTE_CONVERSATION": "Tắt tiếng hội thoại",
       "SNOOZE_CONVERSATION": "Tạm dừng \bhội thoại",
-      "RESOLVE_CONVERSATION": "Giải quyết cuộc trò chuyện",
-      "SEND_WEBHOOK_EVENT": "Send Webhook Event",
-      "SEND_ATTACHMENT": "Send Attachment",
-      "SEND_MESSAGE": "Send a Message",
-      "ADD_PRIVATE_NOTE": "Add a Private Note",
-      "CHANGE_PRIORITY": "Change Priority",
-      "ADD_SLA": "Add SLA",
-      "OPEN_CONVERSATION": "Mở cuộc trò chuyện",
-      "PENDING_CONVERSATION": "Mark conversation as pending"
+      "RESOLVE_CONVERSATION": "Giải quyết hội thoại",
+      "SEND_WEBHOOK_EVENT": "Gửi sự kiện webhook",
+      "SEND_ATTACHMENT": "Gửi tệp đính kèm",
+      "SEND_MESSAGE": "Gửi tin nhắn",
+      "ADD_PRIVATE_NOTE": "Thêm ghi chú nội bộ",
+      "CHANGE_PRIORITY": "Đổi mức ưu tiên",
+      "ADD_SLA": "Gán SLA",
+      "OPEN_CONVERSATION": "Mở hội thoại",
+      "PENDING_CONVERSATION": "Đánh dấu hội thoại đang chờ"
     },
     "MESSAGE_TYPES": {
-      "INCOMING": "Incoming Message",
-      "OUTGOING": "Outgoing Message"
+      "INCOMING": "Tin nhắn đến",
+      "OUTGOING": "Tin nhắn đi"
     },
     "PRIORITY_TYPES": {
       "NONE": "Không có",
@@ -215,20 +216,20 @@
       "URGENT": "Cấp bách"
     },
     "ATTRIBUTES": {
-      "MESSAGE_TYPE": "Message Type",
+      "MESSAGE_TYPE": "Loại tin nhắn",
       "PRIVATE_NOTE": "Lưu ý riêng",
       "MESSAGE_CONTAINS": "Message Contains",
       "EMAIL": "Email",
-      "INBOX": "Hộp thư đến",
-      "CONVERSATION_LANGUAGE": "Conversation Language",
+      "INBOX": "Hộp thư",
+      "CONVERSATION_LANGUAGE": "Ngôn ngữ hội thoại",
       "PHONE_NUMBER": "Số điện thoại",
       "STATUS": "Trạng thái",
       "BROWSER_LANGUAGE": "Ngôn ngữ của Trình duyệt",
-      "MAIL_SUBJECT": "Email Subject",
+      "MAIL_SUBJECT": "Tiêu đề email",
       "COUNTRY_NAME": "Quốc gia",
       "COMPANY_NAME": "Công ty",
-      "REFERER_LINK": "Referrer Link",
-      "ASSIGNEE_NAME": "Assignee",
+      "REFERER_LINK": "Liên kết giới thiệu",
+      "ASSIGNEE_NAME": "Người phụ trách",
       "TEAM_NAME": "Nhóm",
       "PRIORITY": "Mức độ ưu tiên",
       "LABELS": "Nhãn"

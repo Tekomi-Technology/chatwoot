@@ -1,15 +1,15 @@
 {
   "MACROS": {
-    "HEADER": "Macros",
-    "DESCRIPTION": "A macro is a set of saved actions that help customer service agents easily complete tasks. The agents can define a set of actions like tagging a conversation with a label, sending an email transcript, updating a custom attribute, etc., and they can run these actions in a single click.",
-    "LEARN_MORE": "Learn more about macros",
-    "COUNT": "{n} macro | {n} macros",
-    "HEADER_BTN_TXT": "Add a new macro",
-    "HEADER_BTN_TXT_SAVE": "Save macro",
-    "LOADING": "Fetching macros",
-    "SEARCH_PLACEHOLDER": "Search macros...",
-    "NO_RESULTS": "No macros found matching your search",
-    "ERROR": "Something went wrong. Please try again",
+    "HEADER": "Macro",
+    "DESCRIPTION": "Macro là một chuỗi thao tác được lưu sẵn, giúp nhân viên hỗ trợ hoàn thành công việc nhanh hơn. Nhân viên có thể định nghĩa các thao tác như gắn nhãn cho hội thoại, gửi bản ghi hội thoại qua email, cập nhật thuộc tính tuỳ chỉnh… rồi chạy tất cả chỉ bằng một cú bấm.",
+    "LEARN_MORE": "Tìm hiểu thêm về macro",
+    "COUNT": "{n} macro | {n} macro",
+    "HEADER_BTN_TXT": "Thêm macro mới",
+    "HEADER_BTN_TXT_SAVE": "Lưu macro",
+    "LOADING": "Đang tải macro",
+    "SEARCH_PLACEHOLDER": "Tìm macro...",
+    "NO_RESULTS": "Không tìm thấy macro nào phù hợp",
+    "ERROR": "Đã có lỗi xảy ra. Vui lòng thử lại",
     "ORDER_INFO": "Macro sẽ chạy theo thứ tự hành động của bạn. Bạn có thể sắp xếp lại chúng bằng cách kéo chúng bằng tay cầm bên cạnh mỗi nút.",
     "ADD": {
       "FORM": {
@@ -50,7 +50,7 @@
       }
     },
     "VIEW": {
-      "TOOLTIP": "View macro"
+      "TOOLTIP": "Xem macro"
     },
     "EDIT": {
       "TOOLTIP": "Sửa Macro",
@@ -70,8 +70,8 @@
         "GLOBAL": {
           "LABEL": "Công khai",
           "DESCRIPTION": "Macro này có sẵn công khai cho tất cả các tác nhân trong tài khoản này.",
-          "CREATE_DISABLED_DESCRIPTION": "Only administrators can create public macros.",
-          "EDIT_DISABLED_DESCRIPTION": "Only administrators can edit public macros."
+          "CREATE_DISABLED_DESCRIPTION": "Chỉ quản trị viên mới được tạo macro dùng chung.",
+          "EDIT_DISABLED_DESCRIPTION": "Chỉ quản trị viên mới được sửa macro dùng chung."
         },
         "PERSONAL": {
           "LABEL": "Riêng tư",
@@ -83,33 +83,34 @@
       "BUTTON_TOOLTIP": "Thực thi",
       "PREVIEW": "Xem trước Macro",
       "EXECUTED_SUCCESSFULLY": "Macro được thực thi thành công",
-      "EXECUTED_WITHOUT_RESOLVING": "Macro executed. The conversation was not resolved because required attributes are missing."
+      "EXECUTED_WITHOUT_RESOLVING": "Đã chạy macro. Hội thoại chưa được đánh dấu xử lý xong vì còn thiếu thuộc tính bắt buộc."
     },
     "ERRORS": {
-      "ATTRIBUTE_KEY_REQUIRED": "Attribute key is required",
-      "FILTER_OPERATOR_REQUIRED": "Filter operator is required",
+      "ATTRIBUTE_KEY_REQUIRED": "Vui lòng chọn thuộc tính",
+      "FILTER_OPERATOR_REQUIRED": "Vui lòng chọn toán tử lọc",
       "VALUE_REQUIRED": "Giá trị bắt buộc có",
-      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Value must be between 1 and 998",
-      "ACTION_PARAMETERS_REQUIRED": "Action parameters are required",
-      "ATLEAST_ONE_CONDITION_REQUIRED": "At least one condition is required",
-      "ATLEAST_ONE_ACTION_REQUIRED": "At least one action is required"
+      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Giá trị phải nằm trong khoảng từ 1 đến 998",
+      "ACTION_PARAMETERS_REQUIRED": "Vui lòng nhập tham số cho thao tác",
+      "ATLEAST_ONE_CONDITION_REQUIRED": "Cần ít nhất một điều kiện",
+      "ATLEAST_ONE_ACTION_REQUIRED": "Cần ít nhất một thao tác"
     },
     "ACTIONS": {
-      "ASSIGN_TEAM": "Assign a Team",
-      "ASSIGN_AGENT": "Assign an Agent",
-      "ADD_LABEL": "Add a Label",
-      "REMOVE_LABEL": "Remove a Label",
-      "REMOVE_ASSIGNED_AGENT": "Remove Assigned Agent",
-      "REMOVE_ASSIGNED_TEAM": "Remove Assigned Team",
-      "SEND_EMAIL_TRANSCRIPT": "Send an Email Transcript",
-      "MUTE_CONVERSATION": "Tắt tiếng cuộc trò chuyện",
+      "ASSIGN_TEAM": "Giao cho nhóm",
+      "ASSIGN_AGENT": "Giao cho nhân viên",
+      "ADD_LABEL": "Thêm nhãn",
+      "REMOVE_LABEL": "Gỡ nhãn",
+      "REMOVE_ASSIGNED_AGENT": "Bỏ nhân viên được giao",
+      "REMOVE_ASSIGNED_TEAM": "Bỏ nhóm được giao",
+      "SEND_EMAIL_TRANSCRIPT": "Gửi bản ghi hội thoại qua email",
+      "MUTE_CONVERSATION": "Tắt tiếng hội thoại",
       "SNOOZE_CONVERSATION": "Tạm dừng \bhội thoại",
-      "RESOLVE_CONVERSATION": "Giải quyết cuộc trò chuyện",
-      "SEND_ATTACHMENT": "Send Attachment",
-      "SEND_MESSAGE": "Send a Message",
-      "CHANGE_PRIORITY": "Change Priority",
-      "ADD_PRIVATE_NOTE": "Add a Private Note",
-      "SEND_WEBHOOK_EVENT": "Send Webhook Event"
+      "RESOLVE_CONVERSATION": "Giải quyết hội thoại",
+      "SEND_ATTACHMENT": "Gửi tệp đính kèm",
+      "SEND_MESSAGE": "Gửi tin nhắn",
+      "CHANGE_PRIORITY": "Đổi mức ưu tiên",
+      "ADD_PRIVATE_NOTE": "Thêm ghi chú nội bộ",
+      "SEND_WEBHOOK_EVENT": "Gửi sự kiện webhook",
+      "CHANGE_STATUS": "Đổi trạng thái"
     },
     "PRIORITY_TYPES": {
       "NONE": "Không có",

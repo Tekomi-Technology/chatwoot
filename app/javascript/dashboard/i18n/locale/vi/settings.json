@@ -36,40 +36,40 @@
         }
       },
       "INTERFACE_SECTION": {
-        "TITLE": "Interface",
-        "NOTE": "Customize the look and feel of your Chatwoot dashboard.",
+        "TITLE": "Giao diện",
+        "NOTE": "Tuỳ chỉnh diện mạo bảng điều khiển Tekomi của bạn.",
         "FONT_SIZE": {
-          "TITLE": "Font size",
-          "NOTE": "Adjust the text size across the dashboard based on your preference.",
-          "UPDATE_SUCCESS": "Your font settings have been updated successfully",
-          "UPDATE_ERROR": "There is an error while updating the font settings, please try again",
+          "TITLE": "Cỡ chữ",
+          "NOTE": "Điều chỉnh cỡ chữ trên toàn bộ bảng điều khiển theo ý bạn.",
+          "UPDATE_SUCCESS": "Đã cập nhật cỡ chữ thành công",
+          "UPDATE_ERROR": "Có lỗi khi cập nhật cỡ chữ, vui lòng thử lại",
           "OPTIONS": {
-            "SMALLER": "Smaller",
-            "SMALL": "Small",
+            "SMALLER": "Nhỏ hơn",
+            "SMALL": "Nhỏ",
             "DEFAULT": "Mặc định",
-            "LARGE": "Large",
-            "LARGER": "Larger",
-            "EXTRA_LARGE": "Extra Large"
+            "LARGE": "Lớn",
+            "LARGER": "Lớn hơn",
+            "EXTRA_LARGE": "Rất lớn"
           }
         },
         "LANGUAGE": {
-          "TITLE": "Preferred Language",
-          "NOTE": "Choose the language you want to use.",
-          "UPDATE_SUCCESS": "Your Language settings have been updated successfully",
-          "UPDATE_ERROR": "There is an error while updating the language settings, please try again",
-          "USE_ACCOUNT_DEFAULT": "Use account default"
+          "TITLE": "Ngôn ngữ ưu tiên",
+          "NOTE": "Chọn ngôn ngữ bạn muốn sử dụng.",
+          "UPDATE_SUCCESS": "Đã cập nhật ngôn ngữ thành công",
+          "UPDATE_ERROR": "Có lỗi khi cập nhật ngôn ngữ, vui lòng thử lại",
+          "USE_ACCOUNT_DEFAULT": "Dùng mặc định của tài khoản"
         }
       },
       "MESSAGE_SIGNATURE_SECTION": {
         "TITLE": "Chữ ký tin nhắn cá nhân",
-        "NOTE": "Create a unique message signature to appear at the end of every message you send from any inbox. You can also include an inline image, which is supported in live-chat, email, and API inboxes.",
+        "NOTE": "Tạo chữ ký riêng để hiện ở cuối mỗi tin nhắn bạn gửi từ bất kỳ hộp thư nào. Bạn cũng có thể chèn ảnh, được hỗ trợ ở hộp thư chat trực tuyến, email và API.",
         "BTN_TEXT": "Lưu chữ ký tin nhắn",
         "API_ERROR": "Không thể lưu chữ ký! Thử lại",
         "API_SUCCESS": "Chữ ký được lưu thành công",
-        "IMAGE_UPLOAD_ERROR": "Couldn't upload image! Try again",
-        "IMAGE_UPLOAD_SUCCESS": "Image added successfully. Please click on save to save the signature",
+        "IMAGE_UPLOAD_ERROR": "Không tải được ảnh lên! Vui lòng thử lại",
+        "IMAGE_UPLOAD_SUCCESS": "Đã thêm ảnh thành công. Vui lòng bấm lưu để lưu chữ ký",
         "IMAGE_UPLOAD_SIZE_ERROR": "Kích thước ảnh phải nhỏ hơn {size}MB",
-        "INLINE_IMAGE_WARNING": "Pasted inline images were removed. Please use the image upload button to add images to your signature."
+        "INLINE_IMAGE_WARNING": "Các ảnh dán trực tiếp đã bị loại bỏ. Vui lòng dùng nút tải ảnh lên để thêm ảnh vào chữ ký."
       },
       "MESSAGE_SIGNATURE": {
         "LABEL": "Chữ ký tin nhắn",
@@ -82,59 +82,59 @@
         "BTN_TEXT": "Thay đổi mật khẩu"
       },
       "SECURITY_SECTION": {
-        "TITLE": "Security",
-        "NOTE": "Manage additional security features for your account.",
-        "MFA_BUTTON": "Manage Two-Factor Authentication"
+        "TITLE": "Bảo mật",
+        "NOTE": "Quản lý các tính năng bảo mật bổ sung cho tài khoản của bạn.",
+        "MFA_BUTTON": "Quản lý xác thực hai lớp"
       },
       "SESSIONS_SECTION": {
-        "TITLE": "Active Sessions",
-        "NOTE": "These are the devices currently logged in to your account.",
-        "CURRENT": "Current session",
-        "REVOKE": "Revoke",
-        "REVOKE_SUCCESS": "Session revoked successfully",
-        "REVOKE_ERROR": "Unable to revoke session. Please try again.",
-        "FETCH_ERROR": "Unable to fetch sessions. Please try again.",
-        "LAST_ACTIVE": "Last active",
-        "UNKNOWN_DEVICE": "Unknown device"
+        "TITLE": "Phiên đang hoạt động",
+        "NOTE": "Đây là các thiết bị đang đăng nhập vào tài khoản của bạn.",
+        "CURRENT": "Phiên hiện tại",
+        "REVOKE": "Thu hồi",
+        "REVOKE_SUCCESS": "Đã thu hồi phiên thành công",
+        "REVOKE_ERROR": "Không thu hồi được phiên. Vui lòng thử lại.",
+        "FETCH_ERROR": "Không tải được danh sách phiên. Vui lòng thử lại.",
+        "LAST_ACTIVE": "Hoạt động lần cuối",
+        "UNKNOWN_DEVICE": "Thiết bị không xác định"
       },
       "ACCESS_TOKEN": {
         "TITLE": "Token truy cập",
         "NOTE": "Có thể sử dụng Token này nếu bạn đang xây dựng tích hợp dựa trên API",
-        "PAID_PLAN_NOTE": "API access tokens are available on paid plans.",
+        "PAID_PLAN_NOTE": "Token truy cập API chỉ có ở các gói trả phí.",
         "COPY": "Sao Chép",
-        "RESET": "Reset",
-        "CONFIRM_RESET": "Are you sure?",
-        "CONFIRM_HINT": "Click again to confirm",
-        "RESET_SUCCESS": "Access token regenerated successfully",
-        "RESET_ERROR": "Unable to regenerate access token. Please try again"
+        "RESET": "Đặt lại",
+        "CONFIRM_RESET": "Bạn có chắc không?",
+        "CONFIRM_HINT": "Bấm lần nữa để xác nhận",
+        "RESET_SUCCESS": "Đã tạo lại token truy cập thành công",
+        "RESET_ERROR": "Không tạo lại được token truy cập. Vui lòng thử lại"
       },
       "AUDIO_NOTIFICATIONS_SECTION": {
-        "TITLE": "Audio Alerts",
-        "NOTE": "Enable audio alerts in dashboard for new messages and conversations.",
-        "PLAY": "Play sound",
+        "TITLE": "Cảnh báo âm thanh",
+        "NOTE": "Bật âm thanh báo tin nhắn và hội thoại mới trên bảng điều khiển.",
+        "PLAY": "Phát thử",
         "ALERT_TYPES": {
           "NONE": "Không có",
-          "MINE": "Assigned",
+          "MINE": "Được giao cho tôi",
           "ALL": "Tất cả",
-          "ASSIGNED": "My assigned conversations",
-          "UNASSIGNED": "Unassigned conversations",
-          "NOTME": "Open conversations assigned to others"
+          "ASSIGNED": "Hội thoại được giao cho tôi",
+          "UNASSIGNED": "Hội thoại chưa phân công",
+          "NOTME": "Hội thoại đang mở được giao cho người khác"
         },
         "ALERT_COMBINATIONS": {
-          "NONE": "You haven't selected any options, you won't receive any audio alerts.",
-          "ASSIGNED": "You'll receive alerts for conversations assigned to you.",
-          "UNASSIGNED": "You'll receive alerts for any unassigned conversations.",
-          "NOTME": "You'll receive alerts for conversations assigned to others.",
-          "ASSIGNED+UNASSIGNED": "You'll receive alerts for your assigned conversations and any unattended ones.",
-          "ASSIGNED+NOTME": "You'll receive alerts for conversations assigned to you and to others, but not for unassigned ones.",
-          "NOTME+UNASSIGNED": "You'll receive alerts for unattended conversations and those assigned to others.",
-          "ASSIGNED+NOTME+UNASSIGNED": "You'll receive alerts for all conversations."
+          "NONE": "Bạn chưa chọn mục nào nên sẽ không nhận cảnh báo âm thanh.",
+          "ASSIGNED": "Bạn sẽ nhận cảnh báo cho các hội thoại được giao cho mình.",
+          "UNASSIGNED": "Bạn sẽ nhận cảnh báo cho mọi hội thoại chưa phân công.",
+          "NOTME": "Bạn sẽ nhận cảnh báo cho các hội thoại được giao cho người khác.",
+          "ASSIGNED+UNASSIGNED": "Bạn sẽ nhận cảnh báo cho hội thoại của mình và các hội thoại chưa ai xử lý.",
+          "ASSIGNED+NOTME": "Bạn sẽ nhận cảnh báo cho hội thoại của mình và của người khác, nhưng không nhận cho hội thoại chưa phân công.",
+          "NOTME+UNASSIGNED": "Bạn sẽ nhận cảnh báo cho hội thoại chưa ai xử lý và hội thoại được giao cho người khác.",
+          "ASSIGNED+NOTME+UNASSIGNED": "Bạn sẽ nhận cảnh báo cho tất cả hội thoại."
         },
         "ALERT_TYPE": {
-          "TITLE": "Alert events for conversations",
+          "TITLE": "Sự kiện cảnh báo cho hội thoại",
           "NONE": "Không có",
-          "ASSIGNED": "Cuộc trò chuyện được phân công",
-          "ALL_CONVERSATIONS": "Tất cả cuộc trò chuyện"
+          "ASSIGNED": "Hội thoại được phân công",
+          "ALL_CONVERSATIONS": "Tất cả hội thoại"
         },
         "DEFAULT_TONE": {
           "TITLE": "Âm báo:"
@@ -144,37 +144,37 @@
           "CONDITION_ONE": "Chỉ gửi cảnh báo âm thanh nếu cửa sổ trình duyệt không hoạt động",
           "CONDITION_TWO": "Gửi thông báo cứ sau 30 giây cho đến khi tất cả các cuộc hội thoại được chỉ định được đọc"
         },
-        "SOUND_PERMISSION_ERROR": "Autoplay is disabled in your browser. To hear alerts automatically, enable sound permission in your browser settings or interact with the page.",
+        "SOUND_PERMISSION_ERROR": "Trình duyệt của bạn đang chặn tự động phát âm thanh. Để nghe cảnh báo tự động, hãy cho phép phát âm thanh trong cài đặt trình duyệt hoặc tương tác với trang.",
         "READ_MORE": "Xem thêm"
       },
       "EMAIL_NOTIFICATIONS_SECTION": {
         "TITLE": "Thông Báo Email",
         "NOTE": "Cập nhật tùy chọn thông báo qua email của bạn tại đây",
-        "CONVERSATION_ASSIGNMENT": "Gửi thông báo qua email khi cuộc trò chuyện được chỉ định cho tôi",
-        "CONVERSATION_CREATION": "Gửi thông báo qua email khi cuộc trò chuyện mới được tạo",
-        "CONVERSATION_MENTION": "Gửi thông báo email khi bạn được nhắc đến trong 1 cuộc trò chuyện",
-        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Gửi thông báo email khi có một tin nhắn mới được tạo trong cuộc trò chuyện được phân công",
-        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Send email notifications when a new message is created in a participating conversation",
-        "SLA_MISSED_FIRST_RESPONSE": "Send email notifications when a conversation misses first response SLA",
-        "SLA_MISSED_NEXT_RESPONSE": "Send email notifications when a conversation misses next response SLA",
-        "SLA_MISSED_RESOLUTION": "Send email notifications when a conversation misses resolution SLA"
+        "CONVERSATION_ASSIGNMENT": "Gửi thông báo qua email khi hội thoại được chỉ định cho tôi",
+        "CONVERSATION_CREATION": "Gửi thông báo qua email khi hội thoại mới được tạo",
+        "CONVERSATION_MENTION": "Gửi thông báo email khi bạn được nhắc đến trong 1 hội thoại",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Gửi thông báo email khi có một tin nhắn mới được tạo trong hội thoại được phân công",
+        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Gửi email thông báo khi có tin nhắn mới trong hội thoại bạn đang tham gia",
+        "SLA_MISSED_FIRST_RESPONSE": "Gửi email thông báo khi một hội thoại lỡ mốc SLA phản hồi đầu tiên",
+        "SLA_MISSED_NEXT_RESPONSE": "Gửi email thông báo khi một hội thoại lỡ mốc SLA phản hồi tiếp theo",
+        "SLA_MISSED_RESOLUTION": "Gửi email thông báo khi một hội thoại lỡ mốc SLA xử lý xong"
       },
       "NOTIFICATIONS": {
-        "TITLE": "Notification preferences",
-        "TYPE_TITLE": "Notification type",
+        "TITLE": "Tuỳ chọn thông báo",
+        "TYPE_TITLE": "Loại thông báo",
         "EMAIL": "Email",
-        "PUSH": "Push notification",
+        "PUSH": "Thông báo đẩy",
         "TYPES": {
-          "CONVERSATION_CREATED": "A new conversation is created",
-          "CONVERSATION_ASSIGNED": "A conversation is assigned to you",
-          "CONVERSATION_MENTION": "You are mentioned in a conversation",
-          "ASSIGNED_CONVERSATION_NEW_MESSAGE": "A new message is created in an assigned conversation",
-          "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "A new message is created in a participating conversation",
-          "SLA_MISSED_FIRST_RESPONSE": "A conversation misses first response SLA",
-          "SLA_MISSED_NEXT_RESPONSE": "A conversation misses next response SLA",
-          "SLA_MISSED_RESOLUTION": "A conversation misses resolution SLA"
+          "CONVERSATION_CREATED": "Có hội thoại mới được tạo",
+          "CONVERSATION_ASSIGNED": "Một hội thoại được giao cho bạn",
+          "CONVERSATION_MENTION": "Bạn được nhắc đến trong một hội thoại",
+          "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Có tin nhắn mới trong hội thoại được giao cho bạn",
+          "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Có tin nhắn mới trong hội thoại bạn đang tham gia",
+          "SLA_MISSED_FIRST_RESPONSE": "Một hội thoại lỡ mốc SLA phản hồi đầu tiên",
+          "SLA_MISSED_NEXT_RESPONSE": "Một hội thoại lỡ mốc SLA phản hồi tiếp theo",
+          "SLA_MISSED_RESOLUTION": "Một hội thoại lỡ mốc SLA xử lý xong"
         },
-        "BROWSER_PERMISSION": "Enable push notifications for your browser so you’re able to receive them"
+        "BROWSER_PERMISSION": "Bật thông báo đẩy cho trình duyệt để có thể nhận được thông báo"
       },
       "API": {
         "UPDATE_SUCCESS": "Tùy chọn thông báo của bạn đã được cập nhật thành công",
@@ -183,16 +183,16 @@
       "PUSH_NOTIFICATIONS_SECTION": {
         "TITLE": "Thông Báo",
         "NOTE": "Cập nhật tùy chọn thông báo của bạn tại đây",
-        "CONVERSATION_ASSIGNMENT": "Gửi thông báo khi cuộc trò chuyện được chỉ định cho tôi",
-        "CONVERSATION_CREATION": "Gửi thông báo khi cuộc trò chuyện mới được tạo",
-        "CONVERSATION_MENTION": "Gửi thông báo đẩy khi bạn được nhắc đến trong 1 cuộc trò chuyện",
-        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Gửi thông báo đẩy khi có một tin nhắn mới được tạo trong cuộc trò chuyện được phân công",
-        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Send push notifications when a new message is created in a participating conversation",
+        "CONVERSATION_ASSIGNMENT": "Gửi thông báo khi hội thoại được chỉ định cho tôi",
+        "CONVERSATION_CREATION": "Gửi thông báo khi hội thoại mới được tạo",
+        "CONVERSATION_MENTION": "Gửi thông báo đẩy khi bạn được nhắc đến trong 1 hội thoại",
+        "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Gửi thông báo đẩy khi có một tin nhắn mới được tạo trong hội thoại được phân công",
+        "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Gửi thông báo đẩy khi có tin nhắn mới trong hội thoại bạn đang tham gia",
         "HAS_ENABLED_PUSH": "Bạn đã bật tính năng thông báo cho trình duyệt này.",
         "REQUEST_PUSH": "Bật thông báo",
-        "SLA_MISSED_FIRST_RESPONSE": "Send push notifications when a conversation misses first response SLA",
-        "SLA_MISSED_NEXT_RESPONSE": "Send push notifications when a conversation misses next response SLA",
-        "SLA_MISSED_RESOLUTION": "Send push notifications when a conversation misses resolution SLA"
+        "SLA_MISSED_FIRST_RESPONSE": "Gửi thông báo đẩy khi một hội thoại lỡ mốc SLA phản hồi đầu tiên",
+        "SLA_MISSED_NEXT_RESPONSE": "Gửi thông báo đẩy khi một hội thoại lỡ mốc SLA phản hồi tiếp theo",
+        "SLA_MISSED_RESOLUTION": "Gửi thông báo đẩy khi một hội thoại lỡ mốc SLA xử lý xong"
       },
       "PROFILE_IMAGE": {
         "LABEL": "Hình ảnh hồ sơ cá nhân"
@@ -205,7 +205,7 @@
       "DISPLAY_NAME": {
         "LABEL": "Tên hiển thị",
         "ERROR": "Vui lòng nhập tên hiển thị hợp lệ",
-        "PLACEHOLDER": "Vui lòng nhập tên hiển thị, tên này sẽ được hiển thị trong các cuộc trò chuyện"
+        "PLACEHOLDER": "Vui lòng nhập tên hiển thị, tên này sẽ được hiển thị trong các hội thoại"
       },
       "AVAILABILITY": {
         "LABEL": "Khả dụng",
@@ -216,12 +216,12 @@
         },
         "SET_AVAILABILITY_SUCCESS": "Tính khả dụng đã được thiết lập thành công",
         "SET_AVAILABILITY_ERROR": "Không thể đặt, vui lòng thử lại",
-        "IMPERSONATING_ERROR": "Cannot change availability while impersonating a user"
+        "IMPERSONATING_ERROR": "Không thể đổi trạng thái sẵn sàng khi đang đóng vai người dùng khác"
       },
       "EMAIL": {
         "LABEL": "Địa chỉ email của bạn",
         "ERROR": "Vui lòng nhập một địa chỉ email hợp lệ",
-        "PLACEHOLDER": "Vui lòng nhập địa chỉ email của bạn, địa chỉ này sẽ được hiển thị trong các cuộc trò chuyện"
+        "PLACEHOLDER": "Vui lòng nhập địa chỉ email của bạn, địa chỉ này sẽ được hiển thị trong các hội thoại"
       },
       "CURRENT_PASSWORD": {
         "LABEL": "Mật khẩu hiện tại",
@@ -242,43 +242,43 @@
   },
   "SIDEBAR_ITEMS": {
     "CHANGE_AVAILABILITY_STATUS": "Đổi",
-    "CHANGE_ACCOUNTS": "Switch account",
-    "SWITCH_ACCOUNT": "Switch account",
-    "CONTACT_SUPPORT": "Contact support",
+    "CHANGE_ACCOUNTS": "Chuyển tài khoản",
+    "SWITCH_ACCOUNT": "Chuyển tài khoản",
+    "CONTACT_SUPPORT": "Liên hệ hỗ trợ",
     "SELECTOR_SUBTITLE": "Chọn một tài khoản từ danh sách sau",
-    "PROFILE_SETTINGS": "Profile settings",
-    "YEAR_IN_REVIEW": "Year in Review",
+    "PROFILE_SETTINGS": "Cài đặt hồ sơ",
+    "YEAR_IN_REVIEW": "Nhìn lại một năm",
     "KEYBOARD_SHORTCUTS": "Phím tắt",
-    "APPEARANCE": "Change appearance",
-    "SUPER_ADMIN_CONSOLE": "SuperAdmin console",
-    "DOCS": "Read documentation",
-    "CHANGELOG": "Changelog",
-    "LOGOUT": "Log out"
+    "APPEARANCE": "Đổi giao diện",
+    "SUPER_ADMIN_CONSOLE": "Bảng quản trị hệ thống",
+    "DOCS": "Đọc tài liệu",
+    "CHANGELOG": "Nhật ký thay đổi",
+    "LOGOUT": "Đăng xuất"
   },
   "APP_GLOBAL": {
     "TRIAL_MESSAGE": "ngày dùng thử còn lại.",
     "TRAIL_BUTTON": "Mua Ngay",
     "DELETED_USER": "Người dùng bị xoá",
-    "EMAIL_VERIFICATION_PENDING": "It seems that you haven't verified your email address yet. Please check your inbox for the verification email.",
-    "RESEND_VERIFICATION_MAIL": "Resend verification email",
-    "EMAIL_VERIFICATION_SENT": "Verification email has been sent. Please check your inbox.",
+    "EMAIL_VERIFICATION_PENDING": "Có vẻ bạn chưa xác minh địa chỉ email. Vui lòng kiểm tra hộp thư để tìm email xác minh.",
+    "RESEND_VERIFICATION_MAIL": "Gửi lại email xác minh",
+    "EMAIL_VERIFICATION_SENT": "Đã gửi email xác minh. Vui lòng kiểm tra hộp thư.",
     "ACCOUNT_SUSPENDED": {
       "TITLE": "Tài khoản bị ngưng",
       "MESSAGE": "Tài khoản của bạn bị tạm ngưng. Vui lòng liên hệ với nhóm hỗ trợ để biết thêm thông tin.",
-      "MANAGE_BILLING": "Manage billing"
+      "MANAGE_BILLING": "Quản lý thanh toán"
     },
     "NO_ACCOUNTS": {
-      "TITLE": "No account found",
-      "MESSAGE_CLOUD": "You are not part of any accounts right now. If you think this is a mistake, please reach out to our support team.",
-      "MESSAGE_SELF_HOSTED": "You are not part of any accounts right now. Please reach out to your administrator.",
-      "LOGOUT": "Log out"
+      "TITLE": "Không tìm thấy tài khoản",
+      "MESSAGE_CLOUD": "Hiện bạn chưa thuộc tài khoản nào. Nếu bạn cho rằng đây là nhầm lẫn, vui lòng liên hệ đội hỗ trợ của chúng tôi.",
+      "MESSAGE_SELF_HOSTED": "Hiện bạn chưa thuộc tài khoản nào. Vui lòng liên hệ quản trị viên.",
+      "LOGOUT": "Đăng xuất"
     }
   },
   "COMPONENTS": {
     "CODE": {
       "BUTTON_TEXT": "Sao Chép",
-      "CODEPEN": "Open in CodePen",
-      "COPY_SUCCESSFUL": "Copied to clipboard"
+      "CODEPEN": "Mở trong CodePen",
+      "COPY_SUCCESSFUL": "Đã sao chép"
     },
     "SHOW_MORE_BLOCK": {
       "SHOW_MORE": "Xem thêm",
@@ -288,7 +288,7 @@
       "DOWNLOAD": "Tải xuống",
       "UPLOADING": "Đang tải lên...",
       "INSTAGRAM_STORY_UNAVAILABLE": "Hội thoại này không còn nữa.",
-      "INSTAGRAM_STORY_REPLY": "Replied to your story:"
+      "INSTAGRAM_STORY_REPLY": "Đã trả lời tin của bạn:"
     },
     "LOCATION_BUBBLE": {
       "SEE_ON_MAP": "Xem trên bản đồ"
@@ -297,61 +297,61 @@
       "SUBMIT": "Gửi"
     },
     "MEDIA": {
-      "IMAGE_UNAVAILABLE": "This image is no longer available.",
-      "LOADING_FAILED": "Loading failed"
+      "IMAGE_UNAVAILABLE": "Ảnh này không còn khả dụng.",
+      "LOADING_FAILED": "Tải thất bại"
     }
   },
   "CONFIRM_EMAIL": "Đang xác thực...",
   "SETTINGS": {
     "INBOXES": {
-      "NEW_INBOX": "Thêm Hộp thư đến"
+      "NEW_INBOX": "Thêm Hộp thư"
     }
   },
   "SIDEBAR": {
-    "NO_ITEMS": "No items",
+    "NO_ITEMS": "Không có mục nào",
     "CURRENTLY_VIEWING_ACCOUNT": "Hiện đang xem:",
     "SWITCH": "Chuyển",
-    "INBOX_VIEW": "Inbox View",
-    "CONVERSATIONS": "Cuộc trò chuyện",
-    "INBOX": "My Inbox",
-    "ALL_CONVERSATIONS": "Tất cả cuộc trò chuyện",
+    "INBOX_VIEW": "Xem theo hộp thư",
+    "CONVERSATIONS": "Hội thoại",
+    "INBOX": "Hộp thư của tôi",
+    "ALL_CONVERSATIONS": "Tất cả hội thoại",
     "MENTIONED_CONVERSATIONS": "Nhắn đến",
-    "PARTICIPATING_CONVERSATIONS": "Participating",
+    "PARTICIPATING_CONVERSATIONS": "Đang tham gia",
     "UNATTENDED_CONVERSATIONS": "Không giám sát",
     "REPORTS": "Báo cáo",
     "SETTINGS": "Cài Đặt",
     "CONTACTS": "Liên hệ",
     "ACTIVE": "Có hiệu lực",
-    "COMPANIES": "Companies",
-    "ALL_COMPANIES": "All Companies",
+    "COMPANIES": "Công ty",
+    "ALL_COMPANIES": "Tất cả công ty",
     "CAPTAIN": "Tekomi AI",
-    "CALLS": "Calls",
-    "CAPTAIN_ASSISTANTS": "Assistants",
+    "CALLS": "Cuộc gọi",
+    "CAPTAIN_ASSISTANTS": "Trợ lý",
     "CAPTAIN_OVERVIEW": "Tổng quan",
-    "CAPTAIN_DOCUMENTS": "Documents",
-    "CAPTAIN_RESPONSES": "FAQs",
-    "CAPTAIN_TOOLS": "Tools",
-    "CAPTAIN_SCENARIOS": "Scenarios",
-    "CAPTAIN_PLAYGROUND": "Playground",
-    "CAPTAIN_INBOXES": "Hộp thư đến",
+    "CAPTAIN_DOCUMENTS": "Tài liệu",
+    "CAPTAIN_RESPONSES": "Câu hỏi thường gặp",
+    "CAPTAIN_TOOLS": "Công cụ",
+    "CAPTAIN_SCENARIOS": "Kịch bản",
+    "CAPTAIN_PLAYGROUND": "Khu thử nghiệm",
+    "CAPTAIN_INBOXES": "Hộp thư",
     "CAPTAIN_SETTINGS": "Cài đặt",
     "HOME": "Trang Chủ",
-    "AGENTS": "Đại lý",
-    "AGENT_BOTS": "Bots",
-    "AUDIT_LOGS": "Audit Logs",
-    "INBOXES": "Hộp thư đến",
-    "WHATSAPP_TEMPLATES": "Templates",
+    "AGENTS": "Nhân viên",
+    "AGENT_BOTS": "Bot",
+    "AUDIT_LOGS": "Nhật ký kiểm tra",
+    "INBOXES": "Hộp thư",
+    "WHATSAPP_TEMPLATES": "Mẫu tin",
     "NOTIFICATIONS": "Thông báo",
     "CANNED_RESPONSES": "Thư mẫu phẩn hồi",
     "INTEGRATIONS": "Tích hợp",
-    "DATA": "Data",
+    "DATA": "Dữ liệu",
     "PROFILE_SETTINGS": "Cài Đặt Hồ Sơ",
     "ACCOUNT_SETTINGS": "Cài Đặt Tài Khoản",
     "APPLICATIONS": "Ứng dụng",
     "LABELS": "Nhãn",
     "CUSTOM_ATTRIBUTES": "Thuộc tính tùy chỉnh",
     "AUTOMATION": "Tự động hoá",
-    "MACROS": "Macros",
+    "MACROS": "Macro",
     "TEAMS": "Nhóm",
     "BILLING": "Phí",
     "CUSTOM_VIEWS_FOLDER": "Thư mục",
@@ -363,7 +363,7 @@
     "NEW_INBOX": "Kênh mới",
     "REPORTS_CONVERSATION": "Các cuộc hội thoại",
     "CSAT": "CSAT",
-    "LIVE_CHAT": "Live Chat",
+    "LIVE_CHAT": "Chat trực tuyến",
     "SMS": "SMS",
     "WHATSAPP": "WhatsApp",
     "CAMPAIGNS": "Chiến dịch",
@@ -375,17 +375,17 @@
     "REPORTS_LABEL": "Nhãn",
     "REPORTS_INBOX": "Kênh",
     "REPORTS_TEAM": "Nhóm",
-    "AGENT_ASSIGNMENT": "Agent Assignment",
+    "AGENT_ASSIGNMENT": "Phân công nhân viên",
     "SET_AVAILABILITY_TITLE": "Đặt chính mình như",
     "SET_YOUR_AVAILABILITY": "Đặt tính khả dụng của bạn",
     "SLA": "SLA",
-    "CUSTOM_ROLES": "Custom Roles",
+    "CUSTOM_ROLES": "Vai trò tuỳ chỉnh",
     "BETA": "Beta",
     "REPORTS_OVERVIEW": "Tổng quan",
-    "REAUTHORIZE": "Your inbox connection has expired, please reconnect\n to continue receiving and sending messages",
+    "REAUTHORIZE": "Kết nối hộp thư của bạn đã hết hạn, vui lòng kết nối lại\n để tiếp tục nhận và gửi tin nhắn",
     "HELP_CENTER": {
-      "TITLE": "Help Center",
-      "ARTICLES": "Articles",
+      "TITLE": "Trung tâm trợ giúp",
+      "ARTICLES": "Bài viết",
       "CATEGORIES": "Danh mục",
       "LOCALES": "Ngôn ngữ",
       "SETTINGS": "Cài đặt"
@@ -394,40 +394,41 @@
     "SET_AUTO_OFFLINE": {
       "TEXT": "Tự động đánh dấu ngoại tuyến",
       "INFO_TEXT": "Hãy để hệ thống tự động đánh dấu bạn ngoại tuyến khi bạn không sử dụng ứng dụng hoặc trang tổng quan.",
-      "INFO_SHORT": "Automatically mark offline when you aren't using the app."
+      "INFO_SHORT": "Tự động chuyển sang ngoại tuyến khi bạn không dùng ứng dụng."
     },
-    "SORT_TOOLTIP": "Sort",
+    "SORT_TOOLTIP": "Sắp xếp",
     "SORT_BY": "Sắp bởi",
     "SORT_GROUPS": {
-      "CREATED": "Sort by date of creation",
-      "ALPHABETICAL": "Sort in alphabetical order",
-      "UNREAD_COUNT": "Sort by unread count"
+      "CREATED": "Sắp xếp theo ngày tạo",
+      "ALPHABETICAL": "Sắp xếp theo bảng chữ cái",
+      "UNREAD_COUNT": "Sắp xếp theo số tin chưa đọc"
     },
     "SORT_OPTIONS": {
-      "CREATED_DESC": "Newest first",
-      "CREATED_ASC": "Oldest first",
-      "ALPHABETICAL_ASC": "Ascending (A - Z)",
-      "ALPHABETICAL_DESC": "Descending (Z - A)",
-      "UNREAD_COUNT_DESC": "Highest first",
-      "UNREAD_COUNT_ASC": "Lowest first"
+      "CREATED_DESC": "Mới nhất trước",
+      "CREATED_ASC": "Cũ nhất trước",
+      "ALPHABETICAL_ASC": "Tăng dần (A - Z)",
+      "ALPHABETICAL_DESC": "Giảm dần (Z - A)",
+      "UNREAD_COUNT_DESC": "Nhiều nhất trước",
+      "UNREAD_COUNT_ASC": "Ít nhất trước"
     },
     "DOCS": "Đọc tài liệu",
-    "SECURITY": "Security",
+    "SECURITY": "Bảo mật",
     "CAPTAIN_AI": "Tekomi AI",
-    "CONVERSATION_WORKFLOW": "Conversation Workflow"
+    "CONVERSATION_WORKFLOW": "Quy trình hội thoại",
+    "CRM_DIRECTORY": "Danh bạ CRM"
   },
   "DATA_IMPORTS": {
-    "HEADER": "Data",
-    "DESCRIPTION": "Bring your existing contacts and past conversations into this account from another support tool. Each import runs in the background, so you can keep working while it finishes, track its progress, and review anything that was skipped along the way.",
-    "LOADING": "Fetching imports",
-    "DEFAULT_IMPORT_NAME": "Intercom import",
+    "HEADER": "Dữ liệu",
+    "DESCRIPTION": "Đưa danh bạ và lịch sử hội thoại sẵn có từ công cụ hỗ trợ khác vào tài khoản này. Mỗi lần nhập chạy ở chế độ nền nên bạn vẫn làm việc bình thường, theo dõi tiến độ và xem lại những mục bị bỏ qua.",
+    "LOADING": "Đang tải danh sách lần nhập",
+    "DEFAULT_IMPORT_NAME": "Nhập từ Intercom",
     "DEFAULT_IMPORT_NAMES": {
-      "INTERCOM": "Intercom import",
-      "FRESHDESK": "Freshdesk import"
+      "INTERCOM": "Nhập từ Intercom",
+      "FRESHDESK": "Nhập từ Freshdesk"
     },
     "TABS": {
       "IMPORT": "Nhập",
-      "EXPORT": "Export"
+      "EXPORT": "Xuất dữ liệu"
     },
     "TYPES": {
       "CONTACTS": "Liên hệ",
@@ -435,169 +436,169 @@
       "MESSAGES": "Tin nhắn"
     },
     "DRAWER": {
-      "TITLE": "New import",
-      "SOURCE": "Source",
-      "NAME": "Import name",
-      "NAME_PLACEHOLDER": "July support migration",
-      "ACCESS_KEY": "Intercom access key",
-      "ACCESS_KEY_PLACEHOLDER": "Paste your Intercom access key",
-      "INTERCOM_ACCESS_KEY": "Intercom access key",
-      "INTERCOM_ACCESS_KEY_PLACEHOLDER": "Paste your Intercom access key",
-      "FRESHDESK_API_KEY": "Freshdesk API key",
-      "FRESHDESK_API_KEY_PLACEHOLDER": "Paste your Freshdesk API key",
-      "FRESHDESK_DOMAIN": "Freshdesk domain",
+      "TITLE": "Lần nhập mới",
+      "SOURCE": "Nguồn",
+      "NAME": "Tên lần nhập",
+      "NAME_PLACEHOLDER": "Chuyển dữ liệu tháng 7",
+      "ACCESS_KEY": "Khoá truy cập Intercom",
+      "ACCESS_KEY_PLACEHOLDER": "Dán khoá truy cập Intercom của bạn",
+      "INTERCOM_ACCESS_KEY": "Khoá truy cập Intercom",
+      "INTERCOM_ACCESS_KEY_PLACEHOLDER": "Dán khoá truy cập Intercom của bạn",
+      "FRESHDESK_API_KEY": "Khoá API Freshdesk",
+      "FRESHDESK_API_KEY_PLACEHOLDER": "Dán khoá API Freshdesk của bạn",
+      "FRESHDESK_DOMAIN": "Tên miền Freshdesk",
       "FRESHDESK_DOMAIN_PLACEHOLDER": "acme.freshdesk.com",
-      "DATA_TYPES": "Data to import",
-      "VALIDATING": "Validating access key...",
-      "VALID_KEY": "Access key validated.",
-      "INVALID_KEY": "Could not validate this access key.",
-      "ACTIVE_IMPORT": "Wait for the active import to finish before starting another one.",
+      "DATA_TYPES": "Dữ liệu cần nhập",
+      "VALIDATING": "Đang kiểm tra khoá truy cập...",
+      "VALID_KEY": "Khoá truy cập hợp lệ.",
+      "INVALID_KEY": "Không xác thực được khoá truy cập này.",
+      "ACTIVE_IMPORT": "Hãy đợi lần nhập hiện tại hoàn tất trước khi bắt đầu lần mới.",
       "CANCEL": "Huỷ",
       "IMPORT": "Nhập"
     },
     "EXPORT": {
-      "TITLE": "Exports are on the way",
-      "DESCRIPTION": "Export your contacts and conversations out of this account. This workflow is coming soon.",
-      "COMING_SOON": "Coming soon"
+      "TITLE": "Tính năng xuất dữ liệu sắp có",
+      "DESCRIPTION": "Xuất danh bạ và hội thoại ra khỏi tài khoản này. Tính năng này sắp ra mắt.",
+      "COMING_SOON": "Sắp có"
     },
     "TABLE": {
-      "TITLE": "Recent imports",
-      "EMPTY": "No imports yet",
-      "EMPTY_DESCRIPTION": "Start an import to bring your existing customer history into this account.",
+      "TITLE": "Các lần nhập gần đây",
+      "EMPTY": "Chưa có lần nhập nào",
+      "EMPTY_DESCRIPTION": "Bắt đầu một lần nhập để đưa lịch sử khách hàng sẵn có vào tài khoản này.",
       "NEW_IMPORT": "Nhập",
-      "COUNT": "{count} imports",
-      "UNNAMED": "Untitled import",
-      "IMPORTED_COUNT": "{count} imported",
-      "VIEW": "View import",
+      "COUNT": "{count} lần nhập",
+      "UNNAMED": "Lần nhập chưa đặt tên",
+      "IMPORTED_COUNT": "Đã nhập {count}",
+      "VIEW": "Xem lần nhập",
       "NAME": "Tên",
       "TYPE": "Kiểu",
       "STATUS": "Trạng thái",
-      "IMPORTED": "Imported",
+      "IMPORTED": "Đã nhập",
       "CREATED": "Đã tạo",
-      "RETRY": "Retry",
-      "ABANDON": "Abandon"
+      "RETRY": "Thử lại",
+      "ABANDON": "Bỏ dở"
     },
     "DETAIL": {
-      "BACK": "Back to imports",
-      "ERRORS": "Errors",
-      "SKIP_LOGS": "Skip logs",
-      "SOURCE": "Source",
-      "IMPORT_TYPES": "Import types",
+      "BACK": "Quay lại danh sách nhập",
+      "ERRORS": "Lỗi",
+      "SKIP_LOGS": "Nhật ký bỏ qua",
+      "SOURCE": "Nguồn",
+      "IMPORT_TYPES": "Loại dữ liệu nhập",
       "CREATED": "Đã tạo",
       "DURATION": "Thời lượng",
-      "INITIATED_BY": "Started by",
-      "PROGRESS": "Import progress",
-      "PROGRESS_WITH_TOTAL": "{imported} of {total} imported",
-      "PROGRESS_WITHOUT_TOTAL": "{imported} imported",
-      "PROGRESS_OF_TOTAL": "of {total} imported",
-      "PROGRESS_IMPORTED": "imported",
-      "LAST_UPDATED_TOOLTIP": "Last updated {time}",
-      "NO_SKIP_LOGS": "No skipped or failed records recorded.",
-      "DOWNLOAD_SKIP_LOGS": "Download CSV",
-      "DOWNLOAD_ERROR_LOGS": "Download CSV",
+      "INITIATED_BY": "Người bắt đầu",
+      "PROGRESS": "Tiến độ nhập",
+      "PROGRESS_WITH_TOTAL": "Đã nhập {imported} trong {total}",
+      "PROGRESS_WITHOUT_TOTAL": "Đã nhập {imported}",
+      "PROGRESS_OF_TOTAL": "trong {total} đã nhập",
+      "PROGRESS_IMPORTED": "đã nhập",
+      "LAST_UPDATED_TOOLTIP": "Cập nhật lần cuối {time}",
+      "NO_SKIP_LOGS": "Không có bản ghi nào bị bỏ qua hoặc thất bại.",
+      "DOWNLOAD_SKIP_LOGS": "Tải CSV",
+      "DOWNLOAD_ERROR_LOGS": "Tải CSV",
       "ALL_SKIP_LOGS": "Tất cả",
-      "KIND": "Kind",
-      "NO_ERRORS": "No errors recorded.",
-      "ERROR_CODE": "Code",
-      "SOURCE_OBJECT": "Source object",
+      "KIND": "Loại",
+      "NO_ERRORS": "Không ghi nhận lỗi nào.",
+      "ERROR_CODE": "Mã",
+      "SOURCE_OBJECT": "Đối tượng nguồn",
       "MESSAGE": "Tin nhắn"
     },
     "MONITOR": {
-      "LIVE": "Live updates every {seconds}s",
-      "LAST_UPDATED": "Last updated {time}",
+      "LIVE": "Cập nhật mỗi {seconds} giây",
+      "LAST_UPDATED": "Cập nhật lần cuối {time}",
       "REFRESH": "Làm mới",
-      "REFRESHING": "Refreshing",
+      "REFRESHING": "Đang làm mới",
       "STAGES": {
-        "unknown": "Waiting for update",
-        "queued": "Queued",
-        "contacts": "Importing contacts",
-        "conversations": "Importing conversations",
-        "finalizing": "Finalizing import",
+        "unknown": "Đang chờ cập nhật",
+        "queued": "Đang xếp hàng",
+        "contacts": "Đang nhập danh bạ",
+        "conversations": "Đang nhập hội thoại",
+        "finalizing": "Đang hoàn tất",
         "completed": "Hoàn tất",
-        "completed_with_errors": "Completed with errors",
-        "failed": "Failed",
-        "abandoned": "Abandoned"
+        "completed_with_errors": "Hoàn tất nhưng có lỗi",
+        "failed": "Thất bại",
+        "abandoned": "Đã bỏ dở"
       }
     },
     "ALERTS": {
-      "IMPORT_STARTED": "Import has started.",
-      "IMPORT_RETRIED": "Import has been queued to resume.",
-      "IMPORT_RETRY_FAILED": "Could not retry the import.",
-      "IMPORT_ABANDONED": "Import has been abandoned.",
-      "IMPORT_FAILED": "Could not start the import."
+      "IMPORT_STARTED": "Đã bắt đầu nhập dữ liệu.",
+      "IMPORT_RETRIED": "Đã xếp hàng để tiếp tục nhập.",
+      "IMPORT_RETRY_FAILED": "Không thử lại được lần nhập này.",
+      "IMPORT_ABANDONED": "Đã bỏ dở lần nhập này.",
+      "IMPORT_FAILED": "Không bắt đầu được lần nhập."
     }
   },
   "CAPTAIN_SETTINGS": {
-    "TITLE": "Tekomi AI Settings",
-    "DESCRIPTION": "Configure your AI models and features for Tekomi AI. Tekomi AI follows a credit based billing, you will be charged credits for every action Tekomi AI takes based on the model selected.",
-    "LOADING": "Loading Tekomi AI configuration...",
-    "LINK_TEXT": "Learn more about Tekomi AI Credits",
-    "NOT_ENABLED": "Tekomi AI is not enabled for your account. Please upgrade your plan to access Tekomi AI features.",
+    "TITLE": "Cài đặt Tekomi AI",
+    "DESCRIPTION": "Cấu hình các mô hình AI và tính năng cho Tekomi AI. Tekomi AI tính phí theo tín dụng, mỗi thao tác của Tekomi AI sẽ trừ tín dụng tuỳ theo mô hình bạn chọn.",
+    "LOADING": "Đang tải cấu hình Tekomi AI...",
+    "LINK_TEXT": "Tìm hiểu thêm về tín dụng Tekomi AI",
+    "NOT_ENABLED": "Tekomi AI chưa được bật cho tài khoản của bạn. Vui lòng nâng cấp gói để dùng các tính năng Tekomi AI.",
     "MODEL_CONFIG": {
-      "TITLE": "Model Configuration",
-      "DESCRIPTION": "Select AI models for different features.",
-      "SELECT_MODEL": "Select model",
-      "CREDITS_PER_MESSAGE": "{credits} credit/message",
-      "COMING_SOON": "Coming soon",
+      "TITLE": "Cấu hình mô hình",
+      "DESCRIPTION": "Chọn mô hình AI cho từng tính năng.",
+      "SELECT_MODEL": "Chọn mô hình",
+      "CREDITS_PER_MESSAGE": "{credits} tín dụng/tin nhắn",
+      "COMING_SOON": "Sắp có",
       "EDITOR": {
-        "TITLE": "Editor Features",
-        "DESCRIPTION": "Powers smart compose, grammar corrections, tone adjustments, and content enhancement in your message editor."
+        "TITLE": "Tính năng soạn thảo",
+        "DESCRIPTION": "Hỗ trợ gợi ý soạn tin, sửa ngữ pháp, điều chỉnh giọng văn và cải thiện nội dung trong ô soạn tin nhắn."
       },
       "ASSISTANT": {
-        "TITLE": "Assistant",
-        "DESCRIPTION": "Handles automated responses, conversation summaries, and intelligent reply suggestions for customer interactions."
+        "TITLE": "Trợ lý",
+        "DESCRIPTION": "Xử lý trả lời tự động, tóm tắt hội thoại và gợi ý câu trả lời thông minh khi tương tác với khách."
       },
       "COPILOT": {
-        "TITLE": "Co-pilot",
-        "DESCRIPTION": "Provides real-time contextual suggestions, knowledge base recommendations, and proactive insights during conversations."
+        "TITLE": "Trợ thủ",
+        "DESCRIPTION": "Đưa ra gợi ý theo ngữ cảnh, đề xuất từ cơ sở tri thức và thông tin hữu ích ngay trong lúc trò chuyện."
       }
     },
     "FEATURES": {
       "TITLE": "Các tính năng",
-      "DESCRIPTION": "Enable or disable AI-powered features.",
+      "DESCRIPTION": "Bật hoặc tắt các tính năng dùng AI.",
       "AUDIO_TRANSCRIPTION": {
-        "TITLE": "Audio Transcription",
-        "DESCRIPTION": "Automatically convert voice messages and call recordings into searchable text transcripts.",
-        "MODEL_TITLE": "Audio Transcription Model",
-        "MODEL_DESCRIPTION": "Select the AI model to use for converting audio messages into text transcripts"
+        "TITLE": "Chuyển âm thanh thành văn bản",
+        "DESCRIPTION": "Tự động chuyển tin nhắn thoại và bản ghi cuộc gọi thành văn bản có thể tìm kiếm được.",
+        "MODEL_TITLE": "Mô hình chuyển âm thanh thành văn bản",
+        "MODEL_DESCRIPTION": "Chọn mô hình AI dùng để chuyển tin nhắn thoại thành văn bản"
       },
       "HELP_CENTER_SEARCH": {
-        "TITLE": "Help Center Search Indexing",
-        "DESCRIPTION": "Use AI for context aware search inside your help center articles."
+        "TITLE": "Lập chỉ mục tìm kiếm cho Trung tâm trợ giúp",
+        "DESCRIPTION": "Dùng AI để tìm kiếm theo ngữ cảnh trong các bài viết của trung tâm trợ giúp."
       },
       "LABEL_SUGGESTION": {
-        "TITLE": "Label Suggestion",
-        "DESCRIPTION": "Automatically suggest relevant labels and tags for conversations based on content analysis and context.",
-        "MODEL_TITLE": "Label Suggestion Model",
-        "MODEL_DESCRIPTION": "Select the AI model to use for analyzing conversations and suggesting appropriate labels"
+        "TITLE": "Gợi ý nhãn",
+        "DESCRIPTION": "Tự động gợi ý nhãn phù hợp cho hội thoại dựa trên nội dung và ngữ cảnh.",
+        "MODEL_TITLE": "Mô hình gợi ý nhãn",
+        "MODEL_DESCRIPTION": "Chọn mô hình AI dùng để phân tích hội thoại và gợi ý nhãn phù hợp"
       }
     },
     "API": {
-      "SUCCESS": "Tekomi AI settings updated successfully.",
-      "ERROR": "Failed to update Tekomi AI settings. Please try again."
+      "SUCCESS": "Đã cập nhật cài đặt Tekomi AI thành công.",
+      "ERROR": "Không cập nhật được cài đặt Tekomi AI. Vui lòng thử lại."
     }
   },
   "BILLING_SETTINGS": {
     "TITLE": "Phí",
-    "DESCRIPTION": "Manage your subscription here, upgrade your plan and get more for your team.",
+    "DESCRIPTION": "Quản lý gói đăng ký tại đây, nâng cấp gói để đội của bạn dùng được nhiều hơn.",
     "CURRENT_PLAN": {
       "TITLE": "Gói hiện tại",
       "PLAN_NOTE": "Bạn hiện đã đăng ký gói **{plan}** với **{quantity}** giấy phép",
-      "SEAT_COUNT": "Number of seats",
-      "RENEWS_ON": "Renews on",
-      "CURRENCY": "Currency"
+      "SEAT_COUNT": "Số chỗ ngồi",
+      "RENEWS_ON": "Gia hạn vào",
+      "CURRENCY": "Tiền tệ"
     },
     "CURRENCY": {
       "SELECT": {
-        "TITLE": "Choose your billing currency",
-        "DESCRIPTION": "Select the currency you'd like to be billed in. This can't be changed once your subscription is created."
+        "TITLE": "Chọn loại tiền thanh toán",
+        "DESCRIPTION": "Chọn loại tiền bạn muốn dùng để thanh toán. Không thể thay đổi sau khi gói đăng ký đã được tạo."
       },
       "OPTIONS": {
-        "USD": "US Dollar (USD)",
-        "BRL": "Brazilian Real (BRL)"
+        "USD": "Đô la Mỹ (USD)",
+        "BRL": "Real Brazil (BRL)"
       }
     },
-    "VIEW_PRICING": "View Pricing",
+    "VIEW_PRICING": "Xem bảng giá",
     "MANAGE_SUBSCRIPTION": {
       "TITLE": "Quản lý thuê bao của bạn",
       "DESCRIPTION": "Xem các hóa đơn trước đây của bạn, chỉnh sửa chi tiết thanh toán hoặc hủy thuê bao của bạn.",
@@ -605,11 +606,11 @@
     },
     "CAPTAIN": {
       "TITLE": "Tekomi AI",
-      "DESCRIPTION": "Manage usage and credits for Tekomi AI.",
-      "BUTTON_TXT": "Buy more credits",
-      "DOCUMENTS": "Documents",
+      "DESCRIPTION": "Quản lý mức sử dụng và tín dụng cho Tekomi AI.",
+      "BUTTON_TXT": "Mua thêm tín dụng",
+      "DOCUMENTS": "Tài liệu",
       "RESPONSES": "Responses",
-      "UPGRADE": "Tekomi AI is not available on the free plan, upgrade now to get access to assistants, copilot and more.",
+      "UPGRADE": "Tekomi AI không có ở gói miễn phí, hãy nâng cấp ngay để dùng trợ lý, trợ thủ và nhiều tính năng khác.",
       "REFRESH_CREDITS": "Làm mới"
     },
     "CHAT_WITH_US": {
@@ -619,134 +620,134 @@
     },
     "NO_BILLING_USER": "Tài khoản thanh toán của bạn đang được định cấu hình. Hãy làm mới trang và thử lại.",
     "TOPUP": {
-      "BUY_CREDITS": "Buy more credits",
-      "MODAL_TITLE": "Buy AI Credits",
-      "MODAL_DESCRIPTION": "Purchase additional credits for Tekomi AI.",
-      "CREDITS": "CREDITS",
-      "ONE_TIME": "one-time",
-      "POPULAR": "Most Popular",
+      "BUY_CREDITS": "Mua thêm tín dụng",
+      "MODAL_TITLE": "Mua tín dụng AI",
+      "MODAL_DESCRIPTION": "Mua thêm tín dụng cho Tekomi AI.",
+      "CREDITS": "TÍN DỤNG",
+      "ONE_TIME": "một lần",
+      "POPULAR": "Phổ biến nhất",
       "NOTE_TITLE": "Ghi chú:",
-      "NOTE_DESCRIPTION": "Credits are added immediately and expire in 6 months. An active subscription is required to use credits. Purchased credits are consumed after your monthly plan credits.",
+      "NOTE_DESCRIPTION": "Tín dụng được cộng ngay lập tức và hết hạn sau 6 tháng. Cần có gói đăng ký đang hoạt động để dùng tín dụng. Tín dụng mua thêm được trừ sau khi dùng hết tín dụng hằng tháng của gói.",
       "CANCEL": "Huỷ",
-      "PURCHASE": "Purchase Credits",
-      "LOADING": "Loading options...",
-      "FETCH_ERROR": "Failed to load credit options. Please try again.",
-      "RETRY": "Retry",
-      "PURCHASE_ERROR": "Failed to process purchase. Please try again.",
-      "PURCHASE_SUCCESS": "Successfully added {credits} credits to your account",
+      "PURCHASE": "Mua tín dụng",
+      "LOADING": "Đang tải các lựa chọn...",
+      "FETCH_ERROR": "Không tải được các gói tín dụng. Vui lòng thử lại.",
+      "RETRY": "Thử lại",
+      "PURCHASE_ERROR": "Không xử lý được giao dịch. Vui lòng thử lại.",
+      "PURCHASE_SUCCESS": "Đã cộng {credits} tín dụng vào tài khoản của bạn",
       "CONFIRM": {
-        "TITLE": "Confirm Purchase",
-        "DESCRIPTION": "You are about to purchase {credits} credits for {amount}.",
-        "INSTANT_DEDUCTION_NOTE": "Your saved card will be charged immediately upon confirmation.",
+        "TITLE": "Xác nhận giao dịch",
+        "DESCRIPTION": "Bạn sắp mua {credits} tín dụng với giá {amount}.",
+        "INSTANT_DEDUCTION_NOTE": "Thẻ đã lưu của bạn sẽ bị trừ tiền ngay khi xác nhận.",
         "GO_BACK": "Quay lại",
-        "CONFIRM_PURCHASE": "Confirm Purchase"
+        "CONFIRM_PURCHASE": "Xác nhận mua"
       }
     }
   },
   "SECURITY_SETTINGS": {
-    "TITLE": "Security",
-    "DESCRIPTION": "Manage your account security settings.",
-    "LINK_TEXT": "Learn more about SAML SSO",
-    "SAML_DISABLED_MESSAGE": "SAML SSO is currently disabled. Please contact your administrator to enable this feature.",
+    "TITLE": "Bảo mật",
+    "DESCRIPTION": "Quản lý các thiết lập bảo mật cho tài khoản của bạn.",
+    "LINK_TEXT": "Tìm hiểu thêm về SAML SSO",
+    "SAML_DISABLED_MESSAGE": "SAML SSO hiện đang tắt. Vui lòng liên hệ quản trị viên để bật tính năng này.",
     "SAML": {
       "TITLE": "SAML SSO",
-      "NOTE": "Configure SAML single sign-on for your account. Users will authenticate through your identity provider instead of using email/password.",
+      "NOTE": "Cấu hình đăng nhập một lần bằng SAML cho tài khoản. Người dùng sẽ xác thực qua nhà cung cấp danh tính thay vì dùng email/mật khẩu.",
       "ACS_URL": {
         "LABEL": "ACS URL",
-        "TOOLTIP": "Assertion Consumer Service URL - Configure this URL in your IdP as the destination for SAML responses"
+        "TOOLTIP": "Assertion Consumer Service URL — hãy cấu hình URL này trong IdP làm nơi nhận phản hồi SAML"
       },
       "SSO_URL": {
         "LABEL": "SSO URL",
-        "HELP": "The URL where SAML authentication requests will be sent",
+        "HELP": "URL mà các yêu cầu xác thực SAML sẽ được gửi tới",
         "PLACEHOLDER": "https://your-idp.com/saml/sso"
       },
       "CERTIFICATE": {
-        "LABEL": "Signing certificate in PEM format",
-        "HELP": "The public certificate from your identity provider used to verify SAML responses",
+        "LABEL": "Chứng chỉ ký ở định dạng PEM",
+        "HELP": "Chứng chỉ công khai từ nhà cung cấp danh tính, dùng để xác minh phản hồi SAML",
         "PLACEHOLDER": "-----BEGIN CERTIFICATE-----\nMIIC..."
       },
       "FINGERPRINT": {
-        "LABEL": "Fingerprint",
-        "TOOLTIP": "SHA-1 fingerprint of the certificate - Use this to verify the certificate in your IdP configuration"
+        "LABEL": "Dấu vân tay chứng chỉ",
+        "TOOLTIP": "Dấu vân tay SHA-1 của chứng chỉ — dùng để đối chiếu chứng chỉ trong cấu hình IdP của bạn"
       },
-      "COPY_SUCCESS": "Copied to clipboard",
+      "COPY_SUCCESS": "Đã sao chép",
       "SP_ENTITY_ID": {
         "LABEL": "SP Entity ID",
-        "HELP": "Unique identifier for this application as a service provider (auto-generated).",
+        "HELP": "Định danh duy nhất của ứng dụng này với vai trò nhà cung cấp dịch vụ (tự sinh).",
         "TOOLTIP": "Unique identifier for Chatwoot as the Service Provider - Configure this in your IdP settings"
       },
       "IDP_ENTITY_ID": {
-        "LABEL": "Identity Provider Entity ID",
-        "HELP": "Unique identifier for your identity provider (usually found in IdP configuration)",
+        "LABEL": "Entity ID của nhà cung cấp danh tính",
+        "HELP": "Định danh duy nhất của nhà cung cấp danh tính (thường có trong cấu hình IdP)",
         "PLACEHOLDER": "https://your-idp.com/saml"
       },
-      "UPDATE_BUTTON": "Update SAML Settings",
+      "UPDATE_BUTTON": "Cập nhật cài đặt SAML",
       "API": {
-        "SUCCESS": "SAML settings updated successfully",
-        "ERROR": "Failed to update SAML settings",
-        "ERROR_LOADING": "Failed to load SAML settings",
-        "DISABLED": "SAML settings disabled successfully"
+        "SUCCESS": "Đã cập nhật cài đặt SAML thành công",
+        "ERROR": "Không cập nhật được cài đặt SAML",
+        "ERROR_LOADING": "Không tải được cài đặt SAML",
+        "DISABLED": "Đã tắt SAML thành công"
       },
       "VALIDATION": {
-        "REQUIRED_FIELDS": "SSO URL, Identity Provider Entity ID, and Certificate are required fields",
-        "SSO_URL_ERROR": "Please enter a valid SSO URL",
-        "CERTIFICATE_ERROR": "Certificate is required",
-        "IDP_ENTITY_ID_ERROR": "Identity Provider Entity ID is required"
+        "REQUIRED_FIELDS": "SSO URL, Entity ID của nhà cung cấp danh tính và Chứng chỉ là các trường bắt buộc",
+        "SSO_URL_ERROR": "Vui lòng nhập SSO URL hợp lệ",
+        "CERTIFICATE_ERROR": "Vui lòng nhập chứng chỉ",
+        "IDP_ENTITY_ID_ERROR": "Vui lòng nhập Entity ID của nhà cung cấp danh tính"
       },
       "ENTERPRISE_PAYWALL": {
-        "AVAILABLE_ON": "The SAML SSO feature is only available in the Enterprise plans.",
-        "UPGRADE_PROMPT": "Upgrade to an Enterprise plan to access SAML single sign-on and other advanced security features.",
-        "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+        "AVAILABLE_ON": "Tính năng SAML SSO chỉ có ở gói Enterprise.",
+        "UPGRADE_PROMPT": "Nâng cấp lên gói Enterprise để dùng đăng nhập một lần bằng SAML và các tính năng bảo mật nâng cao khác.",
+        "ASK_ADMIN": "Vui lòng liên hệ quản trị viên để nâng cấp."
       },
       "PAYWALL": {
-        "TITLE": "Upgrade to enable SAML SSO",
-        "AVAILABLE_ON": "The SAML SSO feature is only available in the Enterprise plans.",
-        "UPGRADE_PROMPT": "Upgrade your plan to get access to SAML single sign-on and other advanced features.",
-        "UPGRADE_NOW": "Upgrade now",
-        "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+        "TITLE": "Nâng cấp để bật SAML SSO",
+        "AVAILABLE_ON": "Tính năng SAML SSO chỉ có ở gói Enterprise.",
+        "UPGRADE_PROMPT": "Nâng cấp gói để dùng đăng nhập một lần bằng SAML và các tính năng nâng cao khác.",
+        "UPGRADE_NOW": "Nâng cấp ngay",
+        "CANCEL_ANYTIME": "Bạn có thể đổi hoặc huỷ gói bất cứ lúc nào"
       },
       "ATTRIBUTE_MAPPING": {
-        "TITLE": "SAML Attribute Setup",
-        "DESCRIPTION": "The following attribute mappings must be configured in your identity provider"
+        "TITLE": "Thiết lập thuộc tính SAML",
+        "DESCRIPTION": "Các ánh xạ thuộc tính sau phải được cấu hình trong nhà cung cấp danh tính của bạn"
       },
       "INFO_SECTION": {
-        "TITLE": "Service Provider Information",
-        "TOOLTIP": "Copy these values and configure them in your Identity Provider to establish the SAML connection"
+        "TITLE": "Thông tin nhà cung cấp dịch vụ",
+        "TOOLTIP": "Sao chép các giá trị này và cấu hình trong nhà cung cấp danh tính để thiết lập kết nối SAML"
       }
     }
   },
   "CONVERSATION_WORKFLOW": {
     "INDEX": {
       "HEADER": {
-        "TITLE": "Conversation Workflows",
-        "DESCRIPTION": "Configure rules and required fields for conversation resolution."
+        "TITLE": "Quy trình hội thoại",
+        "DESCRIPTION": "Cấu hình quy tắc và các trường bắt buộc khi đánh dấu hội thoại đã xử lý xong."
       }
     },
     "REQUIRED_ATTRIBUTES": {
-      "TITLE": "Attributes required on resolution",
-      "DESCRIPTION": "When resolving a conversation, agents will be prompted to fill these attributes if they haven't yet.",
-      "NO_ATTRIBUTES": "No attributes added yet",
+      "TITLE": "Thuộc tính bắt buộc khi xử lý xong",
+      "DESCRIPTION": "Khi đánh dấu hội thoại đã xử lý xong, nhân viên sẽ được nhắc điền các thuộc tính này nếu chưa nhập.",
+      "NO_ATTRIBUTES": "Chưa thêm thuộc tính nào",
       "ADD": {
-        "TITLE": "Add Attributes",
+        "TITLE": "Thêm thuộc tính",
         "SEARCH_PLACEHOLDER": "Tìm kiếm nhiều thuộc tính"
       },
       "SAVE": {
-        "SUCCESS": "Required attributes updated",
-        "ERROR": "Could not update required attributes, please try again"
+        "SUCCESS": "Đã cập nhật thuộc tính bắt buộc",
+        "ERROR": "Không cập nhật được thuộc tính bắt buộc, vui lòng thử lại"
       },
       "MODAL": {
         "TITLE": "Giải quyết hội thoại",
-        "DESCRIPTION": "Please fill in the following custom attributes before resolving this conversation",
+        "DESCRIPTION": "Vui lòng điền các thuộc tính tuỳ chỉnh sau trước khi đánh dấu hội thoại này đã xử lý xong",
         "ACTIONS": {
           "RESOLVE": "Giải quyết hội thoại",
           "CANCEL": "Huỷ"
         },
         "PLACEHOLDERS": {
-          "TEXT": "Write a note...",
-          "NUMBER": "Enter a number",
-          "LINK": "Add a link",
-          "DATE": "Pick a date",
-          "LIST": "Select an option"
+          "TEXT": "Viết ghi chú...",
+          "NUMBER": "Nhập một số",
+          "LINK": "Thêm liên kết",
+          "DATE": "Chọn ngày",
+          "LIST": "Chọn một mục"
         },
         "CHECKBOX": {
           "YES": "Có",
@@ -754,16 +755,16 @@
         }
       },
       "PAYWALL": {
-        "TITLE": "Upgrade to use required attributes",
-        "AVAILABLE_ON": "The required conversation attributes feature is available on the Business and Enterprise plans.",
-        "UPGRADE_PROMPT": "Upgrade your plan to prompt agents to fill required attributes before conversation resolution.",
-        "UPGRADE_NOW": "Upgrade now",
-        "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+        "TITLE": "Nâng cấp để dùng thuộc tính bắt buộc",
+        "AVAILABLE_ON": "Tính năng thuộc tính hội thoại bắt buộc chỉ có ở gói Business và Enterprise.",
+        "UPGRADE_PROMPT": "Nâng cấp gói để nhắc nhân viên điền thuộc tính bắt buộc trước khi đánh dấu hội thoại đã xử lý xong.",
+        "UPGRADE_NOW": "Nâng cấp ngay",
+        "CANCEL_ANYTIME": "Bạn có thể đổi hoặc huỷ gói bất cứ lúc nào"
       },
       "ENTERPRISE_PAYWALL": {
-        "AVAILABLE_ON": "The required conversation attributes feature is available on the paid plans.",
-        "UPGRADE_PROMPT": "Upgrade to a paid plan to enforce required attributes before conversation resolution.",
-        "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+        "AVAILABLE_ON": "Tính năng thuộc tính hội thoại bắt buộc chỉ có ở các gói trả phí.",
+        "UPGRADE_PROMPT": "Nâng cấp lên gói trả phí để bắt buộc điền thuộc tính trước khi đánh dấu hội thoại đã xử lý xong.",
+        "ASK_ADMIN": "Vui lòng liên hệ quản trị viên để nâng cấp."
       }
     }
   },
@@ -779,7 +780,7 @@
     "FORM": {
       "NAME": {
         "LABEL": "Tên công ty",
-        "PLACEHOLDER": "Wayne Enterprises"
+        "PLACEHOLDER": "Công ty Ánh Dương"
       },
       "SUBMIT": "Gửi",
       "CANCEL": "Huỷ"
@@ -788,16 +789,16 @@
   "KEYBOARD_SHORTCUTS": {
     "TOGGLE_MODAL": "Xem tất cả phím tắt",
     "TITLE": {
-      "OPEN_CONVERSATION": "Mở cuộc trò chuyện",
+      "OPEN_CONVERSATION": "Mở hội thoại",
       "RESOLVE_AND_NEXT": "Giải quyết và đi đến cái tiếp theo",
       "NAVIGATE_DROPDOWN": "Điều hướng các mục thả xuống",
-      "RESOLVE_CONVERSATION": "Giải quyết cuộc trò chuyện",
-      "GO_TO_CONVERSATION_DASHBOARD": "Đi tới Trang tổng quan cuộc trò chuyện",
+      "RESOLVE_CONVERSATION": "Giải quyết hội thoại",
+      "GO_TO_CONVERSATION_DASHBOARD": "Đi tới Trang tổng quan hội thoại",
       "ADD_ATTACHMENT": "Thêm đính kèm",
       "GO_TO_CONTACTS_DASHBOARD": "Đi tới Trang tổng quan liên hệ",
       "TOGGLE_SIDEBAR": "Chuyển đổi thanh bên",
       "GO_TO_REPORTS_SIDEBAR": "Đi đến thanh bên Báo cáo",
-      "MOVE_TO_NEXT_TAB": "Di chuyển đến tab tiếp theo trong danh sách cuộc trò chuyện",
+      "MOVE_TO_NEXT_TAB": "Di chuyển đến tab tiếp theo trong danh sách hội thoại",
       "GO_TO_SETTINGS": "Đi đến Cài đặt",
       "SWITCH_TO_PRIVATE_NOTE": "Chuyển sang Ghi chú Riêng tư",
       "SWITCH_TO_REPLY": "Chuyển sang phản hồi",
@@ -807,12 +808,12 @@
   "ASSIGNMENT_POLICY": {
     "INDEX": {
       "HEADER": {
-        "TITLE": "Agent assignment",
-        "DESCRIPTION": "Define policies to effectively manage workload and route conversations based on the needs of inboxes and agents. Learn more here"
+        "TITLE": "Phân công nhân viên",
+        "DESCRIPTION": "Thiết lập chính sách để quản lý khối lượng công việc và điều phối hội thoại theo nhu cầu của từng hộp thư và nhân viên. Tìm hiểu thêm tại đây"
       },
       "ASSIGNMENT_POLICY": {
-        "TITLE": "Assignment policy",
-        "DESCRIPTION": "Manage how conversations get assigned in inboxes.",
+        "TITLE": "Chính sách phân công",
+        "DESCRIPTION": "Quản lý cách hội thoại được giao trong các hộp thư.",
         "FEATURES": [
           "Assign by conversations evenly or by available capacity",
           "Add fair distribution rules to avoid overloading any agent",
@@ -820,8 +821,8 @@
         ]
       },
       "AGENT_CAPACITY_POLICY": {
-        "TITLE": "Agent capacity policy",
-        "DESCRIPTION": "Manage workload for agents.",
+        "TITLE": "Chính sách năng lực nhân viên",
+        "DESCRIPTION": "Quản lý khối lượng công việc của nhân viên.",
         "FEATURES": [
           "Define maximum conversations per inbox",
           "Create exceptions based on labels and time",
@@ -832,253 +833,263 @@
     "AGENT_ASSIGNMENT_POLICY": {
       "INDEX": {
         "HEADER": {
-          "TITLE": "Assignment policy",
-          "CREATE_POLICY": "New policy"
+          "TITLE": "Chính sách phân công",
+          "CREATE_POLICY": "Chính sách mới"
         },
         "CARD": {
-          "ORDER": "Order",
+          "ORDER": "Thứ tự",
           "PRIORITY": "Mức độ ưu tiên",
           "ACTIVE": "Có hiệu lực",
-          "INACTIVE": "Inactive",
-          "POPOVER": "Added inboxes",
+          "INACTIVE": "Đang tắt",
+          "POPOVER": "Hộp thư đã thêm",
           "EDIT": "Chỉnh sửa"
         },
-        "NO_RECORDS_FOUND": "No assignment policies found"
+        "NO_RECORDS_FOUND": "Không tìm thấy chính sách phân công nào"
       },
       "CREATE": {
         "HEADER": {
-          "TITLE": "Create assignment policy"
+          "TITLE": "Tạo chính sách phân công"
         },
-        "CREATE_BUTTON": "Create policy",
+        "CREATE_BUTTON": "Tạo chính sách",
         "API": {
-          "SUCCESS_MESSAGE": "Assignment policy created successfully",
-          "ERROR_MESSAGE": "Failed to create assignment policy",
-          "INBOX_LINKED": "Inbox has been linked to the policy"
+          "SUCCESS_MESSAGE": "Đã tạo chính sách phân công thành công",
+          "ERROR_MESSAGE": "Không tạo được chính sách phân công",
+          "INBOX_LINKED": "Đã gắn hộp thư vào chính sách"
         }
       },
       "EDIT": {
         "HEADER": {
-          "TITLE": "Edit assignment policy"
+          "TITLE": "Sửa chính sách phân công"
         },
-        "EDIT_BUTTON": "Update policy",
+        "EDIT_BUTTON": "Cập nhật chính sách",
         "CONFIRM_ADD_INBOX_DIALOG": {
-          "TITLE": "Add inbox",
-          "DESCRIPTION": "{inboxName} inbox is already linked to another policy. Are you sure you want to link it to this policy? It will be unlinked from the other policy.",
-          "CONFIRM_BUTTON_LABEL": "Continue",
+          "TITLE": "Thêm hộp thư",
+          "DESCRIPTION": "Hộp thư {inboxName} đang gắn với một chính sách khác. Bạn có chắc muốn gắn nó vào chính sách này không? Nó sẽ bị gỡ khỏi chính sách kia.",
+          "CONFIRM_BUTTON_LABEL": "Tiếp tục",
           "CANCEL_BUTTON_LABEL": "Huỷ"
         },
         "INBOX_LINK_PROMPT": {
-          "TITLE": "Link inbox to policy",
-          "DESCRIPTION": "Would you like to link this inbox to the assignment policy?",
-          "LINK_BUTTON": "Link inbox",
-          "CANCEL_BUTTON": "Skip"
+          "TITLE": "Gắn hộp thư vào chính sách",
+          "DESCRIPTION": "Bạn có muốn gắn hộp thư này vào chính sách phân công không?",
+          "LINK_BUTTON": "Gắn hộp thư",
+          "CANCEL_BUTTON": "Bỏ qua"
         },
         "API": {
-          "SUCCESS_MESSAGE": "Assignment policy updated successfully",
-          "ERROR_MESSAGE": "Failed to update assignment policy"
+          "SUCCESS_MESSAGE": "Đã cập nhật chính sách phân công thành công",
+          "ERROR_MESSAGE": "Không cập nhật được chính sách phân công"
         },
         "INBOX_API": {
           "ADD": {
-            "SUCCESS_MESSAGE": "Inbox added to policy successfully",
-            "ERROR_MESSAGE": "Failed to add inbox to policy"
+            "SUCCESS_MESSAGE": "Đã thêm hộp thư vào chính sách thành công",
+            "ERROR_MESSAGE": "Không thêm được hộp thư vào chính sách"
           },
           "REMOVE": {
-            "SUCCESS_MESSAGE": "Inbox removed from policy successfully",
-            "ERROR_MESSAGE": "Failed to remove inbox from policy"
+            "SUCCESS_MESSAGE": "Đã gỡ hộp thư khỏi chính sách thành công",
+            "ERROR_MESSAGE": "Không gỡ được hộp thư khỏi chính sách"
           }
         }
       },
       "FORM": {
         "NAME": {
-          "LABEL": "Policy name:",
-          "PLACEHOLDER": "Enter policy name"
+          "LABEL": "Tên chính sách:",
+          "PLACEHOLDER": "Nhập tên chính sách"
         },
         "DESCRIPTION": {
           "LABEL": "Mô tả:",
-          "PLACEHOLDER": "Enter description"
+          "PLACEHOLDER": "Nhập mô tả"
         },
         "STATUS": {
           "LABEL": "Trạng thái:",
-          "PLACEHOLDER": "Select status",
-          "ACTIVE": "Policy is active",
-          "INACTIVE": "Policy is inactive"
+          "PLACEHOLDER": "Chọn trạng thái",
+          "ACTIVE": "Chính sách đang bật",
+          "INACTIVE": "Chính sách đang tắt"
         },
         "ASSIGNMENT_ORDER": {
-          "LABEL": "Assignment order",
+          "LABEL": "Thứ tự phân công",
           "ROUND_ROBIN": {
-            "LABEL": "Round robin",
-            "DESCRIPTION": "Assign conversations evenly among agents."
+            "LABEL": "Luân phiên",
+            "DESCRIPTION": "Chia hội thoại đều cho các nhân viên."
           },
           "BALANCED": {
-            "LABEL": "Balanced",
-            "DESCRIPTION": "Assign conversations based on available capacity.",
-            "PREMIUM_MESSAGE": "Upgrade to access balanced assignment and agent capacity management.",
+            "LABEL": "Cân bằng tải",
+            "DESCRIPTION": "Giao hội thoại dựa trên năng lực còn trống của nhân viên.",
+            "PREMIUM_MESSAGE": "Nâng cấp để dùng phân công cân bằng tải và quản lý năng lực nhân viên.",
             "PREMIUM_BADGE": "Premium"
           }
         },
         "ASSIGNMENT_PRIORITY": {
-          "LABEL": "Assignment priority",
+          "LABEL": "Mức ưu tiên khi phân công",
           "EARLIEST_CREATED": {
-            "LABEL": "Earliest created",
-            "DESCRIPTION": "The conversation that was created first gets assigned first."
+            "LABEL": "Tạo sớm nhất",
+            "DESCRIPTION": "Hội thoại được tạo trước sẽ được giao trước."
           },
           "LONGEST_WAITING": {
-            "LABEL": "Longest waiting",
-            "DESCRIPTION": "The conversation waiting the longest gets assigned first."
+            "LABEL": "Chờ lâu nhất",
+            "DESCRIPTION": "Hội thoại chờ lâu nhất sẽ được giao trước."
           }
         },
         "FAIR_DISTRIBUTION": {
-          "LABEL": "Fair distribution policy",
+          "LABEL": "Chính sách chia đều",
           "DESCRIPTION": "Set the maximum number of conversations that can be assigned per agent within a time window to avoid overloading any one agent. This required field defaults to 100 conversations per hour.",
-          "INPUT_MAX": "Assign max",
-          "DURATION": "Conversations per agent in every"
+          "INPUT_MAX": "Giao tối đa",
+          "DURATION": "hội thoại cho mỗi nhân viên trong mỗi"
         },
         "EXCLUDE_OLDER_THAN": {
-          "LABEL": "Skip stale conversations",
-          "DESCRIPTION": "Skip unassigned conversations older than this. Defaults to 7 days; clear to disable."
+          "LABEL": "Bỏ qua hội thoại cũ",
+          "DESCRIPTION": "Bỏ qua các hội thoại chưa phân công cũ hơn mốc này. Mặc định 7 ngày; để trống để tắt."
         },
         "INBOXES": {
-          "LABEL": "Added inboxes",
-          "DESCRIPTION": "Add inboxes for which this policy will be applicable.",
-          "ADD_BUTTON": "Add inbox",
+          "LABEL": "Hộp thư đã thêm",
+          "DESCRIPTION": "Thêm các hộp thư sẽ áp dụng chính sách này.",
+          "ADD_BUTTON": "Thêm hộp thư",
           "DROPDOWN": {
-            "SEARCH_PLACEHOLDER": "Search and select inboxes to add",
+            "SEARCH_PLACEHOLDER": "Tìm và chọn hộp thư để thêm",
             "ADD_BUTTON": "Thêm"
           },
-          "EMPTY_STATE": "No inboxes added to this policy, add an inbox to get started",
+          "EMPTY_STATE": "Chưa có hộp thư nào trong chính sách này, hãy thêm một hộp thư để bắt đầu",
           "API": {
-            "SUCCESS_MESSAGE": "Inbox successfully added to policy",
-            "ERROR_MESSAGE": "Failed to add inbox to policy"
+            "SUCCESS_MESSAGE": "Đã thêm hộp thư vào chính sách thành công",
+            "ERROR_MESSAGE": "Không thêm được hộp thư vào chính sách"
           }
         }
       },
       "DELETE_POLICY": {
-        "SUCCESS_MESSAGE": "Assignment policy deleted successfully",
-        "ERROR_MESSAGE": "Failed to delete assignment policy"
+        "SUCCESS_MESSAGE": "Đã xoá chính sách phân công thành công",
+        "ERROR_MESSAGE": "Không xoá được chính sách phân công"
       }
     },
     "AGENT_CAPACITY_POLICY": {
       "INDEX": {
         "HEADER": {
-          "TITLE": "Agent capacity",
-          "CREATE_POLICY": "New policy"
+          "TITLE": "Năng lực nhân viên",
+          "CREATE_POLICY": "Chính sách mới"
         },
         "CARD": {
-          "POPOVER": "Added agents",
+          "POPOVER": "Nhân viên đã thêm",
           "EDIT": "Chỉnh sửa"
         },
-        "NO_RECORDS_FOUND": "No agent capacity policies found"
+        "NO_RECORDS_FOUND": "Không tìm thấy chính sách năng lực nhân viên nào"
       },
       "CREATE": {
         "HEADER": {
-          "TITLE": "Create agent capacity policy"
+          "TITLE": "Tạo chính sách năng lực nhân viên"
         },
-        "CREATE_BUTTON": "Create policy",
+        "CREATE_BUTTON": "Tạo chính sách",
         "API": {
-          "SUCCESS_MESSAGE": "Agent capacity policy created successfully",
-          "ERROR_MESSAGE": "Failed to create agent capacity policy"
+          "SUCCESS_MESSAGE": "Đã tạo chính sách năng lực nhân viên thành công",
+          "ERROR_MESSAGE": "Không tạo được chính sách năng lực nhân viên"
         }
       },
       "EDIT": {
         "HEADER": {
-          "TITLE": "Edit agent capacity policy"
+          "TITLE": "Sửa chính sách năng lực nhân viên"
         },
-        "EDIT_BUTTON": "Update policy",
+        "EDIT_BUTTON": "Cập nhật chính sách",
         "CONFIRM_ADD_AGENT_DIALOG": {
-          "TITLE": "Add agent",
-          "DESCRIPTION": "{agentName} is already linked to another policy. Are you sure you want to link it to this policy? It will be unlinked from the other policy.",
-          "CONFIRM_BUTTON_LABEL": "Continue",
+          "TITLE": "Thêm nhân viên",
+          "DESCRIPTION": "{agentName} đang gắn với một chính sách khác. Bạn có chắc muốn gắn vào chính sách này không? Nhân viên sẽ bị gỡ khỏi chính sách kia.",
+          "CONFIRM_BUTTON_LABEL": "Tiếp tục",
           "CANCEL_BUTTON_LABEL": "Huỷ"
         },
         "API": {
-          "SUCCESS_MESSAGE": "Agent capacity policy updated successfully",
-          "ERROR_MESSAGE": "Failed to update agent capacity policy"
+          "SUCCESS_MESSAGE": "Đã cập nhật chính sách năng lực nhân viên thành công",
+          "ERROR_MESSAGE": "Không cập nhật được chính sách năng lực nhân viên"
         },
         "AGENT_API": {
           "ADD": {
-            "SUCCESS_MESSAGE": "Agent added to policy successfully",
-            "ERROR_MESSAGE": "Failed to add agent to policy"
+            "SUCCESS_MESSAGE": "Đã thêm nhân viên vào chính sách thành công",
+            "ERROR_MESSAGE": "Không thêm được nhân viên vào chính sách"
           },
           "REMOVE": {
-            "SUCCESS_MESSAGE": "Agent removed from policy successfully",
-            "ERROR_MESSAGE": "Failed to remove agent from policy"
+            "SUCCESS_MESSAGE": "Đã gỡ nhân viên khỏi chính sách thành công",
+            "ERROR_MESSAGE": "Không gỡ được nhân viên khỏi chính sách"
           }
         },
         "INBOX_LIMIT_API": {
           "ADD": {
-            "SUCCESS_MESSAGE": "Inbox limit added successfully",
-            "ERROR_MESSAGE": "Failed to add inbox limit"
+            "SUCCESS_MESSAGE": "Đã thêm giới hạn hộp thư thành công",
+            "ERROR_MESSAGE": "Không thêm được giới hạn hộp thư"
           },
           "UPDATE": {
-            "SUCCESS_MESSAGE": "Inbox limit updated successfully",
-            "ERROR_MESSAGE": "Failed to update inbox limit"
+            "SUCCESS_MESSAGE": "Đã cập nhật giới hạn hộp thư thành công",
+            "ERROR_MESSAGE": "Không cập nhật được giới hạn hộp thư"
           },
           "DELETE": {
-            "SUCCESS_MESSAGE": "Inbox limit deleted successfully",
-            "ERROR_MESSAGE": "Failed to delete inbox limit"
+            "SUCCESS_MESSAGE": "Đã xoá giới hạn hộp thư thành công",
+            "ERROR_MESSAGE": "Không xoá được giới hạn hộp thư"
           }
         }
       },
       "FORM": {
         "NAME": {
-          "LABEL": "Policy name:",
-          "PLACEHOLDER": "Enter policy name"
+          "LABEL": "Tên chính sách:",
+          "PLACEHOLDER": "Nhập tên chính sách"
         },
         "DESCRIPTION": {
           "LABEL": "Mô tả:",
-          "PLACEHOLDER": "Enter description"
+          "PLACEHOLDER": "Nhập mô tả"
         },
         "INBOX_CAPACITY_LIMIT": {
-          "LABEL": "Inbox capacity limits",
-          "ADD_BUTTON": "Add inbox",
+          "LABEL": "Giới hạn năng lực theo hộp thư",
+          "ADD_BUTTON": "Thêm hộp thư",
           "FIELD": {
-            "SELECT_INBOX": "Select inbox",
-            "MAX_CONVERSATIONS": "Max conversations",
-            "SET_LIMIT": "Set limit"
+            "SELECT_INBOX": "Chọn hộp thư",
+            "MAX_CONVERSATIONS": "Số hội thoại tối đa",
+            "SET_LIMIT": "Đặt giới hạn"
           },
-          "EMPTY_STATE": "No inbox limit set"
+          "EMPTY_STATE": "Chưa đặt giới hạn hộp thư nào"
         },
         "EXCLUSION_RULES": {
-          "LABEL": "Exclusion rules",
-          "DESCRIPTION": "Conversations that satisfy the following conditions would not count towards agent capacity",
+          "LABEL": "Quy tắc loại trừ",
+          "DESCRIPTION": "Các hội thoại thoả những điều kiện sau sẽ không được tính vào năng lực của nhân viên",
           "TAGS": {
-            "LABEL": "Exclude conversations tagged with specific labels",
-            "ADD_TAG": "add tag",
+            "LABEL": "Loại trừ hội thoại mang nhãn cụ thể",
+            "ADD_TAG": "thêm thẻ",
             "DROPDOWN": {
-              "SEARCH_PLACEHOLDER": "Search and select tags to add"
+              "SEARCH_PLACEHOLDER": "Tìm và chọn thẻ để thêm"
             },
-            "EMPTY_STATE": "No tags added to this policy."
+            "EMPTY_STATE": "Chưa có thẻ nào trong chính sách này."
           },
           "DURATION": {
-            "LABEL": "Exclude conversations older than a specified duration",
-            "PLACEHOLDER": "Set time"
+            "LABEL": "Loại trừ hội thoại cũ hơn một khoảng thời gian nhất định",
+            "PLACEHOLDER": "Đặt thời gian"
           }
         },
         "USERS": {
-          "LABEL": "Assigned agents",
-          "DESCRIPTION": "Add agents for which this policy will be applicable.",
-          "ADD_BUTTON": "Add agent",
+          "LABEL": "Nhân viên được áp dụng",
+          "DESCRIPTION": "Thêm các nhân viên sẽ áp dụng chính sách này.",
+          "ADD_BUTTON": "Thêm nhân viên",
           "DROPDOWN": {
-            "SEARCH_PLACEHOLDER": "Search and select agents to add",
+            "SEARCH_PLACEHOLDER": "Tìm và chọn nhân viên để thêm",
             "ADD_BUTTON": "Thêm"
           },
-          "EMPTY_STATE": "No agents added",
+          "EMPTY_STATE": "Chưa thêm nhân viên nào",
           "API": {
-            "SUCCESS_MESSAGE": "Agent successfully added to policy",
-            "ERROR_MESSAGE": "Failed to add agent to policy"
+            "SUCCESS_MESSAGE": "Đã thêm nhân viên vào chính sách thành công",
+            "ERROR_MESSAGE": "Không thêm được nhân viên vào chính sách"
           }
         }
       },
       "DELETE_POLICY": {
-        "SUCCESS_MESSAGE": "Agent capacity policy deleted successfully",
-        "ERROR_MESSAGE": "Failed to delete agent capacity policy"
+        "SUCCESS_MESSAGE": "Đã xoá chính sách năng lực nhân viên thành công",
+        "ERROR_MESSAGE": "Không xoá được chính sách năng lực nhân viên"
       }
     },
     "DELETE_POLICY": {
-      "TITLE": "Delete policy",
-      "DESCRIPTION": "Are you sure you want to delete this policy? This action cannot be undone.",
+      "TITLE": "Xoá chính sách",
+      "DESCRIPTION": "Bạn có chắc muốn xoá chính sách này? Thao tác không thể hoàn tác.",
       "CONFIRM_BUTTON_LABEL": "Xoá",
       "CANCEL_BUTTON_LABEL": "Huỷ"
     }
+  },
+  "CRM_DIRECTORY": {
+    "TITLE": "Danh bạ CRM",
+    "SUBTITLE": "{count} liên hệ trên toàn bộ công ty",
+    "SYNC_BUTTON": "Đồng bộ CRM",
+    "SYNC_STARTED": "Đã bắt đầu đồng bộ CRM (dữ liệu cũ {age} phút). Tải lại trang sau một phút để thấy kết quả mới.",
+    "SYNC_STARTED_FIRST_TIME": "Đã bắt đầu đồng bộ CRM lần đầu. Tải lại trang sau một phút để thấy kết quả.",
+    "LOADING": "Đang tải danh bạ...",
+    "NO_CONTACTS": "Công ty này chưa có liên hệ nào",
+    "UNGROUPED": "Liên hệ chưa phân nhóm"
   }
 }
