@@ -968,13 +968,7 @@ const menuItems = computed(() => {
   const DEMO_MODE = true;
   if (!DEMO_MODE) return items;
 
-  const DEMO_HIDDEN_TOP_LEVEL = [
-    'Tekomi',
-    'Calls',
-    'Companies',
-    'Reports',
-    'Portals',
-  ];
+  const DEMO_HIDDEN_TOP_LEVEL = ['Calls', 'Companies', 'Reports', 'Portals'];
   const DEMO_HIDDEN_SETTINGS_CHILDREN = [
     'Settings Account Settings',
     'Settings Agents',
