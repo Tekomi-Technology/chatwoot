@@ -4,6 +4,7 @@ import ConversationHeader from './ConversationHeader.vue';
 import DashboardAppFrame from '../DashboardApp/Frame.vue';
 import EmptyState from './EmptyState/EmptyState.vue';
 import MessagesView from './MessagesView.vue';
+import ZaloSessionBanner from './ZaloSessionBanner.vue';
 
 export default {
   components: {
@@ -11,6 +12,7 @@ export default {
     DashboardAppFrame,
     EmptyState,
     MessagesView,
+    ZaloSessionBanner,
   },
   props: {
     inboxId: {
@@ -128,10 +130,13 @@ export default {
         :inbox-id="inboxId"
         :is-inbox-view="isInboxView"
       />
-      <EmptyState
+      <div
         v-if="!currentChat.id && !isInboxView"
-        :is-on-expanded-layout="isOnExpandedLayout"
-      />
+        class="flex flex-col flex-1 min-w-0 min-h-0 bg-n-surface-1"
+      >
+        <ZaloSessionBanner :key="inboxId" :inbox-id="inboxId" />
+        <EmptyState :is-on-expanded-layout="isOnExpandedLayout" />
+      </div>
       <slot />
     </div>
     <DashboardAppFrame

@@ -11,10 +11,17 @@ import Banner from 'dashboard/components/ui/Banner.vue';
 import Dialog from 'dashboard/components-next/dialog/Dialog.vue';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 
+const props = defineProps({
+  inboxId: {
+    type: [String, Number],
+    default: null,
+  },
+});
+
 const store = useStore();
 const { t } = useI18n();
 const { isAdmin } = useAdmin();
-const { inbox, isAZaloPersonalChannel } = useInbox();
+const { inbox, isAZaloPersonalChannel } = useInbox(props.inboxId);
 
 const dialogRef = ref(null);
 
