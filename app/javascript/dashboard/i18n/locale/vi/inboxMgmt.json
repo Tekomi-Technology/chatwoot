@@ -1499,7 +1499,9 @@
       "API": "Kênh API",
       "INSTAGRAM": "Instagram",
       "TIKTOK": "TikTok",
-      "VOICE": "Thoại"
+      "VOICE": "Thoại",
+      "ZALO_OA": "Zalo OA",
+      "ZALO_PERSONAL": "Zalo cá nhân"
     },
     "ZALO_PERSONAL_SESSION": {
       "LABEL": "Phiên Zalo",

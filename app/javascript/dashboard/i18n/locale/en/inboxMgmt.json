@@ -1507,7 +1507,9 @@
       "API": "API Channel",
       "INSTAGRAM": "Instagram",
       "TIKTOK": "TikTok",
-      "VOICE": "Voice"
+      "VOICE": "Voice",
+      "ZALO_OA": "Zalo OA",
+      "ZALO_PERSONAL": "Zalo Personal"
     }
   }
 }
