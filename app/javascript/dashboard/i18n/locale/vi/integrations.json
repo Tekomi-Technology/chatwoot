@@ -190,7 +190,7 @@
         "GRAMMAR": "Sửa ngữ pháp & chính tả",
         "SUGGESTION": "Gợi ý câu trả lời",
         "SUMMARIZE": "Tóm tắt hội thoại",
-        "ASK_COPILOT": "Hỏi Trợ thủ"
+        "ASK_COPILOT": "Hỏi Tekomi"
       },
       "ASSISTANCE_MODAL": {
         "DRAFT_TITLE": "Nội dung nháp",
@@ -483,8 +483,8 @@
     "COPILOT": {
       "TITLE": "Trợ thủ",
       "TRY_THESE_PROMPTS": "Thử các câu gợi ý sau",
-      "PANEL_TITLE": "Bắt đầu với Copilot",
-      "KICK_OFF_MESSAGE": "Cần tóm tắt nhanh, muốn kiểm tra các hội thoại trước, hay soạn câu trả lời tốt hơn? Copilot sẽ giúp tăng tốc.",
+      "PANEL_TITLE": "Bắt đầu với Tekomi",
+      "KICK_OFF_MESSAGE": "Cần tóm tắt nhanh, muốn kiểm tra các hội thoại trước, hay soạn câu trả lời tốt hơn? Tekomi sẽ giúp tăng tốc.",
       "SEND_MESSAGE": "Gửi tin nhắn...",
       "EMPTY_MESSAGE": "Đã xảy ra lỗi khi tạo phản hồi. Vui lòng thử lại.",
       "LOADER": "Tekomi AI đang suy nghĩ",
@@ -527,13 +527,13 @@
     "PAYWALL": {
       "TITLE": "Nâng cấp để sử dụng Tekomi AI",
       "AVAILABLE_ON": "Tekomi AI không khả dụng trên gói miễn phí.",
-      "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, copilot và nhiều hơn nữa.",
+      "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, Tekomi và nhiều hơn nữa.",
       "UPGRADE_NOW": "Nâng cấp ngay",
       "CANCEL_ANYTIME": "Bạn có thể đổi hoặc huỷ gói bất cứ lúc nào"
     },
     "ENTERPRISE_PAYWALL": {
       "AVAILABLE_ON": "Tekomi AI chỉ có trong các gói Doanh nghiệp.",
-      "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, copilot và nhiều hơn nữa.",
+      "UPGRADE_PROMPT": "Nâng cấp gói của bạn để truy cập trợ lý, Tekomi và nhiều hơn nữa.",
       "ASK_ADMIN": "Vui lòng liên hệ quản trị viên để nâng cấp."
     },
     "BANNER": {

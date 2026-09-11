@@ -246,7 +246,7 @@
       "MESSAGING_RESTRICTED_WHATSAPP": "Bạn chỉ có thể trả lời bằng tin nhắn mẫu do giới hạn cửa sổ 24 giờ",
       "MESSAGING_RESTRICTED_API": "Bạn chỉ có thể trả lời bằng tin nhắn mẫu do giới hạn cửa sổ nhắn tin",
       "MESSAGE_SIGNATURE_NOT_CONFIGURED": "Chứ ký cuối tin nhắn chưa được cài đặt, xin hãy cài đặt một chữ ký trong phần cài đặt hồ sơ.",
-      "COPILOT_MSG_INPUT": "Cho copilot thêm lời nhắc hoặc hỏi thêm bất cứ điều gì... Nhấn enter để gửi theo dõi",
+      "COPILOT_MSG_INPUT": "Cho Tekomi thêm lời nhắc hoặc hỏi thêm bất cứ điều gì... Nhấn enter để gửi tiếp",
       "CLICK_HERE": "Bấm vào đây để cập nhật",
       "WHATSAPP_TEMPLATES": "Mẫu Whatsapp"
     },
@@ -268,7 +268,7 @@
       "IMAGE_UPLOAD_SUCCESS": "Ảnh tải lên thành công",
       "START_AUDIO_RECORDING": "Bắt đầu ghi âm",
       "STOP_AUDIO_RECORDING": "Dừng ghi âm",
-      "COPILOT_THINKING": "Copilot đang suy nghĩ",
+      "COPILOT_THINKING": "Tekomi đang suy nghĩ",
       "EMAIL_HEAD": {
         "TO": "ĐẾN",
         "ADD_BCC": "Thêm bcc",
@@ -359,7 +359,7 @@
     },
     "SIDEBAR": {
       "CONTACT": "Liên hệ",
-      "COPILOT": "Copilot"
+      "COPILOT": "Tekomi"
     },
     "VOICE_WIDGET": {
       "INCOMING_CALL": "Cuộc gọi đến",

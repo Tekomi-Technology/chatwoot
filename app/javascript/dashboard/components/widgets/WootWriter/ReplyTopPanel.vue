@@ -178,7 +178,7 @@ export default {
             'text-n-violet-9 bg-n-violet-3': showCopilotMenu,
           }"
           sm
-          icon="i-ph-sparkle-fill"
+          icon="i-woot-tekomi"
           @click="toggleCopilotMenu"
         />
         <CopilotMenuBar
