@@ -67,4 +67,18 @@ RSpec.describe Callbot::CallCompletedProcessor do
     expect(PbxCallEvent.count).to eq(2)
     expect(PhoneCall.last.message.content_attributes.dig('data', 'callbot_summary')).to eq('Báo cáo đầy đủ hơn.')
   end
+
+  it 'adds the internal audio proxy when Callytics reports a vendor recording' do
+    described_class.new(payload: payload(
+      recording: {
+        available: true,
+        status: 'ready',
+        access: { method: 'vendor_api', resource: '/api/v1/vendor/call-reports/call-1/recording' }
+      }
+    ), webhook: webhook).perform
+
+    phone_call = PhoneCall.last
+    expect(phone_call.recording_url).to eq("/api/v1/accounts/#{account.id}/phone_calls/#{phone_call.id}/recording")
+    expect(phone_call.metadata['callytics_recording_resource']).to eq('/api/v1/vendor/call-reports/call-1/recording')
+  end
 end

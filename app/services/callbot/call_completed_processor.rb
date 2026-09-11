@@ -42,7 +42,8 @@ class Callbot::CallCompletedProcessor
       ended_at: call['endedAt'],
       duration: call['durationSeconds'],
       hangup_cause: call['endReason'],
-      callbot_report: report
+      callbot_report: report,
+      callbot_recording_resource: recording_resource
     }
   end
 
@@ -76,5 +77,16 @@ class Callbot::CallCompletedProcessor
       'conversation' => payload['conversation'].is_a?(Hash) ? payload['conversation'] : {},
       'recording' => payload['recording'].is_a?(Hash) ? payload['recording'] : {}
     }
+  end
+
+  def recording_resource
+    recording = payload['recording']
+    return unless recording.is_a?(Hash) && recording['available'] == true
+
+    access = recording['access']
+    return unless access.is_a?(Hash) && access['method'] == 'vendor_api'
+
+    resource = access['resource'].to_s
+    resource if resource.match?(%r{\A/api/v1/vendor/call-reports/[^/]+/recording\z})
   end
 end

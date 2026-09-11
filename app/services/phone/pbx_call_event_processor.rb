@@ -213,6 +213,7 @@ class Phone::PbxCallEventProcessor
       metadata: phone_call.metadata.merge(
         'last_leg_uuid' => payload['leg_uuid'],
         'pbx_recording_url' => payload['recording_url'].presence || phone_call.metadata['pbx_recording_url'],
+        'callytics_recording_resource' => payload['callbot_recording_resource'].presence || phone_call.metadata['callytics_recording_resource'],
         'callbot_report' => payload['callbot_report'].presence || phone_call.metadata['callbot_report']
       ).compact
     )
@@ -232,7 +233,7 @@ class Phone::PbxCallEventProcessor
   end
 
   def recording_proxy_url(phone_call)
-    return phone_call.recording_url unless payload['recording_url'].present?
+    return phone_call.recording_url unless payload['recording_url'].present? || payload['callbot_recording_resource'].present?
 
     "/api/v1/accounts/#{phone_call.account_id}/phone_calls/#{phone_call.id}/recording"
   end
