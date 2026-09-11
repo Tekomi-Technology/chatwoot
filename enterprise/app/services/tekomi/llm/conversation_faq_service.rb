@@ -19,7 +19,7 @@ class Tekomi::Llm::ConversationFaqService < Llm::BaseAiService
   private_class_method :normalize_language
 
   def initialize(assistant, conversation)
-    super(feature: LLM_FEATURE, account: conversation.account, fallback_model: Llm::Models.default_model_for(LLM_FEATURE))
+    super(feature: LLM_FEATURE)
     @assistant = assistant
     @conversation = conversation
     @content = Tekomi::Llm::ConversationFaqContentService.new(assistant, conversation).generate
@@ -82,9 +82,9 @@ class Tekomi::Llm::ConversationFaqService < Llm::BaseAiService
       existing: { question: existing_record.question, answer: existing_record.answer }
     }
     prompt = Tekomi::Llm::ConversationFaqPromptsService.same_faq
-    faq_match_model = Llm::FeatureRouter.resolve(feature: 'conversation_faq_matching', account: conversation.account)[:model]
-    response = instrument_llm_call(match_instrumentation_params(prompt, comparison, faq_match_model)) do
-      chat(model: faq_match_model)
+    faq_match = Llm::FeatureRouter.resolve(feature: 'conversation_faq_matching')
+    response = instrument_llm_call(match_instrumentation_params(prompt, comparison, faq_match[:model])) do
+      chat(model: faq_match[:model], provider: faq_match[:provider])
         .with_params(response_format: { type: 'json_object' })
         .with_instructions(prompt)
         .ask(comparison.to_json)

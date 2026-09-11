@@ -10,6 +10,9 @@ class Tekomi::Copilot::ResponseJob < ApplicationJob
       copilot_thread_id: copilot_thread_id,
       message: message
     )
+  rescue StandardError => e
+    ChatwootExceptionTracker.new(e, account: assistant.account).capture_exception
+    assistant.account.copilot_threads.find(copilot_thread_id).copilot_messages.create!(message: { content: '' }, message_type: :assistant)
   end
 
   private

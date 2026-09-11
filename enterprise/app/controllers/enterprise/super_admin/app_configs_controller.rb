@@ -39,13 +39,7 @@ module Enterprise::SuperAdmin::AppConfigsController
   end
 
   def tekomi_config_options
-    %w[
-      TEKOMI_OPEN_AI_API_KEY
-      TEKOMI_OPEN_AI_MODEL
-      TEKOMI_OPEN_AI_ENDPOINT
-      TEKOMI_EMBEDDING_MODEL
-      TEKOMI_FIRECRAWL_API_KEY
-    ]
+    %w[TEKOMI_FIRECRAWL_API_KEY]
   end
 
   def saml_config_options

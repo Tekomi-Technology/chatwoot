@@ -1,4 +1,4 @@
-class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
+class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::BaseAiService
   include Integrations::LlmInstrumentation
 
   # Default pages per chunk - easily configurable
@@ -8,20 +8,17 @@ class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
   attr_reader :total_pages_processed, :iterations_completed
 
   def initialize(document, options = {})
-    super()
+    super(feature: 'pdf_faq_generation')
     @document = document
     @language = options[:language] || 'english'
     @pages_per_chunk = options[:pages_per_chunk] || DEFAULT_PAGES_PER_CHUNK
     @max_pages = options[:max_pages] # Optional limit from UI
     @total_pages_processed = 0
     @iterations_completed = 0
-    @model = Llm::FeatureRouter.resolve(feature: 'pdf_faq_generation', account: document.account)[:model]
   end
 
   def generate
-    raise CustomExceptions::Pdf::FaqGenerationError, I18n.t('tekomi.documents.missing_openai_file_id') if @document&.openai_file_id.blank?
-
-    generate_paginated_faqs
+    @document.pdf_file.blob.open { |pdf_file| generate_paginated_faqs(pdf_file.path) }
   end
 
   # Method to check if we should continue processing
@@ -44,34 +41,13 @@ class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
 
   private
 
-  def generate_standard_faqs
-    params = standard_chat_parameters
-    instrumentation_params = {
-      span_name: 'llm.faq_generation',
-      account_id: @document&.account_id,
-      feature_name: 'faq_generation',
-      model: @model,
-      messages: params[:messages],
-      metadata: document_metadata
-    }
-
-    response = instrument_llm_call(instrumentation_params) do
-      @client.chat(parameters: params)
-    end
-
-    parse_response(response)
-  rescue OpenAI::Error => e
-    Rails.logger.error I18n.t('tekomi.documents.openai_api_error', error: e.message)
-    []
-  end
-
-  def generate_paginated_faqs
+  def generate_paginated_faqs(pdf_path)
     all_faqs = []
     current_page = 1
 
     loop do
       end_page = calculate_end_page(current_page)
-      chunk_result = process_chunk_and_update_state(current_page, end_page, all_faqs)
+      chunk_result = process_chunk_and_update_state(pdf_path, current_page, end_page, all_faqs)
 
       break unless should_continue_processing?(chunk_result)
 
@@ -86,8 +62,8 @@ class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
     @max_pages && end_page > @max_pages ? @max_pages : end_page
   end
 
-  def process_chunk_and_update_state(current_page, end_page, all_faqs)
-    chunk_result = process_page_chunk(current_page, end_page)
+  def process_chunk_and_update_state(pdf_path, current_page, end_page, all_faqs)
+    chunk_result = process_page_chunk(pdf_path, current_page, end_page)
     chunk_faqs = chunk_result[:faqs]
 
     all_faqs.concat(chunk_faqs)
@@ -97,81 +73,25 @@ class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
     chunk_result
   end
 
-  def process_page_chunk(start_page, end_page)
-    params = build_chunk_parameters(start_page, end_page)
+  def process_page_chunk(pdf_path, start_page, end_page)
+    prompt = page_chunk_prompt(start_page, end_page)
 
-    instrumentation_params = build_instrumentation_params(params, start_page, end_page)
-
-    response = instrument_llm_call(instrumentation_params) do
-      @client.chat(parameters: params)
+    response = instrument_llm_call(build_instrumentation_params(prompt, start_page, end_page)) do
+      chat.with_params(response_format: { type: 'json_object' }).ask(prompt, with: pdf_path)
     end
 
-    result = parse_chunk_response(response)
+    result = parse_chunk_response(response.content)
     { faqs: result['faqs'] || [], has_content: result['has_content'] != false }
-  rescue OpenAI::Error => e
+  rescue RubyLLM::Error => e
     Rails.logger.error I18n.t('tekomi.documents.page_processing_error', start: start_page, end: end_page, error: e.message)
     { faqs: [], has_content: false }
-  end
-
-  def build_chunk_parameters(start_page, end_page)
-    {
-      model: @model,
-      response_format: { type: 'json_object' },
-      messages: [
-        {
-          role: 'user',
-          content: build_user_content(start_page, end_page)
-        }
-      ]
-    }
-  end
-
-  def build_user_content(start_page, end_page)
-    [
-      {
-        type: 'file',
-        file: { file_id: @document.openai_file_id }
-      },
-      {
-        type: 'text',
-        text: page_chunk_prompt(start_page, end_page)
-      }
-    ]
   end
 
   def page_chunk_prompt(start_page, end_page)
     Tekomi::Llm::SystemPromptsService.paginated_faq_generator(start_page, end_page, @language)
   end
 
-  def standard_chat_parameters
-    {
-      model: @model,
-      response_format: { type: 'json_object' },
-      messages: [
-        {
-          role: 'system',
-          content: Tekomi::Llm::SystemPromptsService.faq_generator(@language)
-        },
-        {
-          role: 'user',
-          content: @content
-        }
-      ]
-    }
-  end
-
-  def parse_response(response)
-    content = response.dig('choices', 0, 'message', 'content')
-    return [] if content.nil?
-
-    JSON.parse(sanitize_json_response(content)).fetch('faqs', [])
-  rescue JSON::ParserError => e
-    Rails.logger.error "Error parsing response: #{e.message}"
-    []
-  end
-
-  def parse_chunk_response(response)
-    content = response.dig('choices', 0, 'message', 'content')
+  def parse_chunk_response(content)
     return { 'faqs' => [], 'has_content' => false } if content.nil?
 
     JSON.parse(sanitize_json_response(content))
@@ -208,13 +128,13 @@ class Tekomi::Llm::PaginatedFaqGeneratorService < Llm::LegacyBaseOpenAiService
     common_words.size.to_f / total_words
   end
 
-  def build_instrumentation_params(params, start_page, end_page)
+  def build_instrumentation_params(prompt, start_page, end_page)
     {
       span_name: 'llm.paginated_faq_generation',
       account_id: @document&.account_id,
       feature_name: 'paginated_faq_generation',
       model: @model,
-      messages: params[:messages],
+      messages: [{ role: 'user', content: prompt }],
       metadata: document_metadata.merge(start_page: start_page, end_page: end_page, iteration: @iterations_completed + 1)
     }
   end

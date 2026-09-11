@@ -197,7 +197,6 @@ gem 'pgvector'
 gem 'reverse_markdown'
 
 gem 'iso-639'
-gem 'ruby-openai'
 gem 'ai-agents', '>= 0.12.0'
 
 # TODO: Move this gem as a dependency of ai-agents

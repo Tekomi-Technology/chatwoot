@@ -1,11 +1,9 @@
 class Tekomi::Llm::AssistantFalsePromiseService < Llm::BaseAiService
-  DETECTOR_MODEL = 'gpt-5.2'.freeze
-
   include Integrations::LlmInstrumentation
   include Tekomi::Llm::AssistantResponseInspectionHelpers
 
   def initialize(assistant:, conversation:)
-    super()
+    super(feature: 'false_promise_detection')
     @assistant = assistant
     @conversation = conversation
     @temperature = 0.0
@@ -36,10 +34,6 @@ class Tekomi::Llm::AssistantFalsePromiseService < Llm::BaseAiService
   end
 
   private
-
-  def setup_model
-    @model = DETECTOR_MODEL
-  end
 
   def normalize_response(parsed, raw_content)
     decision = parsed['decision'].to_s

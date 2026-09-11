@@ -6,7 +6,7 @@ class Tekomi::AssistantOverviewSummaryService < Tekomi::BaseTaskService
   def perform
     return { points: [] } unless report_has_activity?
 
-    response = make_api_call(feature: 'editor', messages: messages, schema: RESPONSE_SCHEMA)
+    response = make_api_call(feature: 'overview_summary', messages: messages, schema: RESPONSE_SCHEMA)
     return response if response[:error]
 
     { points: extract_points(response[:message]) }
@@ -54,10 +54,6 @@ class Tekomi::AssistantOverviewSummaryService < Tekomi::BaseTaskService
 
   def event_name
     'tekomi_assistant_overview_summary'
-  end
-
-  def use_account_openai_hook?
-    true
   end
 
   def counts_toward_usage?

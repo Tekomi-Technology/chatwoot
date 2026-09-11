@@ -34,7 +34,7 @@ class Tekomi::Document < ApplicationRecord
   has_many :responses, class_name: 'Tekomi::AssistantResponse', dependent: :destroy, as: :documentable
   belongs_to :account
   has_one_attached :pdf_file
-  store_accessor :metadata, :content_fingerprint, :last_sync_error_code, :sync_step, :openai_file_id
+  store_accessor :metadata, :content_fingerprint, :last_sync_error_code, :sync_step
 
   validates :external_link, presence: true, unless: -> { pdf_file.attached? }
   validates :external_link, uniqueness: { scope: :assistant_id }, allow_blank: true
@@ -85,10 +85,6 @@ class Tekomi::Document < ApplicationRecord
 
   def file_size
     pdf_file.blob.byte_size if pdf_file.attached?
-  end
-
-  def store_openai_file_id(file_id)
-    update!(openai_file_id: file_id)
   end
 
   def display_url

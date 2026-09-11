@@ -21,14 +21,14 @@ class Tekomi::Assistant::SessionCaptureService
   end
 
   def capture!
-    model = @assistant.agent_model
+    route = @assistant.agent_llm_route
 
     Tekomi::AgentSession.create!(
       assistant: @assistant,
       session_type: :assistant,
       subject: @conversation,
       result: result_message,
-      llm_model: "#{Llm::Models.provider_for(model)}-#{model}",
+      llm_model: "#{route[:provider]}-#{route[:model]}",
       credits_consumed: @credits_consumed,
       faq_ids: metadata[:faq_ids] || [],
       used_faq_ids: metadata[:used_faq_ids] || [],

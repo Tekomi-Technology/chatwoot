@@ -1,0 +1,9 @@
+<nav class="flex gap-6 px-8 border-b border-n-weak">
+  <% [
+       [t('super_admin.llm_config.tabs.features'), super_admin_llm_feature_models_path],
+       [t('super_admin.llm_config.tabs.providers'), super_admin_llm_providers_path],
+       [t('super_admin.llm_config.tabs.firecrawl'), super_admin_app_config_path(config: 'tekomi')]
+     ].each do |label, path| %>
+    <%= link_to label, path, class: "py-3 text-sm #{current_page?(path) ? 'text-woot-500 border-b-2 border-woot-500' : 'text-slate-800 hover:text-woot-500'}" %>
+  <% end %>
+</nav>

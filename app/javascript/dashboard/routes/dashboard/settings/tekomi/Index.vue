@@ -11,7 +11,6 @@ import { useTekomiConfigStore } from 'dashboard/store/tekomi/preferences';
 import SettingsLayout from '../SettingsLayout.vue';
 import BaseSettingsHeader from '../components/BaseSettingsHeader.vue';
 import SectionLayout from '../account/components/SectionLayout.vue';
-import ModelSelector from './components/ModelSelector.vue';
 import FeatureToggle from './components/FeatureToggle.vue';
 import TekomiPaywall from 'next/tekomi/pageComponents/Paywall.vue';
 
@@ -24,26 +23,6 @@ const tekomiConfigStore = useTekomiConfigStore();
 const { uiFlags } = storeToRefs(tekomiConfigStore);
 
 const isLoading = computed(() => uiFlags.value.isFetching);
-
-const modelFeatures = computed(() => [
-  {
-    key: 'editor',
-    title: t('TEKOMI_SETTINGS.MODEL_CONFIG.EDITOR.TITLE'),
-    description: t('TEKOMI_SETTINGS.MODEL_CONFIG.EDITOR.DESCRIPTION'),
-  },
-  {
-    key: 'assistant',
-    title: t('TEKOMI_SETTINGS.MODEL_CONFIG.ASSISTANT.TITLE'),
-    description: t('TEKOMI_SETTINGS.MODEL_CONFIG.ASSISTANT.DESCRIPTION'),
-    enterprise: true,
-  },
-  {
-    key: 'copilot',
-    title: t('TEKOMI_SETTINGS.MODEL_CONFIG.COPILOT.TITLE'),
-    description: t('TEKOMI_SETTINGS.MODEL_CONFIG.COPILOT.DESCRIPTION'),
-    enterprise: true,
-  },
-]);
 
 const featureToggles = computed(() => [
   {
@@ -99,18 +78,6 @@ async function handleFeatureToggle({ feature, enabled }) {
   }
 }
 
-async function handleModelChange({ feature, model }) {
-  try {
-    await tekomiConfigStore.updatePreferences({
-      tekomi_models: { [feature]: model },
-    });
-    useAlert(t('TEKOMI_SETTINGS.API.SUCCESS'));
-  } catch (error) {
-    useAlert(t('TEKOMI_SETTINGS.API.ERROR'));
-    tekomiConfigStore.fetch();
-  }
-}
-
 onMounted(() => {
   tekomiConfigStore.fetch();
 });
@@ -133,30 +100,10 @@ onMounted(() => {
     </template>
     <template #body>
       <div v-if="tekomiEnabled" class="flex flex-col gap-1">
-        <!-- Model Configuration Section -->
-        <SectionLayout
-          :title="t('TEKOMI_SETTINGS.MODEL_CONFIG.TITLE')"
-          :description="t('TEKOMI_SETTINGS.MODEL_CONFIG.DESCRIPTION')"
-        >
-          <div class="grid gap-4">
-            <ModelSelector
-              v-for="feature in modelFeatures"
-              v-show="shouldShowFeature(feature)"
-              :key="feature.key"
-              :is-allowed="isFeatureAccessible(feature)"
-              :feature-key="feature.key"
-              :title="feature.title"
-              :description="feature.description"
-              @change="handleModelChange"
-            />
-          </div>
-        </SectionLayout>
-
         <!-- Features Section -->
         <SectionLayout
           :title="t('TEKOMI_SETTINGS.FEATURES.TITLE')"
           :description="t('TEKOMI_SETTINGS.FEATURES.DESCRIPTION')"
-          with-border
         >
           <div class="grid gap-4">
             <FeatureToggle
@@ -166,7 +113,6 @@ onMounted(() => {
               :is-allowed="isFeatureAccessible(feature)"
               :feature-key="feature.key"
               @change="handleFeatureToggle"
-              @model-change="handleModelChange"
             />
           </div>
         </SectionLayout>

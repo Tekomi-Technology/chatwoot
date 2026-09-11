@@ -2,14 +2,11 @@ class Tekomi::Llm::HelpCenterCurationService < Tekomi::BaseTaskService
   RESPONSE_SCHEMA = Tekomi::Llm::HelpCenterCurationSchema
   MAX_LINKS_IN_PROMPT = 50
   IGNORED_URL_PATTERN = /\.(?:pdf|jpe?g|png|gif|webp|svg|ico|bmp|tiff?|avif|heic)(?:\?|#|$)/i
-  # This model consistently outperforms 5.2 in generating tighter and more
-  # accurate curations.
-  CURATION_MODEL = 'gpt-4.1'.freeze
 
   pattr_initialize [:account!, :links!]
 
   def perform
-    response = make_api_call(feature: 'onboarding_content_generation', model: CURATION_MODEL, messages: messages, schema: RESPONSE_SCHEMA)
+    response = make_api_call(feature: 'help_center_curation', messages: messages, schema: RESPONSE_SCHEMA)
     return response if response[:error]
 
     response.merge(message: extract_payload(response[:message]))
@@ -135,10 +132,6 @@ class Tekomi::Llm::HelpCenterCurationService < Tekomi::BaseTaskService
 
   def event_name
     'help_center_curation'
-  end
-
-  def llm_credential
-    @llm_credential ||= system_llm_credential
   end
 
   def tekomi_tasks_enabled?

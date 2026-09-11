@@ -2,7 +2,7 @@ class Internal::AccountAnalysis::ContentEvaluatorService
   include Integrations::LlmInstrumentation
 
   def initialize
-    Llm::Config.initialize!
+    Llm::Config.apply!
   end
 
   def evaluate(content)

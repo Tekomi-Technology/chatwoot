@@ -33,7 +33,7 @@ class Tekomi::FollowUpService < Tekomi::BaseTaskService
       { role: 'user', content: user_message }
     ]
 
-    response = make_api_call(feature: 'editor', messages: messages)
+    response = make_api_call(feature: 'follow_up', messages: messages)
     return response if response[:error]
 
     response.merge(follow_up_context: update_follow_up_context(user_message, response[:message]))
@@ -102,9 +102,5 @@ class Tekomi::FollowUpService < Tekomi::BaseTaskService
 
   def event_name
     'follow_up'
-  end
-
-  def use_account_openai_hook?
-    true
   end
 end

@@ -24,12 +24,6 @@ class Tekomi::Llm::TranslateQueryService < Tekomi::BaseTaskService
     'translate_query'
   end
 
-  # Translation is an internal operation, not customer-initiated.
-  # It should always use the installation key.
-  def llm_credential
-    @llm_credential ||= system_llm_credential
-  end
-
   def counts_toward_usage?
     false
   end

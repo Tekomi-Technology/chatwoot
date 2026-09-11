@@ -2,7 +2,7 @@ class Tekomi::Llm::FaqGeneratorService < Llm::BaseAiService
   include Integrations::LlmInstrumentation
 
   def initialize(document:)
-    super(feature: 'document_faq_generation', account: document.account)
+    super(feature: 'document_faq_generation')
     @document = document
     @content = document.content
     @language = document.account.locale_english_name

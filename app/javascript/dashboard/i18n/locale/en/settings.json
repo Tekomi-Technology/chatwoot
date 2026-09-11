@@ -532,37 +532,16 @@
   },
   "TEKOMI_SETTINGS": {
     "TITLE": "Tekomi AI Settings",
-    "DESCRIPTION": "Configure your AI models and features for Tekomi AI. Tekomi AI follows a credit based billing, you will be charged credits for every action Tekomi AI takes based on the model selected.",
+    "DESCRIPTION": "Enable or disable Tekomi AI features for your account. Tekomi AI follows a credit based billing, you will be charged credits for every action Tekomi AI takes.",
     "LOADING": "Loading Tekomi AI configuration...",
     "LINK_TEXT": "Learn more about Tekomi AI Credits",
     "NOT_ENABLED": "Tekomi AI is not enabled for your account. Please upgrade your plan to access Tekomi AI features.",
-    "MODEL_CONFIG": {
-      "TITLE": "Model Configuration",
-      "DESCRIPTION": "Select AI models for different features.",
-      "SELECT_MODEL": "Select model",
-      "CREDITS_PER_MESSAGE": "{credits} credit/message",
-      "COMING_SOON": "Coming soon",
-      "EDITOR": {
-        "TITLE": "Editor Features",
-        "DESCRIPTION": "Powers smart compose, grammar corrections, tone adjustments, and content enhancement in your message editor."
-      },
-      "ASSISTANT": {
-        "TITLE": "Assistant",
-        "DESCRIPTION": "Handles automated responses, conversation summaries, and intelligent reply suggestions for customer interactions."
-      },
-      "COPILOT": {
-        "TITLE": "Co-pilot",
-        "DESCRIPTION": "Provides real-time contextual suggestions, knowledge base recommendations, and proactive insights during conversations."
-      }
-    },
     "FEATURES": {
       "TITLE": "Features",
       "DESCRIPTION": "Enable or disable AI-powered features.",
       "AUDIO_TRANSCRIPTION": {
         "TITLE": "Audio Transcription",
-        "DESCRIPTION": "Automatically convert voice messages and call recordings into searchable text transcripts.",
-        "MODEL_TITLE": "Audio Transcription Model",
-        "MODEL_DESCRIPTION": "Select the AI model to use for converting audio messages into text transcripts"
+        "DESCRIPTION": "Automatically convert voice messages and call recordings into searchable text transcripts."
       },
       "HELP_CENTER_SEARCH": {
         "TITLE": "Help Center Search Indexing",
@@ -570,9 +549,7 @@
       },
       "LABEL_SUGGESTION": {
         "TITLE": "Label Suggestion",
-        "DESCRIPTION": "Automatically suggest relevant labels and tags for conversations based on content analysis and context.",
-        "MODEL_TITLE": "Label Suggestion Model",
-        "MODEL_DESCRIPTION": "Select the AI model to use for analyzing conversations and suggesting appropriate labels"
+        "DESCRIPTION": "Automatically suggest relevant labels and tags for conversations based on content analysis and context."
       }
     },
     "API": {

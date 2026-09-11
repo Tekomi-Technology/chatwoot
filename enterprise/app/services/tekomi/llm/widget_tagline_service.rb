@@ -54,10 +54,6 @@ class Tekomi::Llm::WidgetTaglineService < Tekomi::BaseTaskService
     'widget_tagline'
   end
 
-  def llm_credential
-    @llm_credential ||= system_llm_credential
-  end
-
   def tekomi_tasks_enabled?
     true
   end

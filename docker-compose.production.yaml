@@ -42,6 +42,7 @@ services:
 
   zalo:
     image: chatwoot-custom-rails:1.0
+    pull_policy: never
     env_file: .env
     depends_on:
       - rails

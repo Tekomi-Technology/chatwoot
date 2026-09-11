@@ -1,8 +1,7 @@
 module AccountSettingsSchema
   extend ActiveSupport::Concern
 
-  TEKOMI_MODEL_PROPERTIES = Llm::Models.model_feature_keys.index_with { { 'type': %w[string null] } }.freeze
-  TEKOMI_FEATURE_PROPERTIES = Llm::Models.feature_keys.index_with { { 'type': %w[boolean null] } }.freeze
+  TEKOMI_FEATURE_PROPERTIES = TekomiFeaturable::TOGGLE_FEATURE_KEYS.index_with { { 'type': %w[boolean null] } }.freeze
 
   SETTINGS_PARAMS_SCHEMA = {
     'type': 'object',
@@ -19,11 +18,6 @@ module AccountSettingsSchema
         'conversation_required_attributes': {
           'type': %w[array null],
           'items': { 'type': 'string' }
-        },
-        'tekomi_models': {
-          'type': %w[object null],
-          'properties': TEKOMI_MODEL_PROPERTIES,
-          'additionalProperties': false
         },
         'tekomi_features': {
           'type': %w[object null],

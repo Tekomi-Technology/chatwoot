@@ -1,12 +1,11 @@
 class Tekomi::AssistantMigration::InstructionClassifier < Tekomi::BaseTaskService
   RESPONSE_SCHEMA = Tekomi::AssistantMigration::InstructionClassifierSchema
-  CLASSIFIER_MODEL = 'gpt-5.2'.freeze
   MAX_INSTRUCTIONS_LENGTH = 20_000
 
   pattr_initialize [:assistant!]
 
   def perform
-    classifier_response = make_api_call(model: CLASSIFIER_MODEL, messages: messages, schema: RESPONSE_SCHEMA)
+    classifier_response = make_api_call(feature: 'instruction_migration', messages: messages, schema: RESPONSE_SCHEMA)
     return error_response(classifier_response) if classifier_response[:error]
 
     generated_draft = normalized_payload(classifier_response[:message])

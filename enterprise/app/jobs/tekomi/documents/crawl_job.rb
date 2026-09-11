@@ -3,7 +3,7 @@ class Tekomi::Documents::CrawlJob < ApplicationJob
 
   def perform(document)
     if document.pdf_document?
-      perform_pdf_processing(document)
+      document.update!(status: :available)
     elsif InstallationConfig.find_by(name: 'TEKOMI_FIRECRAWL_API_KEY')&.value.present?
       perform_firecrawl_crawl(document)
     else
@@ -14,14 +14,6 @@ class Tekomi::Documents::CrawlJob < ApplicationJob
   private
 
   include Tekomi::FirecrawlHelper
-
-  def perform_pdf_processing(document)
-    Tekomi::Llm::PdfProcessingService.new(document).process
-    document.update!(status: :available)
-  rescue StandardError => e
-    Rails.logger.error I18n.t('tekomi.documents.pdf_processing_failed', document_id: document.id, error: e.message)
-    raise # Re-raise to let job framework handle retry logic
-  end
 
   def perform_simple_crawl(document)
     page_links = Tekomi::Tools::SimplePageCrawlService.new(document.external_link).page_links

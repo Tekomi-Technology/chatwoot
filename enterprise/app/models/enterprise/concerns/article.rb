@@ -63,27 +63,11 @@ module Enterprise::Concerns::Article
   end
 
   def generate_article_search_terms
-    messages = [
-      { role: 'system', content: article_to_search_terms_prompt },
-      { role: 'user', content: "title: #{title} \n description: #{description} \n content: #{content}" }
-    ]
-    headers = { 'Content-Type' => 'application/json', 'Authorization' => "Bearer #{openai_api_key}" }
-    body = { model: 'gpt-4o', messages: messages, response_format: { type: 'json_object' } }.to_json
-    Rails.logger.info "Requesting Chat GPT with body: #{body}"
-    response = HTTParty.post(openai_api_url, headers: headers, body: body)
-    Rails.logger.info "Chat GPT response: #{response.body}"
-    JSON.parse(response.parsed_response['choices'][0]['message']['content'])['search_terms']
-  end
-
-  private
-
-  def openai_api_key
-    InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_API_KEY')&.value.presence || raise(I18n.t('tekomi.api_key_missing'))
-  end
-
-  def openai_api_url
-    endpoint = InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_ENDPOINT')&.value.presence || 'https://api.openai.com/'
-    endpoint = endpoint.chomp('/')
-    "#{endpoint}/v1/chat/completions"
+    route = Llm::FeatureRouter.resolve(feature: 'article_search_terms')
+    response = RubyLLM.chat(model: route[:model], provider: route[:provider], assume_model_exists: true)
+                      .with_params(response_format: { type: 'json_object' })
+                      .with_instructions(article_to_search_terms_prompt)
+                      .ask("title: #{title} \n description: #{description} \n content: #{content}")
+    JSON.parse(response.content)['search_terms']
   end
 end

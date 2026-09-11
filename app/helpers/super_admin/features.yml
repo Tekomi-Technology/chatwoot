@@ -53,6 +53,7 @@ tekomi:
   enabled: true
   icon: 'icon-tekomi'
   config_key: 'tekomi'
+  config_url: '/super_admin/llm_feature_models'
 
 # ------- Communication Channels ------- #
 live_chat:

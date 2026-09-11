@@ -63,10 +63,13 @@ class Tekomi::Assistant::ResponseRewriter
 
   def runner
     @runner ||= begin
+      route = @assistant.agent_llm_route
       agent = Agents::Agent.new(
         name: AGENT_NAME,
         instructions: INSTRUCTIONS,
-        model: @assistant.agent_model,
+        model: route[:model],
+        provider: route[:provider],
+        assume_model_exists: true,
         temperature: 0,
         response_schema: Tekomi::ResponseSchema
       )

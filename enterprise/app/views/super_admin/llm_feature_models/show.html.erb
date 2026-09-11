@@ -1,0 +1,44 @@
+<% content_for(:title) { t('super_admin.llm_config.title') } %>
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title"><%= content_for(:title) %></h1>
+</header>
+<%= render 'super_admin/llm_providers/tabs' %>
+<section class="main-content__body">
+  <% unconfigured_count = Llm::Features.keys.count { |feature_key| @feature_models[feature_key].blank? } %>
+  <% if unconfigured_count.positive? %>
+    <p class="mb-4 text-sm text-amber-700"><%= t('super_admin.llm_feature_models.unconfigured_summary', count: unconfigured_count) %></p>
+  <% end %>
+  <%= form_with url: super_admin_llm_feature_models_path, method: :patch do |form| %>
+    <% Llm::Features.grouped.each do |group, feature_keys| %>
+      <h2 class="mt-8 mb-2 text-base font-medium text-n-slate-12"><%= t("super_admin.llm_feature_models.groups.#{group}") %></h2>
+      <table>
+        <tbody>
+          <% feature_keys.each do |feature_key| %>
+            <% feature_model = @feature_models[feature_key] %>
+            <% warning = t("super_admin.llm_feature_models.features.#{feature_key}.warning", default: '') %>
+            <tr>
+              <td class="w-2/5">
+                <div class="text-sm font-medium text-n-slate-12"><%= t("super_admin.llm_feature_models.features.#{feature_key}.name") %></div>
+                <div class="text-xs text-slate-500"><%= t("super_admin.llm_feature_models.features.#{feature_key}.description") %></div>
+                <% if warning.present? %>
+                  <div class="mt-1 text-xs text-amber-700"><%= warning %></div>
+                <% end %>
+              </td>
+              <td>
+                <%= form.select "features[#{feature_key}][llm_provider_id]",
+                                options_from_collection_for_select(@llm_providers, :id, :name, feature_model&.llm_provider_id),
+                                { include_blank: t('super_admin.llm_feature_models.select_provider') },
+                                class: 'border border-slate-100 p-1 rounded-md' %>
+              </td>
+              <td><%= form.text_field "features[#{feature_key}][model]", value: feature_model&.model %></td>
+              <td class="text-xs <%= feature_model ? 'text-green-700' : 'text-amber-700' %>">
+                <%= feature_model ? t('super_admin.llm_feature_models.configured') : t('super_admin.llm_feature_models.not_configured') %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <div class="form-actions"><%= form.submit t('super_admin.llm_feature_models.save') %></div>
+  <% end %>
+</section>

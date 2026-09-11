@@ -6,11 +6,14 @@ module Concerns::Agentable
   DEFAULT_MAX_TOKENS = 4000
 
   def agent
+    route = agent_llm_route
     Agents::Agent.new(
       name: agent_name,
       instructions: ->(context) { agent_instructions(context) },
       tools: agent_tools,
-      model: agent_model,
+      model: route[:model],
+      provider: route[:provider],
+      assume_model_exists: true,
       temperature: temperature.presence&.to_f || DEFAULT_TEMPERATURE,
       response_schema: agent_response_schema,
       params: { max_tokens: DEFAULT_MAX_TOKENS }
@@ -35,11 +38,8 @@ module Concerns::Agentable
     Tekomi::PromptRenderer.render(prompt_template, enhanced_context.with_indifferent_access)
   end
 
-  def agent_model
-    route = Llm::FeatureRouter.resolve(feature: 'assistant', account: account)
-    return route[:model] if route[:source] == :account_override || account&.feature_enabled?('tekomi_integration_v2')
-
-    installation_model.presence || route[:model]
+  def agent_llm_route
+    Llm::FeatureRouter.resolve(feature: 'assistant')
   end
 
   private
@@ -54,10 +54,6 @@ module Concerns::Agentable
 
   def agent_tools
     []  # Default implementation, override if needed
-  end
-
-  def installation_model
-    InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_MODEL')&.value
   end
 
   def agent_response_schema

@@ -1,7 +1,7 @@
 # Blob-in, text-out audio transcription shared by voice-note attachments
 # (Messages::AudioTranscriptionService) and voice-call recordings
 # (Voice::CallTranscriptionService).
-class Llm::SpeechToTextService < Llm::LegacyBaseOpenAiService
+class Llm::SpeechToTextService
   include Integrations::LlmInstrumentation
 
   # OpenAI's transcription endpoint hard limit is 25 MB *decimal* (25_000_000), not
@@ -10,9 +10,8 @@ class Llm::SpeechToTextService < Llm::LegacyBaseOpenAiService
   # skips transcription.
   BYTE_LIMIT = 25_000_000
 
-  attr_reader :blob, :account, :transcription_model
+  attr_reader :blob, :account, :route
 
-  # Transcription runs on Tekomi's OpenAI credentials and consumes its response credits.
   def self.available_for?(account)
     return false unless account.feature_enabled?('tekomi_integration')
     return false if account.audio_transcriptions.blank?
@@ -25,30 +24,18 @@ class Llm::SpeechToTextService < Llm::LegacyBaseOpenAiService
   end
 
   def initialize(blob:, account:)
-    super()
     @blob = blob
     @account = account
-    @transcription_model = Llm::FeatureRouter.resolve(feature: 'audio_transcription', account: account)[:model]
+    @route = Llm::FeatureRouter.resolve(feature: 'audio_transcription')
   end
 
   def perform
     temp_file_path = fetch_audio_file
-    transcribed_text = nil
-
-    File.open(temp_file_path, 'rb') do |file|
-      transcribed_text = instrument_audio_transcription(instrumentation_params(temp_file_path)) do
-        # temperature: 0.0 minimises hallucinations on silence / near-silent
-        # audio; non-zero values trigger spiraling repeats — well-documented
-        # behaviour across OpenAI transcription models.
-        response = @client.audio.transcribe(
-          parameters: {
-            model: transcription_model,
-            file: file,
-            temperature: 0.0
-          }
-        )
-        response['text']
-      end
+    transcribed_text = instrument_audio_transcription(instrumentation_params(temp_file_path)) do
+      # temperature: 0.0 minimises hallucinations on silence / near-silent
+      # audio; non-zero values trigger spiraling repeats — well-documented
+      # behaviour across OpenAI transcription models.
+      RubyLLM.transcribe(temp_file_path, model: route[:model], provider: route[:provider], assume_model_exists: true, temperature: 0.0).text
     end
 
     account.increment_response_usage if transcribed_text.present?
@@ -94,7 +81,7 @@ class Llm::SpeechToTextService < Llm::LegacyBaseOpenAiService
   def instrumentation_params(file_path)
     {
       span_name: 'llm.messages.audio_transcription',
-      model: transcription_model,
+      model: route[:model],
       account_id: account&.id,
       feature_name: 'audio_transcription',
       file_path: file_path

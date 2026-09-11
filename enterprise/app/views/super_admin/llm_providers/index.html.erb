@@ -1,0 +1,39 @@
+<% content_for(:title) { t('super_admin.llm_config.title') } %>
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title"><%= content_for(:title) %></h1>
+  <%= link_to t('super_admin.llm_providers.new'), new_super_admin_llm_provider_path, class: 'button' %>
+</header>
+<%= render 'super_admin/llm_providers/tabs' %>
+<section class="main-content__body">
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('super_admin.llm_providers.fields.name') %></th>
+        <th><%= t('super_admin.llm_providers.fields.provider_type') %></th>
+        <th><%= t('super_admin.llm_providers.fields.api_base') %></th>
+        <th><%= t('super_admin.llm_providers.fields.api_key') %></th>
+        <th><%= t('super_admin.llm_providers.fields.usage') %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @llm_providers.each do |provider| %>
+        <tr>
+          <td><%= provider.name %></td>
+          <td><%= t("super_admin.llm_providers.types.#{provider.provider_type}") %></td>
+          <td><%= provider.api_base.presence || t('super_admin.llm_providers.default_api_base') %></td>
+          <td><%= provider.masked_api_key %></td>
+          <td><%= t('super_admin.llm_providers.usage', count: provider.llm_feature_models.size) %></td>
+          <td>
+            <div class="flex items-center gap-3">
+              <%= link_to t('super_admin.llm_providers.edit'), edit_super_admin_llm_provider_path(provider) %>
+              <% if provider.llm_feature_models.empty? %>
+                <%= button_to t('super_admin.llm_providers.delete'), super_admin_llm_provider_path(provider), method: :delete %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

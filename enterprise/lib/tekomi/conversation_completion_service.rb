@@ -102,12 +102,6 @@ class Tekomi::ConversationCompletionService < Tekomi::BaseTaskService
     { complete: false, reason: reason }
   end
 
-  # This is an internal operational evaluation, not a customer-triggered feature,
-  # so it should always use the installation key.
-  def llm_credential
-    @llm_credential ||= system_llm_credential
-  end
-
   def counts_toward_usage?
     false
   end

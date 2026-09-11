@@ -1,0 +1,8 @@
+<% content_for(:title) { t('super_admin.llm_config.title') } %>
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title"><%= @llm_provider.name %></h1>
+</header>
+<%= render 'super_admin/llm_providers/tabs' %>
+<section class="main-content__body">
+  <%= render 'super_admin/llm_providers/form', form_url: super_admin_llm_provider_path(@llm_provider) %>
+</section>

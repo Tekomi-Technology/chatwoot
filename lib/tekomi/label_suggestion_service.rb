@@ -87,10 +87,6 @@ class Tekomi::LabelSuggestionService < Tekomi::BaseTaskService
     'label_suggestion'
   end
 
-  def use_account_openai_hook?
-    true
-  end
-
   def build_follow_up_context?
     false
   end

@@ -1,51 +1,33 @@
 require 'ruby_llm'
 
 module Llm::Config
-  DEFAULT_MODEL = 'gpt-4.1-mini'.freeze
+  VERSION_KEY = 'LLM_PROVIDERS_CONFIG_VERSION'.freeze
 
   class << self
-    def initialized?
-      @initialized ||= false
-    end
+    def apply!
+      version = $alfred.with { |conn| conn.get(VERSION_KEY) }.to_i
+      return if @applied_version == version
 
-    def initialize!
-      return if @initialized
-
-      configure_ruby_llm
-      @initialized = true
-    end
-
-    def reset!
-      @initialized = false
-    end
-
-    def with_api_key(api_key, api_base: nil)
-      initialize!
-      context = RubyLLM.context do |config|
-        config.openai_api_key = api_key
-        config.openai_api_base = api_base
+      providers = LlmProvider.all.index_by(&:provider_type)
+      RubyLLM.configure do |config|
+        config.model_registry_file = Rails.root.join('config/llm_models.json').to_s
+        config.logger = Rails.logger
+        LlmProvider::PROVIDER_TYPES.each { |provider_type| assign_provider(config, provider_type, providers[provider_type]) }
       end
+      @applied_version = version
+    end
 
-      yield context
+    def bump_version!
+      $alfred.with { |conn| conn.incr(VERSION_KEY) }
     end
 
     private
 
-    def configure_ruby_llm
-      RubyLLM.configure do |config|
-        config.openai_api_key = system_api_key if system_api_key.present?
-        config.openai_api_base = "#{openai_endpoint.chomp('/')}/v1/" if openai_endpoint.present?
-        config.model_registry_file = Rails.root.join('config/llm_models.json').to_s
-        config.logger = Rails.logger
+    def assign_provider(config, provider_type, provider)
+      %w[api_key api_base].each do |attribute|
+        setter = "#{provider_type}_#{attribute}="
+        config.public_send(setter, provider&.public_send(attribute).presence) if config.respond_to?(setter)
       end
-    end
-
-    def system_api_key
-      InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_API_KEY')&.value
-    end
-
-    def openai_endpoint
-      InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_ENDPOINT')&.value
     end
   end
 end

@@ -4,20 +4,15 @@ class Tekomi::Llm::EmbeddingService
   class EmbeddingsError < StandardError; end
 
   def initialize(account_id: nil)
-    Llm::Config.initialize!
     @account_id = account_id
-    @embedding_model = self.class.embedding_model
+    @route = Llm::FeatureRouter.resolve(feature: 'embedding')
   end
 
-  def self.embedding_model
-    InstallationConfig.find_by(name: 'TEKOMI_EMBEDDING_MODEL')&.value.presence || LlmConstants::DEFAULT_EMBEDDING_MODEL
-  end
-
-  def get_embedding(content, model: @embedding_model)
+  def get_embedding(content)
     return [] if content.blank?
 
-    instrument_embedding_call(instrumentation_params(content, model)) do
-      RubyLLM.embed(content, model: model, provider: :openai, assume_model_exists: true).vectors
+    instrument_embedding_call(instrumentation_params(content)) do
+      RubyLLM.embed(content, model: @route[:model], provider: @route[:provider], assume_model_exists: true).vectors
     end
   rescue RubyLLM::Error => e
     Rails.logger.error "Embedding API Error: #{e.message}"
@@ -26,10 +21,10 @@ class Tekomi::Llm::EmbeddingService
 
   private
 
-  def instrumentation_params(content, model)
+  def instrumentation_params(content)
     {
       span_name: 'llm.tekomi.embedding',
-      model: model,
+      model: @route[:model],
       input: content,
       feature_name: 'embedding',
       account_id: @account_id

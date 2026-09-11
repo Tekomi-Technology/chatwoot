@@ -6,7 +6,7 @@ class Tekomi::OverviewSummaryService < Tekomi::BaseTaskService
 
   def perform
     api_response = make_api_call(
-      feature: 'editor',
+      feature: 'overview_summary',
       messages: [
         { role: 'system', content: system_prompt },
         { role: 'user', content: 'Write the summary.' }
@@ -70,10 +70,6 @@ class Tekomi::OverviewSummaryService < Tekomi::BaseTaskService
 
   def event_name
     'tekomi_overview_summary'
-  end
-
-  def use_account_openai_hook?
-    true
   end
 
   # The overview summary is an internal analytics readout, not a customer-facing

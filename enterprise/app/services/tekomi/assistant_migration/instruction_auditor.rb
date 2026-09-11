@@ -1,10 +1,9 @@
 class Tekomi::AssistantMigration::InstructionAuditor < Tekomi::BaseTaskService
-  AUDITOR_MODEL = 'gpt-5.2'.freeze
   pattr_initialize [:assistant!, :source_payload!, :draft!, :available_additions!]
 
   def perform
     make_api_call(
-      model: AUDITOR_MODEL,
+      feature: 'instruction_migration',
       messages: messages,
       schema: Tekomi::AssistantMigration::InstructionAuditorSchema.for(available_additions)
     )

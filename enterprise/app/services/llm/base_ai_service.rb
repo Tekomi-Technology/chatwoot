@@ -3,23 +3,19 @@
 # Base service for LLM operations using RubyLLM.
 # New features should inherit from this class.
 class Llm::BaseAiService
-  DEFAULT_MODEL = Llm::Config::DEFAULT_MODEL
   DEFAULT_TEMPERATURE = 1.0
 
-  attr_reader :model, :temperature
+  attr_reader :model, :provider, :temperature
 
-  def initialize(feature: nil, account: nil, fallback_model: nil)
-    @llm_feature = feature
-    @llm_account = account
-    @fallback_model = fallback_model
-
-    Llm::Config.initialize!
-    setup_model
-    setup_temperature
+  def initialize(feature:)
+    route = Llm::FeatureRouter.resolve(feature: feature)
+    @model = route[:model]
+    @provider = route[:provider]
+    @temperature = DEFAULT_TEMPERATURE
   end
 
-  def chat(model: @model, temperature: @temperature)
-    RubyLLM.chat(model: model).with_temperature(temperature)
+  def chat(model: @model, provider: @provider, temperature: @temperature)
+    RubyLLM.chat(model: model, provider: provider, assume_model_exists: true).with_temperature(temperature)
   end
 
   private
@@ -30,34 +26,5 @@ class Llm::BaseAiService
     return response if response.nil?
 
     response.strip.sub(/\A```(?:\w*)\s*\n?/, '').sub(/\n?\s*```\s*\z/, '').strip
-  end
-
-  def setup_model
-    route = feature_route
-    return @model = route[:model] if account_override_route?(route) || tekomi_v2_assistant?
-
-    @model = @fallback_model.presence || installation_model.presence || route&.dig(:model) || DEFAULT_MODEL
-  end
-
-  def feature_route
-    return if @llm_feature.blank?
-
-    Llm::FeatureRouter.resolve(feature: @llm_feature, account: @llm_account)
-  end
-
-  def account_override_route?(route)
-    route&.dig(:source) == :account_override
-  end
-
-  def tekomi_v2_assistant?
-    @llm_feature.to_s == 'assistant' && @llm_account&.feature_enabled?('tekomi_integration_v2')
-  end
-
-  def installation_model
-    InstallationConfig.find_by(name: 'TEKOMI_OPEN_AI_MODEL')&.value
-  end
-
-  def setup_temperature
-    @temperature = DEFAULT_TEMPERATURE
   end
 end

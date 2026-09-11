@@ -36,7 +36,7 @@ class Tekomi::RewriteService < Tekomi::BaseTaskService
 
   def call_llm_with_prompt(system_content, user_content = content)
     make_api_call(
-      feature: 'editor',
+      feature: 'rewrite',
       messages: [
         { role: 'system', content: system_content },
         { role: 'user', content: user_content }
@@ -55,9 +55,5 @@ class Tekomi::RewriteService < Tekomi::BaseTaskService
 
   def event_name
     operation
-  end
-
-  def use_account_openai_hook?
-    true
   end
 end

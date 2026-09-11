@@ -1,0 +1,35 @@
+<%= form_with model: @llm_provider, scope: :llm_provider, url: form_url do |form| %>
+  <% if @llm_provider.errors.any? %>
+    <p class="mb-6 text-sm text-red-600"><%= @llm_provider.errors.full_messages.join(', ') %></p>
+  <% end %>
+  <div class="flex mb-8">
+    <div class="field-unit__label"><%= form.label :name, t('super_admin.llm_providers.fields.name') %></div>
+    <div class="-mt-2 field-unit__field"><%= form.text_field :name %></div>
+  </div>
+  <div class="flex mb-8">
+    <div class="field-unit__label"><%= form.label :provider_type, t('super_admin.llm_providers.fields.provider_type') %></div>
+    <div class="-mt-2 field-unit__field">
+      <%= form.select :provider_type,
+                      LlmProvider::PROVIDER_TYPES.map { |type| [t("super_admin.llm_providers.types.#{type}"), type] },
+                      {},
+                      class: 'mt-2 border border-slate-100 p-1 rounded-md' %>
+    </div>
+  </div>
+  <div class="flex mb-8">
+    <div class="field-unit__label"><%= form.label :api_key, t('super_admin.llm_providers.fields.api_key') %></div>
+    <div class="-mt-2 field-unit__field">
+      <%= form.password_field :api_key, value: nil, autocomplete: 'new-password', class: 'mt-2 border border-slate-100 p-1.5 rounded-md w-full' %>
+      <% if @llm_provider.persisted? %>
+        <p class="pt-2 text-xs italic text-slate-400"><%= t('super_admin.llm_providers.api_key_keep_hint') %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="flex mb-8">
+    <div class="field-unit__label"><%= form.label :api_base, t('super_admin.llm_providers.fields.api_base') %></div>
+    <div class="-mt-2 field-unit__field">
+      <%= form.text_field :api_base %>
+      <p class="pt-2 text-xs italic text-slate-400"><%= t('super_admin.llm_providers.api_base_hint') %></p>
+    </div>
+  </div>
+  <div class="form-actions"><%= form.submit t('super_admin.llm_providers.save') %></div>
+<% end %>

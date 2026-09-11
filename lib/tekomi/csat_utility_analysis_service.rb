@@ -3,7 +3,7 @@ class Tekomi::CsatUtilityAnalysisService < Tekomi::BaseTaskService
 
   def perform
     api_response = make_api_call(
-      feature: 'editor',
+      feature: 'csat_analysis',
       messages: [
         { role: 'system', content: system_prompt },
         { role: 'user', content: message }
@@ -62,9 +62,5 @@ class Tekomi::CsatUtilityAnalysisService < Tekomi::BaseTaskService
 
   def event_name
     'csat_utility_analysis'
-  end
-
-  def use_account_openai_hook?
-    true
   end
 end

@@ -1,7 +1,9 @@
 import { computed, onMounted } from 'vue';
-import { useMapGetter, useStore } from 'dashboard/composables/store';
+import { storeToRefs } from 'pinia';
+import { useMapGetter } from 'dashboard/composables/store';
 import { useAccount } from 'dashboard/composables/useAccount';
 import { FEATURE_FLAGS } from 'dashboard/featureFlags';
+import { useTekomiConfigStore } from 'dashboard/store/tekomi/preferences';
 import TasksAPI from 'dashboard/api/tekomi/tasks';
 
 /**
@@ -19,9 +21,9 @@ const cleanLabels = labels => {
 };
 
 export function useLabelSuggestions() {
-  const store = useStore();
   const { isCloudFeatureEnabled } = useAccount();
-  const appIntegrations = useMapGetter('integrations/getAppIntegrations');
+  const tekomiConfigStore = useTekomiConfigStore();
+  const { features } = storeToRefs(tekomiConfigStore);
   const currentChat = useMapGetter('getSelectedChat');
   const conversationId = computed(() => currentChat.value?.id);
 
@@ -29,26 +31,9 @@ export function useLabelSuggestions() {
     return isCloudFeatureEnabled(FEATURE_FLAGS.TEKOMI_TASKS);
   });
 
-  const aiIntegration = computed(
-    () =>
-      appIntegrations.value.find(
-        integration => integration.id === 'openai' && !!integration.hooks.length
-      )?.hooks[0]
+  const isLabelSuggestionFeatureEnabled = computed(
+    () => !!features.value.label_suggestion?.enabled
   );
-
-  const isLabelSuggestionFeatureEnabled = computed(() => {
-    if (aiIntegration.value) {
-      const { settings = {} } = aiIntegration.value || {};
-      return !!settings.label_suggestion;
-    }
-    return false;
-  });
-
-  const fetchIntegrationsIfRequired = async () => {
-    if (!appIntegrations.value.length) {
-      await store.dispatch('integrations/get');
-    }
-  };
 
   /**
    * Gets label suggestions for the current conversation.
@@ -69,7 +54,9 @@ export function useLabelSuggestions() {
   };
 
   onMounted(() => {
-    fetchIntegrationsIfRequired();
+    if (!Object.keys(features.value).length) {
+      tekomiConfigStore.fetch();
+    }
   });
 
   return {

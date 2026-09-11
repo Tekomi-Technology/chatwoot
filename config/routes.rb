@@ -773,6 +773,11 @@ Rails.application.routes.draw do
 
       resource :settings, only: [:show]
 
+      if ChatwootApp.enterprise?
+        resources :llm_providers, only: [:index, :new, :create, :edit, :update, :destroy]
+        resource :llm_feature_models, only: [:show, :update]
+      end
+
       # resources that doesn't appear in primary navigation in super admin
       resources :account_users, only: [:new, :create, :show, :destroy]
     end

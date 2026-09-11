@@ -3,7 +3,7 @@ class Tekomi::SummaryService < Tekomi::BaseTaskService
 
   def perform
     make_api_call(
-      feature: 'editor',
+      feature: 'summary',
       messages: [
         { role: 'system', content: system_prompt },
         { role: 'user', content: conversation.to_llm_text(include_contact_details: false) }
@@ -23,9 +23,5 @@ class Tekomi::SummaryService < Tekomi::BaseTaskService
 
   def event_name
     'summarize'
-  end
-
-  def use_account_openai_hook?
-    true
   end
 end
