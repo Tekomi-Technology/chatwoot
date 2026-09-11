@@ -43,6 +43,7 @@ const audioSourceUrl = computed(() =>
   requiresAuth.value ? authenticatedAudioUrl.value : timeStampURL.value
 );
 const isLoadingAudio = ref(false);
+const isAudioReady = ref(!requiresAuth.value);
 
 const waitForAudioReady = () =>
   new Promise((resolve, reject) => {
@@ -92,6 +93,14 @@ const loadAuthenticatedAudio = async () => {
     const ready = waitForAudioReady();
     audioPlayer.value?.load();
     await ready;
+    isAudioReady.value = true;
+  } catch (error) {
+    if (authenticatedAudioUrl.value) {
+      URL.revokeObjectURL(authenticatedAudioUrl.value);
+      authenticatedAudioUrl.value = '';
+    }
+    isAudioReady.value = false;
+    throw error;
   } finally {
     isLoadingAudio.value = false;
   }
@@ -152,7 +161,18 @@ const playbackSpeedLabel = computed(() => {
 // There maybe a chance that the audioPlayer ref is not available
 // When the onLoadMetadata is called, so we need to set the duration
 // value when the component is mounted
-onMounted(() => {
+onMounted(async () => {
+  // Fetch private recordings before the click. Calling play only after an
+  // awaited authenticated request loses the user gesture in Safari/iOS and
+  // is rejected by the browser's autoplay policy.
+  if (requiresAuth.value) {
+    try {
+      await loadAuthenticatedAudio();
+    } catch {
+      // Keep the control disabled when the recording could not be loaded.
+    }
+  }
+
   const d = audioPlayer.value?.duration;
   if (Number.isFinite(d)) duration.value = d;
   audioPlayer.value.playbackRate = playbackSpeed.value;
@@ -197,10 +217,13 @@ const playOrPause = async () => {
     audioPlayer.value.pause();
     isPlaying.value = false;
   } else {
+    if (requiresAuth.value && !isAudioReady.value) return;
+
     try {
-      await loadAuthenticatedAudio();
       // Emit event to pause all other audio
       emitter.emit('pause_playing_audio', uid);
+      // play() must be called directly from the click handler so Safari/iOS
+      // keeps the user-activation permission.
       await audioPlayer.value.play();
       isPlaying.value = true;
     } catch {
@@ -253,11 +276,20 @@ onBeforeUnmount(() => {
     class="rounded-xl w-full gap-2 p-1.5 bg-n-alpha-white flex flex-col items-center border border-n-container shadow-[0px_2px_8px_0px_rgba(94,94,94,0.06)]"
   >
     <div class="flex gap-1 w-full flex-1 items-center justify-start">
-      <button class="p-0 border-0 size-8" @click="playOrPause">
+      <button
+        class="p-0 border-0 size-8 disabled:cursor-wait disabled:opacity-60"
+        :disabled="requiresAuth && !isAudioReady"
+        @click="playOrPause"
+      >
         <Icon
           v-if="isPlaying"
           class="size-8"
           icon="i-teenyicons-pause-small-solid"
+        />
+        <Icon
+          v-else-if="isLoadingAudio"
+          class="size-5 animate-spin"
+          icon="i-lucide-loader-circle"
         />
         <Icon v-else class="size-8" icon="i-teenyicons-play-small-solid" />
       </button>

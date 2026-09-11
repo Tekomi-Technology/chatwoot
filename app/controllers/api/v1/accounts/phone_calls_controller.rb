@@ -1,5 +1,9 @@
+require 'open3'
+
 class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseController
   include ActionController::Live
+
+  class RecordingTranscodeError < StandardError; end
 
   before_action :phone_call
 
@@ -51,12 +55,43 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
     return head :bad_gateway unless uri.is_a?(URI::HTTPS)
 
     request_to_callytics = Net::HTTP::Get.new(uri)
-    request_to_callytics['Range'] = request.headers['Range'] if request.headers['Range'].present?
     request_to_callytics['X-Callytics-API-Key'] = callytics_api_key
 
-    stream_response(uri, request_to_callytics)
+    send_callytics_response(uri, request_to_callytics)
   rescue URI::InvalidURIError
     head :bad_gateway
+  end
+
+  # Callytics currently returns Ogg/Opus. Safari and iOS support varies, so
+  # normalize it to MP3 before returning it to the authenticated dashboard.
+  # Buffering also prevents a browser-aborted media probe from breaking the
+  # upstream ActionController::Live stream halfway through.
+  def send_callytics_response(uri, outbound_request)
+    upstream = Net::HTTP.start(uri.host, uri.port, use_ssl: true, open_timeout: 5, read_timeout: 60) do |http|
+      http.request(outbound_request)
+    end
+
+    body, content_type = compatible_recording(upstream.body, upstream['Content-Type'])
+    response.headers['Cache-Control'] = 'private, no-store'
+    send_data body,
+              type: content_type,
+              disposition: 'inline',
+              status: upstream.code.to_i
+  rescue SocketError, Net::OpenTimeout, Net::ReadTimeout, RecordingTranscodeError
+    head :bad_gateway
+  end
+
+  def compatible_recording(body, content_type)
+    return [body, content_type.presence || 'application/octet-stream'] unless content_type.to_s.start_with?('audio/ogg')
+
+    output, _error, status = Open3.capture3(
+      'ffmpeg', '-nostdin', '-hide_banner', '-loglevel', 'error',
+      '-i', 'pipe:0', '-vn', '-codec:a', 'libmp3lame', '-f', 'mp3', 'pipe:1',
+      stdin_data: body, binmode: true
+    )
+    raise RecordingTranscodeError unless status.success? && output.present?
+
+    [output, 'audio/mpeg']
   end
 
   def stream_response(uri, outbound_request)
