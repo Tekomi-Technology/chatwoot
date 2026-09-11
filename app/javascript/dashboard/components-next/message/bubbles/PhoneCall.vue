@@ -72,6 +72,9 @@ const recordingAttachment = computed(() => {
     dataUrl: recordingUrl,
     fileType: 'audio',
     extension: 'wav',
+    // Dashboard authentication is header-based. Native <audio> requests
+    // cannot carry those headers, so AudioChip fetches these through axios.
+    requiresAuth: recordingUrl.startsWith('/api/'),
   };
 });
 

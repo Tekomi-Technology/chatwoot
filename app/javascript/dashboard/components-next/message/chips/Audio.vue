@@ -1,6 +1,8 @@
 <script setup>
 import {
   computed,
+  nextTick,
+  onBeforeUnmount,
   onMounted,
   useTemplateRef,
   ref,
@@ -30,6 +32,38 @@ defineOptions({
 const timeStampURL = computed(() => {
   return timeStampAppendedURL(attachment.dataUrl);
 });
+const audioPlayer = useTemplateRef('audioPlayer');
+
+// Chatwoot's dashboard uses token headers rather than a session cookie. A
+// native media element cannot attach those headers, so private recordings are
+// fetched through the configured axios client and then played as a blob URL.
+const authenticatedAudioUrl = ref('');
+const requiresAuth = computed(() => attachment.requiresAuth === true);
+const audioSourceUrl = computed(() =>
+  requiresAuth.value ? authenticatedAudioUrl.value : timeStampURL.value
+);
+const isLoadingAudio = ref(false);
+
+const loadAuthenticatedAudio = async () => {
+  if (
+    !requiresAuth.value ||
+    authenticatedAudioUrl.value ||
+    isLoadingAudio.value
+  )
+    return;
+
+  isLoadingAudio.value = true;
+  try {
+    const response = await window.axios.get(attachment.dataUrl, {
+      responseType: 'blob',
+    });
+    authenticatedAudioUrl.value = URL.createObjectURL(response.data);
+    await nextTick();
+    audioPlayer.value?.load();
+  } finally {
+    isLoadingAudio.value = false;
+  }
+};
 
 const TRANSCRIPT_PREVIEW_LENGTH = 200;
 const isTranscriptExpanded = ref(false);
@@ -41,8 +75,6 @@ const displayedTranscript = computed(() => {
   if (!isTranscriptLong.value || isTranscriptExpanded.value) return text;
   return `${text.slice(0, TRANSCRIPT_PREVIEW_LENGTH).trimEnd()}…`;
 });
-
-const audioPlayer = useTemplateRef('audioPlayer');
 
 const isPlaying = ref(false);
 const isMuted = ref(false);
@@ -128,15 +160,20 @@ const seek = event => {
   currentTime.value = time;
 };
 
-const playOrPause = () => {
+const playOrPause = async () => {
   if (isPlaying.value) {
     audioPlayer.value.pause();
     isPlaying.value = false;
   } else {
-    // Emit event to pause all other audio
-    emitter.emit('pause_playing_audio', uid);
-    audioPlayer.value.play();
-    isPlaying.value = true;
+    try {
+      await loadAuthenticatedAudio();
+      // Emit event to pause all other audio
+      emitter.emit('pause_playing_audio', uid);
+      await audioPlayer.value.play();
+      isPlaying.value = true;
+    } catch {
+      isPlaying.value = false;
+    }
   }
 };
 
@@ -156,9 +193,15 @@ const changePlaybackSpeed = () => {
 };
 
 const downloadAudio = async () => {
-  const { fileType, dataUrl, extension } = attachment;
-  downloadFile({ url: dataUrl, type: fileType, extension });
+  await loadAuthenticatedAudio();
+  const { fileType, extension } = attachment;
+  downloadFile({ url: audioSourceUrl.value, type: fileType, extension });
 };
+
+onBeforeUnmount(() => {
+  if (authenticatedAudioUrl.value)
+    URL.revokeObjectURL(authenticatedAudioUrl.value);
+});
 </script>
 
 <template>
@@ -171,7 +214,7 @@ const downloadAudio = async () => {
     @timeupdate="onTimeUpdate"
     @ended="onEnd"
   >
-    <source :src="timeStampURL" />
+    <source v-if="audioSourceUrl" :src="audioSourceUrl" />
   </audio>
   <div
     v-bind="$attrs"
