@@ -44,6 +44,36 @@ const audioSourceUrl = computed(() =>
 );
 const isLoadingAudio = ref(false);
 
+const waitForAudioReady = () =>
+  new Promise((resolve, reject) => {
+    const player = audioPlayer.value;
+    if (!player) {
+      reject(new Error('Audio player is unavailable'));
+      return;
+    }
+    if (player.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      resolve();
+      return;
+    }
+
+    let onCanPlay;
+    let onError;
+    const cleanup = () => {
+      player.removeEventListener('canplay', onCanPlay);
+      player.removeEventListener('error', onError);
+    };
+    onCanPlay = () => {
+      cleanup();
+      resolve();
+    };
+    onError = () => {
+      cleanup();
+      reject(new Error('Audio cannot be decoded'));
+    };
+    player.addEventListener('canplay', onCanPlay, { once: true });
+    player.addEventListener('error', onError, { once: true });
+  });
+
 const loadAuthenticatedAudio = async () => {
   if (
     !requiresAuth.value ||
@@ -59,7 +89,9 @@ const loadAuthenticatedAudio = async () => {
     });
     authenticatedAudioUrl.value = URL.createObjectURL(response.data);
     await nextTick();
+    const ready = waitForAudioReady();
     audioPlayer.value?.load();
+    await ready;
   } finally {
     isLoadingAudio.value = false;
   }
