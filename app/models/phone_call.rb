@@ -75,6 +75,20 @@ class PhoneCall < ApplicationRecord
       started_at: started_at&.iso8601,
       answered_at: answered_at&.iso8601,
       ended_at: ended_at&.iso8601
-    }.compact
+    }.merge(callbot_message_data).compact
+  end
+
+  private
+
+  def callbot_message_data
+    report = metadata['callbot_report']
+    return {} unless report.is_a?(Hash)
+
+    result = report['result'].is_a?(Hash) ? report['result'] : {}
+    {
+      callbot_summary: result['summary'],
+      callbot_outcome: result['outcome'],
+      callbot_analysis_status: result['analysisStatus']
+    }
   end
 end

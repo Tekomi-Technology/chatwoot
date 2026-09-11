@@ -74,6 +74,10 @@ const recordingAttachment = computed(() => {
     extension: 'wav',
   };
 });
+
+const callbotSummary = computed(
+  () => call.value.callbotSummary || call.value.callbot_summary
+);
 </script>
 
 <template>
@@ -92,6 +96,12 @@ const recordingAttachment = computed(() => {
           </span>
           <span v-if="details" class="truncate text-sm opacity-75">
             {{ details }}
+          </span>
+          <span
+            v-if="callbotSummary"
+            class="mt-1 line-clamp-2 text-sm opacity-75"
+          >
+            {{ callbotSummary }}
           </span>
         </div>
       </div>

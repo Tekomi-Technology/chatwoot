@@ -5,6 +5,7 @@ import { useStore } from 'vuex';
 import { useAlert } from 'dashboard/composables';
 import NextButton from 'dashboard/components-next/button/Button.vue';
 import phoneExtensionsAPI from 'dashboard/api/phoneExtensions';
+import callbotWebhooksAPI from 'dashboard/api/callbotWebhooks';
 
 const props = defineProps({
   inbox: {
@@ -18,6 +19,7 @@ const { t } = useI18n();
 
 const members = ref([]);
 const extensions = ref([]);
+const callbotWebhooks = ref([]);
 const isSavingChannel = ref(false);
 const savingUserId = ref(null);
 const deletingUserId = ref(null);
@@ -28,6 +30,10 @@ const turnUrls = ref('');
 const turnSharedSecret = ref('');
 const turnCredentialTtl = ref(3600);
 const extensionForms = reactive({});
+const newWebhookName = ref('');
+const creatingWebhook = ref(false);
+const savingWebhookId = ref(null);
+const deletingWebhookId = ref(null);
 
 const splitUrls = value =>
   value
@@ -72,12 +78,15 @@ const syncExtensionForms = () => {
 
 const fetchConfiguration = async () => {
   try {
-    const [memberResponse, extensionResponse] = await Promise.all([
-      store.dispatch('inboxMembers/get', { inboxId: props.inbox.id }),
-      phoneExtensionsAPI.getAll(props.inbox.id),
-    ]);
+    const [memberResponse, extensionResponse, webhookResponse] =
+      await Promise.all([
+        store.dispatch('inboxMembers/get', { inboxId: props.inbox.id }),
+        phoneExtensionsAPI.getAll(props.inbox.id),
+        callbotWebhooksAPI.getAll(props.inbox.id),
+      ]);
     members.value = memberResponse.data.payload;
     extensions.value = extensionResponse.data;
+    callbotWebhooks.value = webhookResponse.data;
     syncExtensionForms();
   } catch (error) {
     useAlert(error.message);
@@ -175,6 +184,60 @@ const deleteExtension = async member => {
     useAlert(error.message);
   } finally {
     deletingUserId.value = null;
+  }
+};
+
+const createCallbotWebhook = async () => {
+  if (!newWebhookName.value.trim()) return;
+  creatingWebhook.value = true;
+  try {
+    const response = await callbotWebhooksAPI.create(props.inbox.id, {
+      name: newWebhookName.value.trim(),
+    });
+    callbotWebhooks.value = [...callbotWebhooks.value, response.data];
+    newWebhookName.value = '';
+    useAlert(t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_CREATED'));
+  } catch (error) {
+    useAlert(error.message);
+  } finally {
+    creatingWebhook.value = false;
+  }
+};
+
+const saveCallbotWebhook = async webhook => {
+  savingWebhookId.value = webhook.id;
+  try {
+    const response = await callbotWebhooksAPI.update(
+      props.inbox.id,
+      webhook.id,
+      {
+        name: webhook.name,
+        enabled: webhook.enabled,
+      }
+    );
+    callbotWebhooks.value = callbotWebhooks.value.map(item =>
+      item.id === webhook.id ? response.data : item
+    );
+    useAlert(t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_SAVED'));
+  } catch (error) {
+    useAlert(error.message);
+  } finally {
+    savingWebhookId.value = null;
+  }
+};
+
+const deleteCallbotWebhook = async webhook => {
+  deletingWebhookId.value = webhook.id;
+  try {
+    await callbotWebhooksAPI.delete(props.inbox.id, webhook.id);
+    callbotWebhooks.value = callbotWebhooks.value.filter(
+      item => item.id !== webhook.id
+    );
+    useAlert(t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_DELETED'));
+  } catch (error) {
+    useAlert(error.message);
+  } finally {
+    deletingWebhookId.value = null;
   }
 };
 
@@ -329,6 +392,91 @@ onMounted(fetchConfiguration);
       <p v-else class="text-sm text-n-slate-11">
         {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.NO_MEMBERS') }}
       </p>
+    </section>
+
+    <section class="rounded-xl border border-n-weak bg-n-solid-2 p-6">
+      <h3 class="text-heading-2 text-n-slate-12">
+        {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOKS_TITLE') }}
+      </h3>
+      <p class="mb-5 mt-1 text-sm text-n-slate-11">
+        {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOKS_DESC') }}
+      </p>
+
+      <form
+        class="mb-5 flex max-w-3xl gap-3"
+        @submit.prevent="createCallbotWebhook"
+      >
+        <input
+          v-model="newWebhookName"
+          type="text"
+          class="h-10 flex-1 rounded-lg border border-n-weak bg-n-alpha-2 px-3 font-normal"
+          :placeholder="$t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_NAME')"
+        />
+        <NextButton
+          type="submit"
+          solid
+          blue
+          :is-loading="creatingWebhook"
+          :label="$t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.CREATE_WEBHOOK')"
+        />
+      </form>
+
+      <div
+        v-if="callbotWebhooks.length"
+        class="flex flex-col divide-y divide-n-weak"
+      >
+        <div
+          v-for="webhook in callbotWebhooks"
+          :key="webhook.id"
+          class="grid gap-3 py-5 md:grid-cols-[minmax(10rem,1fr)_2fr_auto] md:items-end"
+        >
+          <label
+            class="flex flex-col gap-1 text-sm font-medium text-n-slate-12"
+          >
+            {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_NAME') }}
+            <input
+              v-model="webhook.name"
+              type="text"
+              class="h-10 rounded-lg border border-n-weak bg-n-alpha-2 px-3 font-normal"
+            />
+            <span
+              class="mt-1 flex items-center gap-2 text-sm font-normal text-n-slate-11"
+            >
+              <input v-model="webhook.enabled" type="checkbox" />
+              {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.ENABLED') }}
+            </span>
+          </label>
+          <label
+            class="flex flex-col gap-1 text-sm font-medium text-n-slate-12"
+          >
+            {{ $t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.WEBHOOK_URL') }}
+            <input
+              :value="webhook.endpoint_url"
+              readonly
+              type="text"
+              class="h-10 rounded-lg border border-n-weak bg-n-alpha-2 px-3 font-normal"
+            />
+          </label>
+          <div class="flex gap-2">
+            <NextButton
+              sm
+              solid
+              blue
+              :is-loading="savingWebhookId === webhook.id"
+              :label="$t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.SAVE_WEBHOOK')"
+              @click="saveCallbotWebhook(webhook)"
+            />
+            <NextButton
+              sm
+              ghost
+              ruby
+              :is-loading="deletingWebhookId === webhook.id"
+              :label="$t('INBOX_MGMT.ADD.PHONE_CONFIGURATION.DELETE_WEBHOOK')"
+              @click="deleteCallbotWebhook(webhook)"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>

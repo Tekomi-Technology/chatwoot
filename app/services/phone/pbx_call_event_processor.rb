@@ -108,6 +108,9 @@ class Phone::PbxCallEventProcessor
   end
 
   def resolve_inbox(extension)
+    explicit_inbox = Inbox.find_by(id: payload['inbox_id'])
+    return explicit_inbox if explicit_inbox&.phone?
+
     channel = Channel::Phone.find_by(sip_domain: payload['sip_domain'].presence || payload['pbx_id'])
     return channel.inbox if channel&.inbox
 
@@ -209,7 +212,8 @@ class Phone::PbxCallEventProcessor
       recording_url: recording_proxy_url(phone_call),
       metadata: phone_call.metadata.merge(
         'last_leg_uuid' => payload['leg_uuid'],
-        'pbx_recording_url' => payload['recording_url'].presence || phone_call.metadata['pbx_recording_url']
+        'pbx_recording_url' => payload['recording_url'].presence || phone_call.metadata['pbx_recording_url'],
+        'callbot_report' => payload['callbot_report'].presence || phone_call.metadata['callbot_report']
       ).compact
     )
     phone_call.status = incoming_status if status_can_advance?(phone_call.status, incoming_status)

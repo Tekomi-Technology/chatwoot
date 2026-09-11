@@ -635,7 +635,17 @@
         "EXTENSION_REQUIRED": "Cần nhập tên đăng nhập SIP và mật khẩu cho số nội bộ mới.",
         "EXTENSION_SAVED": "Đã lưu số nội bộ của nhân viên.",
         "EXTENSION_DELETED": "Đã xoá số nội bộ của nhân viên.",
-        "NO_MEMBERS": "Hãy thêm nhân viên vào hộp thư này trước khi gán số nội bộ SIP."
+        "NO_MEMBERS": "Hãy thêm nhân viên vào hộp thư này trước khi gán số nội bộ SIP.",
+        "WEBHOOKS_TITLE": "Webhook báo cáo Callbot",
+        "WEBHOOKS_DESC": "Tạo một endpoint cho mỗi tích hợp callbot. Cuộc gọi hoàn tất được ghép với khách hàng theo số điện thoại đã chuẩn hoá.",
+        "WEBHOOK_NAME": "Tên webhook",
+        "WEBHOOK_URL": "URL webhook",
+        "CREATE_WEBHOOK": "Tạo webhook",
+        "SAVE_WEBHOOK": "Lưu",
+        "DELETE_WEBHOOK": "Xoá",
+        "WEBHOOK_CREATED": "Đã tạo webhook Callbot.",
+        "WEBHOOK_SAVED": "Đã lưu webhook Callbot.",
+        "WEBHOOK_DELETED": "Đã xoá webhook Callbot."
       },
       "ZALO_OA_CHANNEL": {
         "TITLE": "Kênh Zalo OA",

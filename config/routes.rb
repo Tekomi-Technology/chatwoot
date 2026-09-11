@@ -300,6 +300,7 @@ Rails.application.routes.draw do
           resource :branded_email_layout, only: [:show, :update]
           resources :inboxes, only: [:index, :show, :create, :update, :destroy] do
             resources :phone_extensions, only: [:index, :create, :update, :destroy], controller: 'inboxes/phone_extensions'
+            resources :callbot_webhooks, only: [:index, :create, :update, :destroy], controller: 'inboxes/callbot_webhooks'
             get :assignable_agents, on: :member
             get :campaigns, on: :member
             get :agent_bot, on: :member
@@ -691,6 +692,7 @@ Rails.application.routes.draw do
   post 'webhooks/zalo_oa', to: 'webhooks/zalo_oa#process_payload'
   post 'webhooks/zalo_personal', to: 'webhooks/zalo_personal#process_payload'
   post 'webhooks/pbx/calls', to: 'webhooks/pbx/calls#process_payload'
+  post 'webhooks/callytics/:token', to: 'webhooks/callytics/calls#process_payload'
   get 'zalo_oa/callback', to: 'zalo_oa/callbacks#show'
 
   # Consumed by the Zalo worker on boot to restore its sessions; loopback + shared secret only.

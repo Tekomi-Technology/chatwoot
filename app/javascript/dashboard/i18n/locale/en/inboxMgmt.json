@@ -574,7 +574,17 @@
         "EXTENSION_REQUIRED": "SIP username and password are required for a new extension.",
         "EXTENSION_SAVED": "Agent extension saved.",
         "EXTENSION_DELETED": "Agent extension removed.",
-        "NO_MEMBERS": "Add agents to this inbox before assigning SIP extensions."
+        "NO_MEMBERS": "Add agents to this inbox before assigning SIP extensions.",
+        "WEBHOOKS_TITLE": "Callbot report webhooks",
+        "WEBHOOKS_DESC": "Create one endpoint per callbot integration. Completed calls are matched to contacts by normalized phone number.",
+        "WEBHOOK_NAME": "Webhook name",
+        "WEBHOOK_URL": "Webhook URL",
+        "CREATE_WEBHOOK": "Create webhook",
+        "SAVE_WEBHOOK": "Save",
+        "DELETE_WEBHOOK": "Delete",
+        "WEBHOOK_CREATED": "Callbot webhook created.",
+        "WEBHOOK_SAVED": "Callbot webhook saved.",
+        "WEBHOOK_DELETED": "Callbot webhook deleted."
       },
       "AUTH": {
         "TITLE": "Choose a channel",
