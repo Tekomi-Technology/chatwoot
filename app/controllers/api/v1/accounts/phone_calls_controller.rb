@@ -5,11 +5,13 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
 
   class RecordingTranscodeError < StandardError; end
 
+  skip_before_action :authenticate_user!, :current_account, if: :signed_recording_request?
   before_action :phone_call
 
   # The dashboard calls Chatwoot, never the PBX. Chatwoot authorizes the agent
   # then proxies an authenticated request to the recording provider.
   def recording
+    return render_playback_url if playback_url_request? && !signed_recording_request?
     return proxy_pbx_recording if @phone_call.metadata['pbx_recording_url'].present?
     return proxy_callytics_recording if @phone_call.metadata['callytics_recording_resource'].present?
 
@@ -19,8 +21,40 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
   private
 
   def phone_call
+    if signed_recording_request?
+      payload = recording_token_verifier.verified(params[:token])&.with_indifferent_access
+      return head :unauthorized unless payload
+
+      @phone_call = PhoneCall.find_by(id: payload[:phone_call_id], account_id: payload[:account_id])
+      return head :not_found unless @phone_call && @phone_call.id.to_s == params[:id] && @phone_call.account_id.to_s == params[:account_id]
+
+      return
+    end
+
     @phone_call = PhoneCall.where(account: Current.account).find(params[:id])
     authorize @phone_call.conversation, :show?
+  end
+
+  def render_playback_url
+    token = recording_token_verifier.generate(
+      { phone_call_id: @phone_call.id, account_id: @phone_call.account_id },
+      expires_in: 1.hour
+    )
+    render json: {
+      url: url_for(action: :recording, account_id: @phone_call.account_id, id: @phone_call.id, token: token, only_path: true)
+    }
+  end
+
+  def signed_recording_request?
+    params[:token].present?
+  end
+
+  def playback_url_request?
+    ActiveModel::Type::Boolean.new.cast(params[:playback_url])
+  end
+
+  def recording_token_verifier
+    Rails.application.message_verifier('phone_call_recording')
   end
 
   def proxy_pbx_recording
@@ -67,11 +101,14 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
   # Buffering also prevents a browser-aborted media probe from breaking the
   # upstream ActionController::Live stream halfway through.
   def send_callytics_response(uri, outbound_request)
+    return send_cached_recording if @phone_call.cached_recording.attached?
+
     upstream = Net::HTTP.start(uri.host, uri.port, use_ssl: true, open_timeout: 5, read_timeout: 60) do |http|
       http.request(outbound_request)
     end
 
     body, content_type = compatible_recording(upstream.body, upstream['Content-Type'])
+    cache_recording(body, content_type) if upstream.is_a?(Net::HTTPSuccess) && content_type == 'audio/mpeg'
     response.headers['Cache-Control'] = 'private, no-store'
     send_data body,
               type: content_type,
@@ -79,6 +116,21 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
               status: upstream.code.to_i
   rescue SocketError, Net::OpenTimeout, Net::ReadTimeout, RecordingTranscodeError
     head :bad_gateway
+  end
+
+  def send_cached_recording
+    response.headers['Cache-Control'] = 'private, no-store'
+    send_data @phone_call.cached_recording.download,
+              type: @phone_call.cached_recording.blob.content_type,
+              disposition: 'inline'
+  end
+
+  def cache_recording(body, content_type)
+    @phone_call.cached_recording.attach(
+      io: StringIO.new(body),
+      filename: "phone-call-#{@phone_call.id}.mp3",
+      content_type: content_type
+    )
   end
 
   def compatible_recording(body, content_type)

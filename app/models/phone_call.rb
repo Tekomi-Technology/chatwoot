@@ -48,6 +48,7 @@ class PhoneCall < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :phone_extension, optional: true
   has_many :pbx_call_events, dependent: :destroy
+  has_one_attached :cached_recording
 
   validates :pbx_id, :linked_id, :customer_number, :status, presence: true
   validates :direction, inclusion: { in: DIRECTIONS }

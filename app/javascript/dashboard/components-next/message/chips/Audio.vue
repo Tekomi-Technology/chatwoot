@@ -1,8 +1,6 @@
 <script setup>
 import {
   computed,
-  nextTick,
-  onBeforeUnmount,
   onMounted,
   useTemplateRef,
   ref,
@@ -34,9 +32,9 @@ const timeStampURL = computed(() => {
 });
 const audioPlayer = useTemplateRef('audioPlayer');
 
-// Chatwoot's dashboard uses token headers rather than a session cookie. A
-// native media element cannot attach those headers, so private recordings are
-// fetched through the configured axios client and then played as a blob URL.
+// Chatwoot's dashboard uses token headers rather than a session cookie. Fetch
+// a short-lived signed playback URL while mounting, but leave the media itself
+// unloaded until play() is called.
 const authenticatedAudioUrl = ref('');
 const requiresAuth = computed(() => attachment.requiresAuth === true);
 const audioSourceUrl = computed(() =>
@@ -44,36 +42,6 @@ const audioSourceUrl = computed(() =>
 );
 const isLoadingAudio = ref(false);
 const isAudioReady = ref(!requiresAuth.value);
-
-const waitForAudioReady = () =>
-  new Promise((resolve, reject) => {
-    const player = audioPlayer.value;
-    if (!player) {
-      reject(new Error('Audio player is unavailable'));
-      return;
-    }
-    if (player.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-      resolve();
-      return;
-    }
-
-    let onCanPlay;
-    let onError;
-    const cleanup = () => {
-      player.removeEventListener('canplay', onCanPlay);
-      player.removeEventListener('error', onError);
-    };
-    onCanPlay = () => {
-      cleanup();
-      resolve();
-    };
-    onError = () => {
-      cleanup();
-      reject(new Error('Audio cannot be decoded'));
-    };
-    player.addEventListener('canplay', onCanPlay, { once: true });
-    player.addEventListener('error', onError, { once: true });
-  });
 
 const loadAuthenticatedAudio = async () => {
   if (
@@ -86,19 +54,12 @@ const loadAuthenticatedAudio = async () => {
   isLoadingAudio.value = true;
   try {
     const response = await window.axios.get(attachment.dataUrl, {
-      responseType: 'blob',
+      params: { playback_url: true },
     });
-    authenticatedAudioUrl.value = URL.createObjectURL(response.data);
-    await nextTick();
-    const ready = waitForAudioReady();
-    audioPlayer.value?.load();
-    await ready;
+    authenticatedAudioUrl.value = response.data.url;
     isAudioReady.value = true;
   } catch (error) {
-    if (authenticatedAudioUrl.value) {
-      URL.revokeObjectURL(authenticatedAudioUrl.value);
-      authenticatedAudioUrl.value = '';
-    }
+    authenticatedAudioUrl.value = '';
     isAudioReady.value = false;
     throw error;
   } finally {
@@ -252,25 +213,20 @@ const downloadAudio = async () => {
   const { fileType, extension } = attachment;
   downloadFile({ url: audioSourceUrl.value, type: fileType, extension });
 };
-
-onBeforeUnmount(() => {
-  if (authenticatedAudioUrl.value)
-    URL.revokeObjectURL(authenticatedAudioUrl.value);
-});
 </script>
 
 <template>
   <audio
     ref="audioPlayer"
+    :src="audioSourceUrl"
     controls
     class="hidden"
     playsinline
+    preload="none"
     @loadedmetadata="onLoadedMetadata"
     @timeupdate="onTimeUpdate"
     @ended="onEnd"
-  >
-    <source v-if="audioSourceUrl" :src="audioSourceUrl" />
-  </audio>
+  />
   <div
     v-bind="$attrs"
     class="rounded-xl w-full gap-2 p-1.5 bg-n-alpha-white flex flex-col items-center border border-n-container shadow-[0px_2px_8px_0px_rgba(94,94,94,0.06)]"
