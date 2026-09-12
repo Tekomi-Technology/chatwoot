@@ -1,12 +1,14 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { formatDuration } from 'shared/helpers/timeHelper';
 import { useMessageContext } from '../provider.js';
+import phoneCallsAPI from 'dashboard/api/phoneCalls';
 
 import Icon from 'dashboard/components-next/icon/Icon.vue';
 import BaseBubble from 'next/message/bubbles/Base.vue';
 import AudioChip from 'next/message/chips/Audio.vue';
+import PhoneCallDetailsDialog from './PhoneCallDetailsDialog.vue';
 
 const { t } = useI18n();
 const { contentAttributes } = useMessageContext();
@@ -81,10 +83,59 @@ const recordingAttachment = computed(() => {
 const callbotSummary = computed(
   () => call.value.callbotSummary || call.value.callbot_summary
 );
+const callbotOutcome = computed(
+  () => call.value.callbotOutcome || call.value.callbot_outcome
+);
+const callbotAnalysisStatus = computed(
+  () => call.value.callbotAnalysisStatus || call.value.callbot_analysis_status
+);
+const isCallbot = computed(
+  () =>
+    Boolean(callbotSummary.value) ||
+    Boolean(callbotOutcome.value) ||
+    Boolean(callbotAnalysisStatus.value)
+);
+
+const detailsDialogRef = ref(null);
+const callDetails = ref(null);
+const isLoadingDetails = ref(false);
+const hasDetailsError = ref(false);
+
+const loadCallDetails = async () => {
+  if (callDetails.value || isLoadingDetails.value) return;
+
+  isLoadingDetails.value = true;
+  hasDetailsError.value = false;
+  try {
+    const phoneCallId = call.value.phoneCallId || call.value.phone_call_id;
+    const response = await phoneCallsAPI.show(phoneCallId);
+    callDetails.value = response.data;
+  } catch {
+    hasDetailsError.value = true;
+  } finally {
+    isLoadingDetails.value = false;
+  }
+};
+
+const openCallDetails = () => {
+  if (!isCallbot.value) return;
+
+  detailsDialogRef.value?.open();
+  loadCallDetails();
+};
 </script>
 
 <template>
-  <BaseBubble class="!max-w-md !p-3 min-w-[240px]" hide-meta>
+  <BaseBubble
+    class="!max-w-md !p-3 min-w-[240px]"
+    :class="{ 'cursor-pointer': isCallbot }"
+    :role="isCallbot ? 'button' : undefined"
+    :tabindex="isCallbot ? 0 : undefined"
+    hide-meta
+    @click="openCallDetails"
+    @keydown.enter.prevent="openCallDetails"
+    @keydown.space.prevent="openCallDetails"
+  >
     <div class="flex w-full flex-col gap-3">
       <div class="flex items-start gap-2.5">
         <div
@@ -107,13 +158,27 @@ const callbotSummary = computed(
             {{ callbotSummary }}
           </span>
         </div>
+        <Icon
+          v-if="isCallbot"
+          class="mt-3 size-4 shrink-0 opacity-60"
+          icon="i-lucide-chevron-right"
+        />
       </div>
 
-      <AudioChip
-        v-if="recordingAttachment"
-        :attachment="recordingAttachment"
-        :show-transcribed-text="false"
-      />
+      <div v-if="recordingAttachment" @click.stop @keydown.stop>
+        <AudioChip
+          :attachment="recordingAttachment"
+          :show-transcribed-text="false"
+        />
+      </div>
     </div>
+
+    <PhoneCallDetailsDialog
+      v-if="isCallbot"
+      ref="detailsDialogRef"
+      :details="callDetails"
+      :is-loading="isLoadingDetails"
+      :has-error="hasDetailsError"
+    />
   </BaseBubble>
 </template>

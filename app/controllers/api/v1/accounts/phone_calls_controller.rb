@@ -11,6 +11,13 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
 
   # The dashboard calls Chatwoot, never the PBX. Chatwoot authorizes the agent
   # then proxies an authenticated request to the recording provider.
+  def show
+    report = @phone_call.metadata['callbot_report']
+    return head :not_found unless report.is_a?(Hash)
+
+    render json: callbot_details(report)
+  end
+
   def recording
     return render_playback_url if playback_url_request? && !signed_recording_request?
     return proxy_pbx_recording if @phone_call.metadata['pbx_recording_url'].present?
@@ -47,7 +54,7 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
   end
 
   def signed_recording_request?
-    params[:token].present?
+    action_name == 'recording' && params[:token].present?
   end
 
   def playback_url_request?
@@ -56,6 +63,54 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
 
   def recording_token_verifier
     Rails.application.message_verifier('phone_call_recording')
+  end
+
+  def callbot_details(report)
+    result = report['result'].is_a?(Hash) ? report['result'] : {}
+    conversation = report['conversation'].is_a?(Hash) ? report['conversation'] : {}
+
+    {
+      id: @phone_call.id,
+      call_id: @phone_call.linked_id,
+      campaign_id: report['campaign_id'],
+      direction: @phone_call.direction,
+      status: @phone_call.status,
+      customer_number: @phone_call.customer_number,
+      from_number: @phone_call.from_number,
+      to_number: @phone_call.to_number,
+      duration_seconds: @phone_call.duration_seconds,
+      hangup_cause: @phone_call.hangup_cause,
+      started_at: @phone_call.started_at&.iso8601,
+      answered_at: @phone_call.answered_at&.iso8601,
+      ended_at: @phone_call.ended_at&.iso8601,
+      outcome: result['outcome'],
+      summary: result['summary'],
+      analysis_status: result['analysisStatus'],
+      customer_intent: result['customerIntent'],
+      customer_disposition: result['customerDisposition'],
+      callback_status: result.dig('callback', 'status'),
+      business_resolution: result.dig('business', 'resolution'),
+      failure_reason: result.dig('business', 'failureReason'),
+      captured_fields: result.dig('captured', 'fields') || {},
+      confirmed_actions: result.dig('captured', 'confirmedActions') || [],
+      actions: result['actions'].is_a?(Array) ? result['actions'] : [],
+      metadata: report['metadata'].is_a?(Hash) ? report['metadata'] : {},
+      transcript: callbot_transcript(conversation['turns'])
+    }.compact
+  end
+
+  def callbot_transcript(turns)
+    return [] unless turns.is_a?(Array)
+
+    turns.filter_map do |turn|
+      next unless turn.is_a?(Hash) && turn['text'].present?
+
+      {
+        speaker: turn['speaker'],
+        text: turn['text'].gsub(/\s*\|(?:CHAT|ENDCALL)<\/ctl>\s*/i, '').strip,
+        occurred_at: turn['occurredAt']
+      }.compact
+    end
   end
 
   def proxy_pbx_recording
