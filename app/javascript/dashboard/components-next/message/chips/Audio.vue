@@ -109,10 +109,18 @@ const resolveStreamingDuration = () => {
 const onLoadedMetadata = () => {
   const d = audioPlayer.value?.duration;
   if (!Number.isFinite(d)) {
-    resolveStreamingDuration();
+    // Private call recordings are served with byte-range support. Do not use
+    // the WebM workaround here: seeking to MAX_SAFE_INTEGER can interrupt the
+    // browser's first media request before playback starts.
+    if (!requiresAuth.value) resolveStreamingDuration();
     return;
   }
   duration.value = d;
+};
+
+const onDurationChange = () => {
+  const d = audioPlayer.value?.duration;
+  if (Number.isFinite(d)) duration.value = d;
 };
 
 const playbackSpeedLabel = computed(() => {
@@ -152,7 +160,7 @@ useEmitter('pause_playing_audio', currentPlayingId => {
 });
 
 const formatTime = time => {
-  if (!time || Number.isNaN(time)) return '00:00';
+  if (!time || !Number.isFinite(time)) return '00:00';
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
   return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -224,6 +232,7 @@ const downloadAudio = async () => {
     playsinline
     preload="none"
     @loadedmetadata="onLoadedMetadata"
+    @durationchange="onDurationChange"
     @timeupdate="onTimeUpdate"
     @ended="onEnd"
   />

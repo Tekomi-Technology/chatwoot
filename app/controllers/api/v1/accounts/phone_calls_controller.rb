@@ -1,4 +1,5 @@
 require 'open3'
+require 'tempfile'
 
 class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseController
   include ActionController::Live
@@ -108,7 +109,11 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
     end
 
     body, content_type = compatible_recording(upstream.body, upstream['Content-Type'])
-    cache_recording(body, content_type) if upstream.is_a?(Net::HTTPSuccess) && content_type == 'audio/mpeg'
+    if upstream.is_a?(Net::HTTPSuccess) && content_type == 'audio/mpeg'
+      cache_recording(body, content_type)
+      return send_cached_recording
+    end
+
     response.headers['Cache-Control'] = 'private, no-store'
     send_data body,
               type: content_type,
@@ -119,10 +124,55 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
   end
 
   def send_cached_recording
+    blob = @phone_call.cached_recording.blob
+    byte_range = requested_byte_range(blob.byte_size)
+
+    return range_not_satisfiable(blob.byte_size) if byte_range == :invalid
+
     response.headers['Cache-Control'] = 'private, no-store'
-    send_data @phone_call.cached_recording.download,
-              type: @phone_call.cached_recording.blob.content_type,
-              disposition: 'inline'
+    response.headers['Accept-Ranges'] = 'bytes'
+
+    if byte_range
+      body = blob.download_chunk(byte_range)
+      response.headers['Content-Range'] = "bytes #{byte_range.begin}-#{byte_range.end}/#{blob.byte_size}"
+      send_data body,
+                type: blob.content_type,
+                disposition: 'inline',
+                status: :partial_content
+    else
+      send_data blob.download,
+                type: blob.content_type,
+                disposition: 'inline'
+    end
+  end
+
+  def requested_byte_range(byte_size)
+    range_header = request.headers['Range']
+    return if range_header.blank?
+
+    match = range_header.match(/\Abytes=(\d*)-(\d*)\z/)
+    return :invalid unless match && (match[1].present? || match[2].present?)
+
+    if match[1].blank?
+      suffix_length = match[2].to_i
+      return :invalid unless suffix_length.positive?
+
+      return [byte_size - suffix_length, 0].max..(byte_size - 1)
+    end
+
+    range_start = match[1].to_i
+    return :invalid if range_start >= byte_size
+
+    range_end = match[2].present? ? [match[2].to_i, byte_size - 1].min : byte_size - 1
+    return :invalid if range_end < range_start
+
+    range_start..range_end
+  end
+
+  def range_not_satisfiable(byte_size)
+    response.headers['Accept-Ranges'] = 'bytes'
+    response.headers['Content-Range'] = "bytes */#{byte_size}"
+    head :range_not_satisfiable
   end
 
   def cache_recording(body, content_type)
@@ -136,12 +186,17 @@ class Api::V1::Accounts::PhoneCallsController < Api::V1::Accounts::BaseControlle
   def compatible_recording(body, content_type)
     return [body, content_type.presence || 'application/octet-stream'] unless content_type.to_s.start_with?('audio/ogg')
 
-    output, _error, status = Open3.capture3(
-      'ffmpeg', '-nostdin', '-hide_banner', '-loglevel', 'error',
-      '-i', 'pipe:0', '-vn', '-codec:a', 'libmp3lame', '-f', 'mp3', 'pipe:1',
-      stdin_data: body, binmode: true
-    )
-    raise RecordingTranscodeError unless status.success? && output.present?
+    output = Tempfile.create(['phone-call-recording', '.mp3']) do |output_file|
+      output_file.close
+      _stdout, _error, status = Open3.capture3(
+        'ffmpeg', '-y', '-nostdin', '-hide_banner', '-loglevel', 'error',
+        '-i', 'pipe:0', '-vn', '-codec:a', 'libmp3lame', '-f', 'mp3', output_file.path,
+        stdin_data: body, binmode: true
+      )
+      raise RecordingTranscodeError unless status.success? && File.size?(output_file.path)
+
+      File.binread(output_file.path)
+    end
 
     [output, 'audio/mpeg']
   end
